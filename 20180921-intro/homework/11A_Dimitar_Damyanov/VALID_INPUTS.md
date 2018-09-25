@@ -18,7 +18,7 @@ VALID INPUT EXAMPLES:
 	3x^2-5x^2+6-4x=-9-2x
 	
 The program can handle variations of the order of monomials in which they occur in the equation
-Handles absence of equallity sign ("=")	
+Handles absence of equallity sign ("="), you can also replace "x" with every other letter
 
 NOTE: depending on the terminal you are using you may need to type x^^2 instead of x^2 ,if errors occur when using the first notation,
 try the latter, and vice versa 
