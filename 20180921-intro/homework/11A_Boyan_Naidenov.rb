@@ -8,7 +8,7 @@ d = b*b -4*a*c
 
 if d < 0
 	puts "No solution"
-elsif d == 1
+elsif d == 0
 	x = -b/(2*a)
 	puts x
 else d > 0
