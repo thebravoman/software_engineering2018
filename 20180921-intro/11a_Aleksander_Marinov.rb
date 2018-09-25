@@ -10,13 +10,17 @@ if a == 0
       puts "No solution"
     end
   else
-    x = -b/c
+    x = -c/b
     puts "X = #{x}"
   end
 else
-  d = b**2 - 4*a*c
+  d = b*b - 4*a*c
   x1 = (-b + Math.sqrt(d))/2*a
   x2 = (-b - Math.sqrt(d))/2*a
-  puts "X1 = #{x1}"
-  puts "X2 = #{x2}"
+  if x1 == x2
+    puts "X = #{x1}"
+  else
+    puts "X1 = #{x1}"
+    puts "X2 = #{x2}"
+  end
 end
