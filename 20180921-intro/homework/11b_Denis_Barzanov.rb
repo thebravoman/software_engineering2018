@@ -4,9 +4,9 @@ if (ARGV.length != 3)
 	abort("Usage: #{$PROGRAM_NAME} <number> <number> <number>")
 end
 
-a = ARGV[0].to_i
-b = ARGV[1].to_i
-c = ARGV[2].to_i
+a = ARGV[0].to_f
+b = ARGV[1].to_f
+c = ARGV[2].to_f
 
 if (a == 0)
 	abort("Not a quadratic equation...")
