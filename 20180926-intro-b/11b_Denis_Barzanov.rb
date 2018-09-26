@@ -1,6 +1,8 @@
 # ax^2 + bx + c = 0
 
-
+if (ARGV.length != 3) {
+	abort("Usage: #{$PROGRAM_NAME} <number> <number> <number>")
+}
 
 a = ARGV[0].to_i
 b = ARGV[1].to_i
