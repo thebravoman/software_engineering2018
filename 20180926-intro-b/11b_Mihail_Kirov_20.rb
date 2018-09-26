@@ -5,6 +5,8 @@ c = ARGV[2].to_i
 D = Math.sqrt(b*b - 4*a*c)
 if D < 0 
     puts "no sollution in the real number plane"
+elsif a == 0
+    puts "not a quadratic equation"
 else    
     x1 =  (-b + D) / 2*a
     x2 =  (-b - D) / 2*a
