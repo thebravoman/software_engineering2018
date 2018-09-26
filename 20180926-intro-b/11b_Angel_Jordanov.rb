@@ -1,4 +1,4 @@
-# Quadratic equation solver
+# Quadratic equation solver.
 
 A = ARGV[0].to_i
 B = ARGV[1].to_i
