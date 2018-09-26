@@ -13,3 +13,12 @@ https://blabla.com/equations/new
 	-> Submit
 
 	-> x1, x2
+
+
+# Homework
+Implement a program for quadratic equations.
+Handle all the cases.
+Name the file Class_FirstName_Lastname.rb 
+Commit the file it 20180921-intro/homework
+
+Deadline: 2018-09-29 02:00:01
