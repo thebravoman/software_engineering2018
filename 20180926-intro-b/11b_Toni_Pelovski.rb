@@ -6,6 +6,8 @@ D = b*b - 4*a*c
 
 if D < 0 
     puts "D < 0"
+elsif a == 0
+    puts "a = 0 - it is not valid"
 else
     x1 = (-b + Math.sqrt(D)) / 2*a
     x2 = (-b - Math.sqrt(D)) / 2*a
