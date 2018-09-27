@@ -1,0 +1,2 @@
+class EquationController < ApplicationController
+end
