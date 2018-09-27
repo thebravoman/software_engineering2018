@@ -1,0 +1,2 @@
+class QuadraticController < ApplicationController
+end
