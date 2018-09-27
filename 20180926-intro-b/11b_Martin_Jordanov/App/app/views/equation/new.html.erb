@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title> Equation </title>
+</head>
+<body>
+	<h1> My Implementation2 </h1>
+
+	<%= form_tag("/equation", method: "post") do %>
+		<%= label_tag(:a, "A:") %>
+  		<%= text_field_tag(:a) %>
+		<br>
+		<%= label_tag(:b, "B:") %>
+  		<%= text_field_tag(:b) %>
+		<br>
+		<%= label_tag(:c, "C:") %>
+  		<%= text_field_tag(:c) %>
+		<br>
+		<%= submit_tag("Calculate") %>
+	<% end %>
+
+</body>
+</html>
