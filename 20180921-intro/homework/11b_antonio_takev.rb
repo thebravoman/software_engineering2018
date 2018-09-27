@@ -11,7 +11,7 @@ unless a == 0
 		x1 = (-b + Math.sqrt(d))/(2*a);
 		x2 = (-b - Math.sqrt(d))/(2*a);
 
-		puts "x1: #{x1}, #{x2}"
+		puts "x1: #{x1}, x2: #{x2}"
 		
 
 	elsif d==0
@@ -34,3 +34,4 @@ else
 		end
 	end
 end
+
