@@ -7,7 +7,7 @@ if a == 0
 	return
 end
 
-d = b**2-4*a*c
+d = b**2 - 4*a*c
 
 if d < 0
 	p "No real roots..."
@@ -16,7 +16,7 @@ end
 
 d = Math.sqrt(d)
 
-p "X1: #{(-b-d)/2*a}"
-p "X2: #{(-b+d)/2*a}"
+p "X1: #{(-b-d)/(2*a)}"
+p "X2: #{(-b+d)/(2*a)}"
 
 
