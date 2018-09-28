@@ -2,7 +2,7 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 d = b*b-4*a*c
-a*x*x-bx+c
+
 if a==0
     if b!=0
         x=-c/b
