@@ -1,6 +1,6 @@
-a = Integer(ARGV[0])
-b = Integer(ARGV[1])
-c = Integer(ARGV[2])
+a = Float(ARGV[0])
+b = Float(ARGV[1])
+c = Float(ARGV[2])
 
 
 
@@ -36,8 +36,7 @@ end
 	
 if(D > 0)
 
-	x1 = (-b - Math.sqrt(D))/2*a;
-	x2 = (-b + Math.sqrt(D))/2*a;
-
+	x1 = (-b + Math.sqrt(D))/ (2 * a)
+	x2 = (-b - Math.sqrt(D))/ (2 * a)
 	puts(x1,x2);
 end	
