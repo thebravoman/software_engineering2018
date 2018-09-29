@@ -9,7 +9,7 @@ def solve_equation(a, b, c)
             end
         else
             x = c/b
-            puts "#{x}"
+            puts sprintf("%.3f", x)
         end
     else
         determinant = b*b - 4*a*c;
@@ -17,17 +17,18 @@ def solve_equation(a, b, c)
                 puts "NaN"
         elsif determinant == 0
             x = -b / 2 * a
-            puts "#{x}"
+            puts sprintf("%.3f", x)
         else 
             x1 = (-b - Math.sqrt(determinant)) / 2*a
             x2 = (-b + Math.sqrt(determinant)) / 2*a
-            puts "#{x1},#{x2}"
+            puts sprintf("%.3f", x1)
+            puts sprintf("%.3f", x2)
         end
     end
 end
 
 
-a = ARGV[0].to_i
-b = ARGV[1].to_i
-c = ARGV[2].to_i
+a = ARGV[0].to_f
+b = ARGV[1].to_f
+c = ARGV[2].to_f
 solve_equation(a, b, c)
