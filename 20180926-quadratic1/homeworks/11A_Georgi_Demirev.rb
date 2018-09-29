@@ -3,7 +3,7 @@ def quadEq(a, b, c)
 	if a == 0
 		if b == 0
 			if c == 0
-				puts('Nan')
+				puts('*')
 				return
 			end
 			puts('NaN')
