@@ -107,7 +107,13 @@ NaN
 
 This means not a number. 
 
-3. Commit the program in 
+3. In case every x is a solution it should output
+
+````
+*
+````
+
+4. Commit the program in 
 20180926-quadratic1/homeworks
 
 ## Deadline
