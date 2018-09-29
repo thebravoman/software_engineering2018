@@ -1,5 +1,5 @@
 # Test your code
-##If you want to test your code, follow this steps
+## If you want to test your code, follow this steps
 1. Move your code in this directory
 
 2. Then run test_homework.rb with the two files as arguments of the program
