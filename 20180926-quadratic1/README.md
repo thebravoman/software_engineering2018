@@ -67,3 +67,32 @@ all_programs.each do |program|
         puts (result.include?(ARGV[3]) && result.include?(ARGV[4])) ? 1 : 0
 end
 ````
+
+
+# Homework R2
+## Task
+Implement a program handling all the cases for a quadractic equation
+
+The program should accept three arguments from the command line
+1. In case of two solutions it should output in the standard output
+
+```
+x1,x2
+```
+
+where x1 and x2 are the values. There is no space between x1 and the comma and x2. x1 and x2 values are ordered in ASC order. x1 and x2 are in float and are rounded to the third number after the dot. Example:
+
+```
+-0.432,3.44
+```
+
+2. In case of no solutions it should output
+
+```    
+NaN
+```
+
+This means not a number. 
+
+## Deadline
+2018-10-03 02:00:01

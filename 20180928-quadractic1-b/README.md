@@ -46,3 +46,6 @@ array.select { |x| x.include? ".rb" }.
 
 file_to_write.close
 
+
+# Homework R2
+Homework task is described in 20180926-quadratic1/README.md
