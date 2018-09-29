@@ -15,3 +15,4 @@ trusted = ARGV[1]
 		return
 	end
 end
+puts "After 100 different test cases there's no difference"
