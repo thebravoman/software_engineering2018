@@ -7,6 +7,9 @@ d = b*b-4*a*c
 if a == 0 && b == 0 && c == 0	
 	puts "*"
 
+elsif a == 0 && b == 0
+	puts "NaN"
+
 elsif d < 0
 	puts "NaN"
 
