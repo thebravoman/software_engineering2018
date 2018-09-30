@@ -8,7 +8,7 @@ if a == 0 && b == 0 && c == 0
 	puts "*"
 
 elsif a == 0 && b == 0
-	puts "NaN"
+	puts "*"
 
 elsif d < 0
 	puts "NaN"
