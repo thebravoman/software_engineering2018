@@ -10,17 +10,6 @@ c = arr[2].to_f
 
 if a == 0 && b == 0 && c == 0
 	puts "*"
-# if a == 0
-# 	if b == 0 && c == 0
-# 		puts "*"
-# 	end
-
-# 	x = -c/b
-# 	puts "#{x}"
-
-# elsif(b == 0)
-# 	x = Math.sqrt((-c)/a)
-# 	puts "#{x}"
 else
 	D = b*b - 4*a*c
 	if D < 0
@@ -47,9 +36,4 @@ else
 	end
 end
 
-# a*x + b*x + c = 0 #
-
-#  D = 0 - 4 * 15 * 4
-#  D < 0
-#  puts NAN 
 
