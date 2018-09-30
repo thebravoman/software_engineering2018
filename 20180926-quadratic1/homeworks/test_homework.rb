@@ -1,9 +1,11 @@
+# Dobavih negativni stoinosti. Predi beshe pochti nevuzmozhno da vlezesh v discriminanta. ~Krasi
+
 testing = ARGV[0]
 trusted = ARGV[1]
 100.times do
-	a = rand(20)
-	b = rand(20)
-	c = rand(20)
+	a = rand(20) - 5
+	b = rand(20) - 5
+	c = rand(20) - 5
 	trusted_output = `ruby #{trusted} #{a} #{b} #{c}`
 	testing_output = `ruby #{testing} #{a} #{b} #{c}`
 
