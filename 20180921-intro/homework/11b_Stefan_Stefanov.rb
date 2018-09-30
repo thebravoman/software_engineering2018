@@ -3,15 +3,27 @@ b = ARGV[1].to_i
 c = ARGV[2].to_i 
 disc = b*b - (4*a*c)
 if disc < 0
-	abort("No solution.")
+	puts "NaN"
+	exit()
 end
 
-if a < 0
-	abort("Not a quadratic equation!")
+
+if (a == 0 && b == 0 && c == 0) || (a == 0 && b == c)
+	puts "*"
 end
 
-x1 = (-b + Math.sqrt(disc))/2*a
-x2 = (-b - Math.sqrt(disc))/2*a
+if a == 0
+	puts "Not a quadratic equation!"
+	exit()
+end
 
-puts "x1: #{x1}" 
-puts "x2: #{x2}"
+
+x1 = ((-b + Math.sqrt(disc))/2*a).round(3)
+x2 = ((-b - Math.sqrt(disc))/2*a).round(3)
+
+if disc == 0
+	puts x1
+else
+	puts "#{x1},#{x2}" 
+	
+end
