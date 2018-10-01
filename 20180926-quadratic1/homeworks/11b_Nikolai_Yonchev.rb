@@ -25,7 +25,12 @@ else
 	else
 		x1 = (-b + Math.sqrt(d)) / (2*a)
 		x2 = (-b - Math.sqrt(d)) / (2*a)
-		puts "#{x2.round(3)},#{x1.round(3)}"
+		if x1 > x2
+			c = x1
+			x1 = x2
+			x2 = c
+		end
+		puts "#{x1.round(3)},#{x2.round(3)}"
 	end
 end	
 
