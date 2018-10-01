@@ -29,6 +29,10 @@ def find(a,b,c)
 		puts "*"
 	elsif a!=0&&b!=0&&c!=0
 		determinate(a,b,c)
+	elsif a==0
+		x=-c/b
+		puts "#{x.round(3)}"
+				
 	else
 		puts "NaN"	
 	end
