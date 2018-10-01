@@ -19,13 +19,13 @@ def quadratic_equation(a, b, c)
 end
 
 a, b, c = ARGV[0..2].map { |arg| arg.to_f }
-x1, x2 = quadratic_equation(a, b, c)
-if x1.nil?  # there are no solutions
+solutions = quadratic_equation(a, b, c).minmax
+if solutions[0].nil?  # there are no solutions
   puts 'NaN'
-elsif x1 == x2
+elsif solutions[0] == solutions[1]
   # there is only one solution or every number is a solution
-  puts x1 == Float::INFINITY ? '*' : x1.round(3)
+  puts solutions[0] == Float::INFINITY ? '*' : solutions[0].round(3)
 else
-  puts "#{x1.round(3)},#{x2.round(3)}"
+  puts "#{solutions[0].round(3)},#{solutions[1].round(3)}"
 end
 
