@@ -27,11 +27,11 @@ else
 		x1 = ((-b + Math.sqrt(d)) / (2*a)).round(3)
 		x2 = ((-b - Math.sqrt(d)) / (2*a)).round(3)
 		
-		if x1 > x2
+		if x1 < x2
 			puts "#{x1},#{x2}"
 		end
 		
-		if x2 > x1
+		if x2 < x1
 			puts "#{x2},#{x1}"
 		end
 	end
