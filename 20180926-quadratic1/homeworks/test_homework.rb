@@ -2,13 +2,16 @@
 
 testing = ARGV[0]
 trusted = ARGV[1]
-100.times do
-	a = rand(20) - 5
-	b = rand(20) - 5
-	c = rand(20) - 5
+100.times do |i|
+	a = rand(20) - 10
+	b = rand(20) - 10
+	c = rand(20) - 10
 	trusted_output = `ruby #{trusted} #{a} #{b} #{c}`
 	testing_output = `ruby #{testing} #{a} #{b} #{c}`
-
+	
+	if i % 10 == 0
+		puts "#{i}/100 test cases"
+	end
 	if trusted_output != testing_output
 		puts "One of the programs gives different output..."
 		puts "Your: #{testing_output}"
