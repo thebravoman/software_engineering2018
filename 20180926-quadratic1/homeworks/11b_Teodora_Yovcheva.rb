@@ -21,7 +21,7 @@ else
 	if d < 0
 		puts "NaN"
 	elsif d == 0	
-		x = -b / (2*a )
+		x = (-b / (2*a )).round(3)
 		puts "#{x}"
 	else 
 		x1 = ((-b + Math.sqrt(d)) / (2*a)).round(3)
