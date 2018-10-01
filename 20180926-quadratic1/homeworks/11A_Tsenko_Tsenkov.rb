@@ -11,7 +11,7 @@ def quadratic_eq a, b, c
 	puts "#{(-c/b).round(3)}"
   else 
         x1 = ((-b + Math.sqrt(discriminant))/(2 * a)).round(3)
-	    x2 = ((-b - Math.sqrt(discriminant))/(2 * a)).round(3)
+        x2 = ((-b - Math.sqrt(discriminant))/(2 * a)).round(3)
 
         if x1>x2
 		puts "#{x2},#{x1}"
