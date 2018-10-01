@@ -2,7 +2,7 @@
 
 testing = ARGV[0]
 trusted = ARGV[1]
-10000.times do
+100.times do
 	a = rand(20) - 5
 	b = rand(20) - 5
 	c = rand(20) - 5
@@ -17,4 +17,4 @@ trusted = ARGV[1]
 		return
 	end
 end
-puts "After 10000 different test cases there's no difference"
+puts "After 100 different test cases there's no difference"
