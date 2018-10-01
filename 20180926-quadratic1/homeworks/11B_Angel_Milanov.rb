@@ -27,7 +27,11 @@ elsif d<0
 elsif d>0
     x1= ((-b+Math.sqrt(b*b-4*a*c))/(2*a)).round(3)
     x2= ((-b-Math.sqrt(b*b-4*a*c))/(2*a)).round(3)
-    puts "#{x1},#{x2}"
-    
+    if x1 > x2
+        puts "#{x2},#{x1}"
+    else
+        puts "#{x1},#{x2}"
+    end
+       
 end
 
