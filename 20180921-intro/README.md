@@ -10,7 +10,7 @@ git push -u origin master
 # Everybody should commit
 12 out of 23 files are added to the repo
 
-# Home
+# Homework
 25.09.2018 23:59:59
 
 Develop a program for finding the solution of a quadratic equal. 

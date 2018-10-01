@@ -7,13 +7,13 @@
 
 	<%= form_tag("/equation", method: "post") do %>
 		<%= label_tag(:a, "A:") %>
-  		<%= text_field_tag(:a) %>
+  		<%= text_field_tag(:a, 1) %>
 		<br>
 		<%= label_tag(:b, "B:") %>
-  		<%= text_field_tag(:b) %>
+  		<%= text_field_tag(:b, 3) %>
 		<br>
 		<%= label_tag(:c, "C:") %>
-  		<%= text_field_tag(:c) %>
+  		<%= text_field_tag(:c, 2) %>
 		<br>
 		<%= submit_tag("Calculate") %>
 	<% end %>

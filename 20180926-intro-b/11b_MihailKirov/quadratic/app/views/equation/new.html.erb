@@ -1,0 +1,21 @@
+
+<%= form_with scope: :equation , url:equation_index_path , local: true do |form| %>
+    <p>
+      <%= form.label :a %><br>
+      <%= form.text_field :a %>
+    </p>
+    
+    <p>
+      <%= form.label :b %><br>
+      <%= form.text_field :b %>
+    </p>
+
+    <p>
+      <%= form.label :c %><br>
+      <%= form.text_field :c %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
