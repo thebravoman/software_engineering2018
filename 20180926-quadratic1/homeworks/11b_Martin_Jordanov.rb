@@ -11,7 +11,7 @@ if a == 0
 		puts 'NaN'
 		return
 	end
-	puts -c/b
+	puts (-c/b).round(3)
 	return
 end
 
@@ -24,8 +24,8 @@ end
 
 d = Math.sqrt(d)
 
-print "#{(-b-d)/(2*a)}"
+print "#{((-b-d)/(2*a)).round(3)}"
 if d > 0
-	print ",#{(-b+d)/(2*a)}"
+	print ",#{((-b+d)/(2*a)).round(3)}"
 end
 puts

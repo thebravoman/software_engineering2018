@@ -1,9 +1,16 @@
 def quadEq(a, b, c)
 
 	if a == 0
+		if b == 0
+			if c == 0
+				puts('*')
+				return
+			end
+			puts('NaN')
+			return
+		end
 		x = - c / b
 		x = x.round(3)
-		puts("Not a quadratic equation")
 		puts("#{x}")
 		return
 	end
