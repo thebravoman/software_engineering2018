@@ -21,7 +21,11 @@ else
     x1 = (-b - Math.sqrt(D)) / (2*a)
     x2 = (-b + Math.sqrt(D)) / (2*a)
     if x1 != x2
-	    puts "#{x1.round(3)},#{x2.round(3)}"
+	    if x1 < x2
+	    	puts "#{x1.round(3)},#{x2.round(3)}"
+	    else
+		puts "#{x2.round(3)},#{x1.round(3)}"
+	    end
     else
 	    puts "#{x1.round(3)}"
 	    end
