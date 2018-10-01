@@ -11,7 +11,7 @@ if a == 0
 			puts "NaN"    
 		end
 	else
-		x = (-c) / b
+		x = ((-c) / b).round(3)
 		puts "#{x}"
 	end
 else
