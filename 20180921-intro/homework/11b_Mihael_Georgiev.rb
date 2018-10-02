@@ -16,3 +16,4 @@ if a != 0
 else
         puts "Not a quadratic equation"
 end
+
