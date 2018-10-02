@@ -18,5 +18,10 @@ else
 	x1 = ((-b + Math.sqrt(d))/(2*a)).round(3)
 
 	x2 = ((-b - Math.sqrt(d))/(2*a)).round(3)
-	puts "#{x1},#{x2}"
+	if x1 > x2
+		puts "#{x2},#{x1}"
+	else
+		puts "#{x1},#{x2}"
+	end
+
 end
