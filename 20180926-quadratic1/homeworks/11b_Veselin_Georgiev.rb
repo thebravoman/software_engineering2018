@@ -25,7 +25,7 @@ else
     puts "#{x1},#{x2}"
 
     else
-    puts "#{x1},#{x2}"
+    puts "#{x2},#{x1}"
     end
 
 
