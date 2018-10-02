@@ -10,7 +10,7 @@ if a != 0
 	d = b*b-4*a*c
 	
 	if d < 0
-		puts "quadratic equation has no real roots"
+		puts "NaN"
 	elsif d == 0
 		puts "x1 and x2: #{-b/2.a}"
 	else 
@@ -29,7 +29,7 @@ else
 		if c == 0
 			puts "*"
 		else
-			puts "Not a quadratic equation"
+			puts "NaN"
 		end
 	else
 		x = (-c/b).round(3)
