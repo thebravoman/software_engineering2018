@@ -8,8 +8,8 @@ def solve_equation(a, b, c)
                 puts "NaN"
             end
         else
-            x = c/b
-            puts sprintf("%.3f", x)
+            x = -c/b
+            puts "#{x.round(3)}"
         end
     else
         determinant = b*b - 4*a*c;
@@ -17,14 +17,14 @@ def solve_equation(a, b, c)
                 puts "NaN"
         elsif determinant == 0
             x = -b / 2 * a
-            puts sprintf("%.3f", x)
+            puts "#{x.round(3)}"
         else 
             x1 = (-b - Math.sqrt(determinant)) / (2*a)
             x2 = (-b + Math.sqrt(determinant)) / (2*a)
             if x2 > x1
-                puts sprintf("%.3f", x1) + "," + sprintf("%.3f", x2)
+                puts "#{x1.round(3)},#{x2.round(3)}"
             else
-                puts sprintf("%.3f", x2) + "," + sprintf("%.3f", x1) 
+                puts "#{x2.round(3)},#{x1.round(3)}" 
             end
         end
     end
