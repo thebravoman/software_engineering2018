@@ -29,6 +29,6 @@ else
 		end
 	else 
 		x=(-c)/b
-		puts "#{'% .3f' % x}"
+		puts "#{x.round(3)}"
 	end
 end
