@@ -4,9 +4,14 @@ c = ARGV[2].to_f
 
 if (a == 0 && b == 0 && c == 0)
   puts "*"
+elsif (a == 0 && b == 0)
+  if (c == 0)
+    puts "*"
+  else
+    puts "NaN"
+  end
 elsif (a == 0)
   x = (-c / b).round(3)
-
   puts "#{x}"
 else
   d = b*b - 4*a*c
