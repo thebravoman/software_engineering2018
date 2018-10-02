@@ -24,8 +24,13 @@ end
 
 d = Math.sqrt(d)
 
-print "#{((-b-d)/(2*a)).round(3)}"
-if d > 0
-	print ",#{((-b+d)/(2*a)).round(3)}"
+roots = []
+
+roots.push(((-b-d)/(2*a)).round(3))
+roots.push(((-b+d)/(2*a)).round(3))
+
+if roots[0] != roots[1]
+	puts "#{roots.min},#{roots.max}" 
+else
+	puts "#{roots[0]}"
 end
-puts

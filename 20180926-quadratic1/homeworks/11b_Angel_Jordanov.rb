@@ -22,8 +22,13 @@ else
 	elsif d == 0
 		puts ""+ (-b / (2 * a)).to_s
 	else 
-		x1 = ((-b + Math.sqrt(d)) / (2 * a))
-		x2 = ((-b - Math.sqrt(d)) / (2 * a))
-		puts "#{x1},#{x2}"
+		x1 = ((-b + Math.sqrt(d)) / (2 * a)).round(3)
+		x2 = ((-b - Math.sqrt(d)) / (2 * a)).round(3)
+			if(x1 < x2)
+				puts "#{x1},#{x2}"
+			else
+				puts "#{x2},#{x1}"
+			end	
+			
 	end
 end

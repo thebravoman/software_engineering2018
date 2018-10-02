@@ -19,8 +19,8 @@ def solve_equation(a, b, c)
             x = -b / 2 * a
             puts sprintf("%.3f", x)
         else 
-            x1 = (-b - Math.sqrt(determinant)) / (2*a)
-            x2 = (-b + Math.sqrt(determinant)) / (2*a)
+            x1 = (-b - Math.sqrt(determinant)) / 2*a
+            x2 = (-b + Math.sqrt(determinant)) / 2*a
             if x2 > x1
                 puts sprintf("%.3f", x1)
                 puts sprintf("%.3f", x2)
