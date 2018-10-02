@@ -15,6 +15,9 @@ elsif a!=0
 		puts "NaN"
 	elsif diskriminanta==0
 		x = (-b/(2*a)).round(3)
+		if x==-0.0
+			x=0.0
+		end
 		puts "#{x}"
 	elsif diskriminanta>0
 		x1 = ((-b+Math.sqrt(diskriminanta))/(2*a)).round(3)
