@@ -4,16 +4,23 @@ c = ARGV[2].to_f
 
 if a == 0
 	if b == 0
-		puts("NaN")	
-	else
-		puts(-b/c)	
+		if c == 0 
+			puts("*")
+			return
+		end
+		puts("NaN")
+		return
 	end
+	puts(-b/c)	
+	return
 else
 	d = b*b - 4*a*c
 	if d < 0
-		puts("NaN")	
+		puts("NaN")
+		return	
 	elsif d == 0
-		puts(-b/(2*a))	
+		puts(-b/(2*a))
+		return	
 	else
 		x1 = ((-b + Math.sqrt(d))/(2*a)).round(3)		
 		x2 = ((-b - Math.sqrt(d))/(2*a)).round(3)
