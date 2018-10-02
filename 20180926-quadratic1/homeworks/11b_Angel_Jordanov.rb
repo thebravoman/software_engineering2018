@@ -4,7 +4,7 @@ c = ARGV[2].to_f
 
 if a == 0
 	if b != 0
-		puts ""+ (-c/b).to_s
+		puts ""+ ((-c/b).round(3)).to_s
 	else	
 		if c != 0 
 			puts "NaN"	
@@ -20,7 +20,7 @@ else
 	if d < 0
 		puts "NaN" 
 	elsif d == 0
-		puts ""+ (-b / (2 * a)).to_s
+		puts ""+ ((-b / (2 * a)).round(3)).to_s
 	else 
 		x1 = ((-b + Math.sqrt(d)) / (2 * a)).round(3)
 		x2 = ((-b - Math.sqrt(d)) / (2 * a)).round(3)
