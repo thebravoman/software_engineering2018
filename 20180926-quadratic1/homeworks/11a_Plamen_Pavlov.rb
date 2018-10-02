@@ -37,5 +37,8 @@ elsif a!=0
 	end
 elsif a==0
 	x = (-c/b).round(3)
+	if x==-0.0
+		x=0.0
+	end
 	puts "#{x}"
 end
