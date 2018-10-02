@@ -14,14 +14,16 @@ if a == 0
 	end
 		
 else
+	
 	d = b * b - 4 * a * c
+		
 	if d < 0
 		puts "Nqma realni koreni" 
 	elsif d == 0
 		puts "X = "+ (-b / (2 * a)).to_s
 	else 
-		puts "X1 = "+ ((-b + Math.sqrt(d)) / 2 *a).to_s
-		puts "X2 = "+ ((-b - Math.sqrt(d)) / 2 * a).to_s
+		puts "X1 = "+ ((-b + Math.sqrt(d)) / (2 * a)).to_s
+		puts "X2 = "+ ((-b - Math.sqrt(d)) / (2 * a)).to_s
 	end
 end
 

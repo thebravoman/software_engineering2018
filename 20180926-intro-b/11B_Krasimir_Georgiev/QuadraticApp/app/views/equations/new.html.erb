@@ -1,0 +1,22 @@
+
+<%= form_with scope: :equation, url: equations_path, local: true do |form| %>
+  <p>
+    <%= form.label :a %><br>
+    <%= form.number_field :a %>
+  </p>
+ 
+  <p>
+    <%= form.label :b %><br>
+    <%= form.number_field :b %>
+  </p>
+
+  <p>
+    <%= form.label :c %><br>
+    <%= form.number_field :c %>
+  </p>
+ 
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
