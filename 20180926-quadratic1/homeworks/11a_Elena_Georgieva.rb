@@ -5,8 +5,12 @@ c=ARGV[2].to_f
 d=b*b-4*a*c 
 
 if a==0
-	if b==0 and c==0
+	if b==0 
+		if c==0
 			puts "*"
+		elsif c!=0
+			puts "NaN"
+		end
 	else
 		x=-c/b
 		x=x.round(3);
