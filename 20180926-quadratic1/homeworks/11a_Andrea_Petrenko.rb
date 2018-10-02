@@ -28,7 +28,9 @@ elsif(D>0)
         x2 = (-b - Math.sqrt(D))/(2*a)
         if(x1<x2)
                 puts "#{x1.round(3)},#{x2.round(3)}"
+                end
         if(x2<x1)
                 puts "#{x2.round(3)},#{x1.round(3)}"
+                end
 end
 
