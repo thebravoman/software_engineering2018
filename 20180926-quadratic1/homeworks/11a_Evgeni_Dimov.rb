@@ -6,8 +6,11 @@ c = nums[2]
 
 def solve_quadratic_equation(a, b, c)
 	if a == 0
-		if b == 0 && c == 0
-			return "*"
+		if b == 0 
+			if c == 0
+				return "*"
+			end
+			return "NaN"
 		end
 		x = -c/b
 		return x.round(3)
