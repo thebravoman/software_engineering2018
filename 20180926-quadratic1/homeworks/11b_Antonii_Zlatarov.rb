@@ -15,14 +15,14 @@ if a == 0
 	end
 else
 	d = b**2 - 4*a*c
-    if d > 0
-        x1 = ((-b + Math.sqrt(d)) / (2*a)).round(3);
-        x2 = ((-b - Math.sqrt(d)) / (2*a)).round(3);
-        puts "#{x1},#{x2}";
-    elsif d == 0
+	if d > 0
+		x1 = ((-b + Math.sqrt(d)) / (2*a)).round(3);
+		x2 = ((-b - Math.sqrt(d)) / (2*a)).round(3);
+		puts "#{x1},#{x2}";
+	elsif d == 0
 		x = (-b / (2*a)).round(3);
-        puts x
-    else
+		puts x
+	else
 		puts "NaN"
 	end
 end
