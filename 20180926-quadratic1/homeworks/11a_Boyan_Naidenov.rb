@@ -16,15 +16,27 @@ def solution(a, b, c, d)
 			
 		elsif d == 0
 			x = ((-b)/(2*a))
+			if x == -0.0
+				x = 0.0
+			end
 			puts "#{x.round(3)}"
 		else
 			if a==0
 				x = (-c/b)
+				if x == -0.0
+					x = 0.0
+				end
 				puts "#{x.round(3)}"
 					return
 			else
 				x1 = ((-b + Math.sqrt(d))/(2*a))
 				x2 = ((-b - Math.sqrt(d))/(2*a))
+				if x1 == -0.0
+					x1 = 0.0
+				end
+				if x2 == -0.0
+					x2 = 0.0
+				end
 				if x2 > x1
 					puts "#{x1.round(3)},#{x2.round(3)}"
 				else
