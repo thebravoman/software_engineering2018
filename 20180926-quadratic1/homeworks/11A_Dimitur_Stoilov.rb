@@ -15,11 +15,17 @@ elsif d < 0
 
 elsif a == 0
 	x = (-c/b).round(3)
+	if x == -0.0
+		x = 0.0
+	end
 	puts "#{x}"
 
 
 elsif d == 0
 	x = (-b/(2*a)).round(3)
+	if x == -0.0
+		x = 0.0
+	end
 	
 	puts "#{x}"
 
@@ -27,6 +33,14 @@ elsif d > 0
 
 	x1 = ((-b+Math.sqrt(d))/(2*a)).round(3)
 	x2 = ((-b-Math.sqrt(d))/(2*a)).round(3)
+
+	if x1 == -0.0
+		x1 = 0.0
+	end
+
+	if x2 == -0.0
+		x2 = 0.0
+	end
 	
 
 	if x1 > x2
