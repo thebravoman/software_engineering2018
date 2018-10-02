@@ -23,8 +23,8 @@ if d < 0
 end
 
 d = Math.sqrt(d)
-x1 = ((-b + d)/(2*a))
-x2 = ((-b - d)/(2*a))
+x1 = ((-b + d)/(2*a)).round(3)
+x2 = ((-b - d)/(2*a)).round(3)
 
 if x1 != x2
 	if x1 > x2
