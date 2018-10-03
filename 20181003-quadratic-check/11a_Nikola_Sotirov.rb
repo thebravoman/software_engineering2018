@@ -31,20 +31,13 @@ def check_homework filename
 
 		begin
 			if Float(item[1]) != Float(result)
-				puts item[1]
-				puts result
 				return 0
 			end
 		rescue
 			if not item[1] == result.tr("\n", "")
-				puts item[1]
-				puts result
 				return 0
 			end
 		end
-
-
-		
 	end
 
 	return 1;
@@ -55,4 +48,8 @@ content = content.split("\n")
 
 content = content.map{|x| x.include?(".rb") ? x: nil}.compact.map{|x| x.split(" ")[-1]}
 
-content.each{|x| puts "#{x}'s homework: #{check_homework x}"}
+file_to_write = File.open("test_results.csv", "a")
+
+content.each{|x| puts file_to_write.write("#{x}, #{check_homework x}\n")}
+
+file_to_write.close()
