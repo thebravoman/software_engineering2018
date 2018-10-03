@@ -10,10 +10,15 @@ def quadEq(a, b, c)
 			return
 		end
 		x = - c / b
+		if x == -0.0
+			x = 0
+		end
 		x = x.round(3)
 		puts("#{x}")
 		return
 	end
+
+	
 
 	d = b * b - (4 * a * c)
 
