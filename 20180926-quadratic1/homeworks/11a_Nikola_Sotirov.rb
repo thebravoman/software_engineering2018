@@ -14,7 +14,7 @@ def solve_quad_eq(a, b ,c)
 			
 			result = -c/b
 
-			if result == -0.0
+			if String(result) == "-0.0"
 				result = -result
 			end
 
@@ -31,8 +31,8 @@ def solve_quad_eq(a, b ,c)
 					return "NaN"
 				end
 
-				if result == -0.0
-					result = 0.0
+				if String(result) == "-0.0"
+					result = -result
 				end
 
 				return result
@@ -47,7 +47,7 @@ def solve_quad_eq(a, b ,c)
 
 		if d == 0
 			result = -b/(2*a)
-			if (result == -0.0)
+			if String(result) == "-0.0"
 				result = -result
 			end
 
@@ -57,11 +57,11 @@ def solve_quad_eq(a, b ,c)
 		x1 = (-b + Math.sqrt(d))/(2*a)
 		x2 = (-b - Math.sqrt(d))/(2*a)
 
-		if x1 == -0.0
+		if String(x1) == "-0.0"
 			x1 = -x1
 		end
 
-		if x2 == -0.0
+		if String(x2) == "-0.0"
 			x2 = -x2
 		end
 
