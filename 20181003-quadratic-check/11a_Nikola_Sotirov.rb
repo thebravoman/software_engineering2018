@@ -19,6 +19,5 @@ def check_homework filename
 		["1 2 3", "NaN"]
 	];
 
-	test.each{}
-	command = `ruby #{filename} `
+	test.each{ |item| result = `ruby #{filename} #{item[0].split(" ")[0]} #{item[0].split(" ")[1]} #{item[0].split(" ")[2]}` == item[0][1] ? return 1 : return 0}
 end
