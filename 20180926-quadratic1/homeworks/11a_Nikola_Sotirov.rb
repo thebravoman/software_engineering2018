@@ -72,7 +72,7 @@ def solve_quad_eq(a, b ,c)
 result = solve_quad_eq(a, b, c)
 
 begin 
-	print String(result.join(","))
+	puts String(result.join(","))
 rescue
-	print String(result)
+	puts String(result)
 end
