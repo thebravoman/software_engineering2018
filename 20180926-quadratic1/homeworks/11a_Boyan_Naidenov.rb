@@ -5,7 +5,7 @@ c = ARGV[2].to_f
 d = (b*b) -(4*a*c)
 def solution(a, b, c, d)
 	if b==0 && c==0
-		puts 0.0
+		puts "*"
 		return
 	end
 	if a==0 && b==0 && c==0
