@@ -5,7 +5,7 @@ def quadratic_eq a, b, c
       puts "NaN"
   elsif a==0 && b==0 && c==0
 	puts "*"
-  elsif a==0 && c==0
+  elsif (a==0 && c==0) || (b==0 && c==0)
 	puts "0.0"
   elsif discriminant == 0
          puts "#{(-b/(2 * a)).round(3)}"
