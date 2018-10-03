@@ -1,17 +1,22 @@
-content = File.read("allfiles_Nikola_Sotirov.txt")
-
-content = content.split("\n")
-
-content.map{|x| x.include?(".rb") ? x: nil}.compact.map{|x| x.split(" ")[-1]}
-
-content.map{}
+content = File.read("allfiles.txt")
 
 def check_homework filename
 
+	# tests = [
+	# 	["1 2 1", "-1.0"],
+	# 	["0 0 0", "*"],
+	# 	["1 3 2", "-2.0, -1.0"],
+	# 	["0 1 3", "-3.0"],
+	# 	["0 0 1", "NaN"],
+	# 	["1 0 0", "0.0"],
+	# 	["0 1 0", "0.0"],
+	# 	["1 2 3", "NaN"]
+	# ];
+
 	tests = [
-		["1 2 1", "0.0"],
+		["1 2 1", "-1.0"],
 		["0 0 0", "*"],
-		["1 3 2", "-2.0, -1.0"],
+		["1 3 2", "-2.0,-1.0"],
 		["0 1 3", "-3.0"],
 		["0 0 1", "NaN"],
 		["1 0 0", "0.0"],
@@ -19,5 +24,35 @@ def check_homework filename
 		["1 2 3", "NaN"]
 	];
 
-	test.each{ |item| result = `ruby #{filename} #{item[0].split(" ")[0]} #{item[0].split(" ")[1]} #{item[0].split(" ")[2]}` == item[0][1] ? return 1 : return 0}
+	tests.each do |item|
+		abc = item[0].split(" ")
+
+		result = `ruby #{filename} #{abc[0]} #{abc[1]} #{abc[2]}`
+
+		begin
+			if Float(item[1]) != Float(result)
+				puts item[1]
+				puts result
+				return 0
+			end
+		rescue
+			if not item[1] == result.tr("\n", "")
+				puts item[1]
+				puts result
+				return 0
+			end
+		end
+
+
+		
+	end
+
+	return 1;
+	
 end
+
+content = content.split("\n")
+
+content = content.map{|x| x.include?(".rb") ? x: nil}.compact.map{|x| x.split(" ")[-1]}
+
+content.each{|x| puts "#{x}'s homework: #{check_homework x}"}
