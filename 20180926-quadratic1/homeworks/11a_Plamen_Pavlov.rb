@@ -15,10 +15,19 @@ elsif a!=0
 		puts "NaN"
 	elsif diskriminanta==0
 		x = (-b/(2*a)).round(3)
+		if x==-0.0
+			x=0.0
+		end
 		puts "#{x}"
 	elsif diskriminanta>0
 		x1 = ((-b+Math.sqrt(diskriminanta))/(2*a)).round(3)
 		x2 = ((-b-Math.sqrt(diskriminanta))/(2*a)).round(3)
+		if x1==-0.0
+			x1=0.0
+		elsif x2==-0.0
+			x2=0.0
+		end
+		
 		if x1>x2
 			flag = x1
 			x1 = x2
@@ -27,7 +36,9 @@ elsif a!=0
 		puts"#{x1},#{x2}"
 	end
 elsif a==0
-	puts "Uravnenieto ne e kvadratno"
 	x = (-c/b).round(3)
-	puts "x = #{x}"
+	if x==-0.0
+		x=0.0
+	end
+	puts "#{x}"
 end
