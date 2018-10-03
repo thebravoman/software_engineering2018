@@ -14,21 +14,25 @@ def solve_quad_eq(a, b ,c)
 			
 			result = -c/b
 
-			if result == -0.0
+			if String(result) == "-0.0"
 				result = -result
 			end
 
-			return (result).round(3)
+			return result.round(3)
 		else
 			if b == 0 && c == 0
 				return 0.0
 			end
 
 			if b == 0
-				result = -c/a
+				begin
+					result = [Math.sqrt(-c/a).round(3), -Math.sqrt(-c/a).round(3)]
+				rescue
+					return "NaN"
+				end
 
-				if result == -0.0
-					result = 0.0
+				if String(result) == "-0.0"
+					result = -result
 				end
 
 				return result
@@ -43,7 +47,7 @@ def solve_quad_eq(a, b ,c)
 
 		if d == 0
 			result = -b/(2*a)
-			if (result == -0.0)
+			if String(result) == "-0.0"
 				result = -result
 			end
 
@@ -53,11 +57,11 @@ def solve_quad_eq(a, b ,c)
 		x1 = (-b + Math.sqrt(d))/(2*a)
 		x2 = (-b - Math.sqrt(d))/(2*a)
 
-		if x1 == -0.0
+		if String(x1) == "-0.0"
 			x1 = -x1
 		end
 
-		if x2 == -0.0
+		if String(x2) == "-0.0"
 			x2 = -x2
 		end
 
