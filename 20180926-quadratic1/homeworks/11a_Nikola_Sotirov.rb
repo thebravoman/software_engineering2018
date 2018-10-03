@@ -39,8 +39,6 @@ def solve_quad_eq(a, b ,c)
 			end
 		end
 
-		end
-
 		d = b*b - 4*a*c
 
 		if d < 0
