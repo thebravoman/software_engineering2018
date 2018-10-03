@@ -18,14 +18,18 @@ def solve_quad_eq(a, b ,c)
 				result = -result
 			end
 
-			return (result).round(3)
+			return result.round(3)
 		else
 			if b == 0 && c == 0
 				return 0.0
 			end
 
 			if b == 0
-				result = -c/a
+				begin
+					result = [Math.sqrt(-c/a).round(3), -Math.sqrt(-c/a).round(3)]
+				rescue
+					return "NaN"
+				end
 
 				if result == -0.0
 					result = 0.0
@@ -33,6 +37,8 @@ def solve_quad_eq(a, b ,c)
 
 				return result
 			end
+		end
+
 		end
 
 		d = b*b - 4*a*c
