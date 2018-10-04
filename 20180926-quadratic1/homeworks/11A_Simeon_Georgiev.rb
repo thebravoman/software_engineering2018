@@ -20,7 +20,11 @@ else
 	
 	elsif d == 0
 		x = (-b/(2*a)).round(3)
-		puts x.to_s
+		if x == -0.0
+			puts 0.0
+		else
+			puts x.to_s
+		end
 	
 	else
 		x1 = ((-b + Math.sqrt(d))/(2*a)).round(3)
