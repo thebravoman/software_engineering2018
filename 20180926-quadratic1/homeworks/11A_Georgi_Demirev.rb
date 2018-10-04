@@ -11,7 +11,7 @@ def quadEq(a, b, c)
 		end
 		x = - c / b
 		if x == -0.0
-			x = 0
+			x = 0.0
 		end
 		x = x.round(3)
 		puts("#{x}")
