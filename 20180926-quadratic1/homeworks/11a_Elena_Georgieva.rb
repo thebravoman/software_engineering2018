@@ -14,7 +14,11 @@ if a==0
 	else
 		x=-c/b	
 		x=x.round(3)
-		puts "#{x}"
+		if x == -0.0
+			puts "0.0"
+		else
+			puts "#{x}"
+		end
 	end
 
 
