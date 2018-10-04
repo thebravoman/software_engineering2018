@@ -15,7 +15,7 @@ if a == 0
 		if x == 0
 			x *= -1
 		end
-		x.round(3)
+		x = x.round(3)
 		puts "#{x}"
 	end
 
@@ -31,7 +31,7 @@ else
 		if x == 0
 			x *= -1
 		end
-		x.round(3)
+		x = x.round(3)
 		puts "#{x}"
 
 	else
@@ -47,8 +47,8 @@ else
 			x2 *= -1
 		end
 
-		x1.round(3)
-		x2.round(3)
+		x1 = x1.round(3)
+		x2 = x2.round(3)
 
 		if x2 > x1
 			puts "#{x1},#{x2}"
