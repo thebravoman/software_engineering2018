@@ -39,12 +39,20 @@ else
 		x1 = (-b + Math.sqrt(d)) / (2*a)
 		x2 = (-b - Math.sqrt(d)) / (2*a)
 
+		if x1 == 0
+			x1 *= -1
+		end
+
+		if x2 == 0
+			x2 *= -1
+		end
+
 		x1.round(3)
 		x2.round(3)
 
-		if x1 > x2
+		if x2 > x1
 			puts "#{x1},#{x2}"
-		elsif x1 < x2
+		elsif x2 < x1
 			puts "#{x2},#{x1}"
 		end
 
