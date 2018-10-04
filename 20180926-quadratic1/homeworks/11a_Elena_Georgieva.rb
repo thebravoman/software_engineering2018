@@ -12,10 +12,11 @@ if a==0
 			puts "NaN"
 		end
 	else
-		x=-c/b
-		x=x.round(3);
+		x=-c/b	
+		x=x.round(3)
 		puts "#{x}"
 	end
+
 
 else
 	if d<0
@@ -23,10 +24,15 @@ else
 
 	elsif d == 0
 		x=(-b)/(2*a)
-		x=x.round(3);
-		puts "#{x}"
+		x=x.round(3)
+		if x == -0.0
+			puts "0.0"
+		else
+			puts "#{x}"
+		end
 
 	else
+		
 		x1=(-b+Math.sqrt(d))/(2*a)
 		x2=(-b-Math.sqrt(d))/(2*a)
 		x1=x1.round(3)
@@ -38,3 +44,4 @@ else
 		end
 	end
 end
+
