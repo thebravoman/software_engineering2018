@@ -13,7 +13,7 @@ if a == 0
 	else
 		x = -c/b
 		if x == 0
-			x *= -1
+			x = 0.0
 		end
 		x = x.round(3)
 		puts "#{x}"
@@ -29,7 +29,7 @@ else
 	elsif d == 0
 		x = (-b) / (2*a)
 		if x == 0
-			x *= -1
+			x = 0.0
 		end
 		x = x.round(3)
 		puts "#{x}"
@@ -40,11 +40,11 @@ else
 		x2 = (-b - Math.sqrt(d)) / (2*a)
 
 		if x1 == 0
-			x1 *= -1
+			x1 = 0.0
 		end
 
-		if x2 == 0
-			x2 *= -1
+		if x2 == -0.0
+			x2 = 0.0
 		end
 
 		x1 = x1.round(3)
