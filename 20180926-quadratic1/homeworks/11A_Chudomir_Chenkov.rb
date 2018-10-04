@@ -12,7 +12,10 @@ if a == 0
 		end
 	else
 		x = -c/b
-		x = x.round(3)
+		if x == 0
+			x *= -1
+		end
+		x.round(3)
 		puts "#{x}"
 	end
 
@@ -25,7 +28,10 @@ else
 
 	elsif d == 0
 		x = (-b) / (2*a)
-		x = x.round(3)
+		if x == 0
+			x *= -1
+		end
+		x.round(3)
 		puts "#{x}"
 
 	else
@@ -33,13 +39,13 @@ else
 		x1 = (-b + Math.sqrt(d)) / (2*a)
 		x2 = (-b - Math.sqrt(d)) / (2*a)
 
-		x1 = x1.round(3)
-		x2 = x2.round(3)
+		x1.round(3)
+		x2.round(3)
 
 		if x1 > x2
-			puts "#{x2},#{x1}"
-		elsif x1 < x2
 			puts "#{x1},#{x2}"
+		elsif x1 < x2
+			puts "#{x2},#{x1}"
 		end
 
 	end
