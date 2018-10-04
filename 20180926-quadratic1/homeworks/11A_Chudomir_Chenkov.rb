@@ -13,9 +13,9 @@ if a == 0
 	else
 		x = -c/b
 		if x == 0
-			x *= -1
+			x = 0.0
 		end
-		x.round(3)
+		x = x.round(3)
 		puts "#{x}"
 	end
 
@@ -29,9 +29,9 @@ else
 	elsif d == 0
 		x = (-b) / (2*a)
 		if x == 0
-			x *= -1
+			x = 0.0
 		end
-		x.round(3)
+		x = x.round(3)
 		puts "#{x}"
 
 	else
@@ -40,15 +40,15 @@ else
 		x2 = (-b - Math.sqrt(d)) / (2*a)
 
 		if x1 == 0
-			x1 *= -1
+			x1 = 0.0
 		end
 
-		if x2 == 0
-			x2 *= -1
+		if x2 == -0.0
+			x2 = 0.0
 		end
 
-		x1.round(3)
-		x2.round(3)
+		x1 = x1.round(3)
+		x2 = x2.round(3)
 
 		if x2 > x1
 			puts "#{x1},#{x2}"
