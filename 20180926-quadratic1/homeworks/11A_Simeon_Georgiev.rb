@@ -9,8 +9,12 @@ if a == 0
 	if (b==0 and c==0)
 		puts "*"
 	elsif d>0
+		if c==0
+			puts 0.0
+		else
 		x=(-c/b).round(3)
 		puts x.to_s
+		end
 	elsif c!=0
 		puts "NaN"
 	end
@@ -20,7 +24,7 @@ else
 	
 	elsif d == 0
 		x = (-b/(2*a)).round(3)
-		if x == -0.0
+		if c==0
 			puts 0.0
 		else
 			puts x.to_s
