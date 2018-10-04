@@ -35,6 +35,10 @@ def solve_quad_eq(a, b ,c)
 					result = -result
 				end
 
+				if result[0] > result[1]
+					result[0], result[1] = result[1], result[0]
+				end
+
 				return result
 			end
 		end
