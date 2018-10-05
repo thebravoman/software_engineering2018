@@ -16,9 +16,9 @@ if a == 0
 			puts "NaN"
 		end
 		
+	else
+		puts (-c/b).round(3)
 	end
-	puts (-c/b).round(3)
-
 else
 
 	x1 = ((-b + Math.sqrt(disc))/(2*a)).round(3)
