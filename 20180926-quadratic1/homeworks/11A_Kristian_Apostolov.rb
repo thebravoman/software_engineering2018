@@ -23,5 +23,5 @@ elsif d == 0
 else
     x1 = ((-b + Math.sqrt(d))/(2*a)).round(3)
     x2 = ((-b - Math.sqrt(d))/(2*a)).round(3)
-    puts(x1 > x2 ? puts("#{x2},#{x1}") : puts("#{x1},#{x2}"))
+    puts(x1 > x2 ? "#{x2},#{x1}" : "#{x1},#{x2}")
 end

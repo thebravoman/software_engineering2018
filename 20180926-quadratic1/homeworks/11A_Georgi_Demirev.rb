@@ -28,6 +28,9 @@ def quadEq(a, b, c)
 	elsif d == 0
 		x = -b / (2 * a)
 		x = x.round(3)
+		if x == -0.0
+			x = 0.0
+		end
 		puts("#{x}")
 	
 	else 

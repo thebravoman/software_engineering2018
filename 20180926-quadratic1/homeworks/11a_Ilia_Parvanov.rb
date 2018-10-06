@@ -20,10 +20,10 @@ else
 
     #in case x2 or x1 is -0
     if x1 == 0
-        x1 = 0
+        x1 = 0.0
     end
     if x2 == 0
-        x2 = 0
+        x2 = 0.0
     end
 
     if x1 < x2
