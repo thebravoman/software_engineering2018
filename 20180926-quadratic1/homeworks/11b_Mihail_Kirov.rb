@@ -16,8 +16,11 @@ def solve_equation(a, b, c)
         if determinant < 0
                 puts "NaN"
         elsif determinant == 0
-            x = -b / 2 * a
-            puts "#{x.round(3)}"
+            x = (-b / (2 * a)).round(3)
+            if x == -0.0
+                x = 0.0
+            end
+            puts "#{x}"
         else 
             x1 = (-b - Math.sqrt(determinant)) / (2*a)
             x2 = (-b + Math.sqrt(determinant)) / (2*a)
