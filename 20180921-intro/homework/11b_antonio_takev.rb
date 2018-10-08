@@ -16,7 +16,7 @@ unless a == 0
 
 	elsif d==0
 		x1 = ((-b)/(2*a)).round(3);
-		if x1 == 0
+		if x1 == -0.0
 			zero_x1 = ((b)/(2*a)).round(3);		
 			puts "#{zero_x1}"
 		else
@@ -30,7 +30,14 @@ unless a == 0
 else
 	unless b == 0
 		x = (-c/b).round(3);
-		puts "#{x}"
+		if x == -0.0
+			zero_x = (c/b).round(3); 		
+			puts "#{zero_x}"
+		else
+			
+			puts "#{x}"
+		end
+		
 	else
 		unless c == 0
 			puts "NaN"
