@@ -1,2 +1,0 @@
-class QuadraticController < ApplicationController
-end

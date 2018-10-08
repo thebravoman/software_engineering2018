@@ -1,0 +1,103 @@
+Name,State,Test Output, Test count: 1
+AleksanderMarinov,Failed!,One of the programs gives different output...	Yours: -1.0	Trusted: 	When a=0 b=4 c=4	
+
+AndreaPetrenko,Failed!,One of the programs gives different output...	Yours: 0.0,3.0	Trusted: 	When a=1 b=-3 c=0	
+
+AnetaTsvetkova,Failed!,One of the programs gives different output...	Yours: -2.562,1.562	Trusted: 	When a=1 b=1 c=-4	
+
+BoyanNaidenov,Failed!,One of the programs gives different output...	Yours: -1.133,0.883	Trusted: 	When a=-4 b=-1 c=4	
+
+ChudomirChenkov,Failed!,One of the programs gives different output...	Yours: 0.382,2.618	Trusted: 	When a=1 b=-3 c=1	
+
+DanailChaushev,Failed!,One of the programs gives different output...	Yours: -0.766,3.266	Trusted: 	When a=-2 b=5 c=5	
+
+DimitarDamyanov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=5 b=-4 c=0	
+
+DimiturStoilov,Failed!,One of the programs gives different output...	Yours: -1.5	Trusted: 	When a=0 b=2 c=3	
+
+ElenaGeorgieva,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-4 b=0 c=-2	
+
+EvgeniDimov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-3 b=0 c=-3	
+
+GeorgiDemirev,Failed!,One of the programs gives different output...	Yours: -0.0,2.0	Trusted: 	When a=-2 b=4 c=0	
+
+HristinaIvanova,Failed!,One of the programs gives different output...	Yours: 2.5	Trusted: 	When a=0 b=-2 c=5	
+
+IliaParvanov,Failed!,One of the programs gives different output...	Yours: -4.0	Trusted: 	When a=0 b=-1 c=-4	
+
+IvailoGeorgiev,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=4 b=1 c=4	
+
+KonstantinGeorgiev,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-3 b=-1 c=-1	
+
+KristianApostolov,Failed!,One of the programs gives different output...	Yours: -5.541,0.541	Trusted: 	When a=-1 b=-5 c=3	
+
+ManoelManev,Failed!,One of the programs gives different output...	Yours: -1.0	Trusted: 	When a=0 b=-5 c=-5	
+
+MartinPenev,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=4 b=0 c=2	
+
+MihailMetodiev,Failed!,One of the programs gives different output...	Yours: -1.554,0.804	Trusted: 	When a=-4 b=-3 c=5	
+
+NikolaSotirov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=2 b=3 c=2	
+
+PlamenPavlov,Failed!,One of the programs gives different output...	Yours: -0.724,-0.276	Trusted: 	When a=5 b=5 c=1	
+
+SimeonGeorgiev,Failed!,One of the programs gives different output...	Yours: -2.5	Trusted: 	When a=0 b=2 c=5	
+
+StefanGalabov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-1 b=1 c=-4	
+
+StefanGalabov.csv,Passed!,After 1 different test cases there's no difference	
+
+TsenkoTsenkov,Failed!,One of the programs gives different output...	Yours: 1.0	Trusted: 	When a=-2 b=4 c=-2	
+
+ViktorVladimirov,Failed!,One of the programs gives different output...	Yours: -0.207,1.207	Trusted: 	When a=4 b=-4 c=-1	
+
+YoanaIvanova,Failed!,One of the programs gives different output...	Yours: NaN,-Infinity	Trusted: 	When a=0 b=2 c=2	
+
+AlexandarKarapenev,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-5 b=1 c=-1	
+
+AngelJordanov,Failed!,One of the programs gives different output...	Yours: 0.4	Trusted: 	When a=0 b=5 c=-2	
+
+AngelMilanov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-5 b=-1 c=-4	
+
+AntoniiZlatarov,Failed!,One of the programs gives different output...	Yours: -1.0	Trusted: 	When a=1 b=2 c=1	
+
+AntonioTakev,Failed!,One of the programs gives different output...	Yours: -1.569,0.319	Trusted: 	When a=4 b=5 c=-2	
+
+BoykoDimitrov,Failed!,One of the programs gives different output...	Yours: -1.0,0.0	Trusted: 	When a=4 b=4 c=0	
+
+DenisBarzanov,Failed!,One of the programs gives different output...	Yours: -1.22,0.82	Trusted: 	When a=-5 b=-2 c=5	
+
+KrasimirGeorgiev,Failed!,One of the programs gives different output...	Yours: -1.791,2.791	Trusted: 	When a=-1 b=1 c=5	
+
+MartinJordanov,Failed!,One of the programs gives different output...	Yours: -0.871,2.871	Trusted: 	When a=-2 b=4 c=5	
+
+MartinStamenkov,Failed!,One of the programs gives different output...	Yours: -0.0,0.6	Trusted: 	When a=-5 b=3 c=0	
+
+MihaelGeorgiev,Failed!,One of the programs gives different output...	Yours: x1: -2.0	x2: -0.0	Trusted: 	When a=-2 b=-4 c=0	
+
+MihailBoshikyov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-5 b=4 c=-2	
+
+MihailGerginov,Failed!,One of the programs gives different output...	Yours: -0.535,1.869	Trusted: 	When a=-3 b=4 c=3	
+
+MihailKirov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=5 b=3 c=4	
+
+MilenIliev,Failed!,One of the programs gives different output...	Yours: -0.896,1.396	Trusted: 	When a=-4 b=2 c=5	
+
+NikolaiYonchev,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=4 b=-2 c=1	
+
+PetarNikolov,Failed!,One of the programs gives different output...	Yours: -0.175,1.425	Trusted: 	When a=-4 b=5 c=1	
+
+StefanStefanov,Failed!,One of the programs gives different output...	Yours: 1.667	Trusted: 	When a=0 b=3 c=-5	
+
+TeodoraYovcheva,Failed!,One of the programs gives different output...	Yours: 1.0	Trusted: 	When a=0 b=5 c=-5	
+
+ToniPelovski,Failed!,One of the programs gives different output...	Yours: 0.268,3.732	Trusted: 	When a=-1 b=4 c=-1	
+
+ValeriDobrev,Failed!,One of the programs gives different output...	Yours: -0.5,1.0	Trusted: 	When a=-2 b=1 c=1	
+
+VeselinGeorgiev,Failed!,One of the programs gives different output...	Yours: -1.25	Trusted: 	When a=0 b=4 c=5	
+
+ViktoriaRadkova,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=-1 b=-2 c=-4	
+
+YoanaVasileva,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 	When a=5 b=5 c=4	
+
