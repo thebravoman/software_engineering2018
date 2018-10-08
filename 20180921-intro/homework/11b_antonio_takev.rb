@@ -10,9 +10,11 @@ unless a == 0
 	if d>0
 		x1 = ((-b + Math.sqrt(d))/(2*a)).round(3);
 		x2 = ((-b - Math.sqrt(d))/(2*a)).round(3);
-
-		puts "#{x1},#{x2}"
-		
+		if(x1<x2)
+			puts "#{x1},#{x2}"
+		else
+			puts "#{x2},#{x1}"
+		end
 
 	elsif d==0
 		x1 = ((-b)/(2*a)).round(3);
@@ -47,3 +49,6 @@ else
 	end
 end
 	
+	
+	
+
