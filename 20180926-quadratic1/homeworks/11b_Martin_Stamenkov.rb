@@ -10,7 +10,11 @@ if(a == 0)
 		if(x == -0.0)
 		puts(0.0);
 		abort();
+		else
+		puts(x);
+		abort();
 		end
+		
 		
 		
 	elsif(c!=0)
@@ -31,6 +35,10 @@ if(D == 0)
 	x = (-b/(2*a)).round(3);
 	if(x == -0.0)
 		puts(0.0);
+		abort();
+	else
+		puts(x);
+		abort();
 	end
 end
 if(D < 0)
