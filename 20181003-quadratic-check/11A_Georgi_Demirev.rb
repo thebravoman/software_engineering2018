@@ -3,7 +3,7 @@ book = File.open("dnevnik.csv", "w")
 file = file.split("\n")
 namesOfFiles = []
 results = []
-checks = [["0", "0", "0"], ["2", "5", "2"], ["1", "5", "20"], ["1", "2", "1"], ["0", "5", "2"], ["0", "0", "2"], ["0", "5", "0"], ["2", "5", "0"], ["17", "-158", "27"]]
+checks = [["0", "0", "0"], ["2", "5", "2"], ["1", "5", "20"], ["1", "2", "1"], ["0", "5", "2"], ["0", "0", "2"], ["0", "5", "0"], ["2", "5", "0"], ["17", "-158", "27"], ["3", "0", "0"]]
 checksVal = {
 	checks[0] => "*",
 	checks[1] => "-2.0,-0.5",
@@ -11,9 +11,10 @@ checksVal = {
 	checks[3] => "-1.0",
 	checks[4] => "-0.4",
 	checks[5] => "NaN",
-	checks[6] => "0",
+	checks[6] => "0.0",
 	checks[7] => "-2.5,0.0",
-	checks[8] => "0.174,9.12"
+	checks[8] => "0.174,9.12",
+	checks[9] => "0.0"
 }
 
 i = 0
@@ -30,6 +31,7 @@ file = file.map { |x| x.include?(".rb") && x.include?("11") ? x : nil}.
 		loop do 
 			result = `ruby #{program} #{checks[i][0]} #{checks[i][1]} #{checks[i][2]}`
 			result = result.gsub("\n", "")
+
 			if result.eql?(checksVal[checks[i]])
 				correct = 1
 			else
@@ -37,13 +39,13 @@ file = file.map { |x| x.include?(".rb") && x.include?("11") ? x : nil}.
 				break
 			end
 			i += 1
-			break if i == 9
+			break if i == 10
+
 		end
 		if correct == 1
 			results.push(1)
 		else
 			results.push(0)
-			break
 		end
 		puts program, correct
 

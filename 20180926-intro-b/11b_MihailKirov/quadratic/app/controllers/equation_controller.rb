@@ -34,7 +34,10 @@ class EquationController < ApplicationController
                     @output.push("NaN")
                 end
             else
-                x = c/b
+                x = (-c/b).round(3)
+                if x == -0.0
+                    x = 0.0
+                end
                 @output.push(x)
             end
         else
@@ -43,11 +46,14 @@ class EquationController < ApplicationController
             if determinant < 0
                 @output.push("NaN")
             elsif determinant == 0
-                x1 = -@b / 2 * @a
+                x1 = (-@b / (2 * @a)).round(3)
+                if x1 == -0.0
+                    x1 = 0.0
+                end
                 @output.push(x1)
             else
-                x1 = (-@b + Math.sqrt(determinant)) / 2 * @a
-                x2 = (-@b - Math.sqrt(determinant)) / 2 * @a
+                x1 = ((-@b + Math.sqrt(determinant)) / (2 * @a)).round(3)
+                x2 = ((-@b - Math.sqrt(determinant)) / (2 * @a)).round(3)
                 @output.push(x1)
                 @output.push(x2)
             end
