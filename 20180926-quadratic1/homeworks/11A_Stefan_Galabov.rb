@@ -10,11 +10,10 @@ else
 		var = -c/b
 		if var == -0.0
 			puts 0.0
-		end
-		if b == 0
+		elsif b == 0
 			puts "NaN"
 		elsif c == 0
-			puts "0.0"
+			puts 0.0
 		else
 			puts "#{var.round(3)}"
 		end 	
