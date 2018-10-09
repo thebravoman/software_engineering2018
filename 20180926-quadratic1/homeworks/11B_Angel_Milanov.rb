@@ -6,7 +6,11 @@ d = b*b-4*a*c
 if a==0
     if b!=0
         x=(-c/b).round(3)
-            puts "#{x}"
+        if x ==  -0.0
+        x = 0.0
+    
+        end
+        puts "#{x}"
     else
         if c!=0
             puts "NaN"
@@ -18,6 +22,10 @@ if a==0
 
 elsif d==0 
     x= ((-b)/(2*a)).round(3)
+    if x ==  -0.0
+        x = 0.0
+    
+    end
     puts "#{x}"
 
 elsif d<0

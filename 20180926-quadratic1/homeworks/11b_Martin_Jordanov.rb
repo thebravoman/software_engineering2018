@@ -11,7 +11,8 @@ if a == 0
 		puts 'NaN'
 		return
 	end
-	puts (-c/b).round(3)
+	result = (-c/b).round(3)
+	puts result < 0 ? result : result.abs
 	return
 end
 
@@ -28,6 +29,7 @@ roots = []
 
 roots.push(((-b-d)/(2*a)).round(3))
 roots.push(((-b+d)/(2*a)).round(3))
+roots = roots.map{|x| x < 0 ? x : x.abs} 
 
 if roots[0] != roots[1]
 	puts "#{roots.min},#{roots.max}" 

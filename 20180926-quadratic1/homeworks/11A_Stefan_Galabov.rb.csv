@@ -1,0 +1,21 @@
+Name,State,Test Output, Test count: 50
+AleksanderMarinov,Failed!,One of the programs gives different output...	Yours: 18.0,-3.0	Trusted: -0.333,2.0	When a=3 b=-5 c=-2	
+
+AndreaPetrenko,Failed!,One of the programs gives different output...	Yours: -0.0	Trusted: 0.0	When a=2 b=0 c=0	
+
+AnetaTsvetkova,Passed!,After 50 different test cases there's no difference	
+
+BoyanNaidenov,Failed!,One of the programs gives different output...	Yours: 0.0,0.6	Trusted: -0.0,0.6	When a=-5 b=3 c=0	
+
+ChudomirChenkov,Failed!,One of the programs gives different output...	Yours: 0.0	Trusted: -0.0	When a=-4 b=0 c=0	
+
+DanailChaushev,Failed!,One of the programs gives different output...	Yours: 0.0	Trusted: -0.0	When a=0 b=-5 c=0	
+
+DimitarDamyanov,Failed!,One of the programs gives different output...	Yours: NaN	Trusted: 0.0	When a=5 b=0 c=0	
+
+DimiturStoilov,Failed!,One of the programs gives different output...	Yours: 0.0,4.0	Trusted: -0.0,4.0	When a=-1 b=4 c=0	
+
+ElenaGeorgieva,Failed!,One of the programs gives different output...	Yours: 0.0	Trusted: -0.0	When a=0 b=-5 c=0	
+
+EvgeniDimov,Failed!,One of the programs gives different output...	Yours: 0.0	Trusted: -0.0	When a=0 b=-2 c=0	
+

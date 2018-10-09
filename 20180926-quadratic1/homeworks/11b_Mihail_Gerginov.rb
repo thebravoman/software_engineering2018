@@ -14,7 +14,11 @@ def solve(a, b, c)
     if d < 0
       "NaN"
     elsif d == 0
-      (-b / (2 * a)).round(3)
+      x = (-b / (2 * a)).round(3)
+      if(x == -0.0)
+        x = 0.0
+      end
+      x
     else
       x1 = ((-b + Math.sqrt(d)) / (2 * a)).round(3)
       x2 = ((-b - Math.sqrt(d)) / (2 * a)).round(3)
