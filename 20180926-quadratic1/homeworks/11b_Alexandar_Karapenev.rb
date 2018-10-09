@@ -40,8 +40,17 @@ else
     		
 	end
 	if (D == 0)
+		
 		x = (-b/( 2*a )).round(3)
-		puts (x)
+		
+		if(x == -0.0)
+			puts(0.0);
+			abort();
+		else
+			puts(x);
+			abort();
+		end
+		
 	end
 	if (D < 0)
 		puts("NaN")
