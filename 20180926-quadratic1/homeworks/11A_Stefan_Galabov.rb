@@ -24,7 +24,7 @@ else
 		elsif discriminant == 0
 			x = -b/(2*a)
 			if x == -0.0
-				puts "0.0"
+				puts 0.0
 			else
 				puts "#{x.round(3)}"
 			end 
