@@ -4,7 +4,7 @@ a = nums[0]
 b = nums[1]
 c = nums[2]
 
-def solve_quadratic_equation(a, b, c)
+def solve_quadratic_equationn(a, b, c)
 	if a == 0
 		if b == 0 
 			if c == 0
@@ -31,6 +31,15 @@ def solve_quadratic_equation(a, b, c)
 		return x.round(3)
 	else
 		return "NaN"
+	end
+end
+
+def solve_quadratic_equation(a, b, c)
+	result = solve_quadratic_equationn(a, b, c)
+	if result == -0.0
+		return 0.0
+	else
+		return result
 	end
 end
 

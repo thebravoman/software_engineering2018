@@ -25,6 +25,9 @@ else
 		end
 	elsif d == 0
 		x = (-b / (2*a)).round(3);
+		if x == -0.0
+			x = 0.0
+		end
 		puts x
 	else
 		puts "NaN"
