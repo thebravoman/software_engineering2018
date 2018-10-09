@@ -5,8 +5,16 @@ c = ARGV[2].to_f
 if (a == 0)
 
 	if(b != 0)
-		x = (- (c/b)).round(3)
-		puts(x)
+		x = (-c/b).round(3);
+		
+		if(x == -0.0)
+			puts(0.0);
+			abort();
+		else
+			puts(x);
+			abort();
+		end
+	
 	else
 	
 		if(c != 0)
