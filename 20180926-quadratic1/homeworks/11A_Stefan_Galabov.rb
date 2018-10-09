@@ -28,7 +28,9 @@ else
 		else
 			x1 = ((-b + Math.sqrt(discriminant))/(2*a)).round(3)
 			x2 = ((-b - Math.sqrt(discriminant))/(2*a)).round(3)
-			if x1 > x2
+			if x1 == -0.0 || x2 == -0.0
+				puts "0.0"
+			elsif x1 > x2
 				puts "#{x2},#{x1}"
 			elsif x1 < x2
 				puts "#{x1},#{x2}"
