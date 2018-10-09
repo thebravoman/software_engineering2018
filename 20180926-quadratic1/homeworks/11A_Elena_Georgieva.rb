@@ -39,7 +39,9 @@ else
 		
 		x1=(-b+Math.sqrt(d))/(2*a)
 		x2=(-b-Math.sqrt(d))/(2*a)
-		if x2==-0.0
+		if x1==-0.0
+			x1=0.0
+		elsif x2==-0.0
 			x2=0.0
 		end
 		x1=x1.round(3)
