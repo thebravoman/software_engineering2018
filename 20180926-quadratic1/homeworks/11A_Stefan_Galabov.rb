@@ -8,6 +8,9 @@ else
 	discriminant = b*b - 4*a*c
 	if a == 0
 		var = -c/b
+		if var == -0.0
+			puts 0.0
+		end
 		if b == 0
 			puts "NaN"
 		elsif c == 0
@@ -20,8 +23,8 @@ else
 			puts "NaN"
 		elsif discriminant == 0
 			x = -b/(2*a)
-			if x == -0
-				puts "#{(x*(-1)).round(3)}"
+			if x == -0.0
+				puts "0.0"
 			else
 				puts "#{x.round(3)}"
 			end 
