@@ -47,9 +47,4 @@ else
 			puts "#{x}"
         	end
 	end
-
-
-
-
-
 end

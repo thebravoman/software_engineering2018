@@ -7,12 +7,18 @@ if a == 0
 		if c == 0
 			puts "*"
 			return
+		else
+			puts "NaN"
+			return
 		end
-		puts "NaN"
+	else
+		x = (-c/b)
+		if x == -0.0
+			x = 0.0
+       			puts "#{x}" 		
 		return
+		end	
 	end
-	puts (-c/b).round(3)
-	return
 end
 
 d = b*b - 4*a*c
@@ -25,6 +31,7 @@ end
 d = Math.sqrt(d)
 x1 = ((-b + d)/(2*a)).round(3)
 x2 = ((-b - d)/(2*a)).round(3)
+
 
 if x1 != x2
 	if x1 > x2
