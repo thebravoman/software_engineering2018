@@ -17,12 +17,14 @@ else
 
 	elsif D == 0
 		x  = ((-b)/(2*a)).round(3)
-
-		puts "#{x}"
+		
+		puts x == 0 ? "0.0" : "#{x}"
 	else
 		if a == 0
 			x = (-c/b).round(3)
-			puts "#{x}"
+			
+			puts x == 0 ? "0.0" : "#{x}"
+
 		else
 			x1 = ((-b + Math.sqrt(D))/(2*a)).round(3)
 			x2 = ((-b - Math.sqrt(D))/(2*a)).round(3)
@@ -31,7 +33,7 @@ else
 				x1 = x2
 				x2 = c
 			end
-			puts "#{x1},#{x2}"
+			puts "#{x1 == 0 ? "0.0" : x1},#{x2 == 0 ? "0.0" : x2}"
 		end
 	end
 end

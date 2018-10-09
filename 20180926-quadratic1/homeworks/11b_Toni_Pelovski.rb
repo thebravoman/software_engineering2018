@@ -15,11 +15,20 @@ elsif a == 0
 	    end
     else
 	x = -c/b
+	if x == -0.0
+		x = 0.0
+	end
 	puts "#{x.round(3)}"
         end
 else
     x1 = (-b - Math.sqrt(D)) / (2*a)
     x2 = (-b + Math.sqrt(D)) / (2*a)
+    if x1 == -0.0
+	    x1 = 0.0
+    end
+    if x2 == -0.0
+	    x2 = 0.0
+    end
     if x1 != x2
 	    if x1 < x2
 	    	puts "#{x1.round(3)},#{x2.round(3)}"

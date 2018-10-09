@@ -12,7 +12,7 @@ if a != 0
 	if d < 0
 		puts "NaN"
 	elsif d == 0
-		puts "x1 and x2: #{-b/2.a}"
+		puts "x1 and x2: #{-b/2*a}"
 	else 
 		x1 = (-b + Math.sqrt(d)) / (2*a)
 		x2 = (-b - Math.sqrt(d)) / (2*a)

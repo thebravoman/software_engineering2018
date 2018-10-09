@@ -26,6 +26,9 @@ x1 = (-b + d)/(2*a)
 x2 = (-b - d)/(2*a)
 
 if x1 == x2
+	if x1.to_s == "-0.0"
+		x1 = 0.0
+	end
 	puts "#{x1.round(3)}"
 else
 	if x1 < x2
