@@ -16,7 +16,10 @@ if a!=0
 				
 	elsif d==0
 		x=(-b)/(2*a)
-		puts "#{x.round(3)}"
+		if(x==0)
+			x*=(-1)
+		end
+		puts "#{x.round(3)}"	
 	else 
 		puts "NaN"
 	end
