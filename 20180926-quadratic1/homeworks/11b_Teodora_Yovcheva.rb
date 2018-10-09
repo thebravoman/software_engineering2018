@@ -38,11 +38,26 @@ else
 		
 			
 		if x1 < x2
-			puts "#{x1},#{x2}"
+			if x1 == 0
+				puts "0.0,#{x2}"
+			
+			elsif x2 == 0
+				puts "#{x1},0.0"
+			else
+				puts "#{x1},#{x2}"
+			end
 		end
 		
 		if x2 < x1
-			puts "#{x2},#{x1}"
+			if x1 == 0
+				puts "#{x2},0.0"
+			
+			elsif x2 == 0
+				puts "0.0,#{x1}"
+			else
+				puts "#{x2},#{x1}"
+			end
+
 		end
 	end
 end
