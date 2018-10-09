@@ -41,7 +41,7 @@ else
         puts "#{y},#{x}"
     end
   else
-    x = -b / 2*a
+    x = (-b) / (2*a)
     x = x.round(3)
     puts "#{x}"
   end

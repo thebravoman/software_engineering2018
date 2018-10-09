@@ -4,12 +4,14 @@ c = ARGV[2].to_f
 
 if a == 0
     if b == 0
-        puts("NaN")
-    elsif c == 0
-        puts(0);
+        if c == 0
+            puts("*");
+        else
+            puts("NaN")
+        end
     else
-        x1 = (-c/b).round(3)
-        puts(x1)
+        x1 = (-c/b).round(3).to_s
+        puts(x1.match(/-?0.0/) ? 0.0 : x1)
     end
     abort
 end
@@ -19,7 +21,7 @@ if d < 0
     puts("NaN")
 elsif d == 0
     x1 = (-b / (2*a)).round(3).to_s
-    puts(x1.match(/-?0.0/) ? 0 : x1)
+    puts(x1.match(/-?0.0/) ? 0.0 : x1)
 else
     x1 = ((-b + Math.sqrt(d))/(2*a)).round(3)
     x2 = ((-b - Math.sqrt(d))/(2*a)).round(3)
