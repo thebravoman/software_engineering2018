@@ -7,7 +7,11 @@ def solve(a, b, c)
         "NaN"
       end
     else
-      (-c / b).round(3)
+      x = (-c / b).round(3)
+      if x == -0.0
+        x = 0.0
+      end
+      x
     end
   else
     d = b ** 2 - 4 * a * c
@@ -22,6 +26,12 @@ def solve(a, b, c)
     else
       x1 = ((-b + Math.sqrt(d)) / (2 * a)).round(3)
       x2 = ((-b - Math.sqrt(d)) / (2 * a)).round(3)
+      if x1 == -0.0
+        x1 = 0.0
+      end
+      if x2 == -0.0
+        x2 = 0.0
+      end
       [x1, x2].
         sort.
         join(",")
