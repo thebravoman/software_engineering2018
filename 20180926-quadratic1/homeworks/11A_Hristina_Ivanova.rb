@@ -12,6 +12,9 @@ if a == 0
     exit
   end
     x = (-c/b).round(3)
+    if x == -0.0
+      x = 0.0
+    end
     puts "#{x}"
     exit
 end
@@ -34,6 +37,12 @@ if d > 0
   x1 = ((-b - Math.sqrt(b*b - 4*a*c))/(2*a)).round(3)
   x2 = ((-b + Math.sqrt(b*b - 4*a*c))/(2*a)).round(3)
 
+  if x1 == -0.0
+    x1 = 0.0
+  end
+  if x2 == -0.0
+    x2 = 0.0
+  end
   if(x1 < x2)
     puts "#{x1},#{x2}"
   else
