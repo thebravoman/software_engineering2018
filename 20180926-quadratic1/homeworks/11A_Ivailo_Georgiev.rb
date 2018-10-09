@@ -11,7 +11,11 @@ elsif a == 0 and b!=0
 
     x = (-c/b).round(3)
    
-    puts "#{x}"
+    if x == -0.0
+        puts "0.0"
+       else
+        puts "#{x}"
+      end
    
 else
    
@@ -24,8 +28,8 @@ else
     elsif dis == 0 && a!=0
    
         x = ((-b) / 2*a).round(3)
-       if b==0 and c==0
-        puts "#{x*-1}"
+       if x == -0.0
+        puts "0.0"
        else
         puts "#{x}"
       end
