@@ -48,8 +48,16 @@ end
 	
 if(D > 0)
 
-	x1 = ((-b + Math.sqrt(D))/ (2 * a)).round(3)
-	x2 = ((-b - Math.sqrt(D))/ (2 * a)).round(3)
+	x1 = ((-b + Math.sqrt(D))/ (2 * a)).round(3);
+	x2 = ((-b - Math.sqrt(D))/ (2 * a)).round(3);
+	
+	if(x1 == -0.0)
+		x1 = 0.0;
+	end
+	
+	if(x2 == -0.0)
+		x2 = 0.0;
+	end
 	
 	if(x1 < x2)
 		puts("#{x1},#{x2}");
