@@ -68,7 +68,7 @@ Implement a program to check all the homeworks and their solutions for x1 and x2
             compact.
             map {|x| x.split(" ")[-1]}
 
-    all_programs.each do |program|
+        all_programs.each do |program|
             puts program
             result = `ruby #{program} #{ARGV[0]} #{ARGV[1]} #{ARGV[2]}`
             puts (result.include?(ARGV[3]) && result.include?(ARGV[4])) ? 1 : 0

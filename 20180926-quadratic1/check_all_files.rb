@@ -8,6 +8,7 @@ all_programs = content.
 
 all_programs.each do |program|
 	puts program
+	i = 0
 	result = `ruby #{program} #{ARGV[0]} #{ARGV[1]} #{ARGV[2]}`
 	puts (result.include?(ARGV[3]) && result.include?(ARGV[4])) ? 1 : 0
 end

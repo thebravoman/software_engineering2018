@@ -10,6 +10,8 @@ else
 		var = -c/b
 		if b == 0
 			puts "NaN"
+		elsif c == 0
+			puts "0.0"
 		else
 			puts "#{var.round(3)}"
 		end 	
@@ -18,7 +20,7 @@ else
 			puts "NaN"
 		elsif discriminant == 0
 			x = -b/(2*a)
-			if x == 0
+			if x == -0
 				puts "#{(x*(-1)).round(3)}"
 			else
 				puts "#{x.round(3)}"
