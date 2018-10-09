@@ -18,6 +18,9 @@ if a == 0
 		end
 	else
 		x = (-c/b).round(3)
+		if x == -0.0
+			x = 0.0
+		end
 		puts "#{x}"
 		abort()
 	end
@@ -34,6 +37,10 @@ x1 = ((-b + Math.sqrt(discriminant)) / (2 * a)).round(3);
 x2 = ((-b - Math.sqrt(discriminant)) / (2 * a)).round(3);
 
 if x1 == x2
+	if x1 == -0.0
+		x1 = 0.0
+	end
+	
 	puts "#{x1}"
 elsif x1 > x2
 	puts "#{x2},#{x1}"

@@ -13,7 +13,7 @@ j.times do |i|
   next unless trusted_output != testing_output
 
   puts 'One of the programs gives different output...'
-  puts "Your: #{testing_output}"
+  puts "Yours: #{testing_output}"
   puts "Trusted: #{trusted_output}"
   puts "When a=#{a} b=#{b} c=#{c}"
   return
