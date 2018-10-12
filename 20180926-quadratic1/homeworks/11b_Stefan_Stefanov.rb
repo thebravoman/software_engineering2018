@@ -16,14 +16,23 @@ if a == 0
 			puts "NaN"
 		end
 		
+	else
+		x1 = (-c/b).round(3)
+		if x1 == -0.0
+			x1 = 0.0
+		end
+		puts x1
 	end
-	puts (-c/b).round(3)
-
 else
 
 	x1 = ((-b + Math.sqrt(disc))/(2*a)).round(3)
 	x2 = ((-b - Math.sqrt(disc))/(2*a)).round(3)
-
+	if x1 == -0.0
+	    x1 = 0.0
+	end
+	if x2 == -0.0
+	    x2 = 0.0
+	end
 	if disc == 0
 		puts x1
 	else

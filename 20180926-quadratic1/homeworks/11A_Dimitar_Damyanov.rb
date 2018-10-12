@@ -17,7 +17,7 @@ def determinate(a,b,c)
 		puts "NaN"
 
 	when d==0
-		x=-b/(2*a).round(3)
+		x=-b/(2*a)
 		x=x.round(3)
 		puts "#{x}"
 	end	
@@ -25,16 +25,46 @@ end
 
 def find(a,b,c)
 
-	if a==0&&b==0&&c==0
-		puts "*"
-	elsif a!=0&&b!=0&&c!=0
-		determinate(a,b,c)
-	elsif a==0
-		x=-c/b
-		puts "#{x.round(3)}"
-				
+	if a==0
+		if b==0
+			if c==0
+				puts "*"
+			else 
+				puts "NaN"
+			end
+
+		else
+			if c==0
+				puts "0.0"
+			else
+				x=-c/b
+				puts "#{x.round(3)}"
+			end
+		end
 	else
-		puts "NaN"	
+		if b==0
+			if c==0
+				puts "0.0"
+			else
+				if -c/a>0
+				x1=Math.sqrt(-c/a).round(3)
+				x2=-x1
+				xs=[x1,x2].sort
+				puts "#{xs[0]},#{xs[1]}"
+				else
+					puts "NaN"
+				end
+			end
+		else
+			if c==0
+				x1=0
+				x2=(-b/a).round(3)
+				xs=[x1,x2].sort
+				puts "#{xs[0]},#{xs[1]}"
+			else 
+				determinate(a,b,c)
+			end
+		end
 	end
 
 

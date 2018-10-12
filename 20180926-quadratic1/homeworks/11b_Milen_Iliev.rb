@@ -4,8 +4,13 @@ c = ARGV[2].to_f
 
 if a == 0
     if b!= 0
-        x = (-c/b).round(3)
-        puts x
+	if (x = (-c/b).round(3)) == 0 
+		x = (c/b).round(3)
+		puts x
+	else
+        	x = (-c/b).round(3)
+        	puts x
+	end
     else
         if c != 0
             puts "NaN"
@@ -26,7 +31,12 @@ else
     else
         if d == 0
             x = (-b/(2*a)).round(3)
-            puts x
+	    if x == -0
+		x0 = x = (b/(2*a)).round(3)
+		puts x0
+	    else
+		puts x
+	    end
         else
             puts "NaN"
         end
