@@ -75,7 +75,14 @@ Add the hello world to the calculations controller
         end
 
 ````
+
+# End of class
+Everyone to commit a controller called 
+Class_FirstName_LastName_CalculationsController in 20181012 
+that renders the current time plus their number in class
+
 # Implementing rails calculator for 1+1
 
 # Implementing quadratic equations with RAILS
  - homework - friday
+
