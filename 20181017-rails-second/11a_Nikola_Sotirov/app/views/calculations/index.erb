@@ -1,0 +1,16 @@
+<h1>Solve equation!</h1>
+
+<%=form_for :eq, url: {action: "new"} do |f|%>
+	A: <%=f.text_field :a%>
+	<br>
+	B: <%=f.text_field :b%>
+	<br>
+	C: <%=f.text_field :c%>
+	<br>
+	<%=f.submit "Submit"%>
+<%end%>
+
+<%if @result != nil%>
+	<%=@result%>
+<%end%>
+
