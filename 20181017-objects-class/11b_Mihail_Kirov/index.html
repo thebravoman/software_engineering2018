@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Classwork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+</head>
+<script>
+    $(document).ready(function(){
+       //1
+       object = {innerObject: {a: "a", b: "b"},
+                c: "d",
+                e: "f"};
+        //show(object);
+        jsonStringified = JSON.stringify(object);
+        $("#txtObject").append(jsonStringified);
+
+        //2 
+        var object_keys = Object.keys(object);
+        for(key in object_keys){
+            let key_input = $("<input/>", {value: key});
+            let value_input = $("<input/>", {value: object[key]});
+            let div = $("<div/>");
+            div.append(key_input)
+            div.append(value_input)
+            $("#inputObject").append(div);
+            
+        }
+
+    });
+    function show(object){
+        object_keys = Object.keys(object);
+        for(key in object_keys){
+            if(typeof object[key] === 'object'){
+                show(object[key]);
+            }
+            $()
+        }
+    }
+</script>
+<body>
+    <div id="inputObject">
+       
+    </div>
+    <div id="container2">
+        <textarea id="inputObject" ></textarea>
+    </div>
+</body>
+</html>
