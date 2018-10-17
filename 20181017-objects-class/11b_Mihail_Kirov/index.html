@@ -11,7 +11,7 @@
 <script>
     $(document).ready(function(){
        //1
-       object = {innerObject: {a: "a", b: "b"},
+       object = {a: "b",
                 c: "d",
                 e: "f"};
         //show(object);
@@ -20,9 +20,11 @@
 
         //2 
         var object_keys = Object.keys(object);
-        for(key in object_keys){
-            let key_input = $("<input/>", {value: key});
-            let value_input = $("<input/>", {value: object[key]});
+        for(key of object_keys){
+            let key_input = $("<input/>")
+                            .val(key);
+            let value_input = $("<input/>")
+                                .val(object[key]);
             let div = $("<div/>");
             div.append(key_input)
             div.append(value_input)
