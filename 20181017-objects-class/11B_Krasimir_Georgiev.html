@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var state = {};
+
+				$("#addItem").click(function() {
+					var newNode = $("<div>", {id: "node"});
+					$("#items").append(newNode);
+					var key = $("<input/>", {id: "key"});
+					var value = $("<input/>", {id: "value"});
+					newNode.append(key);
+					newNode.append($("<span>:</span>"));
+					newNode.append(value);
+					addUpdateButton(state, newNode);
+				});
+			});
+
+
+			function addUpdateButton(state, parent) {
+				var updateButton = $("<button/>", {text: "Update"});
+				parent.append(updateButton);
+
+				var previous_key = parent.find("#key").val();
+
+				$(updateButton).click(function() {
+					delete state[previous_key];
+					var key = parent.find("#key");
+					JSON.stringify(key.val());
+					var value = parent.find("#value");
+					state[key.val()] = value.val();
+					previous_key = key.val();
+					updateTextArea(state);
+				});
+			}
+
+			function updateTextArea(state) {
+				$("#textArea").val(JSON.stringify(state));
+			}
+		</script>
+
+
+	</head>
+
+	<body>
+		<input type = "button" id = "showItems" value = "Show JSON">
+		<input type = "button" id = "addItem" value = "Add Node">
+		<div id = "items">
+
+		</div>
+
+		<textarea id = "textArea"></textarea>
+
+		<div
+	</body>
+</html>
