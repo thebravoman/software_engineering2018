@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title> Classwork </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<textarea name="" id="writeHere"disabled></textarea>
+	
+	<script>
+		var object = {
+			"bira": "s kafe"
+		};
+		$("#writeHere").val(JSON.stringify(object));
+		for(var key in object) {
+			var keyInput = $("<input>")
+				.attr("type", "text")
+				.val(key);
+				
+			keyInput.appendTo($("body"));
+		
+			var valueInput = $("<input>")
+			.attr("type", "text")
+			.val(object[key]);
+			valueInput.appendTo($("body"));
+		}
+		
+		
+	</script>
+</body>
+</html>
