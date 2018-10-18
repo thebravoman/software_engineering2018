@@ -17,7 +17,11 @@ if a == 0
 		end
 		
 	else
-		puts (-c/b).round(3)
+		x1 = (-c/b).round(3)
+		if x1 == -0.0
+			x1 = 0.0
+		end
+		puts x1
 	end
 else
 

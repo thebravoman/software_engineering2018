@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework, I suppose</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h4>Current JSON value:</h4>
+    <textarea id="textarea" cols="30" rows="10" disabled></textarea>
+    <hr />
+    <h4>Current JSON state as input fields: </h4>
+    <div id="container"></div>
+
+    <script>
+        function renderObjectInTextArea(object) {
+            $("#textarea").val(JSON.stringify(object));
+        }
+
+        function renderInputs(object) {
+            for (const objKey in object) {
+                let div = $("<div>");
+
+                let key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(objKey);
+
+                let value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(object[objKey]);
+
+                div.append(key)
+                    .append(value);
+
+                div.appendTo($("#container"));
+            }
+        }
+
+        let obj = {
+            "ala": "bala",
+            "sample": "text"
+        };
+
+        renderObjectInTextArea(obj);
+        renderInputs(obj);
+    </script>
+</body>
+</html>
