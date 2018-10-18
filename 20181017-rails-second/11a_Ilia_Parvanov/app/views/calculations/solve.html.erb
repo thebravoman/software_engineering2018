@@ -1,0 +1,10 @@
+<h1>QuadraticSolver</h1>
+<%= form_tag("/calculations/solved", method: "get") do %>
+   <%= label_tag(:a, "a:") %>
+   <%= text_field_tag(:a) %>
+   <%= label_tag(:b, "b:") %>
+   <%= text_field_tag(:b) %>
+   <%= label_tag(:c, "c:") %>
+   <%= text_field_tag(:c) %>
+   <%= submit_tag("Solve") %>
+ <% end %>
