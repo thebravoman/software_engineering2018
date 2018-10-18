@@ -1,14 +1,11 @@
 class CalculationsController < ApplicationController
-	#require "Eqaution"
-
-	def index
-	
+	def new
+		
 	end
 
-
-	def new
+	def create
 		@result = solve_quad_eq(Float(params[:eq][:a]), Float(params[:eq][:b]), Float(params[:eq][:c]))
-		render "index"
+		render "new"
 	end
 
 	def solve_quad_eq(a, b ,c)
