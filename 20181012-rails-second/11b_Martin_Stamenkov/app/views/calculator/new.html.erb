@@ -1,0 +1,11 @@
+<%= form_tag("/calculator/result/", method: "post") do %>
+	<p>
+		A:<%= text_field_tag(:a,1) %><br>
+		B:<%= text_field_tag(:b,2) %><br>
+		C:<%= text_field_tag(:c,3) %><br>
+	</p>
+
+	<p>
+		<%= submit_tag %><br>
+	</p>
+<% end %>
