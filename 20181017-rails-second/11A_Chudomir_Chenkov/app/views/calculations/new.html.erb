@@ -1,0 +1,32 @@
+<%= form_for :calculation, url: calculations_path, local: true do |form| %>
+  <p>
+    <!--
+    <%= form.label :a %><br>
+    <%= form.text_field :a %>
+    -->
+    <%= form.label :a %><br>
+    <%= text_field_tag(:a) %>
+  </p>
+
+  <p>
+    <!--
+    <%= form.label :b %><br>
+    <%= form.text_field :b %>
+    -->
+    <%= form.label :b %><br>
+    <%= text_field_tag(:b) %>
+  </p>
+
+  <p>
+    <!--
+    <%= form.label :c %><br>
+    <%= form.text_field :c %>
+    -->
+    <%= form.label :c %><br>
+    <%= text_field_tag(:c) %>
+  </p>
+
+  <p>
+    <%= form.submit "Submit" %>
+  </p>
+<% end %>
