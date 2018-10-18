@@ -1,0 +1,13 @@
+<%= form_tag("/calculations/create/", method: "post") do %>
+	
+	<p style="font-size:20px">
+		a : <%= text_field_tag(:a) %><br>
+		b : <%= text_field_tag(:b) %><br>
+		c : <%= text_field_tag(:c) %><br>
+	</p>
+
+	<p>
+		<%= submit_tag %><br>
+	</p>
+<% end %>
+
