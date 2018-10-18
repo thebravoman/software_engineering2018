@@ -1,0 +1,79 @@
+Started GET "/" for 127.0.0.1 at 2018-10-12 10:20:28 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/misho/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/misho/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/time" for 127.0.0.1 at 2018-10-12 10:40:02 +0300
+  
+ActionController::RoutingError (uninitialized constant ActionControllerX):
+  
+app/controllers/time_controller.rb:1:in `<main>'
+Started GET "/time" for 127.0.0.1 at 2018-10-12 10:40:22 +0300
+  
+ActionController::RoutingError (uninitialized constant ActionControllerX):
+  
+app/controllers/time_controller.rb:1:in `<main>'
+Started GET "/time" for 127.0.0.1 at 2018-10-12 10:42:19 +0300
+  
+ActionController::RoutingError (uninitialized constant ActionControllerX):
+  
+app/controllers/time_controller.rb:1:in `<main>'
+Started GET "/time" for 127.0.0.1 at 2018-10-12 10:43:22 +0300
+  
+TypeError (superclass must be a Class (Module given)):
+  
+app/controllers/time_controller.rb:1:in `<main>'
+Started GET "/time" for 127.0.0.1 at 2018-10-12 10:43:49 +0300
+Processing by TimeController#new as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 21:14:45 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/misho/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/misho/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-10-18 21:14:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/time" for 127.0.0.1 at 2018-10-18 21:15:55 +0300
+Processing by TimeController#new as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
