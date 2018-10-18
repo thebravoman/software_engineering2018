@@ -11,9 +11,9 @@ class CalculationsController < ApplicationController
 		if a == 0
 			if b == 0
 				if c == 0
-					puts "*"
+					render plain: "*"
 				else
-					puts "NaN"
+					render plain: "NaN"
 				end
 			else
 				x = -c/b
@@ -21,7 +21,7 @@ class CalculationsController < ApplicationController
 					x = 0.0
 				end
 				x = x.round(3)
-				puts "#{x}"
+				render plain: "#{x}"
 			end
 
 		else
@@ -29,7 +29,7 @@ class CalculationsController < ApplicationController
 			d = b*b - 4*a*c
 
 			if d < 0
-				puts "NaN"
+				render plain: "NaN"
 
 			elsif d == 0
 				x = (-b) / (2*a)
@@ -37,7 +37,7 @@ class CalculationsController < ApplicationController
 					x = 0.0
 				end
 				x = x.round(3)
-				puts "#{x}"
+				render plain: "#{x}"
 
 			else
 
@@ -56,9 +56,9 @@ class CalculationsController < ApplicationController
 				x2 = x2.round(3)
 
 				if x2 > x1
-					puts "#{x1},#{x2}"
+					render plain: "#{x1},#{x2}"
 				elsif x2 < x1
-					puts "#{x2},#{x1}"
+					render plain: "#{x2},#{x1}"
 				end
 
 			end
