@@ -11,35 +11,47 @@
 <script>
     $(document).ready(function(){
        //1
-       object = {a: "b",
+       object = {innerObject: {a: "a", b:"b"},
                 c: "d",
                 e: "f"};
-        //show(object);
+        show(object);
         jsonStringified = JSON.stringify(object);
         $("#txtObject").append(jsonStringified);
 
         //2 
-        var object_keys = Object.keys(object);
-        for(key of object_keys){
-            let key_input = $("<input/>")
-                            .val(key);
-            let value_input = $("<input/>")
-                                .val(object[key]);
-            let div = $("<div/>");
-            div.append(key_input)
-            div.append(value_input)
-            $("#inputObject").append(div);
-            
-        }
+        //var object_keys = Object.keys(object);
+        //for(key of object_keys){
+        //    let key_input = $("<input/>")
+        //                    .val(key);
+        //    let value_input = $("<input/>")
+        //                        .val(object[key]);
+        //    let div = $("<div/>");
+        //    div.append(key_input)
+        //    div.append(value_input)
+        //    $("#inputObject").append(div);
+        //    
+        //}
 
     });
     function show(object){
         object_keys = Object.keys(object);
-        for(key in object_keys){
+        let input = $("#inputObject");
+        let br = $("<br>");
+        for(key of object_keys){
+            
+            let key_input = $("<input/>")
+                            .val(key);
+            
+            input.append(key_input);
+            input.append(br);
             if(typeof object[key] === 'object'){
                 show(object[key]);
             }
-            $()
+            let value_input = $("<input/>")
+                                .val(object[key]);
+            input.append(value_input);
+            input.append(br);
+
         }
     }
 </script>

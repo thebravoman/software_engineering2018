@@ -1,0 +1,23 @@
+<%= form_for :calculation, url: calculations_path,  local: true do |form| %>
+  <table>
+    <tr>
+      <td>
+    <%= form.label :a %><br>
+    <%= text_field_tag(:a) %>
+  </td>
+
+  <td>
+    <%= form.label :b %><br>
+    <%= text_field_tag(:b) %>
+  </td>
+
+  <td>
+    <%= form.label :c %><br>
+    <%= text_field_tag(:c) %>
+  </td>
+</tr>
+
+  <tr>
+  <td>  <%= form.submit "Solve!" %></td>
+  </tr></table>
+<% end %>
