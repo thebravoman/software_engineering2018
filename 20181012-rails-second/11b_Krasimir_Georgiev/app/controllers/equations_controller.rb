@@ -39,6 +39,9 @@ class EquationsController < ApplicationController
 				end
 			else
 				x = (-c/b).round(3)
+				if x == -0.0
+					x = 0.0
+				end
 				return "#{x}"
 			end
 		end
