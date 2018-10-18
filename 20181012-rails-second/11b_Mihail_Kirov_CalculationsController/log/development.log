@@ -77,3 +77,10 @@ Processing by TimeController#new as HTML
 Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/time" for 127.0.0.1 at 2018-10-18 21:20:53 +0300
+Processing by TimeController#new as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
