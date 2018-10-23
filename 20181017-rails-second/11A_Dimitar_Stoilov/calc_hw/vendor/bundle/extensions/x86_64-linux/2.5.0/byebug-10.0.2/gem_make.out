@@ -1,0 +1,19 @@
+current directory: /home/dks/Documents/GO/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+/usr/local/rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20181023-7753-11wdvl5.rb extconf.rb
+creating Makefile
+
+current directory: /home/dks/Documents/GO/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/dks/Documents/GO/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/dks/Documents/GO/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20181023-7753-ou0qce/byebug
