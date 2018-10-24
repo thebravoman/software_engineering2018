@@ -1,0 +1,3 @@
+class Quadratic < ApplicationRecord
+  
+end
