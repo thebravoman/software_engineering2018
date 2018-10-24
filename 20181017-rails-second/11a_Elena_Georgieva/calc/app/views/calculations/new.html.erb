@@ -1,0 +1,15 @@
+<h1> Quadratic Equation </h1>
+
+<%= form_for :calculation, url: calculations_path, local: true do |form| %> <p>
+    <%= text_field_tag(:a) %>
+  </p>
+  <p>
+    <%= text_field_tag(:b) %>
+  </p>
+  <p>
+    <%= text_field_tag(:c) %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

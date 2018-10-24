@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solve an equation!</title>
+</head>
+<body>
+
+	<h1>Solve equation!</h1>
+
+	<%=form_for :eq, url: {action: "create"} do |f|%>
+		A: <%=f.text_field :a%>
+		<br>
+		B: <%=f.text_field :b%>
+		<br>
+		C: <%=f.text_field :c%>
+		<br>
+		<%=f.submit "Submit"%>
+	<%end%>
+
+	<%if @result != nil%>
+		<h1>Result: <%=@result%></h1>
+	<%end%>
+
+
+</body>
+</html>
+
+

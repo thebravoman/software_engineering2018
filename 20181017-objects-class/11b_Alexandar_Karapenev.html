@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <body>
+        <script>
+            var object = {
+                "Dobar": " Den"
+            };
+            var value = $("<input>")
+            var div = $("<div>")
+            var key = $("<input>")
+            var line = $("<br>")
+        </script>
+        <textarea id="text" style="width:420px; height: 69px;"></textarea>
+        <div id="items"></div>
+        <script>
+            function AddText(object){
+                $("#text").val(JSON.stringify(object , 2 , 2))
+            }
+            for(var objectKey in object){
+                key.attr("type", "text")
+                key.val(objectKey)
+                
+                value.attr("type", "text")
+                value.val(object[objectKey])
+                
+                div.append(line)
+                div.append(key)
+                div.append(value)
+                div.appendTo($("#items"))
+            }
+            AddText(object);
+        </script>
+    </body>
+</html>

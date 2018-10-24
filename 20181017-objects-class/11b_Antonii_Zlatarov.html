@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <textarea id="textarea" cols="30" rows="20" disabled></textarea>
+    
+    <div id="jsonobject"></div>
+    <script>
+        
+        function addJSONobject(object) {
+            $("#textarea").val(JSON.stringify(object));
+        }
+       
+        function toInputs(object) {
+            for (var i in object) {
+                var key = $("<br><input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(i);
+                var value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(object[i]);
+                key.appendTo($("div"))
+                    .append(value);
+                value.appendTo($("div"));
+            }
+        }
+        var object = {
+            "ala": "bala",
+            "12":"34"
+        };
+        addJSONobject(object);
+        toInputs(object);
+    </script>
+
+</body>
+</html>

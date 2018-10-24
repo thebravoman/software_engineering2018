@@ -1,0 +1,3 @@
+class Equation < ApplicationRecord
+	
+end
