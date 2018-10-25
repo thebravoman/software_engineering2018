@@ -1,0 +1,167 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    var count = {'value': 0};
+	var _state = {}; //this is a JSON object
+	$('#btnAddItem').prop('value', 'Add new attribute');
+	$('#btnShowState').click(function(){
+        showState(_state);
+    });
+	$('#btnAddNode').click(function() {
+	    count.value++;
+        var newDiv = $("<div />", {
+            id: '_divId' + count.value,
+            value: count,
+            'data-nested': 1
+        })
+        $('#items').append(newDiv)
+		createNewAttributeControlls(count, _state, $('#' + '_divId' + count.value));
+		createUpdateStateButton(count, _state, $('#' + '_divId' + count.value));
+        createAddNestedNodeButton(count, _state, $('#' + '_divId' + count.value));
+		createRemoveButton(count, _state, $('#' + '_divId' + count.value));
+		$('#txtObject').show();
+	});
+});
+function showState(state) {
+	alert(JSON.stringify(state));
+}
+function createUpdateStateButton(count, state, parent) {
+	var updateState = $("<button />", {
+				            id: '_btnUpdateState' + count.value,
+							text:'Update state',
+							value: count.value
+                        });
+
+	parent.append(updateState);
+	$(updateState).click(function() {
+        //gets the key and value from the text field and puts them into the JSON object
+        if ($('#' + '_divId' + this.value).data('nested') > 1) {
+            var parentKey = $('#' + '_key' + (this.value-1)).val();
+            console.log("parentKey:" + parentKey);
+            var key = $('#' + '_key' + this.value).val();
+    	    var value = $('#' + '_value' + this.value).val();
+            var jsonObj = {};
+            jsonObj[key] = value;
+            findAndAssignParentValue(state, parentKey, jsonObj);
+        }
+        else {
+    		var key = $('#' + '_key' + this.value).val();
+    	    var value = $('#' + '_value' + this.value).val();
+    	    state[key] = value;
+        }
+	    invalidateState(state);
+	});
+}
+
+function findAndAssignParentValue(state, parentKey, toAssign) {
+    for (prop in state) {
+        if (prop === parentKey) {
+            console.log(state[prop]);
+            state[prop] = toAssign;
+
+            return;
+        }
+        if (typeof state[prop] === 'object') {
+            findAndAssignParentValue(state[prop], parentKey, toAssign);
+        }
+      // `prop` is the property name
+      // `data[prop]` is the property value
+    }
+}
+function createNewAttributeControlls(count, state, parent) {
+    var jsonNodeKey = $("<input />", {
+						      id: '_key' + count.value
+                          });
+	var colon = $("<span />", {
+						id:'_colon' + count.value,
+						text: ':'
+                    });
+	var jsonNodeValue = $("<input />", {
+                        type: 'text',
+						id: '_value' + count.value
+                    });
+		parent.append(jsonNodeKey);
+	    parent.append(colon);
+		parent.append(jsonNodeValue);
+}
+function createAddNestedNodeButton(count, state, parent) {
+    var nestedNode = $("<button />", {
+        text: 'Add nested node',
+        id: '_btnAddNestedNode' + count.value,
+        value: count.value
+    });
+    $(nestedNode).click(function() {
+        count.value++;
+        var newNestedDiv = $("<div />", {
+            id: '_divId' + count.value,
+            value: count.value,
+            'data-nested': parent.data('nested') + 1
+        })
+        newNestedDiv.css("margin-left", parent.data('nested')*5);
+        parent.after(newNestedDiv);
+        createNewAttributeControlls(count, state, $('#' + '_divId' + count.value));
+        createUpdateStateButton(count, state, $('#' + '_divId' + count.value));
+        createAddNestedNodeButton(count, state, $('#' + '_divId' + count.value));
+        createRemoveButton(count, state, $('#' + '_divId' + count.value));
+
+        $('#' + this.value).hide();
+        $('#' + '_value' + this.value).hide();
+        $('#' + '_btnUpdateState' + this.value).hide();
+        $('#' + '_btnAddNestedNode' + this.value).hide();
+        $('#' + '_colon' + this.value).hide();
+    });
+    parent.append(nestedNode);
+}
+function createRemoveButton(count, state, parent) {
+    var remove = $("<button />", {
+      id: count.value,
+	  text:'Remove',
+	  value: count.value
+    });
+	$(remove).click(function() {
+		console.log('#' + '_key' + this.value);
+		var key = $('#' + '_key' + this.value).val();
+		delete state[key];
+	    invalidateState(state);
+        $('#' + (this.value-1)).show();
+        $('#' + '_value' + (this.value-1)).show();
+        $('#' + '_btnUpdateState' + (this.value-1)).show();
+        $('#' + '_btnAddNestedNode' + (this.value-1)).show();
+        $('#' + '_colon' + (this.value-1)).show();
+
+		$('#' + '_key' + this.value).remove();
+	    $('#' + '_colon' + this.value).remove();
+	    $('#' + '_value' + this.value).remove();
+		$('#' + '_br' + this.value).remove();
+		$('#' + '_btnUpdateState' + this.value).remove();
+        $('#' + '_btnAddNestedNode' + this.value).remove();
+		this.remove();
+		if (Object.keys(state) == 0) {
+			$('#txtObject').hide();
+		}
+	});
+	parent.append(remove);
+	parent.append($("<br/>", {id: '_br'+count.value}))
+}
+function invalidateState(state) {
+    //whar are the parameters after state for?
+
+  $('#txtObject').val(JSON.stringify(state, 2, 2));
+}
+</script>
+<body>
+    <div>
+		<input type="button" id="btnAddNode" value="Add Node">
+		<input type="button" id="btnShowState" value="Show State">
+	</div>
+	<br/>
+	<div id="items">
+
+	</div>
+	<hr/>
+	<div>
+		<textarea style="width:520px; height: 480px; display:none;" id="txtObject"></textarea>
+	</div>
+</body>
+</html>
