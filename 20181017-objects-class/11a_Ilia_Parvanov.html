@@ -69,6 +69,20 @@ function findAndAssignParentValue(state, parentKey, toAssign) {
       // `data[prop]` is the property value
     }
 }
+function findAndDeleteValue(state, key) {
+    for (prop in state) {
+        if (prop === key) {
+            console.log(state[prop]);
+            delete state[prop];
+            return;
+        }
+        if (typeof state[prop] === 'object') {
+            findAndDeleteValue(state[prop], key);
+        }
+      // `prop` is the property name
+      // `data[prop]` is the property value
+    }
+}
 function createNewAttributeControlls(count, state, parent) {
     var jsonNodeKey = $("<input />", {
 						      id: '_key' + count.value
@@ -122,7 +136,7 @@ function createRemoveButton(count, state, parent) {
 	$(remove).click(function() {
 		console.log('#' + '_key' + this.value);
 		var key = $('#' + '_key' + this.value).val();
-		delete state[key];
+        findAndDeleteValue(state, key);
 	    invalidateState(state);
         $('#' + (this.value-1)).show();
         $('#' + '_value' + (this.value-1)).show();
