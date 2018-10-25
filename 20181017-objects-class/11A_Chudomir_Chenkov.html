@@ -6,30 +6,29 @@
     $(document).ready(function() {
         var count = 0;
         var nests_count = 0;
-        var _state = {};
-	      $('#btnShowState').click(function(){showState(_state);});
 
         $('#btnAddNode').click(function() {
           count++;
-          createNewAttributeControlls(count, _state, $('#items'));
-          createUpdateStateButton(count, _state, $('#items'));
-          createRemoveButton(count, _state, $('#items'));
+          createNewAttributeControlls(count, $('#items'));
+          //createUpdateStateButton(count, $('#items'));
           $('#txtDisplayState').show();
 
         });
 
         $('#btnAddNestedObject').click(function() {
           nests_count++;
-          createNewNestedAttributeControlls(nests_count, _state, $('#items'));
+          createNewNestedAttributeControlls(nests_count, $('#items'));
           $('#txtDisplayState').show();
         });
 
-        $('#btnUpdateTextArea').click(UpdateTextArea(0, _state, $('#items')));
-        invalidateState(_state);
+        $('#btnUpdateTextArea').click(function() {
+          UpdateText();
+          $('#txtDisplayState').show();
+        });
 
       });
 
-      function createNewNestedAttributeControlls(nests_count, state, parent) {
+      function createNewNestedAttributeControlls(nests_count, parent) {
 
           var nestNode = $("<div>", {id: 'nested_node' + nests_count});
           $(parent).append(nestNode);
@@ -49,23 +48,29 @@
           nestItems.append(AddNodeButton);
           $(AddNodeButton).click(function() {
             nestItems.append($("<br>"));
-            createNewAttributeControlls(nests_count+1, state, nestItems);
+            createNewAttributeControlls(nests_count+1, nestItems);
           });
 
           var AddNestedObject = $("<button />", {id: 'add_nested_object' + nests_count, text: 'Add Nested Object'});
           nestItems.append(AddNestedObject);
           $(AddNestedObject).click(function() {
             nestItems.append($("<br>"));
-            createNewNestedAttributeControlls(nests_count+1, state, nestItems);
+            createNewNestedAttributeControlls(nests_count+1, nestItems);
           });
 
-          createRemoveButton(nests_count, state, nestNode);
+          createRemoveButton(nests_count, nestNode);
 
           nestNode.append($("<p>}</p>"));
 
       }
 
-      function UpdateTextArea(nests_count, state, parent) {
+      function UpdateText() {
+        state = {};
+        UpdateTextArea(state, $('#items'), 0);
+        invalidateState(state);
+      }
+
+      function UpdateTextArea(state, parent, nests_count) {
         for (obj in parent) {
           if (parent.hasOwnProperty(obj)) {
             if (obj.id == "node") {
@@ -76,15 +81,16 @@
               var key = obj;
               state[key] = {};
               console.log("zdr");
-              var value = UpdateTextArea(nests_count+1, state[key], obj.find("#nest_items"));
+              var value = UpdateTextArea(state[key], obj.find("#nest_items"), nests_count+1);
             }
           }
         }
         return 0;
       }
 
-      function createRemoveButton(count, state, parent) {
+      function createRemoveButton(count, parent) {
         var removeButton = $("<button />", {id: count, text: 'Remove'});
+        parent.append(removeButton);
         $(removeButton).click(function() {
           /*
           var key = $('#' + '_key' + this.value).val();
@@ -107,7 +113,8 @@
         parent.append($("<br/>", {id: '_br'+count}))
       }
 
-      function createUpdateStateButton(count, state, parent) {
+      /*
+      function createUpdateStateButton(count, parent) {
         var updateState = $("<button />", {id: '_btnUpdateState' + count, text: 'Update state'});
         parent.append(updateState);
         $(updateState).click(function() {
@@ -117,12 +124,13 @@
           invalidateState(state);
         });
       }
+      */
 
       function invalidateState(state) {
-        $('#txtDisplayState').val(JSON.stringify(state, 2, 2));
+        $('#txtDisplayState').val(JSON.stringify(state));
       }
 
-      function createNewAttributeControlls(count, state, parent) {
+      function createNewAttributeControlls(count, parent) {
         var newNode = $("<div>", {id: "node"});
         parent.append(newNode);
 
@@ -134,15 +142,17 @@
         newNode.append(colon);
         newNode.append(jsonNodeValue);
 
-        createRemoveButton(count, state, newNode);
+        createRemoveButton(count, newNode);
 
         newNode.append($("<br>"));
 
       }
 
+      /*
       function showState(state) {
         alert(JSON.stringify(state));
       }
+      */
     </script>
 </head>
 
