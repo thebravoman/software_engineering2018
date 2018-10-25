@@ -39,18 +39,23 @@ var addObject = (element) => {
 
 	div.appendChild(btn1);
 
+	btn1.onclick = () => {addObject(btn1)};
+	
+	btn1 = document.createElement("button");
+
+	btn1.appendChild(document.createTextNode("Remove"));
+
+	div.appendChild(btn1);
+
 	inputs.appendChild(div);
 
-	btn1.onclick = () => {addObject(btn1)};
-	//EXCUSE ME, WHAT THE FUCK
+	btn1.onclick = () => {removeObject(btn1)};
 
-	
-
-	element.disabled = true;
+	inputs.appendChild(div);
 }
 
 var removeObject = (element) => {
-	objects.splice(element.parentElement.id, 1);
+	objects = objects.splice(parseInt(element.parentElement.id), 1);
 	objectDisplay.value = objects.toString();
 	var id = parseInt(element.parentElement.id);
 
