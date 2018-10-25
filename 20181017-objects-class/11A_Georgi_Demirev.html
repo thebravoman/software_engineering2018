@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ASDF</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+	<script>
+		
+		$(document).ready(function() {
+			addNormalObject($("#items", 0));
+			addNestedObject($("#items"), 0);
+			$("#updateBtn").click(function () {
+				updateText();
+			});
+		});
+
+		function addNormalObject(parent, counter) {
+			var addNormalObjectButton = $("<button />", {text: "Add normal object"});
+			parent.append(addNormalObjectButton);
+			counter++;
+			$(addNormalObjectButton).click(function() {
+				var newNode = $("<div />", {id: "normalNode"});
+				newNode.css("margin-left", counter * 10 + "px");
+
+				var key = $("<input />", {id: "key"});
+				var value = $("<input />", {id: "value"});
+				
+				newNode.append(key);
+				newNode.append(":");
+				newNode.append(value);
+
+				addRemoveButton(newNode);
+				parent.append(newNode);
+			});
+		}
+
+		
+
+		function addNestedObject(parent, counter) {
+			var addNestedObjectButton = $("<button />", {text: "Add nested object"});
+			parent.append(addNestedObjectButton);
+			counter++;
+
+			$(addNestedObjectButton).click(function() {
+
+				newNode = $("<div/>", {id: "nestedNode"})
+				newNode.css("margin-left", counter * 10 + "px");
+
+				var nodeItems = $("<div />", {id: "nodeItems"});
+				var key = $("<input />", {id: "key"});
+				nodeItems.append(key);
+				
+				addNormalObject(nodeItems, counter);
+				addNestedObject(nodeItems, counter);
+				newNode.append(nodeItems);
+				addRemoveButton(newNode);
+				parent.append(newNode);
+
+			});
+		}
+
+		function addRemoveButton(parent) {
+			var removeButton = $("<button />", {id: "removeButton", text: "Remove"});
+			parent.append(removeButton);
+			$(removeButton).click(function() {
+				parent.remove();
+			});
+		}
+
+		function updateText() {
+			text = {}
+			createJson(text, $("#items"))
+			$("#textArea").val(JSON.stringify(text));
+
+		}
+
+		function createJson(text, parent) {
+			var children = parent.children();
+			for(var i = 0; i < children.length; i++) {
+				item = $(children[i]);
+				if(item.attr("id") == "normalNode") {
+					text[item.find("#key").val()] = item.find("#value").val();
+				}
+				else if(item.attr("id") == "nestedNode") {
+					var key = item.find("#key").val();
+					text[key] = {};
+					var value = createJson(text[key], item.find("#nodeItems"));
+				}
+			}
+			return 0;
+		}
+	</script>
+</head>
+<body>
+
+</body>
+	
+
+	<div id = "items">
+	
+	</div>
+
+	<textarea id = "textArea"></textarea>
+	<button style = "display: block;" id = "updateBtn">Create JSON</button>
+</html>
