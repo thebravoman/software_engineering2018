@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Homework</title>
+   <meta charset="utf8">
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+   <style>
+     #single_node {
+       display: block;
+     }
+    </style>
+
+    <script>
+    $(document).ready(function() {
+    				myFunction($("#items"));
+    				$("#Button").click(function () {
+    					updateTextArea();
+    				});
+    			});
+
+      function myFunction(parent) {
+        var addItemButton = $("<button/>", {text: "Add Item"});
+				parent.append(addItemButton);
+				$(addItemButton).click(function() {
+					var newNode = $("<div>", {id: "single_node"});
+					parent.append(newNode);
+					var key = $("<input/>", {id: "key"});
+					var value = $("<input/>", {id: "value"});
+					newNode.append(key);
+					newNode.append($("<span>:</span>"));
+					newNode.append(value);
+        });
+      }
+
+    </script>
+
+ </head>
+
+
+<body>
+  <h2>Homework</h2>
+
+  <div id = "items">
+  </div>
+
+
+  <textarea id="objectDisplay" style="width: 50%; height: 200px;"></textarea>
+
+  <button style"display: block;"id = "Button">Refresh.</button>
+
+</body>
+</html>
