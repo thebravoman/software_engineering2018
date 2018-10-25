@@ -25,9 +25,9 @@ var addObject = (element) => {
 
 	div = document.createElement("div", {id: objectsCounter.toString()});
 
-	div.appendChild(document.createElement("input", {type: "text", style: "width: 40px;"}));
-
-	div.appendChild(document.createElement("input", {type: "text", style: "width: 40px;"}));
+	div.appendChild(document.createElement("input", {type: "text"}));
+ 	
+	div.appendChild(document.createElement("input", {type: "text"}));
 
 	var btn1 = document.createElement("button");
 
@@ -38,9 +38,12 @@ var addObject = (element) => {
 	btn1.onclick = () => {addObject(this)};
 
 	inputs.appendChild(div);
+
+	element.disabled = true;
 }
 
-var removeObject = () => {
-	objects.pop();
+var removeObject = (element) => {
+	objects.splice(element.parentElement.id, 1);
 	objectDisplay.value = objects.toString();
+	element.parentElement.children[2].disabled = false;
 }
