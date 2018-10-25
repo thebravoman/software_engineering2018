@@ -20,7 +20,13 @@ $(document).ready(function() {
 		createUpdateStateButton(count, _state, $('#' + '_divId' + count.value));
         createAddNestedNodeButton(count, _state, $('#' + '_divId' + count.value));
 		createRemoveButton(count, _state, $('#' + '_divId' + count.value));
-		$('#txtObject').show();
+
+        $('#' + (count.value-1)).hide();
+        $('#' + '_value' + (count.value-1)).hide();
+        $('#' + '_btnUpdateState' + (count.value-1)).hide();
+        $('#' + '_btnAddNestedNode' + (count.value-1)).hide();
+        $('#' + '_colon' + (count.value-1)).hide();
+        $('#txtObject').show();
 	});
 });
 function showState(state) {
