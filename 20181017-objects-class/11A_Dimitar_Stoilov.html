@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Homework</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){
+
+        var obj = {
+            "Name": "Mitko",
+            "Class": "11A"
+        };
+        $("#textarea").val(JSON.stringify(obj));
+
+        getKeyAndValue(obj);
+
+    });
+    function  getKeyAndValue(object) {
+        for (const objKey in object) {
+                
+            var div = $("<div>");
+            var key = $("<input>");
+            var value = $("<input>")
+
+            key.attr({"type":"text"})
+            key.val(objKey);
+
+              
+            value.attr({"type":"text"})
+            value.val(object[objKey]);
+
+
+            div.append(function(){
+          		return key;
+        	});
+
+        	div.append(function(){
+           		return value;
+        	});
+
+            div.appendTo($("#div"));
+        }
+	}
+</script>
+
+</head>
+
+<body>
+	<h3>textarea:</h3>
+    <textarea id="textarea"></textarea>
+    <h3>input fields: </h3>
+	<div id="div">
+	</div>
+
+</body>
+
+</html> 
+
