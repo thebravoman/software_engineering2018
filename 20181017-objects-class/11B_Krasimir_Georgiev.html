@@ -3,42 +3,99 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+		<style>
+			#single_node {
+				display: block;
+			}
+		</style>
+
 		<script>
 			$(document).ready(function() {
-				var state = {};
+				addSingleItemButton($("#items"));
+				addItemBlockButton($("#items"), 0);
 
-				$("#addItem").click(function() {
-					var newNode = $("<div>", {id: "node"});
-					$("#items").append(newNode);
+				$("#updateJSONButton").click(function () {
+					updateTextArea();
+				});
+			});
+
+			function addSingleItemButton(parent) {
+				var addItemButton = $("<button/>", {text: "Add Single Item"});
+				parent.append(addItemButton);
+
+				$(addItemButton).click(function() {
+					var newNode = $("<div>", {id: "single_node"});
+					parent.append(newNode);
 					var key = $("<input/>", {id: "key"});
 					var value = $("<input/>", {id: "value"});
 					newNode.append(key);
 					newNode.append($("<span>:</span>"));
 					newNode.append(value);
-					addUpdateButton(state, newNode);
-				});
-			});
-
-
-			function addUpdateButton(state, parent) {
-				var updateButton = $("<button/>", {text: "Update"});
-				parent.append(updateButton);
-
-				var previous_key = parent.find("#key").val();
-
-				$(updateButton).click(function() {
-					delete state[previous_key];
-					var key = parent.find("#key");
-					JSON.stringify(key.val());
-					var value = parent.find("#value");
-					state[key.val()] = value.val();
-					previous_key = key.val();
-					updateTextArea(state);
+					addRemoveItemButton(newNode);
+					newNode.append($("<br><br>"));
 				});
 			}
 
-			function updateTextArea(state) {
+			function addItemBlockButton(parent, recursion_depth) {
+				
+				var addBlockButton = $("<button/>", {text: "Add Item Block"});
+				$(parent).append(addBlockButton);
+
+				recursion_depth++;
+				$(addBlockButton).click(function() {
+					var blockNode = $("<div>", {id: "multiple_node"});
+					$(parent).append(blockNode);
+
+					var key = $("<input/>", {id: "key"});
+					
+					blockNode.append(key);
+					blockNode.append($("<span> {</span><br>"));
+					blockItems = $("<div>", {id: "block_items"});
+					blockItems.css("margin-left", recursion_depth * 20 + "px");
+					blockNode.append(blockItems);
+					addSingleItemButton(blockItems);
+					addItemBlockButton(blockItems, recursion_depth);
+					addRemoveItemButton(blockNode);
+					blockNode.append($("<p>}</p>"));
+				});
+			}
+
+			function addRemoveItemButton(parent) {
+				var removeItemButton = $("<button/>", {text: "Remove"});
+				parent.append(removeItemButton);
+
+				$(removeItemButton).click(function() {
+					parent.remove();
+				});
+			}
+
+			function updateTextArea() {
+				state = {};
+				constructJSONObject(state, $("#items"), 0);
 				$("#textArea").val(JSON.stringify(state));
+			}
+
+			function constructJSONObject(state, parent, recursion_depth) {
+				var children = parent.children();
+				for(var i = 0; i < children.length; i++) {
+					item = $(children[i]);
+					if(item.attr("id") == "single_node") {
+						// Dont know why this fixes the problem but it does 
+						if(item.data("recursion") != null && recursion_depth != item.data("recursion")) {
+							continue;
+						}
+						item.data("recursion", recursion_depth);
+
+						state[item.find("#key").val()] = item.find("#value").val();
+					}
+					else if(item.attr("id") == "multiple_node") {
+						var key = item.find("#key").val();
+						state[key] = {};
+						var value = constructJSONObject(state[key], item.find("#block_items"), recursion_depth + 1);
+					}
+				}
+				return 0;
 			}
 		</script>
 
@@ -46,14 +103,11 @@
 	</head>
 
 	<body>
-		<input type = "button" id = "showItems" value = "Show JSON">
-		<input type = "button" id = "addItem" value = "Add Node">
 		<div id = "items">
 
 		</div>
 
 		<textarea id = "textArea"></textarea>
-
-		<div
+		<button style = "display: block;" id = "updateJSONButton">Construct JSON info</button>
 	</body>
 </html>
