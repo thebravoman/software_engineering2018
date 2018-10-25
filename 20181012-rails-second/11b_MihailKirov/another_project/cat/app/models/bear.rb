@@ -1,0 +1,2 @@
+class Bear < ApplicationRecord
+end

@@ -33,24 +33,34 @@
         //}
 
     });
-    function show(object){
+    function show(object, depth = 0){
         object_keys = Object.keys(object);
         let input = $("#inputObject");
-        let br = $("<br>");
+        
         for(key of object_keys){
             
             let key_input = $("<input/>")
                             .val(key);
+            let key_str = "\xa0".repeat(depth * 8)
+            console.log(key_str);
             
+            input.append(key_str);
             input.append(key_input);
-            input.append(br);
+            //input.append("<br>");
             if(typeof object[key] === 'object'){
-                show(object[key]);
+                input.append("<br>");
+                show(object[key], depth+1);
             }
-            let value_input = $("<input/>")
-                                .val(object[key]);
+            let value_input = $("<input/>", {id: key})
+                                .val(object[key])
+           // value_input.change(function(){
+           //     object[this.id] = $(object[this.id]).val(); 
+           //     console.log(JSON.stringify(object));
+           // });
+            let value_str = "\xa0".repeat(depth * 8);
+            input.append(value_str);
             input.append(value_input);
-            input.append(br);
+            input.append("<br>");
 
         }
     }

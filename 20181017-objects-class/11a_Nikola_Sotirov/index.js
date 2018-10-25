@@ -8,6 +8,8 @@ objectsCounter = 0;
 objects = [];
 
 var addObject = (element) => {
+	console.log(inputs.children);
+
 	var div = element.parentElement;
 
 	var key = div.children[0].value;
@@ -21,9 +23,11 @@ var addObject = (element) => {
 
 	objectDisplay.value = objects.toString();
 
-	objectsCounter++;
+	objectsCounter+=1;
 
-	div = document.createElement("div", {id: objectsCounter.toString()});
+	div = document.createElement("div");
+
+	div.id = objectsCounter.toString();
 
 	div.appendChild(document.createElement("input", {type: "text"}));
  	
@@ -35,15 +39,27 @@ var addObject = (element) => {
 
 	div.appendChild(btn1);
 
-	btn1.onclick = () => {addObject(this)};
+	btn1.onclick = () => {addObject(btn1)};
+	
+	btn1 = document.createElement("button");
+
+	btn1.appendChild(document.createTextNode("Remove"));
+
+	div.appendChild(btn1);
 
 	inputs.appendChild(div);
 
-	element.disabled = true;
+	btn1.onclick = () => {removeObject(btn1)};
+
+	inputs.appendChild(div);
 }
 
 var removeObject = (element) => {
-	objects.splice(element.parentElement.id, 1);
+	objects = objects.splice(parseInt(element.parentElement.id), 1);
 	objectDisplay.value = objects.toString();
-	element.parentElement.children[2].disabled = false;
+	var id = parseInt(element.parentElement.id);
+
+	var parent = element.parentElement.parentElement
+
+	parent.removeChild(document.getElementById(element.parentElement.id));
 }
