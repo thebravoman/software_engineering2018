@@ -1,0 +1,62 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		let state={};
+		let keyInput=$("<input/>",{type:"text",id:"key",placeholder:"key"});
+		let valueInput=$("<input/>",{type:"text",id:"value",placeholder:"value"});
+		let is_object=$("<input/>",{type:"checkbox"});
+		let submit=$("<button/>",{text:"submit"});
+		let types=$("<select/>");
+		types.append($("<option/>").attr("value","root").text("root"));
+	
+		function recursion(where_to){
+			for(let prop in where_to){
+				console.log(prop);
+					if((prop!=types.val()) && (typeof where_to[prop] == "object")){
+						console.log("not found");
+						recursion(where_to[prop]);
+					}
+					else if((prop==types.val()) && (typeof where_to[prop] == "object")){
+						console.log("found");
+						return where_to[prop];
+					}
+				}
+		}
+		submit.click(function(){
+			let write_to=state;
+
+			if(types.val()!="root"){
+				write_to=recursion(state);
+				}
+			
+			let key=$("#key").val();
+			let value=$("#value").val();
+			if(is_object.prop("checked")){
+				types.append($("<option/>").attr("value",key).text(key));
+				write_to[key]=JSON.parse(value);
+			}else{
+				write_to[key]=value;
+			}
+		});
+
+		let show = $("#btnShowState");
+		show.click(()=>{
+			alert("state:"+JSON.stringify(state));
+		})
+		$("#items").append(keyInput,valueInput,is_object,submit,types);
+	});
+</script>
+<body>
+    <div>
+		<input type="button" id="btnShowState" value="Show State">
+	</div>
+	<br/>
+	<p>mark the checkbox to insert object</p>
+	<div id="items">
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var counts = 0, innercounts = 0;
+		var objects = {};
+		function addobj() {
+			counts++;
+			$("#elements").append($(`<div id="div${counts}"  style="margin-bottom: 5px">`)
+				.append($(`<input type="text" id="key${counts}" placeholder="key">`))
+				.append($(`<span>:</span>`))
+				.append($(`<input type="text" id="value${counts}" placeholder="value">`))
+				.append($(`<button onclick="update(${counts})">Update state</button>`))
+				.append($(`<button onclick="remove(${counts})">Remove</button>`)));
+		}
+
+		function update(counts, innercounts)
+		{
+			var key = $(`#key${counts}`).val();
+			var val = $(`#value${counts}`).val();
+			objects[key] = val;
+			$(`#key${counts}`).attr("disabled", true);
+			updatetxt();
+		}
+
+		function remove(counts) {
+			var key = $(`#key${counts}`).val();
+			delete objects[key];
+			$(`#div${counts}`).remove();
+			updatetxt();
+		}
+
+		function showstat() {
+			alert(JSON.stringify(objects, 2, 2));
+		}
+
+		function updatetxt() {
+			console.log(JSON.stringify(objects, 2, 2));
+			$("#txtarea").text(JSON.stringify(objects, 2, 2));
+		}
+
+
+
+
+
+		var count = 0;
+		var objects = {};
+		function addnestedobj() {
+			count++;
+			var innercount = 0;
+			$("#elements").append($(`<div id="div${count}-${innercount}" style="margin-bottom: 5px">`)
+				.append($(`<input type="text" id="key${count}-${innercount}" placeholder="key">`))
+				.append($(`<button onclick="addValue(${count}, ${innercount})" id="value${count}-${innercount}">Add Value</button>`))
+				.append($(`<button onclick="removeNested(${count}, ${innercount})" id="remove${count}${innercount}">Remove</button>`))
+				.append($(`<button onclick="newObj(${count}, ${innercount})" id="newObj${count}-${innercount}">+</button>`)));
+		}
+
+		function caller() {
+			let object = {};
+			let divs = $("#elements");
+
+			jsonrev(object, divs);
+
+			return object;
+		}
+
+		function jsonrev(currentObj, currentDiv) {
+			for(let div of $(currentDiv).children()){
+
+				if (div.localName != "div") {
+					continue;
+				}
+				div = $(div);
+				console.log(div);
+				if (div.attr("id").includes("-")) {
+					let key = div.find("input").val();
+
+					currentObj[key] = {};
+
+					jsonrev(currentObj[key], div);
+				} else {
+					let key = $(div.find("input")[0]).val();
+
+					let value = $(div.find("input")[1]).val();
+
+					currentObj[key] = value;
+				}
+			}			
+		}
+
+		function update(count, innercount)
+		{
+			objects = caller();
+			$(`#key${count}-${innercount}`).attr("disabled", true);
+			updatetxt();
+		}
+
+		function addValue(count, innercount) {
+			var key = $(`#key${count}-${innercount}`).val();
+			$(`#newObj${count}-${innercount}`).hide();
+			$(`#value${count}-${innercount}`).hide();
+			for (var i = 0; i <= innercount; i++) {
+				$(`#remove${count}${i}`).hide();
+			}
+			var div = $(`#div${count}-${innercount}`);
+			innercount++;
+			div.append($(`<span>:</span>`))
+				.append($(`<input type="text" id="value${count}${innercount}" placeholder="value">`))
+				.append($(`<button onclick="removeNested(${count}, ${innercount})" id="remove${count}${innercount}">Remove</button>`))
+				.append($(`<button onclick="update(${count}, ${innercount})">Update state</button>`));
+			$(`#div${count}-${innercount}`).animate({marginLeft: `+=20px`});
+			innercount--;
+			div.attr("id", `div${count}${innercount}`);
+		}
+
+		function newObj(count, innercount) 
+		{
+			$(`#newObj${count}-${innercount}`).hide();
+			$(`#value${count}-${innercount}`).hide();
+			var div = $(`#div${count}-${innercount}`);
+			innercount++;
+			div.append($(`<div id="div${count}-${innercount}" style="margin-bottom: 5px">`)
+				.append($(`<input type="text" id="key${count}-${innercount}" placeholder="key">`))
+				.append($(`<button onclick="addValue(${count}, ${innercount})" id="value${count}-${innercount}">Add Value</button>`))
+				.append($(`<button onclick="removeNested(${count}, ${innercount})" id="remove${count}${innercount}">Remove</button>`))
+				.append($(`<button onclick="newObj(${count}, ${innercount})" id="newObj${count}-${innercount}">+</button>`)));
+			$(`#div${count}-${innercount}`).animate({marginLeft: `+=20px`});
+		}
+
+		function removeNested(count, innercount) {
+			var key = $(`#key${count}-${0}`).val();
+			delete objects[key];
+			updatetxt();
+			$(`#key${count}-${0}`).parent().remove();
+			if (innercount > 0) {
+				$(`#newObj${count}-${innercount-1}`).show();
+			}
+		}
+	</script>
+	<style type="text/css">
+		input:hover{
+			
+		}
+		#elements div input:focus, textarea{
+			outline-color: #00FFFF;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div id="up">
+			<input type="button" value="Add Object" id="add" onclick="addobj()">
+			<input type="button" value="Add Nested Object" id="add" onclick="addnestedobj()">
+			<input type="button" value="Show state" onclick="showstat()">
+			<div><hr></div>
+		</div>
+		<div id="elements">
+		</div>
+		<hr>
+		<div id="items">
+			<textarea id="txtarea" style="width: 400px; height: 200px;"></textarea>
+		</div>
+	</div>
+</body>
+</html>

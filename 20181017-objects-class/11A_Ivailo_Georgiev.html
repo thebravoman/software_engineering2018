@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	</head>
+
+	<body>
+		<textarea id=3></textarea>
+		<div id="key"></div>
+		<script type="text/javascript">
+		
+			$(document).ready(function() {
+				var jsonflat = {"first" : 4, "second": 14}
+				document.getElementById(3).value = JSON.stringify(jsonflat)
+						var div = $("#key")
+						var json_keys = Object.keys(jsonflat)
+
+						for(var i=0; i < json_keys.length; i++){
+							var new_div = $("<div></div>", {id:i})
+							var new_k = $("<input />", {id:i, val:json_keys[i]}).prop('disabled', true);
+							var new_v = $("<input />", {id:i, val:jsonflat[json_keys[i]]}).prop('disabled', true);
+							new_div.append(new_k)
+							new_div.append(new_v)
+							div.append(new_div)
+						}
+				}
+			);	
+		</script>
+	</body>
+</html>
