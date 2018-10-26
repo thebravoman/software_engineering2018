@@ -1,0 +1,12 @@
+<%= form_tag("/calculations", method: "post") do %>
+  <%= text_field_tag(:a) %>
+  <%= text_field_tag(:b) %>
+  <%= text_field_tag(:b) %>
+  <%= submit_tag("Find Roots") %>
+<% end %>
+
+<%= @equation %>
+
+<br>
+
+<%= @result %>
