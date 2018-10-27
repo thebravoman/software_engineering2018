@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+	<!--textovoto pole-->
+    <textarea id="mqstokudetopokazwameinfoto" cols="30" rows="10" disabled></textarea>
+    <h4>Сегашното положение на JSON -a</h4>
+	<!--towa e razdelenieto m/u textarea-ta i poletata-->
+    <hr />
+    <h4>Положението на JSON-а като полета
+	</h4>
+	<!--poletata ot json-a -->
+    <div id="mqstokudetopodavameinfo"></div>
+
+		<script>
+		<!--funciqta za textovoto pole---->
+			function funkciqtakoqto_pokazwa_texta(object) {
+				$("#mqstokudetopokazwameinfoto").val(JSON.stringify(object));
+			}
+			<!--funciqta za pokazwane na imputa-->
+			function funkciqta_za_text_poletata(object) {
+				for (const objKey in object) {
+					let div = $("<div>");
+					let key = $("<input>")
+						.attr("type", "text")
+						.attr("disabled", true)
+						.val(objKey);
+					let value = $("<input>")
+						.attr("type", "text")
+						.attr("disabled", true)
+						.val(object[objKey]);
+						div.append(key)
+						.append(value);
+						div.appendTo($("#mqstokudetopodavameinfo"));
+				}
+			}
+			<!--samiq imput-->
+			let text = {
+				"nqkuv": "text",
+				"majko": "mila"
+			};
+			<!--vikaneto na funkciite-->
+			funkciqtakoqto_pokazwa_texta(text);
+			funkciqta_za_text_poletata(text);
+		</script>
+	</body>
+</html>
