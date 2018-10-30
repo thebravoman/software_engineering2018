@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+	
+    <textarea id="json"></textarea>  
+    <div id="json2"></div>
+
+		<script>
+			var Json = {
+				"Hello": "world",
+				"Tues": "is the best"
+			};			
+			$("#json").val(JSON.stringify(Json));
+			
+			
+			for (const obj in Json) {
+				var div = $("<div>");
+				var key = $("<input>")
+					.attr("type", "text")					
+					.val(obj);
+				var value = $("<input>")
+					.attr("type", "text")					
+					.val(Json[obj]);
+					div.append(key)
+					.append(value);
+					div.appendTo($("#json2"));
+			}		
+			
+		</script>
+	</body>
+</html>
