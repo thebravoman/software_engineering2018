@@ -1,0 +1,30 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $.ajax({
+    url: "https://jsonplaceholder.typicode.com/todos/1",
+    type: "GET",
+    dataType: "json",
+    crossDomain: true,
+    processData: false,
+    success:  function (data, status, xhr){
+      var jsonObject = JSON.parse(JSON.stringify(data)) ;
+      var keys = Object.keys(jsonObject);
+      for (var index in keys) {
+        var key = keys[index];
+        var li = $("<li/>", { text: jsonObject[key]});
+        $('#container').append(li);
+      }
+    },
+    error: function(data, status, xhr) {
+        alert(JSON.stringify(data));
+    }
+  });
+});
+</script>
+<body>
+	<div id="container">
+	</div>
+</body>
+</html>
