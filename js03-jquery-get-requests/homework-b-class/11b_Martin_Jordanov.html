@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #input {
+          width: 50%;
+        }
+    </style>
+    <script>
+
+        $(document).ready(() => {
+          $("#input").val('{"salam":"kartof","domat":"sol"}');
+          loadObject();
+        });
+
+        $("#input").change(loadObject);
+
+        function loadObject() {
+            let obj = JSON.parse($("#input").val());
+            showObject(obj);
+        }
+
+        function showObject(object) {
+            $("#container").empty();
+
+            for (currentKey in object) {
+                let span = $("<span>")
+                    .attr("id", currentKey)
+                    .attr("class", "pairs")
+
+                let key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(currentKey);
+
+                let value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(object[currentKey]);
+
+                let br = $("<br>")
+
+                span.append(key)
+                    .append(value)
+                    .append(br);
+
+                span.appendTo($("#container"));
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>My implementation of the HW</h3>
+    <textarea id="input" cols="30" rows="10"></textarea>
+
+    <div id="container"></div>
+    <h5>Съжалявам ако нещо съм объркал, но отсъствах, а условието не го рабирам добре</h5>
+
+
+</body>
+</html>
