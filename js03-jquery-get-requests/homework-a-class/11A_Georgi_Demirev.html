@@ -3,33 +3,47 @@
 <head>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
-		$.ajax({
-			url: "https://jsonplaceholder.typicode.com/todos/1",
-			type: "GET",
-			dataType: "json",
-			crossDomain: true,
-			processData: false,
-			success: function(data, status, xhr) {
-				for (var k in data) {
-					var ul = $("<ul/>")
-					var dataHolderKey = $("<li />");
-					dataHolderKey.text(JSON.stringify(k));
-					var dataHolderVal = $("<li />");
-					var value = data[k];
-					dataHolderVal.text(JSON.stringify(value));
-					ul.append(dataHolderKey);
-					ul.append(dataHolderVal);
-					parent = $("#container");
-					parent.append(ul);
-				}
-				parent.append("}")
-							
-			}});
+		$(document).ready(function() {
+			var jsonBtn = $("<button />", {text: "JsonUrl"});
+			parent = $("#container");
+			parent.append(jsonBtn);
+			$(jsonBtn).click(function() {
+				$.ajax({
+					url: $("#jsonUrl").val(),
+					type: "GET",
+					dataType: "json",
+					crossDomain: true,
+					processData: false,
+					success: function(data, status, xhr) {
+						var statusHolder = {};
+						var objectHolder = data;
+						var textArea = $("#textArea");
+						var text = {}
+						text["status"] = status;
+						text["object"] = objectHolder;
+
+						textArea.val(JSON.stringify(text));
+								
+					},
+					error: function(xhr, status, error) {
+						var textArea = $("#textArea");
+						var text = {}
+						var statusHolder = {};
+						text["success"] = "false";
+						text["statusCode"] = xhr.status;
+						textArea.val(JSON.stringify(text));
+					}
+				})
+			});
+		});
+		
+		
 	</script>
 </head>
 <body>
+	<input type="text" id="jsonUrl">
 	<div id="container">
-		{
+		<textarea id="textArea"></textarea>
 	</div>
 </body>
 </html>
