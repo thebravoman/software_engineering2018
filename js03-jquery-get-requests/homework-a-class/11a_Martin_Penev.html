@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+        <style>
+            #container{
+                font-size: 30px;
+                margin: auto;
+                width: 50%;
+                border: 3px solid black;
+                padding: 10px;
+                align-items: center;
+            }
+
+            li{
+                margin-bottom: 3%;
+            }
+
+            #btn{
+                display : block; 
+                margin-left: auto;
+                margin-right: auto;
+                width: 30%;
+                padding: 20px;
+            }
+        </style>
+
+        <script>
+        $(document).ready(function(){
+
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos/1",
+                type: "GET",
+                dataType: "json",
+                crossDomain: true,
+                processData: false,
+
+                success: function(data, status, xhr){
+                    var ulist = $("<ul>");
+                    for(var key in data){
+                    var next_element = $("<li>" + key + "  ->  " + data[key] + "</li>");
+
+                    ulist.append(next_element);
+                    }
+                    // ulist.append("</ul>");
+                    $("#container").append(ulist); 
+                    showAlertMessage(data, $("#container"));
+                },
+
+                error: function(data, status, xhr){
+                    alert(JSON.stringify(data));
+                }
+                
+            })
+
+            function showAlertMessage(data, parent){
+                var btn = $("<button />", {id : "btn",
+                                            text : "Show Alert"});
+                                            
+                parent.append(btn);
+
+                btn.click(function(){
+                    alert(JSON.stringify(data));
+                });
+            }
+        });
+        </script>
+    </head>
+    <body>
+        <div id = "container">
+
+        </div>
+
+    </body>
+</html>
