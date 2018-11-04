@@ -14,9 +14,14 @@ var btnClick = () => {
 
     Http.onreadystatechange = () => 
     {
-        var res = document.createTextNode(Http.responseText);
+        if (Http.status == 200 && url != ""){
+            var res = document.createTextNode(`${Http.responseText}\n`);
 
-        container.appendChild(res);
+            container.appendChild(res);
+        }
+        else{
+            container.appendChild(document.createTextNode("WRONG URL!!!\n"));
+        }
     }
 }
 
