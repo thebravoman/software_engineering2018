@@ -1,9 +1,9 @@
 var btn = document.getElementById("btn");
 
-var container = document.getElementById("container");
-
 var btnClick = () => {
-    container.removeChild(container.childNodes[0]);
+    var container = document.getElementById("container");
+
+    container.value = "";
 
     var url = document.getElementById("url").value;
 
@@ -26,9 +26,9 @@ var btnClick = () => {
                 return;
             }
 
-            var res = document.createTextNode(`${JSON.stringify(obj, null, 2)}\n`);
+            //var res = document.createTextNode(`${JSON.stringify(obj, null, 2)}\n`);
 
-            container.appendChild(res);
+            container.value = JSON.stringify(obj, null, 2);
 
             return;
         }
@@ -37,7 +37,9 @@ var btnClick = () => {
 
             obj["statusCode"] = Http.status;
 
-            container.appendChild(document.createTextNode(`${JSON.stringify(obj, null, 2)}\n`));
+            //container.appendChild(document.createTextNode(`${JSON.stringify(obj, null, 2)}\n`));
+
+            container.value = JSON.stringify(obj, null, 2);
 
             return;
 
