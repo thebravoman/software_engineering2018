@@ -3,73 +3,48 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
-        <style>
-            #container{
-                font-size: 30px;
-                margin: auto;
-                width: 50%;
-                border: 3px solid black;
-                padding: 10px;
-                align-items: center;
-            }
-
-            li{
-                margin-bottom: 3%;
-            }
-
-            #btn{
-                display : block; 
-                margin-left: auto;
-                margin-right: auto;
-                width: 30%;
-                padding: 20px;
-            }
-        </style>
-
         <script>
         $(document).ready(function(){
 
-            $.ajax({
-                url: "https://jsonplaceholder.typicode.com/todos/1",
-                type: "GET",
-                dataType: "json",
-                crossDomain: true,
-                processData: false,
+           $("#btnLoadJson").click(function(){
 
-                success: function(data, status, xhr){
-                    var ulist = $("<ul>");
-                    for(var key in data){
-                    var next_element = $("<li>" + key + "  ->  " + data[key] + "</li>");
+               $.ajax({
+                   url: $("#txtJsonUrl").val(),
+                   type: "GET",
+                   dataType: "json",
+                   crossDomain: true,
+                   processData: false,
+                   success: function(data, status, xhr){
+                       var new_state = {"status" : "success", object : data};
+                        invalidate_state(new_state);
+                   },
 
-                    ulist.append(next_element);
-                    }
-                    // ulist.append("</ul>");
-                    $("#container").append(ulist); 
-                    showAlertMessage(data, $("#container"));
-                },
+                   error: function(data, status, xhr){
+                        var message = { "success" : false, "statusCode" : 404};
+                        invalidate_state(message);
+                   }
 
-                error: function(data, status, xhr){
-                    alert(JSON.stringify(data));
-                }
-                
-            })
+               });
 
-            function showAlertMessage(data, parent){
-                var btn = $("<button />", {id : "btn",
-                                            text : "Show Alert"});
-                                            
-                parent.append(btn);
+           });   
 
-                btn.click(function(){
-                    alert(JSON.stringify(data));
-                });
+  
+            function invalidate_state(new_message){
+                $("#resultArea").val(JSON.stringify(new_message, 2, 2));    
             }
+
         });
         </script>
-    </head>
-    <body>
-        <div id = "container">
 
+    </head>
+
+    <body>
+        <div id = "container">  
+            <input type="text"  id="txtJsonUrl" style = "width: 50%"    >
+            <input type="button" id="btnLoadJson" value = "GET">
+        </div>
+        <div id = "textareaHolder">
+            <textarea name="result area" id="resultArea" style = "width: 50%; height: 20%"></textarea>
         </div>
 
     </body>
