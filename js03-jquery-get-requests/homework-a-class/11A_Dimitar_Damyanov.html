@@ -16,7 +16,7 @@ $(document).ready(function() {
                     
               },
               error: function(xhr, status, error) {
-                let res = {succsess:false,statusCode:404};
+                let res = {succsess:false,statusCode:xhr.status};
                 alert(JSON.stringify(res));
               }
             })}
