@@ -1,0 +1,31 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  let adress_input = $("<input/>",{type:"text",id:"url"});
+  let btn = $("<button/>",{id:"btn",text:"send req"}).click(
+    ()=>{$.ajax({
+              url: $("#url").val(),
+              type: "GET",
+              dataType: "json",
+              crossDomain: true,
+              processData: false,
+              success: function(data, status, xhr) {
+                let res = {status:status,object:data};
+                alert(JSON.stringify(res));
+                    
+              },
+              error: function(xhr, status, error) {
+                let res = {succsess:false,statusCode:xhr.status};
+                alert(JSON.stringify(res));
+              }
+            })}
+    );
+    $("#container").append(adress_input,btn);
+});
+</script>
+<body>
+	<div id="container">
+	</div>
+</body>
+</html>
