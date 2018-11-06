@@ -11,12 +11,14 @@ $(document).ready(function() {
               crossDomain: true,
               processData: false,
               success: function(data, status, xhr) {
+                console.log(data);
                 let res = {status:status,object:data};
                 alert(JSON.stringify(res));
                     
               },
-              error: function(xhr, status, error) {
-                let res = {succsess:false,statusCode:xhr.status};
+              error: function(data, status, xhr) {
+                console.log(data);
+                let res = {succsess:false,statusCode:data.status};
                 alert(JSON.stringify(res));
               }
             })}
