@@ -16,14 +16,11 @@
 					processData: false,
 					success: function(data, status, xhr) {
 						var statusHolder = {};
-						var objectHolder = data;
 						var textArea = $("#textArea");
 						var text = {}
 						text["status"] = status;
-						text["object"] = objectHolder;
-
-						textArea.val(JSON.stringify(text));
-								
+						text["object"] = data;
+						textArea.text(JSON.stringify(text, 2, 2));
 					},
 					error: function(xhr, status, error) {
 						var textArea = $("#textArea");
@@ -31,12 +28,11 @@
 						var statusHolder = {};
 						text["success"] = "false";
 						text["statusCode"] = xhr.status;
-						textArea.val(JSON.stringify(text));
+						textArea.text(JSON.stringify(text, 2, 2));
 					}
 				})
 			});
 		});
-		
 		
 	</script>
 </head>
