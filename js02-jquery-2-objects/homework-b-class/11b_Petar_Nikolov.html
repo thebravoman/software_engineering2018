@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Solution</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <style>
+      #textState {
+        width: 520px;
+        height: 480px;
+        display: none;
+      }
+    </style>
+    <script>
+      function stringifyObject(obj, indentation=1, indentSize=2) {
+        var output = `{\n`;
+
+        for (var property in obj) {
+          if (obj.hasOwnProperty(property)) {
+            output += ' '.repeat(indentSize * indentation);  // indentation
+            output += `${property}: `;  // key
+            if (typeof obj[property] == 'object') {
+              output += `${stringifyObject(obj[property], indentation + 1)}`;
+            } else {
+              output += `${obj[property]},\n`;  // value
+            }
+          }
+        }
+        output += `${' '.repeat(indentSize * (indentation-1))}}\n`;
+        return output;
+      }
+
+      $(document).ready(function() {
+        var state = {
+          'hello': 'hi',
+          'world': 'waddup',
+          'obj': {
+            'waddup': 2,
+            'my': 'bad',
+            5: {
+              'hello': {
+                2: 6
+              }
+            }
+          }
+        };
+
+        $('#btnShowState').click(function() {
+          $('#textState').val(stringifyObject(state));
+          $('#textState').show();
+        });
+        console.log(stringifyObject(state));
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="button" id="btnShowState" value="Show state" />
+    </div>
+    <div>
+      <textarea id="textState" disabled></textarea>
+    </div>
+  </body>
+</html>
+
