@@ -1,0 +1,40 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#btnLoadJSON").click(function() {
+  	  var txtjsonurl = $("#txtJsonUrl").val();
+	  $.ajax({
+		url: txtjsonurl,
+		type: "GET",
+		dataType: "json",
+		crossDomain: true,
+		processData: false,
+		success:  function (data, status, xhr){
+			 var jsonObject = JSON.parse(JSON.stringify(data));
+		      var res = {};
+		      res.status = "success";
+		      res.object = jsonObject;
+		      $("#txtObject").val(JSON.stringify(res));
+			  
+		},
+		error: function(data, status, xhr) {
+			var res = {};
+			res.status = false;
+			res.statusCode = data.status;
+		    $("#txtObject").val(JSON.stringify(res));
+		}
+	  });
+  });
+});
+</script>
+<body>
+	<div id="container">
+		<input type = "text" id = "txtJsonUrl">
+		<input type="button" id="btnLoadJSON" value ="Add Object">
+	</div>
+	<br/>
+	<textarea style="width:520px; height: 480px;" id="txtObject"></textarea>
+
+</body>
+</html>
