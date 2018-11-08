@@ -11,15 +11,15 @@ $(document).ready(() => {
 				let text = '';
 				for (let key of Object.keys(data)) {
 					text = key + ': ' + data[key];
-					let item = $(`<li>${text}</li>`);
+					let item = $(`<p>${text}</p>`);
 					$('#container').append(item);
 				}
 				$('#container').append('}<br><br>');
 			},
 			error: (data, status, xhr) => {
 				$('#container').append('{');
-				$('#container').append($(`<li>success: false</li>`));
-				$('#container').append($(`<li>statusCode: ${data.status}</li>`));
+				$('#container').append($(`<p>success: false</p>`));
+				$('#container').append($(`<p>statusCode: ${data.status}</p>`));
 				$('#container').append('}<br><br>');
 			}
 		});
