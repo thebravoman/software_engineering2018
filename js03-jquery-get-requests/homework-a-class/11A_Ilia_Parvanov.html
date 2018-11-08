@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax request with jquery</title>
+</head>
+
+<body>
+    <div id="root">
+        <input type="text" id="txtJsonUrl">
+        <input type="button" id="btnLoadJSON" value="Load JSON">
+    </div>
+    <div id="container">
+        <textarea style="width:350px; height: 350px; display: none;" id="txtObject" ></textarea>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#btnLoadJSON").click(function() {
+        var url = $("#txtJsonUrl").val();
+        makeRequest(url);
+    });
+    function makeRequest(url) {
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            crossDomain: true,
+            processData: false,
+            success: function(data, status, xhr) {
+                var objToShow = {
+                    "status": "success",
+                    "object": data
+                }
+                displayJSON(objToShow)
+            },
+            error: function(data, status, xhr) {
+                var objToShow = {
+                    "success": "false",
+                    "statusCode": data.status
+                }
+                displayJSON(objToShow);
+            }
+
+            });
+    }
+    function displayJSON(data) {
+        $("#txtObject").val(JSON.stringify(data, 2, 2));
+        $("#txtObject").show();
+    }
+</script>
+</body>
+</html>
