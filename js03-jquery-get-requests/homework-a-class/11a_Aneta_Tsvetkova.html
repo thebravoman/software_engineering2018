@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GET</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#txt").hide();
+		});
+		function request() {
+				$.ajax({
+					url: $("#httpAddress").val(),
+					type: "GET", 
+					dataType: "json",
+					crossDomain: true,
+					processData: false,
+					success: function (data, status, xhr) {
+						var objects = {
+							"status" : "success", 
+							"object" : data
+						};
+						$("#txt").show();
+						$("#txt").text(JSON.stringify(objects, 2, 2));
+					},
+					error: function (data, status, xhr) {
+						var objects = {
+							"success" : false, 
+							"statusCode" : data.status
+						};
+						$("#txt").show();
+						$("#txt").text(JSON.stringify(objects, 2, 2));
+					}
+				});
+			}
+	</script>
+	<style type="text/css">
+		button:hover {
+			background-color: grey;
+			outline-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<input style="font-size: 20px" type="text" id="httpAddress" placeholder="http">
+	<button style="font-size: 20px" id="getbut" onclick="request()">Submit</button>
+	<hr>
+	<div id="object">
+		<textarea id="txt" style="width: 500px; height: 300px"></textarea>
+	</div>
+</body>
+</html>
