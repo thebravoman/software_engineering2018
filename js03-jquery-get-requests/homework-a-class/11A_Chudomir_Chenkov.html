@@ -16,15 +16,13 @@
               var jsonObject = JSON.parse(JSON.stringify(data));
               console.log(jsonObject);
               var result = {};
-              var success = "success";
-              result.status = success;
+              result.status = "success";
               result.object = jsonObject;
               $("#txtObject").val(JSON.stringify(result, 2, 2));
             },
             error: function(data, status, xhr) {
               var result = {};
-              var success = false;
-              result.status = success;
+              result.status = false;
               result.statusCode = data.status;
               console.log(result);
               $("#txtObject").val(JSON.stringify(result, 2, 2));
