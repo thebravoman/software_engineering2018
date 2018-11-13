@@ -1,0 +1,37 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	var state = {};
+	state["key1"] = 1;
+	state["key2"] = 2;
+	invalidateState(state);
+	var i = 0;
+	for(obj in state){
+		let key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(obj);
+                let value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(state[obj]);
+		var newline = $("<br>")		
+				
+		$('#items').append(key);
+		$('#items').append(value);
+		$('#items').append(newline);				
+	}
+	
+});
+function invalidateState(state) {
+  $('#txtObject').val(JSON.stringify(state, 2, 2));
+}
+</script>
+<body>
+   	<textarea style="width:520px; height: 480px;" id="txtObject"></textarea>
+	<div id  = "items">
+		
+	</div>
+</body>
+</html>
