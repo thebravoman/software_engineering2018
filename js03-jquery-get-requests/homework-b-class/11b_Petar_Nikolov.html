@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Homework</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+      }
+
+      #input-url {
+        width: 500px;
+      }
+    </style>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script>
+      // function from last homework
+      function stringifyObject(obj, indentation=1, indentSize=2) {
+        var output = `{\n`;
+
+        for (var property in obj) {
+          if (obj.hasOwnProperty(property)) {
+            output += ' '.repeat(indentSize * indentation);  // indentation
+            output += `${property}: `;  // key
+            if (typeof obj[property] == 'object') {
+              output += `${stringifyObject(obj[property], indentation + 1)}`;
+            } else {
+              output += `${obj[property]},\n`;  // value
+            }
+          }
+        }
+        output += `${' '.repeat(indentSize * (indentation-1))}}\n`;
+        return output;
+      }
+
+      function visualizeJSON(container_id, json) {
+        $(`#${container_id}`).val(stringifyObject(JSON.parse(json)));
+      }
+
+      function requestJSON(url, container_id) {
+        $.ajax({
+          url: url,
+          type: "GET",
+          dataType: "json",
+          crossDomain: true,
+          processData: false,
+          success: function(data, status, xhr) {
+            console.log(`Success (status code: ${xhr.status}): ${JSON.stringify(data)}`);
+            visualizeJSON(container_id, JSON.stringify(data));
+          },
+          error: function(xhr, status, errorThrown) {
+            alert("error occurred during request (check console for details)");
+            console.log(`Error (status code: ${xhr.status}): ${JSON.stringify(xhr)}`);
+          }
+        });
+      }
+
+      $(document).ready(function() {
+        $('#btn-request').click(function() {
+          let requestedURL = $('#input-url').val();
+
+          requestJSON(requestedURL, "container");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label for="input-url">URL:</label><br />
+    <input id="input-url" type="text" value="url" /><br />
+    <button id="btn-request" type="button">Request JSON</button><br />
+    <textarea id="container" disabled></textarea>
+  </body>
+</html>
+
