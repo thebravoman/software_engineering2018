@@ -1,0 +1,44 @@
+<html lang='en'>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#btnSubmit').click(function(){
+      var url_json = $('#urlTxt').val();
+      console.log(url_json);
+      var result = {};
+      $.ajax({
+        url: url_json,
+        type: "GET",
+        dataType: "json",
+        crossDomain: true,
+        processData: false,
+        success:  function (data, status, xhr){
+          var jsonObject = JSON.parse(JSON.stringify(data));
+          result.status = "success";
+          result.object = jsonObject;
+          alert(JSON.stringify(result, 3, 3));
+        },
+        error: function(data, status, xhr) {
+          result.success = false;
+          result.statusCode = data.status;
+          alert(JSON.stringify(result, 3, 3));
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+	<div id="container">
+    <input type="text" id="urlTxt">
+    <input type="button" id="btnSubmit" value="Submit">
+	</div>
+  <!--
+  <div>
+    <img src='https://cigarjukebox.files.wordpress.com/2018/02/unicorn-clipart-chubby-1.jpg' height="250px" width="250px" alt='Happy Unicorns'>
+  </div>
+  -->
+</body>
+</html>
