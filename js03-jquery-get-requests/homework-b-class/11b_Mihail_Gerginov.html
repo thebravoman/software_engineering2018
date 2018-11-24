@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Homework</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="url" /><br />
+      <button id="submit">Send Request</button><br />
+      <br />
+      <ul id="output"></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      function renderObject(obj, list) {
+        for(const objKey in obj) {
+          let ul = $('<ul>');
+          if(typeof obj[objKey] === 'object') {
+            list.append($('<li>').text(`${objKey}:`));
+            renderObject(obj[objKey], ul);
+            list.append(ul);
+          } else {
+            list.append($('<li>').text(`${objKey}: ${obj[objKey]}`));
+          }
+        }
+      }
+      $("#submit").click(function() {
+        $('#output').empty();
+        $.ajax({
+          url: $("#url").val(),
+          type: "GET",
+          dataType: "json",
+          crossDomain: true,
+          processData: false
+        }).then(function(output) {
+          renderObject(output, $('#output'));
+        }).catch(function(err) {
+          $('#output').append('An error occurred while processing the request. Status code: ' + err.status);
+          console.log(err);
+        });
+      });
+    </script>
+  </body>
+</html>
+
