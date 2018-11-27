@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title> HOME WORK </title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+    
+    		$("#button").click(function(){
+    		var url = $("#input").val();
+			getResource(url);	
+    		});
+    
+    
+   			function getResource(url){
+	 		$.ajax({
+	    		url: url,
+	    		type: "GET",
+	    		dataType: "json",
+	    		crossDomain: true,
+	    		processData: false,
+	    		success:  function (data, status, xhr){
+	      		var jsonObject = JSON.parse(JSON.stringify(data)) ;
+		  		$("#ijson").append(JSON.stringify(jsonObject));
+	      		var keys = Object.keys(jsonObject);
+	      		for (var index in keys) {
+				var key = keys[index];
+				var li = $("<li/>", { text: jsonObject[key]});
+				$('#container').append(li);		
+	      		}	      
+	    		},
+		
+	    		error: function(data, status, xhr) {
+				alert(JSON.stringify(status));
+	    		}
+	  		});
+   		}
+		});
+	</script>
+</head>
+
+<body>
+	<h3>json textarea</h3>
+	
+	<textarea id = "ijson", cols=100></textarea>
+	</br>
+	<input type="text" id = "input"></input>
+	<button id = "button">Submit URL</button>
+	</br>
+	<h3>json</h3>
+	</br>
+	<div id = "container">
+	</div>
+
+	
+</body>
+</html> 
