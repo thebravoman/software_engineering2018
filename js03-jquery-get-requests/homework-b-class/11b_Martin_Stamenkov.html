@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Homework 3</title>
+    </head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $("#send").click(function(){
+        var url_adress = $("#input").val();
+        get_recuest(url_adress);
+
+        });
+        
+        
+        function get_recuest(url_adress) {
+          $.ajax({
+            url: url_adress,
+            type: "GET",
+            dataType: "json",
+            crossDomain: true,
+            processData: false,
+            success:  function (data, status, xhr){
+              var jsonObject = JSON.parse(JSON.stringify(data)) ;
+              var keys = Object.keys(jsonObject);
+              for (var index in keys) {
+                var key = keys[index];
+                var li = $("<li/>", { text: jsonObject[key]});
+                $('#container').append(li);
+              }
+                $("#result").append(JSON.stringify(jsonObject));
+            },
+
+            error: function(data, status, xhr) {
+                alert(JSON.stringify(status));
+            }
+          });
+    };
+});
+</script>
+<body>
+    <h1>Homework js3</h1>
+	<div id="container">
+        <textarea style="width: 350px" id = "input"></textarea>
+        <br/>
+      <button id="send">Send</button>
+        <br/>
+        <textarea style="width: 200px; height: 100px" id = "result"></textarea>
+	</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,11 +10,7 @@
     
     		$("#button").click(function(){
     		var url = $("#input").val();
-			getResource(url);	
-    		});
-    
-    
-   			function getResource(url){
+   			
 	 		$.ajax({
 	    		url: url,
 	    		type: "GET",
@@ -21,21 +18,23 @@
 	    		crossDomain: true,
 	    		processData: false,
 	    		success:  function (data, status, xhr){
-	      		var jsonObject = JSON.parse(JSON.stringify(data)) ;
-		  		$("#ijson").append(JSON.stringify(jsonObject));
-	      		var keys = Object.keys(jsonObject);
-	      		for (var index in keys) {
-				var key = keys[index];
-				var li = $("<li/>", { text: jsonObject[key]});
-				$('#container').append(li);		
-	      		}	      
+	      			var jsonObject = JSON.parse(JSON.stringify(data)) ;
+		  			$("#ijson").append(JSON.stringify(jsonObject));
+	      			var keys = Object.keys(jsonObject);
+	      			for (var index in keys) {
+						var key = keys[index];
+						var li = $("<li/>", { text: jsonObject[key]});
+						$('#container').append(li);		
+	      			}	      
 	    		},
 		
 	    		error: function(data, status, xhr) {
 				alert(JSON.stringify(status));
 	    		}
-	  		});
-   		}
+		
+	  		
+   			});
+			});
 		});
 	</script>
 </head>
