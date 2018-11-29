@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	function getResource(val){
+	 $.ajax({
+	    url: val,
+	    type: "GET",
+	    dataType: "json",
+	    crossDomain: true,
+	    processData: false,
+	    success:  function (data, status, xhr){
+	      var jsonObject = JSON.parse(JSON.stringify(data)) ;
+	      var keys = Object.keys(jsonObject);
+	      for (var index in keys) {
+			var key = keys[index];
+			var li = $("<li/>", { text: jsonObject[key]});
+			$('#container').append(li);
+	      	}
+
+	      $("#jsonItems").append(JSON.stringify(jsonObject));
+	    },
+
+	    error: function(data, status, xhr) {
+			alert(JSON.stringify(status));
+	    }
+	  });
+   }
+
+    $("#button").click(function(){
+
+	getResource($("#input").val());
+    
+    });
+    
+    
+   
+});
+</script>
+</head>
+
+<body>
+	<div id = "container">
+	
+	</div>
+	<input type="text" id = "input"></input>
+	<button id = "button">Submit</button>
+
+	</br>
+	<textarea id = "Items"></textarea>
+</body>
+</html> 
