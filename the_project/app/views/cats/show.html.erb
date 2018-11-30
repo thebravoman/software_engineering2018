@@ -5,4 +5,6 @@
   Weight: <%= @cat.weight %> <br/>
   <br/>
 
+  <%= link_to 'Edit', edit_cat_path(@cat) %> <br/>
+  <%= link_to 'Delete', cat_path(@cat), method: :delete, data: { confirm: 'For real?' } %> <br/>
   <%= link_to 'Back to all cats', cats_path %>
