@@ -15,8 +15,8 @@
 						success: function(data, status, xhr){
 							alert(JSON.stringify({status:status,object:data}));
 						},
-						error: function(data, status, xhr) {
-							alert(JSON.stringify({succsess:false,statusCode:404}));
+						error: function(xhr, status, error) {
+							alert(JSON.stringify({succsess:false,statusCode:xhr.status}));
 						}
 
 					});

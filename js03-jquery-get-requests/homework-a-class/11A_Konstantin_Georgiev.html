@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btnready").click(function() {
+          var resulturl = $("#texturl").val();
+          console.log(resulturl);
+          $.ajax({
+            url: resulturl,
+            type: "GET",
+            dataType: "json",
+            crossDomain: true,
+            processData: false,
+            success: function(data, status, xhr) {
+              var JSONobject = JSON.parse(JSON.stringify(data));
+              console.log(JSONobject);
+              var finalresult = {};
+              finalresult.status = "success";
+              finalresult.object = jsonObject;
+              document.getElementById("res").innerHTML = JSON.stringify(finalresult, 2, 2);
+            },
+            error: function(data, status, xhr) {
+              var finalresult = {};
+              finalresult.status = false;
+              finalresult.statusCode = data.status;
+              console.log(finalresult);
+              document.getElementById("res").innerHTML = JSON.stringify(finalresult, 2, 2);
+            }});});});
+    </script>
+  </head>
+
+  <body style="text-align: center;">
+    <div id="container">
+      <input type="text" id="texturl">
+      <button id="btnready">Load</button>
+    </div>
+    <p id="res"></p>
+  </body>
+</html>

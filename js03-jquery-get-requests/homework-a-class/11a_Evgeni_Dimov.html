@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function getObject(){
+			let url = $("#url").val();
+			$.ajax({
+				method: "GET",
+				url: url,
+				success: visualize,
+				error: visualize
+			});
+		}
+
+		function visualize(obj){
+			$("#obj").text(JSON.stringify(obj, 2, 2));
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="url"/>
+	<button onclick="getObject()">Yes</button>
+	<textarea id="obj"></textarea>
+</body>
+</html>
