@@ -1,0 +1,15 @@
+<h1>People#edit</h1>
+<p>Find me in app/views/people/edit.html.erb</p>
+
+<%= form_for @person do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :age %>
+  <%= f.number_field :age %><br/>
+  <%= f.label :sex %>
+  <%= f.radio_button :sex, 'Male', :checked => true %>
+  <%= label :sex, 'Male' %>
+  <%= f.radio_button :sex, 'Female' %>
+  <%= label :sex, 'Female' %><br/>
+  <%= f.submit %>
+<% end %>

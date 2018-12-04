@@ -1,0 +1,11 @@
+<h1>People#show</h1>
+<p>Find me in app/views/people/show.html.erb</p>
+
+Name: <%= @person.name %> <br/>
+Age: <%= @person.age %> <br/>
+Sex: <%= @person.sex %> <br/>
+<br/>
+
+<%= link_to 'Edit', edit_person_path(@person) %> <br/>
+<%= link_to 'Delete', person_path(@person), method: :delete, data: { confirm: 'For real?' } %> <br/>
+<%= link_to 'Back to all people', people_path %>
