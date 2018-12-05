@@ -16,6 +16,10 @@ app.post('/', function(request, response) {
   else if(request.body['action'] === 'id') {
     response.json(1);
   }
+  else {
+    response.status(404);
+    response.send("Server not found");
+  }
 });
 
 app.listen(2001, function () {
