@@ -20,7 +20,7 @@ app.post('/', function(request, response){
     {
         response.json(3);
     }else{
-        response.status(500).send("error: ne pozna");
+        response.status(422).send("error: ne pozna");
     }
 });
 
