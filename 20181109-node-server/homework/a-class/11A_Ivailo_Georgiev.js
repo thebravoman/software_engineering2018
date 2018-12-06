@@ -14,7 +14,7 @@ app.post('/', function(request, response){
 	if(request.body["whoami" == "id"]) {
 		response.json({'I am' : '12'});
 	}
-	else if(request.body['avtion'] == "id") {
+	else if(request.body['action'] == "id") {
 		response.json(12);
 	}
 });
