@@ -13,11 +13,6 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    if (request.body == null) {
-        response.send('FUCK');
-        return;
-    }
-
     if (request.body['whoami'] === 'id') {
         response.setHeader('content-type', 'application/json');
 
