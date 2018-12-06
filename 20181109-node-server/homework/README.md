@@ -26,7 +26,7 @@ response:
     body:
     3
 
-Another example of a OST request and response:
+Another example of a POST request and response:
 request:
     body:
     {
