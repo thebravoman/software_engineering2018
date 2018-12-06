@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function (request, response) {
-  response.json({'studentNr':'5'});
+  response.json({'studentNr':'05'});
 });
 
 app.post('/', function(request, response){
