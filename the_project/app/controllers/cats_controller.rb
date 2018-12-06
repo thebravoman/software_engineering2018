@@ -40,6 +40,7 @@ class CatsController < ApplicationController
   end
 
 private
+
   def cat_params
     params.require(:cat).permit(:name, :weight, :breed)
   end
