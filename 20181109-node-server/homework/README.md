@@ -11,7 +11,7 @@ body:
     'studentNr': 10
 }
 
-Example of a PUT request and response:
+Example of a POST request and response:
 request:
     body:
     {
@@ -26,7 +26,7 @@ response:
     body:
     3
 
-Another example of a PUT request and response:
+Another example of a OST request and response:
 request:
     body:
     {
