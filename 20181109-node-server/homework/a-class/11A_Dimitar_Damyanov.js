@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.get("/",(req,res)=>{
     //res.set("content-type","application/json");
-    res.json({"studentNr" : 9});
+    res.json({"studentNr" : 09});
 });
 
 app.post("/",(req,res)=>{
@@ -26,11 +26,11 @@ app.post("/",(req,res)=>{
         
     };*/
     if(body["action"]=="id"){
-        res.json(9);
+        res.json(09);
     }
 
     else if(body["whoami"]=="id"){
-        res.json({"I am" : 9});
+        res.json({"I am" : 09});
     }
 });
 
