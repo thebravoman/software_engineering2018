@@ -23,7 +23,7 @@ app.post('/', (request, response) => {
     } else if (request.body['action'] === 'id') {
         response.setHeader('content-type', 'application/json');
 
-        response.json('20');
+        response.json(20);
     } else {
         response.status(406).send({ 'error': 'Unacceptable request body...' });
     }
