@@ -14,10 +14,9 @@ app.post('/', (request, response) => {
     console.log(request.body);
     var payload = {};
     payload['proxy'] = request.body;
-    console.log(JSON.stringify(payload));
 
     if (payload.proxy.action == 'id') {
-        response.json('13');
+        response.json(13);
     }
     else if (payload.proxy.whoami == 'id') {
         var json_res = {'I am': 13};
