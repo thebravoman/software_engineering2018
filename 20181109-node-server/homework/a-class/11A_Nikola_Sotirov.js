@@ -16,11 +16,11 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    if (request.body['whoami'] === 'id') {
+    if (request.body['whoami']) {
         response.setHeader('content-type', 'application/json');
 
-        response.json({ 'I am': '20' });
-    } else if (request.body['action'] === 'id') {
+        response.json({ 'I am': 20 });
+    } else if (request.body['action']) {
         response.setHeader('content-type', 'application/json');
 
         response.json(20);
