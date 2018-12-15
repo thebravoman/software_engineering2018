@@ -6,5 +6,9 @@
   <%= f.text_field :name %><br/>
   <%= f.label :weight %>
   <%= f.number_field :weight %><br/>
+  <%= f.label :person %>
+  <%= f.select :person_id do %>
+    <%= options_from_collection_for_select(Person.all, :id, :name) %>
+  <% end %>
   <%= f.submit %>
 <% end %>
