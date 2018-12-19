@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const date = require('./date.js');
 const app = express();
-const date = require('./date');
 
 app.use(bodyParser.json());
 
