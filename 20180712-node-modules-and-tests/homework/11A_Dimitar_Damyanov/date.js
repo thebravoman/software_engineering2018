@@ -1,6 +1,6 @@
 exports.today = () => {
 	let date = new Date();
-	return date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+	return "Hello, today is " + date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
 };
 
 
