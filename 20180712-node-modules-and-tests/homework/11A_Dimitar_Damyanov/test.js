@@ -11,6 +11,7 @@ exports.testToday = (test) => {
 
 	todayMock.expects("test").once().returns("Hello, today is " + resultDate);
 	todayMock.verify();
+	test.done();
 	
 };
 
