@@ -1,14 +1,10 @@
-const sinon = require('sinon');
-let Module = require('./module.js');
+var module = require("./module.js");
+var date = new Date();
+exports.testToday = (test) => {
+    
+    var result = "Hello, today is " + date.getFullYear() + "-" + parseInt(date.getUTCMonth() + 1) + "-" + date.getDate();
 
-exports.todayTest = function (test) {
+    test.equals(module.today(), result);
 
-	let test = new Date();
-
-	let obj = {test : Module.today()};
-	let Mock = sinon.mock(obj);
-
-	Mock.expects("test").once().returns("Hello, today is " + test.getFullYear() + "-" + (test.getMonth()+1) + "-" + test.getDate());
-	Mock.verify();
-	test.done();
-};
+    test.done();
+}
