@@ -2,7 +2,7 @@ var d = new Date();
 
 var today = () => {
 
-    return d.getFullYear() + "-" + parseInt(d.getUTCMonth() + 1) + "-" + d.getDate();
+    return `Hello, today is ${d.getFullYear()}-${parseInt(d.getUTCMonth() + 1)}-${d.getDate()}`;
 }
 
 module.exports = {
