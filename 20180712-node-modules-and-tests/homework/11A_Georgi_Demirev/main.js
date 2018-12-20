@@ -8,5 +8,5 @@ app.get("/", function (request, response) {
 })
 
 app.listen(3006, function() {
-  console.log('Started Node.js http server at http://127.0.0.1:3006');
+  console.log('Started Node.js express server at 127.0.0.1:3006');
 });
