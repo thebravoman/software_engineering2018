@@ -2,16 +2,13 @@ var date_module = require("./date_module.js");
 var sinon = require("sinon");
 
 exports.todayTest = function(test){
-    let d = new Date();
-    let message_expected = "Hello, today is "+ d.getFullYear() +`-`+ (d.getMonth()+1) + `-`+ d.getDate();
+    let message_expected = "Hello, today is 2018-12-21";
 
-    // let mock_object = {'today':() => {}};
-    let mock = sinon.mock(date_module);
+    let mock_object = {'date':() => {}};
+    let mock = sinon.mock(mock_object);
     
-    mock.expects('today').once().returns(message_expected);
-    
-    date_module.today();
-
+    mock.expects('date').once().returns(message_expected);
+    test.equals(date_module.today(), mock_object.date());
     mock.verify();
     test.done();
 }
