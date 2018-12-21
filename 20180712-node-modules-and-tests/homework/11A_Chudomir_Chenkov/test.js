@@ -2,7 +2,7 @@ var sinon = require('sinon');
 var dateModule = require('./today.js');
 
 exports.testTodayGetRequest = function(test) {
-  var result = {'today' : dateModule.today};
+  var result = {'today' : function() {}};
 
   var mock = sinon.mock(result);
 
@@ -11,7 +11,7 @@ exports.testTodayGetRequest = function(test) {
 
   mock.expects('today').once().returns('Hello, today is ' + dateString);
 
-  result.today();
+  test.equals(dateModule.today(), result.today());
   mock.verify();
   test.done();
 }
