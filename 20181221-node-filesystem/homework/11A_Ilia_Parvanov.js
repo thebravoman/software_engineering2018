@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require("fs");
+
 const port = 3013;
 const app = express();
-const fs = require("fs");
+
 
 app.use(bodyParser.json());
 
@@ -15,8 +17,8 @@ app.get('/', function (request, response) {
                 if (err) {
                     console.log("Error!");
                 } else {
-                    response.type('json');
                     let obj = JSON.parse(data);
+                    response.type('json');
                     response.json(obj);
                 }
             });
