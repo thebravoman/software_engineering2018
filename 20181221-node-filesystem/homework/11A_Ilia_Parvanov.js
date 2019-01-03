@@ -11,8 +11,6 @@ app.get('/', function (request, response) {
     fs.exists(filename, (exists) => {
         if (exists) {
             console.log("File does exist!");
-
-
             fs.readFile(filename, (err, data) => {
                 if (err) {
                     console.log("Error!");
@@ -27,14 +25,6 @@ app.get('/', function (request, response) {
             console.log("File does not exist!");
         }
     });
-});
-
-app.post('/', function(request, response) {
-    console.log(request.body);
-    var payload = {};
-    payload['proxy'] = request.body;
-    console.log(JSON.stringify(payload));
-    response.json(payload);
 });
 
 app.listen(port, () => {
