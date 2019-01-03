@@ -7,8 +7,7 @@ exports.todayTest = (test) => {
     }
     var objMock = sinon.mock(obj);
 
-    var d = new Date();
-    var expected = "Hello, today is " + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+    var expected = "Hello, today is 2019-1-3";
 
     objMock.expects('today').once().returns(expected);
     // console.log(obj.today());
@@ -16,3 +15,4 @@ exports.todayTest = (test) => {
     objMock.verify();
     test.done();
 };
+
