@@ -37,6 +37,6 @@ app.get('/', function (request, response) {
   readFileAsync("./data.json", response);
 });
 
-app.listen(3000, function () {
+app.listen(3018, function () {
   console.log('Homework app listening on port 3000!');
 });
