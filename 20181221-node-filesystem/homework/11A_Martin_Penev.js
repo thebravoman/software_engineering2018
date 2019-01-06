@@ -19,7 +19,6 @@ function readFileAsync(filename, response)
                     console.log("Error!");
                 }else{
                     console.log("File read!");
-                    console.log(data.toString())
                     response.json(JSON.parse(data.toString()));
                   }
             });
@@ -38,5 +37,5 @@ app.get('/', function (request, response) {
 });
 
 app.listen(3018, function () {
-  console.log('Homework app listening on port 3000!');
+  console.log('Homework app listening on port 3018!');
 });
