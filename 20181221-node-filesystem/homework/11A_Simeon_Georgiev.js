@@ -18,7 +18,7 @@ app.get('/', function(request, response){
                    console.log(err);
                }else{
                    console.log("Data read.");
-                   //console.log(data.toString());
+                   console.log(data.toString());
                }
            });
        }else{
