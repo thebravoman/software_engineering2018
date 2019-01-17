@@ -31,6 +31,6 @@ app.post('/',function(req,res){
 
 });
 
-app.listen('/',function(){
+app.listen(port,function(){
     console.log('App listening on port' + port);
 });
