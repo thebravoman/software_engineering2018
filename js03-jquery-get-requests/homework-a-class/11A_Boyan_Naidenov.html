@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GET Requests</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$("#btnSubmit").click(function(){
+					$.ajax({
+						url: $("#txtJsonUrl").val(),
+						type: "GET",
+						dataType: "json",
+						crossDomain: true,
+						processData: false,
+
+						 success: function(data, status, xhr) {
+			             	var jsonObject = JSON.parse(JSON.stringify(data));
+              				console.log(jsonObject);
+							var result = {};
+							result.status = "success";
+							result.object = jsonObject;
+							$("#txtObject").val(JSON.stringify(result, 4, 4));
+
+						error: function(data, status, xhr) {
+							var result = {};
+							result.status = false;
+							result.statusCode = data.status;
+							console.log(result);
+							$("#txtObject").val(JSON.stringify(result, 4, 4));
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "container">
+			 <input type="text" id="txtJsonUrl">
+			 <input type="button" id="btnSubmit" value="Send">
+		</div>
+
+		<textarea style="width:300px; height: 200px;" id = "txtObject">
+		</textarea>
+	</body>
+</html>
