@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const todayModule = require('./today.js');
+const todayModule = require('../modules/today.js');
 
 // console.log(todayModule.today());
 
