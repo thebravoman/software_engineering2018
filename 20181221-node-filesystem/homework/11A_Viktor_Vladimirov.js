@@ -56,7 +56,11 @@ app.post('/write', function (request, response) {
 app.get('/', function (req, res) {
     fs.readFile('data.json', 'utf8', (err, data) => {
         res.set('content-type', 'application/json');
-        res.send(data);
+        res.json(data);
+        /* 
+            Not sure whether I should send it as JSON or text
+            res.send(data);
+        */
     });
 });
 
