@@ -20,6 +20,9 @@ app.get('/', function (request, response) {
     			}
     		});
     	}
+        else {
+            console.log("File not found");
+        }
     })
 });
 
