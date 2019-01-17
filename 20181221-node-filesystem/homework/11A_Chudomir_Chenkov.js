@@ -10,8 +10,6 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.set('Content-type', 'application/json');
-
   fs.exists(filename, function(exists) {
     if (exists) {
       fs.readFile(filename, function(err, data) {
@@ -19,6 +17,7 @@ app.get('/', function(req, res) {
           console.log(err);
         }
         else {
+          res.set('Content-type', 'application/json');
           res.json(JSON.parse(data));
         }
       });
