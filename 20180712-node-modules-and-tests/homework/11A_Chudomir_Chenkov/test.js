@@ -1,15 +1,14 @@
-var sinon = require('sinon');
-var dateModule = require('./today.js');
+const sinon = require('sinon');
+const dateModule = require('../modules/today');
 
 exports.testTodayGetRequest = function(test) {
   var result = {'today' : function() {}};
 
   var mock = sinon.mock(result);
 
-  var date = new Date();
-  var dateString = date.toISOString().substring(0, 10);
+  var expected_res = "Hello, today is 2019-01-15";
 
-  mock.expects('today').once().returns('Hello, today is ' + dateString);
+  mock.expects('today').once().returns(expected_res);
 
   test.equals(dateModule.today(), result.today());
   mock.verify();

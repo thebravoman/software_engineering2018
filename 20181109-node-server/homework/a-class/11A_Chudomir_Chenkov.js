@@ -2,48 +2,30 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+const number = 26;
 
 app.use(bodyParser.json());
 
 app.get('/', function(request, response) {
-  var res = {
-    'header' : {
-      'content-type' : 'application/json'
-    },
-    'body' : {
-      'studentNr' : 26
-    }
-  };
+  var res = {'studentNr' : number};
 
-  response.json({'response' : res});
+  response.json(res);
 });
 
 app.post('/', function(request, response) {
   var reqbody = request.body;
+  response.set('Content-Type', 'application/json');
 
   if (reqbody['action'] === 'id') {
-    var res = {
-      'header' : {
-        'content-type' : 'application/json'
-      },
-      'body' : 26
-    };
-
-    response.json({'response' : res});
+    response.json(number);
+    console.log(number);
   }
 
   if (reqbody['whoami'] === 'id') {
-    var res = {
-      'header' : {
-        'content-type' : 'application/json'
-      },
-      'body' : {
-        'I am' : 26
-      }
-    };
+    var res = {'I am' : number};
 
-    response.json({'response' : res});
-
+    console.log(res);
+    response.json(res);
   }
 
 });

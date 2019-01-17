@@ -15,11 +15,14 @@ app.get('/', function (request, response) {
     			if(error)
     				console.log("error");
     			else {
-    				response.type('json')
+    				response.type('json');
     				response.json(JSON.parse(data));
     			}
     		});
     	}
+        else {
+            console.log("File not found");
+        }
     })
 });
 
