@@ -16,8 +16,8 @@ app.get('/', function (req, res) {
 				else {
 
                     let obj = JSON.parse(data);
+					res.type('json');
 					res.json(obj);
-                    res.type('json');
                     
                 }
             });
