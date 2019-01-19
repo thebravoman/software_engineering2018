@@ -7,10 +7,15 @@
   <%= @person.name %>
 </p>
 
+<div id="subscribed">
+
+
+</div>
+
 <div id="new-events">
   <%= form_with(model: @attendance, url: "/people/#{@person.id}/add_event") do |f| %>
     <%= f.hidden_field :person_id, value: @person.id %>
-    <%= f.select :event_id, @free_events.map{|e| [e.name, e.id]}, :prompt => 'Select One' %>
+    <%= f.select :event_id, @unsubscribed.map{|e| [e.name, e.id]}, :prompt => 'Select One' %>
     <%= f.submit "Submit" %>
   <% end %>
 </div>

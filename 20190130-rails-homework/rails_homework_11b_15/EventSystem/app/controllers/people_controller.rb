@@ -11,8 +11,14 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     # FIXME
+    @subscribed = @person.events
+    @unsubscribed = []
+
+    Event.find_each do |event| 
+      unless @subscribed.include?(event) then @unsubscribed.push(event) end
+    end
+    
     @attendance = Attendance.new
-    @free_events = Event.all
   end
 
   # GET /people/new
