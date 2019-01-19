@@ -64,8 +64,23 @@ class PeopleController < ApplicationController
     end
   end
 
+  def add_event
+    attendance = Attendance.new(attendance_params)
+
+    if attendance.save
+      redirect_to attendance.event, notice: "New attendance created"
+    else
+      render attendance.person, notice: "Something went wrong..."
+    end
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+    def attendance_params
+      params.require(:attendance).permit(:person_id, :event_id)
+    end
+
+  # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])
     end
