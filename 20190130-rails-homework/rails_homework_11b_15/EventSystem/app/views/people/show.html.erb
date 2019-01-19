@@ -2,15 +2,33 @@
 
 <%= render 'layouts/header' %>
 
-<p>
+<h2>
   <strong>Name:</strong>
   <%= @person.name %>
-</p>
+</h2>
 
 <div id="subscribed">
-  <%= @subscribed.each do |event|
-    
-  end%>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @subscribed.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.location %></td>
+          <td><%= event.time %></td>
+          <td><%= link_to 'Unsubscribe', "/people/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <div id="new-events">

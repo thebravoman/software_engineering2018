@@ -70,15 +70,27 @@ class PeopleController < ApplicationController
     end
   end
 
-  def add_event
+  def subscribe_event
     attendance = Attendance.new(attendance_params)
 
     if attendance.save
-      redirect_to attendance.event, notice: "New attendance created"
+      redirect_to attendance.person, notice: "New attendance created"
     else
-      render attendance.person, notice: "Something went wrong..."
+      render events_path, notice: "Something went wrong..."
     end
   end
+
+  def unsubscribe_event 
+    set_person
+    attendance = Attendance.find_by(person_id: params[:id], event_id: params[:event_id])
+    unless attendance.nil? 
+      attendance.destroy
+      redirect_to @person, notice: "Successfuly deleted this subscription"
+    else
+      render @person, notice: "Something prevents this subscription from being deleted..."
+    end
+  end
+  
 
   private
 
