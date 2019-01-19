@@ -8,10 +8,10 @@
 </p>
 
 <div id="new-events">
-  <%= form_with(url: '/add_event/:event_id') do |f| %>
+  <%= form_for(@attendance, url: "/attendances") do |f| %>
     <%= f.hidden_field :person_id, value: @person.id %>
     <%= f.select :event_id, @free_events.map{|e| [e.name, e.id]}, :prompt => 'Select One' %>
-    <%= f.submit "Submit", disable_with: 'Submiting...' %>
+    <%= f.submit "Submit" %>
   <% end %>
 </div>
 

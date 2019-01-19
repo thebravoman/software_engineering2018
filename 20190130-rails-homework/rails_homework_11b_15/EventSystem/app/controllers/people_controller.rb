@@ -10,7 +10,8 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    # To Fix
+    # FIXME
+    @attendance = Attendance.new
     @free_events = Event.all
   end
 
@@ -63,10 +64,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  def add_event
-#TODO
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person
@@ -77,4 +74,5 @@ class PeopleController < ApplicationController
     def person_params
       params.require(:person).permit(:name)
     end
+
 end
