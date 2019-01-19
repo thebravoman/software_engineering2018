@@ -14,9 +14,10 @@ app.get('/', function (request, response) {
         //console.log(json);
         console.log(result);
         //response.send(json);
-        response.type("application-json").send(result);
+        response.type("application/json").send(result);
     }
     else {
+        response.status(404);
         response.send("FILE NOT FOUND");
     }
 });
