@@ -3,7 +3,7 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new(attendance_params)
 
     if @attendance.save
-      redirect_to "/events/#{params[:event_id]}"
+      redirect_to "/events/#{params[:event_id]}", notice: "New attendance created"
     else
       render "/people/#{params[]}", notice: "Something went wrong..."
     end
