@@ -10,6 +10,8 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
+    # To Fix
+    @free_events = Event.all
   end
 
   # GET /people/new
