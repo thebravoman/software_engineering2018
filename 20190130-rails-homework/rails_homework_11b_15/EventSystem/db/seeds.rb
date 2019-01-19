@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  people = Person.create([{ name: 'Martin' }, { name: 'Gosho' }, {name: "Tosho"}])
+  Event.create([name: 'Monopoly', location: "At home", time: 10.days.from_now, description: "We're going to play all types of board games, but mainly Monopoly"])
