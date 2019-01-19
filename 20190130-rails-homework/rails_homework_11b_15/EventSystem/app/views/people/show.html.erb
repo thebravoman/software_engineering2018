@@ -7,5 +7,15 @@
   <%= @person.name %>
 </p>
 
+<div id="new-events">
+  <%= form_with(url: '/add_event/:event_id') do |form| %>
+  <select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+  </select>   
+</div>
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
