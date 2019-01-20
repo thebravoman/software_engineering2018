@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<h5>New attendance:</h5>
+<% @events.each do |event| %>
+  <tr>
+  <%= form_with(model: @attendance, local: true) do |form| %>
+    <% if @attendance.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+        <ul>
+        <% @attendance.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, :value => @organization.name %>
+    </p>
+
+    <p class="field">
+      <%= form.label :event %>
+      <%= form.text_field :event, :value => event.name %>
+    </p>
+
+    <p class="actions">
+      <%= form.submit %>
+    </p>
+  </tr> 
+<% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', events_path %>

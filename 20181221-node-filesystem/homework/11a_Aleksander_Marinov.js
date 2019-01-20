@@ -1,38 +1,27 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require("fs");
 const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/', function(request, response) {
-    const file_name = "some.json";
-    fs.exists(file_name, function(exists) {
-        if(exists) {
-            console.log("File found");
-            fs.readFile(file_name, function(error, data) {
-                if(error) {
-                    console.log("Some error");
-                }
-                else {
-                    response.json('json');
-                    var object = JSON.parse(data);
-                    response.json(object);
-                }
-            });
-        }
-        else {
-            console.log("File not found");
-        }
-    });
+app.get('/', function (request, response) {
+    const filename = "data.json";
+    if (fs.existsSync(filename)) {
+        console.log("File is found");
+        let json = JSON.stringify(fs.readFileSync(filename).toString());
+        let result = JSON.parse(json);
+        //console.log(json);
+        console.log(result);
+        //response.send(json);
+        response.type("application/json").send(result);
+    }
+    else {
+        response.status(404);
+        response.send("FILE NOT FOUND");
+    }
 });
 
-app.post('/', function(request, response) {
-    let object = {};
-    object['proxy'] = request.body();
-    response.json(object);
-});
-
-app.listen(3001, function() {
+app.listen(3001, function () {
     console.log("Example app listening on port 3001");
-});
+})

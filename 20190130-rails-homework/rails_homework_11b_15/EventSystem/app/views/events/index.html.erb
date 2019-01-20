@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'layouts/header' %>
+
+<h1>Events</h1>
+
+<%= render 'layouts/event_table' , events: @events%>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

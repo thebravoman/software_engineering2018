@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @person.organization %>
+</p>
+
+<h5>Attendances</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @attendances.size > 0 %>
+      <% @attendances.each do |attendance| %>
+        <tr>
+          <% if attendance.name == @person.organization %>
+            <td><%= attendance.event %></td>
+            <td>Organization event- cannot delete</td>
+           <% elsif attendance.name == @person.name %>
+            <td><%= attendance.event %></td>
+            <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<h5>New attendance:</h5>
+<% @events.each do |event| %>
+  <tr>
+  <%= form_with(model: @attendance, local: true) do |form| %>
+    <% if @attendance.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+        <ul>
+        <% @attendance.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, :value => @person.name %>
+    </p>
+
+    <p class="field">
+      <%= form.label :event %>
+      <%= form.text_field :event, :value => event.name %>
+    </p>
+
+    <p class="actions">
+      <%= form.submit %>
+    </p>
+  </tr> 
+<% end %>
+<% end %>
+<br>
+<br>
+<br>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', events_path %>

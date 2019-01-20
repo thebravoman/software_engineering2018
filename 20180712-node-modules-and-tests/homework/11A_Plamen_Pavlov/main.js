@@ -1,4 +1,3 @@
-var smodule = require("./data.js");
 var day = require("./module.js");
 var express = require("express");
 var bodyParser = require("body-parser");

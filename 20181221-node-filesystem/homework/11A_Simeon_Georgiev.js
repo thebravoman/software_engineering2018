@@ -17,8 +17,9 @@ app.get('/', function(request, response){
                if (err) {
                    console.log(err);
                }else{
-                   console.log("Data read.");
-                   console.log(data.toString());
+                   //console.log("Data read.");
+                   //console.log(data.toString());
+                   response.json(JSON.parse(data));
                }
            });
        }else{

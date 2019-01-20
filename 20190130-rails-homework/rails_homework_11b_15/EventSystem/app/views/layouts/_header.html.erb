@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+      <ul class="nav-bar">
+        <li class="left">
+          <%= link_to "events" , events_path%>
+        </li>
+        <li class="left">
+          <%= link_to "people" , people_path%>
+        </li>
+        <li class="right">
+          <%= link_to "Info" , '/info'%>
+        </li>
+      </ul>
+
+    <%= yield   %>
+  
+  </body>
+</html>
