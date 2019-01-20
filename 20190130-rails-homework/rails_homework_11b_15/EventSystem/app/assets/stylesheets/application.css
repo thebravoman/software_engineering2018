@@ -19,7 +19,7 @@
 .nav-bar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     overflow: hidden;
     background-color: rgba(19, 19, 19, 0.9);
     border-radius: 15px;
@@ -31,7 +31,6 @@
 
 .nav-bar .right {
     float: right;
-    padding-right: 30px;
 }
 
 .nav-bar a {
