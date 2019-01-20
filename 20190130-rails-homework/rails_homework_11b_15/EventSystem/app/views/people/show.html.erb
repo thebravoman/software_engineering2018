@@ -24,7 +24,7 @@
           <td><%= event.name %></td>
           <td><%= event.location %></td>
           <td><%= event.time %></td>
-          <td><%= link_to 'Unsubscribe', "/people/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
+          <td><%= link_to 'Unsubscribe', "/person/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
         </tr>
       <% end %>
     </tbody>
@@ -32,10 +32,10 @@
 </div>
 
 <div id="new-events">
-  <%= form_with(model: @attendance, url: "/people/#{@person.id}/add_event") do |f| %>
+  <%= form_with(model: @attendance, url: "/person/#{@person.id}/add_event") do |f| %>
     <%= f.hidden_field :person_id, value: @person.id %>
     <%= f.select :event_id, @unsubscribed.map{|e| [e.name, e.id]}, :prompt => 'Select One' %>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Subscribe" %>
   <% end %>
 </div>
 
