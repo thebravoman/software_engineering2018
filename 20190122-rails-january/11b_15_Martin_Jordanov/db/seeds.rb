@@ -8,4 +8,4 @@
     { name: 'Review', desc: 'Review on Lord of the Rings', content: 'Frodo Baggins plunges into a perilous trek to take the mystical One...'},
     { name: "Untitled", desc: "Simple test file", content: "Lorem ipsum dolor sit amet, consectetur adipiscing..."},
     { name: "Untitled1", desc: "Another sample test file", content: "dolor sit amet, consectetur Lorem ipsum adipiscing..."}])
-  User.create([{name: 'Martin', pass: "123456"}, {name: "Tosho", pass: "portokal"}])
+  User.create([{name: 'Martin', pass: "123456", email: "xxm0703@abv.bg"}, {name: "Tosho", pass: "portokal", email: "to6eto@abv.bg"}])
