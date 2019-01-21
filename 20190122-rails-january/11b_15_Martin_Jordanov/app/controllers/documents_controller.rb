@@ -4,13 +4,19 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
+    
+    if !(params[:user].nil? and params[:pass].nil?) and !valid_user(params)
+      render plain: "You don't have permission for this page"
+    end
+    
     if request.path == '/'
       @documents = Document.last(3).reverse
     else
       @documents = Document.all
     end
+    
   end
-
+  
   # GET /documents/1
   # GET /documents/1.json
   def show
