@@ -5,5 +5,7 @@
 #
   Document.create([
     { name: 'Essay', desc: 'essay for my literature classes', content: 'From an early age I was fascinated with fossils...'}, 
-    { name: 'Review', desc: 'Review on Lord of the Rings', content: 'Frodo Baggins plunges into a perilous trek to take the mystical One...'}])
-  User.create(name: 'Martin', pass: "123456")
+    { name: 'Review', desc: 'Review on Lord of the Rings', content: 'Frodo Baggins plunges into a perilous trek to take the mystical One...'},
+    { name: "Untitled", desc: "Simple test file", content: "Lorem ipsum dolor sit amet, consectetur adipiscing..."},
+    { name: "Untitled1", desc: "Another sample test file", content: "dolor sit amet, consectetur Lorem ipsum adipiscing..."}])
+  User.create([{name: 'Martin', pass: "123456"}, {name: "Tosho", pass: "portokal"}])

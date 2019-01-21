@@ -4,7 +4,11 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    if request.path == '/'
+      @documents = Document.last(3).reverse
+    else
+      @documents = Document.all
+    end
   end
 
   # GET /documents/1
