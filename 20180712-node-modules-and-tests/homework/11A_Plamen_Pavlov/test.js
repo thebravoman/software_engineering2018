@@ -1,10 +1,11 @@
-var date = require("./date.js");
-var day = new Date();
+var date = new Date();
+var new_module = require("./module.js");
 
 exports.testToday = (test) => {
+    
+    var result = "Hello, today is " + date.getFullYear() + "-" + parseInt(date.getUTCMonth() + 1) + "-" + date.getDate();
 
-    var result = "Hello, today is " + day.getFullYear() + "-" + parseInt(day.getUTCMonth() + 1) + "-" + day.getDate();
-    test.equals(date.today(), result);
+    test.equals(new_module.today(), result);
+
     test.done();
-
 }
