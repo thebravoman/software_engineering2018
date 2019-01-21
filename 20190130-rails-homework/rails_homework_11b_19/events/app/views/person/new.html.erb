@@ -1,0 +1,10 @@
+
+<%= form_for @person, url: {action: "create"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <!--<%= f.select :attendances do %>
+    <%= options_from_collection_for_select(Event.all, :id, :name) %><br/>
+  <% end %> -->
+  
+  <%= f.submit %>
+<% end %>

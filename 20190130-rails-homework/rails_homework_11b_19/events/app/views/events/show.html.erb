@@ -1,0 +1,8 @@
+<%= @event.name%><br/>
+<%= @event.location%><br/>
+<%= @event.date%><br/>
+<%= @event.description%><br/>
+
+<%= link_to "Edit event", edit_event_path(@event)%><br/>
+<%= link_to "Delete event", event_path(@event), method: :delete, data: { confirm: 'For real?' }%><br/>
+<%= link_to "Back to all events", events_path%>
