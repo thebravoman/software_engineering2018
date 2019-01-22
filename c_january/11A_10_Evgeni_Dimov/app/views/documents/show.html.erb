@@ -1,0 +1,14 @@
+<% if @has_permissions != nil %>
+    <% if @has_permissions %>
+        <h2>you have permissions :)</h2>
+        <h1><%= @document.name %></h1>
+        <h3><%= @document.description %></h3>
+        </p><%= @document.content %></p>
+    <% else %>
+        <h2>you don't have permissions :(</h2>
+    <% end %>
+<% else %>
+    <h1><%= @document.name %></h1>
+    <h3><%= @document.description %></h3>
+    </p><%= @document.content %></p>
+<% end %>
