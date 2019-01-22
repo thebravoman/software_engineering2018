@@ -29,9 +29,11 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		User.create user_params
+		u = User.create user_params
 
-		
+		mail = RegistrationMailer.register u
+
+		mail.deliver_now
 
 		redirect_to '/users/login'
 	end
