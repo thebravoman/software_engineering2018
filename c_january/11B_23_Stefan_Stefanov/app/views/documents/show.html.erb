@@ -1,9 +1,15 @@
 <!-- <link rel="stylesheet" href="show_style.css"> -->
+<% if not user_signed_in? %>
+<h2> You have no access. You have to log in to see this document </h2>
+<%= link_to 'Back', :back %>
+<%= link_to 'Main Page', "/" %>
+<% else %>
 <h2>Showing file( <%= @doc.filename %> )</h2>
 <%= button_to 'Home', documents_path, method: :get %>
 <%= button_to 'Delete', document_path(@doc), method: :delete, data: { confirm: 'Are you sure?' } %> <br/>
 
 <!-- <p> </p> -->
+Description: <p> <%= @doc.description %> </p>
 <p id="label">File content:</p>
 
 <div id="cont">
@@ -11,3 +17,4 @@
 </div>
 
 <%= button_to 'Home', documents_path, method: :get %>
+<% end %>

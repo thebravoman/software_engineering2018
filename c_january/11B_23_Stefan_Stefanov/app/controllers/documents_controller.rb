@@ -8,10 +8,10 @@ class DocumentsController < ApplicationController
 	end
 
 	def create
-
 		file_name = params[:document][:content].original_filename
+		desc = params[:document][:description]
 		content = params[:document][:content].read
-		doc = Document.new({"content": content, "filename": file_name})
+		doc = Document.new({"content": content, "filename": file_name, "description": desc})
 		doc.save
 		redirect_to document_path(doc)
 	end
