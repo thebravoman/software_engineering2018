@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
 		puts session[:email]
 
-		render 'index'
+		redirect_to '/'
 	end
 
 	def new
