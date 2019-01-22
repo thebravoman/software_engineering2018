@@ -1,4 +1,4 @@
-<% if User.exists?(:email => @user) %>
+<% if User.exists?(:email => @user) && User.exists?(:encrypted_password => @pass) %>
   <% "Yes" %>
 <% else %>
   <% "No" %>
