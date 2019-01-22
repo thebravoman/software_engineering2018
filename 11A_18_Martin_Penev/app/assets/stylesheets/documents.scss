@@ -1,0 +1,50 @@
+// Place all the styles related to the Documents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    strong.name{
+        color: yellow;
+    }
+    div.document_content{
+        width: 70%;
+        word-wrap: break-word;
+        border-style: dotted;
+    }
+    div.document_description{
+        width: 30%;
+        word-wrap: break-word;
+        border-bottom: solid;
+        margin-bottom: 20px;
+    }
+    p.name{
+        margin-top: 5%;
+        border-style: solid;
+        border-color: yellow;
+        margin-bottom: 1px; 
+        font-size: 20px;   
+    }
+    a{
+        font-size: 15px;
+
+        // text-align: right;
+    }
+    a:link{
+        color: yellow;
+        text-decoration: none;
+        font-style: italic;
+    }
+    
+    a:visited{
+        color: orange;
+    }
+
+    a:hover{
+        color: red;
+        font-weight: bold;
+    }
+}

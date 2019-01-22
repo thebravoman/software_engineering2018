@@ -1,0 +1,7 @@
+total 52
+-rwxrwxr-x 1 ilia ilia 8656 яну  7 13:11 a.out
+-rw-rw-r-- 1 ilia ilia    1 яну  7 13:12 example.txt
+-rw-rw-r-- 1 ilia ilia 1181 яну  7 13:10 filetopipe.c
+-rw-rw-r-- 1 ilia ilia  845 яну  7 10:46 pipe.c
+-rw-rw-r-- 1 ilia ilia  756 яну  7 13:11 pipetofile.c
+-rw-rw-r-- 1 ilia ilia    0 яну  7 12:59 wc

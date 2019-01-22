@@ -1,0 +1,16 @@
+<h2><strong>Create new Document!</strong> </br></h2>
+
+<%= form_for @document, url: {action: "create"} do |f|%>
+
+    <div class="field">
+        Name: <%= f.text_field :name %> </br></br>   
+        <%= f.text_field :description, size: "63", value: "Description...(Maximum 30 symbols)" %> </br>
+        <%= f.text_area :text, size: "60x12" %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit "Create" %>
+    </div>
+<% end %>
+
+<%= link_to "Cancel", documents_path%>

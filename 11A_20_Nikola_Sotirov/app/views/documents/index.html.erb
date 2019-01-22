@@ -1,0 +1,14 @@
+<h1>These are all the documents that are currently uploaded!</h1>
+
+<%=@msg%>
+
+<ul>
+	<%Document.all.each do |d|%>
+		<li><%=link_to d.name, '/documents/show/' + String(d.id)%></li>
+		<br>
+		<%='Owner:' + User.find(d.user_id).email%>
+	<%end%>
+</ul>
+
+<%=link_to 'Upload new document!', '/documents/new/'%>
+<%=link_to 'Login', '/users/login'%>

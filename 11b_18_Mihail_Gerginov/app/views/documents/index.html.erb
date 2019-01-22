@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Documents</h1>
+
+<% @documents.each do |document| %>
+    <div>
+        <p><b>Id: </b><%= document.id %></p>
+        <p><b>Name: </b><%= document.document_name %></p>
+        <p><b>Description: </b><%= document.description %></p>
+        <p><b>Content: </b><%= document.content[0..20].gsub(/\s\w+\s*$/,'...') %></p>
+        <p><b>Created at: </b><%= document.created_at %></p>
+        <p><%= link_to 'Show', document %></p>
+    </div>
+    <hr />
+<% end %>
+
+<%= link_to 'New Document', new_document_path %>
+<%= link_to 'Back to home', root_path %>
