@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    
     respond_to do |format|
       if @user.save
         ConfirmationMailer.confirmation_email(@user).deliver_now
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     params[:user][:confirmed] = true
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
+
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
@@ -66,6 +69,7 @@ class UsersController < ApplicationController
 
   def confirm
     set_user
+
     respond_to do |format|
       format.html do
         @user.confirmed = true
