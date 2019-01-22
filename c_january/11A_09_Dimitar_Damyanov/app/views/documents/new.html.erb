@@ -1,0 +1,7 @@
+<h1>NEW document</h1><br>
+
+<%=form_for @document do |doc|%>
+    <%=doc.text_field :name, placeholder: 'enter name' %><br>
+    <%=doc.text_area :text, placeholder: 'enter text' %><br>
+    <%=doc.submit 'submit'%>
+<%end%>
