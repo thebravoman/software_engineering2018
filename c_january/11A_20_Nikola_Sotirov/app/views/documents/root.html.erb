@@ -5,5 +5,12 @@
 <ul>
 	<%Document.last(3).each do |d|%>
 		<li><%=link_to d.name, '/documents/show/' + String(d.id)%></li>
+		<br>
+		<%='Owner:' + User.find(d.user_id).email%>
 	<%end%>
 </ul>
+
+<%=link_to 'View all the documents uploaded to the site!', '/documents/'%>
+<br>
+<br>
+<%=link_to 'Upload new document!', '/documents/new/'%>
