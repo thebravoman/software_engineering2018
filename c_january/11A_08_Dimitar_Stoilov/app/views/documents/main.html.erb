@@ -1,0 +1,25 @@
+<h1>Hello, there!</h1>
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+<br>
+<ul>
+	<%@documents.last(3).each do |document|%>
+	 <tr>
+      <td><%= document.title %></td>
+      <td><%= link_to 'Show', document_path(document) %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to 'Destroy', document_path(document),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+     </tr>
+     <br>
+	<%end%>
+</ul>
