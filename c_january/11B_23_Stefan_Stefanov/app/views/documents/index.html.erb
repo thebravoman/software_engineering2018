@@ -1,4 +1,12 @@
 <h1>Files main page</h1>
+<% if user_signed_in? %>
+	<%= button_to 'Logout',  destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= button_to 'Sign up', new_user_registration_path, method: :get %>
+	<%= button_to 'Log in', new_user_session_path, method: :get %>
+<% end %>
+
+<%= link_to 'Main', "/" %>
 
 <%= link_to 'New file', new_document_path %> <br/>
 
@@ -8,6 +16,7 @@
 	
 <% @docs.each do |doc| %>
  <li> <%= link_to doc.filename, document_path(doc) %> </li>
+ <b>Desc:</b> <%= doc.description %>
 <% end %>
 
 </ul>
