@@ -1386,3 +1386,47 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/password/new" for 127.0.0.1 at 2019-01-22 17:40:02 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/passwords/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 173ms (Views: 160.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 17:40:08 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/welcome_controller.rb:5
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 17:40:11 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:5
+  Rendered documents/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/documents/2" for 127.0.0.1 at 2019-01-22 17:40:19 +0200
+Processing by DocumentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDocument Load (0.4ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:68
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-22 17:40:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/therandomtroll/.rvm/gems/ruby-2.6.0/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
