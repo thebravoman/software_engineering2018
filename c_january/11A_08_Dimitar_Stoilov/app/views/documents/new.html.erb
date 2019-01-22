@@ -1,0 +1,33 @@
+<h1>Documents#new</h1>
+<% if user_signed_in? %>
+	<%= form_with scope: :document, url:  documents_path, local: true do |form| %>
+
+	  <p>
+	    <%= form.label :title %><br>
+	    <%= form.text_field :title %>
+	  </p>
+
+	  <p>
+	    <%= form.label :description %><br>
+	    <%= form.text_area :description %>
+
+	  </p>
+	  <p>
+	    <%= form.label :text %><br>
+	    <%= form.text_area :text %>
+
+	  </p>
+	 
+	  <p>
+	    <%= form.submit %>
+	  </p>
+	<% end %>
+<% else %>
+  <li>
+  <%= link_to('Log in', new_user_session_path)  %>  
+  </li>
+  <li>
+  <%= link_to('Register', new_user_registration_path)  %>
+  </li>
+
+<% end %>
