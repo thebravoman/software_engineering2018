@@ -15,5 +15,9 @@
   <%= @document.content %>
 </p>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
+<p>
+  <strong>Created at:</strong>
+  <%= @document.created_at %>
+</p>
+
 <%= link_to 'Back', documents_path %>
