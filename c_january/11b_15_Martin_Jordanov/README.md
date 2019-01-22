@@ -3,22 +3,8 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+- You may use the command `rake db:seed` to load some test entries into the tables.
 
-* Ruby version
+- Then you type `rails s` to host a simple server on port 3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Finally you're going to be able access **localhost:3000**
