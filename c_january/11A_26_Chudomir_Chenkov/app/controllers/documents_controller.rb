@@ -41,8 +41,9 @@ class DocumentsController < ApplicationController
 
   def show
     @user = User.find_by(email: params[:user])
+    puts @user.nil?
 
-    if defined?(@user)
+    if defined?(@user) && @user.nil? == false
       if @user.valid_password?(params[:pass])
         @document = Document.find(params[:id])
 
@@ -53,8 +54,14 @@ class DocumentsController < ApplicationController
       end
 
     else
-      flash[:alert] = 'Invalid email. You do not have permission to this page!'     
-      redirect_to new_user_session_path
+      if params[:user].nil?
+        @document = Document.find(params[:id])
+
+      else
+        flash[:alert] = 'Invalid email. You do not have permission to this page!'     
+        redirect_to new_user_session_path
+
+      end
       
     end
 
