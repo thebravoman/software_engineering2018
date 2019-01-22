@@ -1,0 +1,16 @@
+<% if User.exists?(:email => @user) %>
+  <% "Yes" %>
+<% else %>
+  <% "No" %>
+<% end %>
+<br/>
+
+Title: <%= @document.title %> <br/>
+Text: <%= @document.text %> <br/>
+<br>
+
+<%= link_to 'Delete', document_path(@document), method: :delete %> <br/>
+<br>
+<%= link_to 'Back', documents_path %>
+<br>
+<%= link_to 'Create another one', new_document_path %>
