@@ -1,0 +1,4 @@
+<h1 align = "center"><%= @document.name %></h1>
+<h4 align = "center"><%= @document.desc %></h4><br/>
+<p align = "center"><%= @document.content %></p><br/>
+<h3 align = "center"><%= link_to 'Delete document', '/documents/' + params[:id] , method: :delete, data: { confirm: 'Note that if you delete this document you might be shot. Are you sure?' } %></h3> <br/>
