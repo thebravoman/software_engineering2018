@@ -1,0 +1,19 @@
+<h1>Start page</h1>
+
+
+<% if current_user %>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<% else %>
+
+<%= link_to 'Sign up', new_user_registration_path %>
+
+<%= link_to 'Log in', new_user_session_path %>
+
+
+<% end %>
+
+<%= link_to 'Documents', documents_path %>
+
+
