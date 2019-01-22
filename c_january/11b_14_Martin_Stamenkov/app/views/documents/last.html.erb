@@ -6,15 +6,10 @@
 <%= link_to "Edit your account", edit_user_registration_path %> <br>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> <br>
 
-ID: <%= @first.id%><br>
-Name: <%= @first.name%><br>
-Description: <%= @first.description%><br>
-<%= @first.text%><br>
-ID: <%= @second.id%><br>
-Name: <%= @second.name%><br>
-Description: <%= @second.description%><br>
-<%= @second.text%><br>
-ID: <%= @third.id%><br>
-Name: <%= @third.name%><br>
-Description: <%= @third.description%><br>
-<%= @third.text%><br>
+<% @lists.each do |f| %>
+  <br/>ID: <%= f.id %><br/>
+  Name: <%= f.name %><br/>
+  Description: <%= f.description %><br/>
+  <%= f.text %><br/>
+  
+<% end %>

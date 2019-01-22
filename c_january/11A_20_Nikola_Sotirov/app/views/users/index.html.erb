@@ -4,12 +4,12 @@
 	Email: <%=f.text_field :email%>
 	<br>
 	<br>
-	Password: <%=f.text_field :password%>
+	Password: <%=f.password_field :password%>
 	<br>
 	<br>
 	<%=f.submit 'Submit'%>
 <%end%>
-
-
+<br>
 <%=@message%>
-
+<br>
+<%=link_to 'Register', '/users/register'%>

@@ -6,6 +6,8 @@ class DocumentsController < ApplicationController
 	end
 
 	def index
+		puts session[:email]
+
 		@msg = @@message
 	end
 
@@ -27,6 +29,13 @@ class DocumentsController < ApplicationController
 	end
 
 	def create
+		if session[:email] == nil
+			puts "HERE"
+			redirect_to '/users/login/'
+			flash[:alert] = 'You do not have an account and therefore will not be permitted to upload a document...'
+			return
+		end
+
 		file_name = params[:document][:file].original_filename
 
 		content = params[:document][:file].read

@@ -11,10 +11,7 @@ class DocumentsController < ApplicationController
   	end
   	
   	def last
-  		@first = Document.last;
-  		id = @first.id;
-  		@second = Document.find(id-1);
-  		@third = Document.find(id-2);
+  		@lists = Document.last(3);
   	end
   	
   	def show

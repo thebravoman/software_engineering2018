@@ -1,4 +1,4 @@
-<h1>Documents#index</h1>
+<h1>These are all the documents that are currently uploaded!</h1>
 
 <%=@msg%>
 
@@ -9,3 +9,6 @@
 		<%='Owner:' + User.find(d.user_id).email%>
 	<%end%>
 </ul>
+
+<%=link_to 'Upload new document!', '/documents/new/'%>
+<%=link_to 'Login', '/users/login'%>
