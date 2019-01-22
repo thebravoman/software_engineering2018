@@ -1,0 +1,20 @@
+<table>
+						<tr>
+							<td>Description</td>
+						</tr>
+						<tr>
+							<th><%= @document.description %></th>
+						</tr>
+					<tbody>
+						<tr>
+							<td>Content</td>
+						</tr>
+						<tr>
+							<td><%= @document.content %></td>
+						</tr>
+					</tbody>
+</table>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %> |
+<%= link_to 'Sign out', destroy_model_session_path, method: :delete%>

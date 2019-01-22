@@ -1,0 +1,20 @@
+<h1 align = "center"> KGB SECRET DATABASE </h1>
+<p style="text-align:center;"> <img src="https://www.logolynx.com/images/logolynx/44/445468ea8d37bad9b580e3f8c3bcae01.jpeg" width = 100 height = 100 > </p>
+<% @documents.each do |document|%>
+    
+
+    <h2 align = "center">
+    <%= link_to document.name, document_path(document)  %></h2>
+    <h4 align = "center">
+    <%= link_to document.desc, document_path(document)  %></h4><br/>
+
+<% end %>
+
+<h2 align = "center">
+<%= link_to 'Create new document', '/documents/new' %><br/>
+<% if !user_signed_in? %>
+<%= link_to 'Sign up', 'users/sign_in' %>
+<% else %>
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+<% end %>       
+</h2>
