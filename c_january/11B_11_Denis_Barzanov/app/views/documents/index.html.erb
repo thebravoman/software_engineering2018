@@ -1,0 +1,24 @@
+<h1>Listing documents</h1>
+
+
+<%= link_to 'New Document', new_document_path %>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @documents.each do |document| %>
+    <tr>
+      <td><%= document.title %></td>
+      <td><%= document.text %></td>
+      <td><%= link_to 'Show', document_path(document) %></td>
+      <td><%= link_to 'Edit', edit_document_path(document) %></td>
+      <td><%= link_to 'Destroy', document_path(document),
+	      method: :delete,
+	      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

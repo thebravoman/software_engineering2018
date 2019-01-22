@@ -1,0 +1,15 @@
+<h1>Users#login</h1>
+
+<%=form_for :user do |f|%>
+	Email: <%=f.text_field :email%>
+	<br>
+	<br>
+	Password: <%=f.password_field :password%>
+	<br>
+	<br>
+	<%=f.submit 'Submit'%>
+<%end%>
+<br>
+<%=@message%>
+<br>
+<%=link_to 'Register', '/users/register'%>

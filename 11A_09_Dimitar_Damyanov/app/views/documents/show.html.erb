@@ -1,0 +1,14 @@
+<%= link_to 'root page', documents_path%>|<%= link_to 'edit doc', edit_document_path(@document)%>|<%= link_to 'delete doc', '/documents/' + @document.id.to_s, method: :delete%>
+<% if user_signed_in? %>
+
+	<h1><%=@document.name.upcase%></h1>
+
+	Doc name: <%=@document.name%><br>
+	<%=@document.text%><br>
+
+
+<%else%>
+
+	<h1>YOU NEED TO LOG IN BEFORE CONTINUING</h1>
+
+<%end%>

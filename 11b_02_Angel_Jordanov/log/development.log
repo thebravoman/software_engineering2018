@@ -1,0 +1,321 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (190.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (197.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateDocuments (20190122160415)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (121.9ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190122160415_create_documents.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190122160415"]]
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (129.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-22 16:04:32.837470"], ["updated_at", "2019-01-22 16:04:32.837470"]]
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (78.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:04:59 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 100ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:05:52 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 19924ms (Views: 19873.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:06:53 +0200
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (179.6ms)
+  Rendered documents/new.html.erb within layouts/application (221.1ms)
+Completed 200 OK in 505ms (Views: 462.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:07:09 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 279ms (Views: 237.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:07:45 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 65ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:09:36 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 235ms (Views: 194.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:18:27 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 243ms (Views: 196.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:18:30 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 84ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:20:21 +0200
+Processing by DocumentsController#welcome as HTML
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" ORDER BY "documents"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/documents_controller.rb:10
+  Rendering documents/welcome.html.erb within layouts/application
+  Rendered documents/welcome.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 282ms (Views: 227.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:20:38 +0200
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (3.3ms)
+  Rendered documents/new.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 282ms (Views: 242.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:24:57 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ d:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (25.3ms)
+  Rendered documents/new.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 807ms (Views: 726.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/documents" for 127.0.0.1 at 2019-01-22 18:25:15 +0200
+Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7bzefDyG1njVcDXKI3HHrD0G4W/de2tWE23FhHQHK86cdiG3GSpma9x47avF4ibhaciXVy7p8o8CZ+PPnJVuzw==", "document"=>{"name"=>"tosho", "description"=>"kukata", "content"=>"e mn zdraw"}, "commit"=>"Create Document"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[36mDocument Create (144.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "tosho"], ["description", "kukata"], ["content", "e mn zdraw"], ["created_at", "2019-01-22 16:25:15.260274"], ["updated_at", "2019-01-22 16:25:15.260274"]]
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[35m (87.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+Redirected to http://localhost:3000/documents/1
+Completed 302 Found in 241ms (ActiveRecord: 232.0ms)
+
+
+Started GET "/documents/1" for 127.0.0.1 at 2019-01-22 18:25:15 +0200
+Processing by DocumentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  Rendering documents/show.html.erb within layouts/application
+  Rendered documents/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 288ms (Views: 225.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:25:22 +0200
+Processing by DocumentsController#welcome as HTML
+  [1m[36mDocument Load (0.4ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" ORDER BY "documents"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/documents_controller.rb:10
+  Rendering documents/welcome.html.erb within layouts/application
+  Rendered documents/welcome.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 262ms (Views: 216.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:25:25 +0200
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (3.5ms)
+  Rendered documents/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 287ms (Views: 248.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/documents" for 127.0.0.1 at 2019-01-22 18:25:28 +0200
+Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OiNm8LZfW9PxKjCwLHW2AaemC16O0Faa9wBclTQsptVL6Zk7k/PrwPgi6NHK5ldM82h9Zn1Cz0PmCnre3L7j1A==", "document"=>{"name"=>"dasd", "description"=>"dasd", "content"=>"dsadasd"}, "commit"=>"Create Document"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[36mDocument Create (144.6ms)[0m  [1m[32mINSERT INTO "documents" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dasd"], ["description", "dasd"], ["content", "dsadasd"], ["created_at", "2019-01-22 16:25:28.766819"], ["updated_at", "2019-01-22 16:25:28.766819"]]
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[35m (125.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+Redirected to http://localhost:3000/documents/2
+Completed 302 Found in 279ms (ActiveRecord: 270.3ms)
+
+
+Started GET "/documents/2" for 127.0.0.1 at 2019-01-22 18:25:29 +0200
+Processing by DocumentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  Rendering documents/show.html.erb within layouts/application
+  Rendered documents/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 281ms (Views: 239.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:25:32 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 222ms (Views: 180.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:25:33 +0200
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (3.6ms)
+  Rendered documents/new.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 268ms (Views: 226.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/documents" for 127.0.0.1 at 2019-01-22 18:25:38 +0200
+Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPCh+3DXvk16JR35w46L8iWTeRbUWtwRI15WhMCBQRVpOl4wVXsOXnMtxZglHWq/cV0PLifIRcgyVHDPKBMEFA==", "document"=>{"name"=>"dasdasdasd", "description"=>"dsadsadas", "content"=>"sadasdasdasd"}, "commit"=>"Create Document"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[36mDocument Create (127.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dasdasdasd"], ["description", "dsadsadas"], ["content", "sadasdasdasd"], ["created_at", "2019-01-22 16:25:38.351598"], ["updated_at", "2019-01-22 16:25:38.351598"]]
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+Redirected to http://localhost:3000/documents/3
+Completed 302 Found in 213ms (ActiveRecord: 204.6ms)
+
+
+Started GET "/documents/3" for 127.0.0.1 at 2019-01-22 18:25:38 +0200
+Processing by DocumentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  Rendering documents/show.html.erb within layouts/application
+  Rendered documents/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 251ms (Views: 204.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:25:41 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 216ms (Views: 172.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/documents/new" for 127.0.0.1 at 2019-01-22 18:25:44 +0200
+Processing by DocumentsController#new as HTML
+  Rendering documents/new.html.erb within layouts/application
+  Rendered documents/_form.html.erb (3.1ms)
+  Rendered documents/new.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 308ms (Views: 267.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/documents" for 127.0.0.1 at 2019-01-22 18:25:48 +0200
+Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1H1aLjriwSzZxHtPBVxv/hiYS7hxf5f0MZr4e8aTocWlt6XlH05xP9DMoy7jz46zTFY9gILtDi0gkN4wLgHkxA==", "document"=>{"name"=>"dsadsdas", "description"=>"dsadasdas", "content"=>"dsadasdasda"}, "commit"=>"Create Document"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[36mDocument Create (153.8ms)[0m  [1m[32mINSERT INTO "documents" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dsadsdas"], ["description", "dsadasdas"], ["content", "dsadasdasda"], ["created_at", "2019-01-22 16:25:48.363679"], ["updated_at", "2019-01-22 16:25:48.363679"]]
+  ↳ app/controllers/documents_controller.rb:32
+  [1m[35m (123.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:32
+Redirected to http://localhost:3000/documents/4
+Completed 302 Found in 286ms (ActiveRecord: 277.6ms)
+
+
+Started GET "/documents/4" for 127.0.0.1 at 2019-01-22 18:25:48 +0200
+Processing by DocumentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  Rendering documents/show.html.erb within layouts/application
+  Rendered documents/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 214ms (Views: 171.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 18:25:51 +0200
+Processing by DocumentsController#welcome as HTML
+  [1m[36mDocument Load (0.4ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" ORDER BY "documents"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/documents_controller.rb:10
+  Rendering documents/welcome.html.erb within layouts/application
+  Rendered documents/welcome.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 250ms (Views: 202.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/documents/2" for 127.0.0.1 at 2019-01-22 18:25:55 +0200
+Processing by DocumentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xqmpbWTNq6ztVHLmGg4SABqqsyTCvlOof6k1MzKc5pFB0yWRc1XrBoYrDw9ZZugCWN9M68w7LacZdUqJkPx68A==", "id"=>"2"}
+  [1m[36mDocument Load (1.0ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:59
+  [1m[36mDocument Destroy (141.5ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/documents_controller.rb:59
+  [1m[35m (98.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:59
+Redirected to http://localhost:3000/documents
+Completed 302 Found in 251ms (ActiveRecord: 241.3ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:25:56 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 224ms (Views: 178.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/documents/1" for 127.0.0.1 at 2019-01-22 18:25:58 +0200
+Processing by DocumentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k9+9gW3v+tqgbnfoJZ26/nfxq3kbpQTQs4Vh9K/2D1YUpTF9ene6cMsRCgFm9UD8NYRUthUget/VWR5ODZaTNw==", "id"=>"1"}
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT  "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:69
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:59
+  [1m[36mDocument Destroy (152.2ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/documents_controller.rb:59
+  [1m[35m (136.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:59
+Redirected to http://localhost:3000/documents
+Completed 302 Found in 299ms (ActiveRecord: 288.5ms)
+
+
+Started GET "/documents" for 127.0.0.1 at 2019-01-22 18:25:59 +0200
+Processing by DocumentsController#index as HTML
+  Rendering documents/index.html.erb within layouts/application
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/views/documents/index.html.erb:16
+  Rendered documents/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 243ms (Views: 207.8ms | ActiveRecord: 0.3ms)
+
+
