@@ -29,12 +29,3 @@
 <br>
 
 <%= link_to 'New Document', new_document_path %>
-<% if model_signed_in? %>
-  <li>
-  <%= link_to 'Log out', destroy_model_session_path, method: :delete %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to 'Register', new_model_registration_path %>
-  </li> 
-<% end %> 
