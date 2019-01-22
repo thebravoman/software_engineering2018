@@ -1,0 +1,14 @@
+<h1>All documents</h1>
+
+<%= link_to "Create new", new_document_path%></br>
+<%= link_to "Home", root_path %>
+
+</br>
+
+<% @documents.each do |document| %>
+
+    <p class="name"><%= document.name %>    
+    <%= link_to "View", document_path(document) %>
+    </p>
+
+<% end %>   

@@ -1,0 +1,30 @@
+<h2>Document "<strong class="name"><%= @document.name %></strong>"</h2>
+
+<% if params[:user] != nil && params[:pass] != nil %>
+    <% access  = false %>
+    <%u = User.where(email: params[:user]).take %>
+    <% if u != nil %>
+        <% if u.valid_password?(params[:pass])  %>
+            <% access = true %>
+        <% end %>
+    <% end %>
+
+    <% if access %>
+        <div class = "notice"> Access Granted! </div> 
+    <% else %>
+        <div class = "alert"> Access Denied! </div> 
+    <% end %>
+    
+    
+<% else %>
+    
+    <div class="document_description"><%= @document.description %></div>
+    <div class="document_content"><%= @document.text %></div>
+
+    <div>
+        <%= link_to "Edit", edit_document_path(@document) %> </br>
+        <%= link_to "Back to all documents", documents_path %> </br>
+        <%= link_to "Delete", document_path(@document), method: :delete, data: {confirm: "Do you really wish to destroy that document?"}%>
+    </div>    
+
+<% end %>

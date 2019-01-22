@@ -1,0 +1,13 @@
+<h1>Documents#index</h1>
+<p>Find me in app/views/documents/index.html.erb</p>
+
+<%= link_to 'New document', new_document_path %>
+<br>
+<br>
+
+<% @documents.each do |d| %>
+  Name: <%= link_to d.name, document_path(d) %> <br>
+  Description: <%= d.description %> <br>
+  Content: <%= d.content %> <br>
+  <br>
+<% end %>
