@@ -1,0 +1,16 @@
+
+<%= form_for Document.new do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <br>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <br>
+    <%= f.submit "Create" %>
+<% end %>
