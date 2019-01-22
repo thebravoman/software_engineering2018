@@ -1,0 +1,20 @@
+<h1>Welcome</h1>
+
+<% if user_signed_in? %>
+  <%= link_to current_user.email, edit_user_registration_path %><br>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+
+<% else %>
+  <%= link_to 'Sign Up', new_user_registration_path %><br>
+  <%= link_to 'Sign In', new_user_session_path %>
+<% end %>
+
+<br><br>
+
+<% Document.order("created_at").last(3).each do |document| %>
+  Title: <%= document.title %><br>
+  Text: <%= document.text %><br>
+  <br>
+<% end %>
+
+<%= link_to 'Documents', documents_path %>
