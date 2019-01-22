@@ -1,0 +1,17 @@
+<%= link_to 'Add document', new_document_path %> |
+<% if user_signed_in? %>
+	<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to "Log in", new_user_session_path %>
+<% end %>
+
+<h3> <i>List of documents</i> </h3>
+
+<% @documents.each do |doc| %>
+	<p>
+		Name: <%= link_to doc.name, document_path(doc) %> <br>
+		Description : <%= doc.description %> <br>
+		Content : <%= doc.content %> <br> 
+		
+	</p>
+<% end %>
