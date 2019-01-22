@@ -1,0 +1,11 @@
+<h1>Documents#index</h1>
+
+<%=@msg%>
+
+<ul>
+	<%Document.all.each do |d|%>
+		<li><%=link_to d.name, '/documents/show/' + String(d.id)%></li>
+		<br>
+		<%='Owner:' + User.find(d.user_id).email%>
+	<%end%>
+</ul>
