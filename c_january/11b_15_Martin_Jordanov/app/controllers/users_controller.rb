@@ -29,7 +29,8 @@ class UsersController < ApplicationController
       if @user.save
         ConfirmationMailer.confirmation_email(@user).deliver_now
 
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: "User was successfully created.
+          You need to confirm your registration on the mail you gave us." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
