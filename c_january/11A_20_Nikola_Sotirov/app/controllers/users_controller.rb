@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	@@message = ''
+
 	def index
 
 	end
@@ -25,11 +27,21 @@ class UsersController < ApplicationController
 	end
 
 	def new
-
+		@message = @@message
 	end
 
 	def create
 		u = User.create user_params
+
+		if not u.valid?
+			u.destroy
+
+			render 'new'
+
+			@@message = 'Please input a valid email and/or password!'
+
+			return
+		end
 
 		mail = RegistrationMailer.register u
 
