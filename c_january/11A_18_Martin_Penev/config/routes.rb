@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'confrimations/show'
   devise_for :users
   resources :documents
   root 'documents#home'
