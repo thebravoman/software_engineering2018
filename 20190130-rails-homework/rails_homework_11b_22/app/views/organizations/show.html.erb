@@ -1,0 +1,29 @@
+<%= content_tag :h1, @organization.name %>
+<br />
+<h3>Events which this organization is attending:</h3>
+<ul>
+  <% @organization_events.each do |event| %>
+    <%= content_tag :li do %>
+      <%= content_tag :span, "#{event.name} (#{event.date})" %>
+      <%= link_to 'Cancel attendance', delete_attendance_path(@organization, event),
+                  method: :delete %>
+    <% end %>
+  <% end %>
+</ul>
+<h3>Events which this organization is not attending:</h3>
+<ul>
+  <% @unattending_events.each do |event| %>
+    <%= content_tag :li do %>
+      <%= content_tag :span, "#{event.name} (#{event.date})" %>
+      <%= link_to 'Confirm attendance', 
+                  confirm_attendance_path(@organization.class, @organization, event),
+                  method: :post %>
+    <% end %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'Edit organization', edit_organization_path(@organization) %> <br />
+<%= link_to 'Index of organizations', organizations_path %> <br />
+<%= link_to 'Delete organization', @organization, 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
+

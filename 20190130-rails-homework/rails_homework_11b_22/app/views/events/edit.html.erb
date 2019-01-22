@@ -1,0 +1,10 @@
+<% provide :form_url, event_path(@event) %>
+<% provide :submit_text, "Update event" %>
+
+<%= content_tag :h1, "Update event '#{@event.name}'" %>
+
+<%= render 'form' %>
+<br />
+<%= link_to "'#{@event.name}' page", @event %> <br />
+<%= link_to 'Index of events', events_path %>
+

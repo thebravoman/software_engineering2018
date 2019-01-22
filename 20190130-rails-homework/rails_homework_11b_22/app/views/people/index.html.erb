@@ -1,0 +1,10 @@
+<h1>Index of people</h1>
+
+<ul>
+  <% @people.each do |person| %>
+    <%= content_tag :li, link_to(person.name, person) %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'New person', new_person_path %>
+
