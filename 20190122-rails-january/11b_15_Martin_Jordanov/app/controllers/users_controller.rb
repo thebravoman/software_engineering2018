@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        ConfirmationMailer.confirmation_email(@user).deliver
+        ConfirmationMailer.confirmation_email(@user).deliver_now
 
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -64,6 +64,13 @@ class UsersController < ApplicationController
   end
 
   def confirm
+    set_user
+    respond_to do |format|
+      format.html do
+        @user.confirmed = true
+        render :show 
+      end
+    end
     @user.confirmed = true
   end
 
