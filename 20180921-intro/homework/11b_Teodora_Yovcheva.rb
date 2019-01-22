@@ -6,27 +6,33 @@ c = ARGV[2].to_f
 if a == 0
 	if b == 0
 		if c == 0
-			puts "Every x is a solution!"
+			puts "*"
 		else 
-			puts "There is no solution to this equation!"    
+			puts "NaN"    
 		end
 	else
-		x = - c / b
-		puts "X: #{x}"
+		x = (-c) / b
+		puts "#{x}"
 	end
 else
 	
 	d = b*b - 4*a*c
 	
 	if d < 0
-		puts "There are no real solutions!"
+		puts "NaN"
 	elsif d == 0	
 		x = -b / (2*a )
-		puts "X: #{x}"
+		puts "#{x}"
 	else 
-		x1 = (-b + Math.sqrt(d)) / (2*a)
-		x2 = (-b - Math.sqrt(d)) / (2*a)	
-		puts "X1: #{x1}"
-		puts "X2: #{x2}"
+		x1 = ((-b + Math.sqrt(d)) / (2*a)).round(3)
+		x2 = ((-b - Math.sqrt(d)) / (2*a)).round(3)
+		
+		if x1 > x2
+			puts "#{x1},#{x2}"
+		end
+		
+		if x2 > x1
+			puts "#{x2},#{x1}"
+		end
 	end
 end
