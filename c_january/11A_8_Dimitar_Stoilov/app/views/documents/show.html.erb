@@ -1,7 +1,13 @@
+<% if @alert %>
+	<%= @alert %>
+<% else %>
 <p>
   <strong>Title:</strong> 
   <%= @document.title %>
- 
+  <br>
+  <strong>Description:</strong>  <%= @document.description %> 
   <br>
   <%= simple_format(@document.text) %>
+
 </p>
+<%end%>
