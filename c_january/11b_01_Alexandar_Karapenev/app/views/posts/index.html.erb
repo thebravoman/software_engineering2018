@@ -1,0 +1,21 @@
+
+
+
+
+<h1>Files</h1>
+<br>
+
+
+
+
+<% @posts.each do |post| %>
+
+	<div class="well">
+		<p> File <%= post.id %> </p>
+
+		<h3> <%= post.title %></h3>
+		<p> <%= post.body %></p>
+		<%= link_to "More...", post_path(post), :class => 'btn btn-default' %>	
+	</div>
+
+<% end %>

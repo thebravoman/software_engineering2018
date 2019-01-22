@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <p>
+    <strong>Title:</strong>
+    <%= @document.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @document.description %>
+  </p>
+
+  <p>
+    <strong>Document content:</strong><br>
+    <% @filetext.each do |line| %>
+        <%= line %>
+        <br>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_document_path(@document) %> |
+  <%= link_to 'Back', documents_path %>
+<% else %>
+  <p style="font-size:1.5em">You need to be logged in to see this page!</p>
+<% end %>

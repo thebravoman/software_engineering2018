@@ -1,0 +1,13 @@
+<!-- <link rel="stylesheet" href="show_style.css"> -->
+<h2>Showing file( <%= @doc.filename %> )</h2>
+<%= button_to 'Home', documents_path, method: :get %>
+<%= button_to 'Delete', document_path(@doc), method: :delete, data: { confirm: 'Are you sure?' } %> <br/>
+
+<!-- <p> </p> -->
+<p id="label">File content:</p>
+
+<div id="cont">
+<%= @doc.content  %>
+</div>
+
+<%= button_to 'Home', documents_path, method: :get %>

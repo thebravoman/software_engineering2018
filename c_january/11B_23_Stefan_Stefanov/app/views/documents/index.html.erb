@@ -1,0 +1,13 @@
+<h1>Files main page</h1>
+
+<%= link_to 'New file', new_document_path %> <br/>
+
+<p>All files: </p>
+
+<ul>
+	
+<% @docs.each do |doc| %>
+ <li> <%= link_to doc.filename, document_path(doc) %> </li>
+<% end %>
+
+</ul>
