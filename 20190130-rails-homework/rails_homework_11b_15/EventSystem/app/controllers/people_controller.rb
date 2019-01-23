@@ -11,14 +11,17 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     # FIXME
+    organization = @person.organization
     @subscribed = @person.events
     unsub = []
+    
+    tmp = @subscribed.dup
+    unless organization.nil? then tmp += organization.events 
 
     Event.find_each do |event| 
-      unless @subscribed.include?(event) then unsub.push(event) end
+      unless tmp.include?(event) then unsub.push(event) end
     end
     @unsubscribed = unsub.map{|e| [e.name, e.id]}
-
 
     @attendance = Attendance.new
   end
