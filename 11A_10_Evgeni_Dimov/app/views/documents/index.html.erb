@@ -1,9 +1,0 @@
-<h1>All documents</h1>
-
-<% @documents.each do |d| %>
-
-    Document name: <%= link_to d.name, document_path(d.id) %>
-    Description: <%= d.description %>
-    <br>
-
-<% end %>

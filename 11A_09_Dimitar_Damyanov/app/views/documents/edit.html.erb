@@ -1,7 +1,0 @@
-<h1>EDIT <%=@document.name%></h1><br>
-
-<%=form_for @document do |doc|%>
-    <%=doc.text_field :name%><br>
-    <%=doc.text_area :text%><br>
-    <%=doc.submit 'submit'%>
-<%end%>
