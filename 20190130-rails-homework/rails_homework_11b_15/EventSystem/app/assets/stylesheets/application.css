@@ -57,11 +57,13 @@
 .personal
 {
     float: left;
+    margin-bottom: 20px;
 }
 
 .group
 {
     float: right;
+    margin-bottom: 20px;
 }
 
 .wrapper

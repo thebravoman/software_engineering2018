@@ -30,10 +30,44 @@
         </tbody>
       </table>
     </div>
-  <% end %>
+    <% end %>
+
+    <div class="group subscribed">
+      <h3> Events </h3>
+      <% unless @subscribed.empty? %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Time</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @subscribed.each do |event| %>
+            <tr>
+              <td><%= event.name %></td>
+              <td><%= event.location %></td>
+              <td><%= event.time %></td>
+              <td><%= link_to 'Unsubscribe', "/organization/#{@organization.id}/unsubscribe/#{event.id}", method: :delete %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+
+    </div>
+    <div class="group adder">
+      <%= form_with(model: @attendance, url: "/organization/#{@organization.id}/add_event", local: true) do |f| %>
+        <%= f.select :event_id, @unsubscribed, :prompt => 'Select One' %>
+        <%= f.submit "Subscribe" %>
+      <% end %>
+    </div>
 </div>
 
-<div class="adder">
+<div class="personal">
 
   <%= form_with(url: "/organizations/#{@organization.id}/add_member", local: true) do |f| %>
     <%= f.select :member_id, @nonmembers, :prompt => 'Select One' %>
@@ -41,6 +75,7 @@
   <% end %>
 
 </div>
-
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+<div class="adder">
+  <%= link_to 'Edit', edit_organization_path(@organization) %> |
+  <%= link_to 'Back', organizations_path %>
+</div>

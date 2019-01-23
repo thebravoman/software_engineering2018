@@ -6,6 +6,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    set_organization
     nonmem = []
     @members = @organization.people
 
@@ -16,6 +17,9 @@ class OrganizationsController < ApplicationController
     end
     
     @nonmembers = nonmem.map{|e| [e.name, e.id]}
+    set_events
+    
+    @attendance = Attendance.new
   end
 
   def new
@@ -83,7 +87,31 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def subscribe_event
+    set_organization
+    attendance = Attendance.new(attendance_params)
+    attendance.subscriber = @organization 
+
+    if attendance.save!
+      redirect_to @organization, notice: "New attendance created"
+    else
+      redirect_to events_path, notice: "Something went wrong..."
+    end
+  end
+
   private
+
+  def set_events
+    @subscribed = @organization.events
+    unsub = []
+    
+    tmp = @subscribed.dup
+
+    Event.find_each do |event| 
+      unless tmp.include?(event) then unsub.push(event) end
+    end
+    @unsubscribed = unsub.map{|e| [e.name, e.id]}
+  end
 
   def set_organization
     @organization = Organization.find(params[:id])
