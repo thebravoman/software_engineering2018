@@ -32,9 +32,9 @@
     </div>
     <% end %>
 
+    <% unless @subscribed.empty? %>
     <div class="group subscribed">
       <h3> Events </h3>
-      <% unless @subscribed.empty? %>
       <table>
         <thead>
           <tr>
@@ -56,9 +56,9 @@
           <% end %>
         </tbody>
       </table>
-      <% end %>
+      </div>
+    <% end %>
 
-    </div>
     <div class="group adder">
       <%= form_with(model: @attendance, url: "/organization/#{@organization.id}/add_event", local: true) do |f| %>
         <%= f.select :event_id, @unsubscribed, :prompt => 'Select One' %>
