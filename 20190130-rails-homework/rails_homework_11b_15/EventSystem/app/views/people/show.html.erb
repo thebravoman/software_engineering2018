@@ -68,7 +68,7 @@
     </div>
   <% end %>
 </div>
-<div id="new-events">
+<div class="adder">
   <%= form_with(model: @attendance, url: "/person/#{@person.id}/add_event", local: true) do |f| %>
     <%= f.select :event_id, @unsubscribed, :prompt => 'Select One' %>
     <%= f.submit "Subscribe" %>

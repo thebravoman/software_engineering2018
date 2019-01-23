@@ -6,7 +6,7 @@
 </p>
 
 <div class="wrapper">
-  <% unless @subscribed.empty? %>
+  <% unless @members.empty? %>
     <div class="personal subscribed">
     <h3> Personal </h3>
       <table>
@@ -20,7 +20,8 @@
         <tbody>
           <% @members.each do |member| %>
             <tr>
-              <td><%= memeber.name %></td>
+              <td><%= member.name %></td>
+              <td><%= link_to "Show", member %></td>
               <td><%= link_to 'Expell', "/organizations/#{@organization.id}/expell_memeber", method: :delete %></td>
             </tr>
           <% end %>
@@ -30,9 +31,9 @@
   <% end %>
 </div>
 
-<div id="add-member">
+<div class="adder">
 
-  <%= form_with(url: "/organizations/#{@organization.id}/add_person", local: true) do |f| %>
+  <%= form_with(url: "/organizations/#{@organization.id}/add_member", local: true) do |f| %>
     <%= f.select :member_id, @nonmembers, :prompt => 'Select One' %>
     <%= f.submit "Add member" %>
   <% end %>

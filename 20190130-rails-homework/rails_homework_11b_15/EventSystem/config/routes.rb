@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root 'people#index'
   
   post "/person/:id/add_event" => 'people#subscribe_event'
-  post "/organizations/:id/add_member" => 'organization#add_member'
+  post "/organizations/:id/add_member" => 'organizations#add_member'
   
-  delete "/organizations/:id/expell_member/member_id" => 'organization#expell_member'
+  delete "/organizations/:id/expell_member/member_id" => 'organizations#expell_member'
   delete "/person/:id/unsubscribe/:event_id" => 'people#unsubscribe_event'
 end

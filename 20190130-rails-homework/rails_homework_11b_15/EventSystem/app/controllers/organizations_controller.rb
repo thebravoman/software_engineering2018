@@ -60,7 +60,15 @@ class OrganizationsController < ApplicationController
   end
 
   def add_member
-    if 
+    set_organization
+    member = Person.find(params[:member_id])
+    
+    if member.organization.nil? 
+      member.organization = @organization
+      (member.save) ? redirect_to(@organization, notice: "Successfully added member") : render(:index, notice: "Something went wrong") 
+    else
+      render :index, notice: "Person already has an organization"
+    end
   end
 
   def expell_member
