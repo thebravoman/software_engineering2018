@@ -53,7 +53,6 @@
               <td><%= event.name %></td>
               <td><%= event.location %></td>
               <td><%= event.time %></td>
-              <td><%= link_to 'Unsubscribe', "/person/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
             </tr>
           <% end %>
         </tbody>

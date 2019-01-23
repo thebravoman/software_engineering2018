@@ -8,8 +8,10 @@
 {
     background-color: antiquewhite  ;
     margin: 30px;
+    padding: 10px;
     display: inline;
     text-align: center;
+    border-radius: 15px;
 }
 
 .personal
@@ -24,10 +26,11 @@
 
 .wrapper
 {
-    margin: 20px;
+    margin: 30px;
 }
 
 #new-events
 {
-    clear: both ;
+    clear: both;
 }
+
