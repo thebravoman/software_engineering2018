@@ -1,0 +1,7 @@
+<h1>Add a new person to the system!</h1>
+
+<%=form_for :person do |f|%>
+	Name: <%=f.text_field :name%>
+
+	<%=f.submit 'Submit'%>
+<%end%>

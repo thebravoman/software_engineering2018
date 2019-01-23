@@ -1,0 +1,12 @@
+<h1>People</h1>
+
+<ul>
+	<%Person.all.each do |person|%>
+		<li>
+			<%=link_to person.name, '/people/show/' + String(person.id)%>
+		</li>
+	<%end%>
+</ul>
+
+
+<%=link_to 'Add a person!', '/people/new/'%>
