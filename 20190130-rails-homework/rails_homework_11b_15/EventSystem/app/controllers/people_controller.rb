@@ -74,7 +74,7 @@ class PeopleController < ApplicationController
     attendance = Attendance.new(attendance_params)
 
     if attendance.save
-      redirect_to attendance.person, notice: "New attendance created"
+      redirect_to attendance.subscriber, notice: "New attendance created"
     else
       render events_path, notice: "Something went wrong..."
     end
