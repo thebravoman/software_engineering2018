@@ -89,14 +89,7 @@ class OrganizationsController < ApplicationController
 
   def subscribe_event
     set_organization
-    attendance = Attendance.new(attendance_params)
-    attendance.subscriber = @organization 
-
-    if attendance.save!
-      redirect_to @organization, notice: "New attendance created"
-    else
-      redirect_to events_path, notice: "Something went wrong..."
-    end
+    subscribe @organization
   end
 
   def unsubscribe_event 
