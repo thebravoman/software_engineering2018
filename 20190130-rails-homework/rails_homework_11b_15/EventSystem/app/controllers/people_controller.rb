@@ -71,12 +71,14 @@ class PeopleController < ApplicationController
   end
 
   def subscribe_event
+    set_person
     attendance = Attendance.new(attendance_params)
+    attendance.subscriber = @person 
 
-    if attendance.save
-      redirect_to attendance.subscriber, notice: "New attendance created"
+    if attendance.save!
+      redirect_to @person, notice: "New attendance created"
     else
-      render events_path, notice: "Something went wrong..."
+      redirect_to events_path, notice: "Something went wrong..."
     end
   end
 
@@ -93,10 +95,6 @@ class PeopleController < ApplicationController
   
 
   private
-
-    def attendance_params
-      params.require(:attendance).permit(:person_id, :event_id)
-    end
 
   # Use callbacks to share common setup or constraints between actions.
     def set_person

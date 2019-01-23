@@ -6,34 +6,36 @@
   <strong>Name:</strong>
   <%= @person.name %>
 </h2>
-
-<div id="subscribed">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Time</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @subscribed.each do |event| %>
+<% unless @subscribed.empty? %>
+  <div id="subscribed">
+    <table>
+      <thead>
         <tr>
-          <td><%= event.name %></td>
-          <td><%= event.location %></td>
-          <td><%= event.time %></td>
-          <td><%= link_to 'Unsubscribe', "/person/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Time</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody>
+        <% @subscribed.each do |event| %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= event.location %></td>
+            <td><%= event.time %></td>
+            <td><%= link_to 'Unsubscribe', "/person/#{@person.id}/unsubscribe/#{event.id}", method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  </br>
+<% end %>
 
 <div id="new-events">
-  <%= form_with(model: @attendance, url: "/person/#{@person.id}/add_event") do |f| %>
-    <%= f.hidden_field :subscriber_id, value: @person.id %>
+  <%= form_with(model: @attendance, url: "/person/#{@person.id}/add_event", local: true) do |f| %>
     <%= f.select :event_id, @unsubscribed.map{|e| [e.name, e.id]}, :prompt => 'Select One' %>
     <%= f.submit "Subscribe" %>
   <% end %>
