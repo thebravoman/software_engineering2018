@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post "/person/:id/add_event" => 'people#subscribe_event'
   post "/organizations/:id/add_member" => 'organizations#add_member'
   
-  delete "/organizations/:id/expell_member/member_id" => 'organizations#expell_member'
+  delete "/organizations/:id/expell_member/:member_id" => 'organizations#expell_member'
   delete "/person/:id/unsubscribe/:event_id" => 'people#unsubscribe_event'
 end

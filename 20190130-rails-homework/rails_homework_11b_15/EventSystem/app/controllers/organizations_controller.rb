@@ -72,7 +72,15 @@ class OrganizationsController < ApplicationController
   end
 
   def expell_member
-
+    set_organization
+    person = Person.find(params[:member_id])
+    
+    unless person.organization.nil?
+      person.organization = nil
+      (person.save) ? redirect_to(@organization, notice: "Successfully expelled member") : render(:index, notice: "Something went wrong") 
+    else
+      render :index, notice: "Person has already been expelled"
+    end
   end
 
   private

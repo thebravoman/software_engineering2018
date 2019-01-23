@@ -22,7 +22,7 @@
             <tr>
               <td><%= member.name %></td>
               <td><%= link_to "Show", member %></td>
-              <td><%= link_to 'Expell', "/organizations/#{@organization.id}/expell_memeber", method: :delete %></td>
+              <td><%= link_to 'Expell', "/organizations/#{@organization.id}/expell_member/#{member.id}", method: :delete %></td>
             </tr>
           <% end %>
         </tbody>
