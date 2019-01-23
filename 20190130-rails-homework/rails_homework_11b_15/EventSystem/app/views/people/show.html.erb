@@ -6,6 +6,14 @@
   <strong>Name:</strong>
   <%= @person.name %>
 </h2>
+
+<% if @person.organization %>
+  <h4>
+    <strong>Organization:</strong>
+    <%= @person.organization.name %>
+  </h4>
+<% end %>
+
 <div class="wrapper">
   <% unless @subscribed.empty? %>
     <div class="personal subscribed">

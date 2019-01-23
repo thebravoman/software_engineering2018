@@ -1,22 +1,22 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
-  # GET /people
-  # GET /people.json
+  
   def index
     @people = Person.all
   end
 
-  # GET /people/1
-  # GET /people/1.json
   def show
-    # FIXME
+    
     organization = @person.organization
     @subscribed = @person.events
     unsub = []
     
     tmp = @subscribed.dup
-    unless organization.nil? then tmp += organization.events 
+    unless organization.nil? 
+      @group = organization.events
+      tmp += @group
+    end
 
     Event.find_each do |event| 
       unless tmp.include?(event) then unsub.push(event) end
@@ -26,17 +26,13 @@ class PeopleController < ApplicationController
     @attendance = Attendance.new
   end
 
-  # GET /people/new
   def new
     @person = Person.new
   end
 
-  # GET /people/1/edit
   def edit
   end
-
-  # POST /people
-  # POST /people.json
+  
   def create
     @person = Person.new(person_params)
 
@@ -51,8 +47,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # PATCH/PUT /people/1
-  # PATCH/PUT /people/1.json
   def update
     respond_to do |format|
       if @person.update(person_params)
@@ -65,8 +59,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.json
   def destroy
     @person.destroy
     respond_to do |format|
@@ -97,18 +89,16 @@ class PeopleController < ApplicationController
       render @person, notice: "Something prevents this subscription from being deleted..."
     end
   end
-  
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
-    end
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def person_params
-      params.require(:person).permit(:name)
-    end
+  
+  def person_params
+    params.require(:person).permit(:name)
+  end
 
 end

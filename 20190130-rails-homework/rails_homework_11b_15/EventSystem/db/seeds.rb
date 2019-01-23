@@ -3,6 +3,7 @@
 #
 # Examples:
 #
-  people = Person.create([{ name: 'Martin' }, { name: 'Gosho' }, {name: "Tosho"}])
-  Event.create([{name: 'Monopoly', location: "At home", time: 10.days.from_now, description: "We're going to play all types of board games, but mainly Monopoly"},
+organizations = Organization.create([{name: "Rockers"}])
+people = Person.create([{ name: 'Martin' , organization_id: 1}, { name: 'Gosho' }, {name: "Tosho"}])
+Event.create([{name: 'Monopoly', location: "At home", time: 10.days.from_now, description: "We're going to play all types of board games, but mainly Monopoly"},
   {name: "Come and Concept", location: "At the park" , description: "Again we're playing board games but this time the main focus is on 'Concept'.", time: 1.month.from_now}])
