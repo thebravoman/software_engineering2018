@@ -12,12 +12,14 @@ class PeopleController < ApplicationController
   def show
     # FIXME
     @subscribed = @person.events
-    @unsubscribed = []
+    unsub = []
 
     Event.find_each do |event| 
-      unless @subscribed.include?(event) then @unsubscribed.push(event) end
+      unless @subscribed.include?(event) then unsub.push(event) end
     end
-    
+    @unsubscribed = unsub.map{|e| [e.name, e.id]}
+
+
     @attendance = Attendance.new
   end
 
