@@ -89,7 +89,6 @@ class PeopleController < ApplicationController
       render @person, notice: "Something prevents this subscription from being deleted..."
     end
   end
-
   private
 
   def set_person

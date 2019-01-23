@@ -99,6 +99,17 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def unsubscribe_event 
+    set_organization
+    attendance = Attendance.find_by(subscriber_id: params[:id], event_id: params[:event_id])
+    unless attendance.nil? 
+      attendance.destroy
+      redirect_to @organization, notice: "Successfuly deleted this subscription"
+    else
+      render :index, notice: "Something prevents this subscription from being deleted..."
+    end
+  end
+
   private
 
   def set_events
