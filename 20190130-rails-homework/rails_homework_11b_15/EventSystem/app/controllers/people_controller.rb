@@ -84,7 +84,7 @@ class PeopleController < ApplicationController
 
   def unsubscribe_event 
     set_person
-    attendance = Attendance.find_by(person_id: params[:id], event_id: params[:event_id])
+    attendance = Attendance.find_by(subscriber_id: params[:id], event_id: params[:event_id])
     unless attendance.nil? 
       attendance.destroy
       redirect_to @person, notice: "Successfuly deleted this subscription"

@@ -2,9 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#subscribed
+
+
+.subscribed
 {
-    background-color: antiquewhite;
+    background-color: antiquewhite  ;
     margin: 30px;
     display: inline;
+    text-align: center;
+}
+
+.personal
+{
+    float: left;
+}
+
+.group
+{
+    float: right;
+}
+
+.wrapper
+{
+    margin: 20px;
+}
+
+#new-events
+{
+    clear: both ;
 }

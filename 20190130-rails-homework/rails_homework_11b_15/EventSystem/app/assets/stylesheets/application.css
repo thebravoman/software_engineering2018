@@ -40,6 +40,6 @@
     text-decoration: none;
 }
 
-.nav-bar li a:hover {
-    background-color: #111;
+.nav-bar li a:link {
+    color: rgb(190, 190, 190);
 }
