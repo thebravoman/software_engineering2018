@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<% if @person.events.empty?%>
+  <p>No current attendances to show</p>
+<% else %>
+  <p>Events</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @person.events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= link_to 'Cancel attendance', @person.id.to_s+'/event/'+event.id.to_s,method: :delete %></td>
+
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<% if @person.events.length != Event.all.length%>
+  <%= form_for :event do |f|%>
+    <%= f.select :event_id do %>
+      <%= options_from_collection_for_select(@not_events, :id, :name) %>
+    <% end %>
+    <%= f.submit "Add event"%>
+  <% end %>
+<% end %>
+<%= link_to 'Back', people_path %>
