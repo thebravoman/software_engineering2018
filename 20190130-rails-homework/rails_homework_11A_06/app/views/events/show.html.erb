@@ -1,0 +1,8 @@
+Name: <%= @event.name %><br>
+Place: <%= @event.place %><br>
+Date: <%= @event.data %><br>
+Description: <%= @event.description %><br>
+
+<%= link_to 'Edit', edit_event_path(@event) %>
+<%= link_to 'Delete', event_path(@event), method: :delete %>
+<%= link_to 'Back', events_path %>

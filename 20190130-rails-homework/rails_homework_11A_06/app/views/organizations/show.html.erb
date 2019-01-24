@@ -1,0 +1,17 @@
+Name: <%= @organization.name %><br><br>
+
+<h3>Events</h3>
+
+<% @events_attended.each do |e| %>
+	Name of event: <%= e.name %><br>
+	Date: <%= e.data %><br>
+	Place: <%= e.place %><br>
+	Description: <%= e.description %><br>
+	<%= link_to "Delete Event", "/organizations/delete_event?event_id=#{e.id}&organization_id=#{@organization.id}" %><br><br>
+<% end %>
+
+<br>
+<%= form_tag("/organizations/add_event?organization_id=#{@organization.id}") do -%>
+  <%= select_tag "event", options_for_select(@events_not_attended.map{|e| e.name}) %>
+  <%= submit_tag "Add Event" %>
+<% end -%>
