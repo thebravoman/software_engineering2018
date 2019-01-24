@@ -1,0 +1,10 @@
+<% @events.each do |e| %>
+	Name: <%= e.name %><br>
+	Place: <%= e.place %><br>
+	Date: <%= e.data %><br>
+	Description: <%= e.description %><br>
+	<%= link_to "Show More", e %><br>
+	<br>
+<% end %>
+
+<%= link_to "Add New Event", new_event_path %>

@@ -1,0 +1,12 @@
+<%= form_for @event do |e| %>
+  <%= e.label :name %>
+  <%= e.text_field :name %><br/>
+  <%= e.label :place %>
+  <%= e.text_field :place %><br/>
+  <%= e.label :date %>
+  <%= e.datetime_field :data %><br>
+  <%= e.label :description %><br>
+  <%= e.text_area :description %><br>
+
+  <%= e.submit %>
+<% end %>

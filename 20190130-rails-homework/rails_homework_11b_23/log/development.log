@@ -1,0 +1,2774 @@
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:17:20 +0200
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateEvents (20190124081633)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124081633_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124081633"]]
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 08:17:31.333578"], ["updated_at", "2019-01-24 08:17:31.333578"]]
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:17:35 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/blackcat/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 2337ms (Views: 2318.9ms | ActiveRecord: 1.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePeople (20190124082656)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190124082656_create_people.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124082656_create_people.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124082656"]]
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:29:08 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/blackcat/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/main/index.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d=( link_to :Events events_path );
+...                    ^~~~~~~~~~~):
+  
+app/views/main/index.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:29:45 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/main/index.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting ')'
+...=( link_to 'Events' events_path );
+...                    ^~~~~~~~~~~):
+  
+app/views/main/index.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:30:38 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/main/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+...=( link_to 'Events' events_path );
+...                    ^~~~~~~~~~~):
+  
+app/views/main/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:31:19 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:34:22 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:42:44 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 105ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 10:42:46 +0200
+Processing by PeopleController#show as HTML
+Completed 404 Not Found in 7ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  
+app/controllers/people_controller.rb:67:in `set_person'
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:42:50 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 10:44:01 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 10:45:49 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:45:51 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 10:45:55 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 91ms (Views: 84.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 10:46:23 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:46:25 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 10:46:52 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:46:53 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 10:46:55 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:46:56 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 10:46:58 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:47:00 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAttendences (20190124084831)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190124084831_create_attendences.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124084831_create_attendences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124084831"]]
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124082656)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 13:01:47.835451"], ["updated_at", "2019-01-24 13:01:47.835451"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124082656)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (14.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 13:01:47.960151"], ["updated_at", "2019-01-24 13:01:47.960151"]]
+  ↳ db/schema.rb:13
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (2.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-01-24 13:01:47.978210"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAttendences (20190124125924)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190124125924_create_attendences.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124125924_create_attendences.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/migrate/20190124125924_create_attendences.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/migrate/20190124125924_create_attendences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124125924"]]
+  ↳ bin/rails:9
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-01-24 15:02:08 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/blackcat/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 149ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 15:02:09 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 68ms (Views: 55.9ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-24 13:11:33.555578"], ["updated_at", "2019-01-24 13:11:33.555578"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (1.5ms)[0m  [1m[32mINSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-24 13:11:54.003642"], ["updated_at", "2019-01-24 13:11:54.003642"]]
+  [1m[35m (115.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAttendence Load (0.2ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAttendence Load (0.1ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAttendence Load (0.2ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asd"], ["created_at", "2019-01-24 13:16:09.696499"], ["updated_at", "2019-01-24 13:16:09.696499"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:40:04 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 155ms (Views: 109.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/people/2" for 127.0.0.1 at 2019-01-24 15:40:13 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (2.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 82ms (Views: 56.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:40:21 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 15:40:26 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 15:40:28 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-01-24 15:40:31 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (103.9ms)
+  Rendered events/new.html.erb within layouts/application (107.1ms)
+Completed 200 OK in 296ms (Views: 292.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 15:40:47 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g0WXKNILaROHyXiQjjPWe0M00rvDJKEVstvb6Z/KECZB0vjXVwdCJkIrEpVR216hVscUoWHn+C90nOS8/OP+IA==", "event"=>{"name"=>"Overwatch lague", "description"=>"None", "location"=>"USA", "date(1i)"=>"2019", "date(2i)"=>"5", "date(3i)"=>"24", "date(4i)"=>"13", "date(5i)"=>"40"}, "commit"=>"Create Event"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "location", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Overwatch lague"], ["description", "None"], ["location", "USA"], ["date", "2019-05-24 13:40:00"], ["created_at", "2019-01-24 13:40:47.682360"], ["updated_at", "2019-01-24 13:40:47.682360"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Redirected to http://0.0.0.0:3000/events/2
+Completed 302 Found in 48ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-01-24 15:40:47 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 183ms (Views: 131.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 15:40:50 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2019-01-24 15:40:55 +0200
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kxFkkBBqA8X/ofZELionh6EOlj3UuIuIIIbp0sx0iKe+SaeB8NT1ChSOIx2re9KXF3xhPFKuPROUZWGur4vdAw==", "id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:57
+  [1m[36mAttendence Load (1.4ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/events_controller.rb:57
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:57
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: attendences.event_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."event_id" = ?):
+  
+app/controllers/events_controller.rb:57:in `destroy'
+Started GET "/events" for 127.0.0.1 at 2019-01-24 15:41:50 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 105ms (Views: 85.0ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2019-01-24 15:41:53 +0200
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8FQNyKq66mPpFkks56xvunpJWj6hTGEk5M8GgzxItzrdDM7ZSgQcrAI5nHVi/ZqqzDutPyda179QLI7/X7fing==", "id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:57
+  [1m[36mEvent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:57
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:57
+Redirected to http://0.0.0.0:3000/events
+Completed 302 Found in 24ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 15:41:53 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 63ms (Views: 57.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 15:42:00 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:42:02 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/people/1" for 127.0.0.1 at 2019-01-24 15:42:06 +0200
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PUsGqXg9J2fnGoDOeTuq73WEM4+fyN0bcI3+QFEG+7QQE8W4mIPRqAw1VZf8al//w/bEjhnea4DEbnY8MvmuEA==", "id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:58
+  [1m[36mAttendence Load (0.5ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/people_controller.rb:58
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: attendences.person_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?):
+  
+app/controllers/people_controller.rb:58:in `destroy'
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:42:47 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 67ms (Views: 58.5ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/people/1" for 127.0.0.1 at 2019-01-24 15:42:50 +0200
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HLtqztRy55EFrCj2ExDiNMdsS+Jhu+K6iyAd4I3faf0x46nfNMwRXu6D/a+WQRckcR684+etVCE/w5Wc7iA8WQ==", "id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:58
+  [1m[36mPerson Destroy (1.1ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/people_controller.rb:58
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:58
+Redirected to http://0.0.0.0:3000/people
+Completed 302 Found in 17ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:42:50 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 15:42:51 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/" for 127.0.0.1 at 2019-01-24 15:43:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/cats"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people" for 127.0.0.1 at 2019-01-24 15:43:13 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/people/2" for 127.0.0.1 at 2019-01-24 15:43:16 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 59ms (Views: 50.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/people/2" for 127.0.0.1 at 2019-01-24 15:44:11 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (0.8ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?[0m  [["person_id", 2]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: attendences.person_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?):
+     6: </p>
+     7: 
+     8: Subscribed events: <br/>
+     9: <% @person_events.each do |event| %>
+    10:     name: <%= event.name%><br/>
+    11:     location: <%= event.location%><br/>
+    12:     date: <%= event.date%><br/>
+  
+app/views/people/show.html.erb:9:in `_app_views_people_show_html_erb___1153569648338929601_69863895748140'
+Started GET "/people/2" for 127.0.0.1 at 2019-01-24 15:44:33 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (0.4ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?[0m  [["people_id", 2]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 59ms (Views: 33.3ms | ActiveRecord: 5.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 13:47:11.439797"], ["updated_at", "2019-01-24 13:47:11.439797"]]
+  ↳ db/schema.rb:13
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (3.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 13:47:11.593306"], ["updated_at", "2019-01-24 13:47:11.593306"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-01-24 13:47:11.608718"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:07:24.892992"], ["updated_at", "2019-01-24 15:07:24.892992"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (7.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:07:24.977980"], ["updated_at", "2019-01-24 15:07:24.977980"]]
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-01-24 15:07:25.001441"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:07:52.289244"], ["updated_at", "2019-01-24 15:07:52.289244"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendences"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "events_id" integer, "people_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_events_id" ON "attendences" ("events_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_people_id" ON "attendences" ("people_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  ↳ db/schema.rb:33
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190124125924)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190124082656),
+(20190124081633);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:07:52.393231"], ["updated_at", "2019-01-24 15:07:52.393231"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-01-24 15:07:52.407371"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateEvents (20190124081633)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124081633_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124081633"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePeople (20190124082656)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124082656_create_people.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124082656"]]
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to Change (20190124134626)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:08:40.233072"], ["updated_at", "2019-01-24 15:08:40.233072"]]
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAttendences (20190124150858)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190124150858_create_attendences.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124150858_create_attendences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124150858"]]
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPerson Load (2.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/people/" for 127.0.0.1 at 2019-01-24 17:11:09 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/blackcat/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 68ms (Views: 48.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:11:11 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:11:13 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:11:15 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPerson Load (2.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:11:31 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-01-24 17:11:33 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (9.2ms)
+  Rendered events/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 55ms (Views: 45.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 17:11:47 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6v2ajBLj6CXUNcxWjo07ij6gxhBd3vrHrb/AxR6jOnAoavVzl+/DEBHXplNRZbNQK1MACv8do/1r+P+QfYrUdg==", "event"=>{"name"=>"Overwatch lague", "description"=>"None", "location"=>"somewhere", "date(1i)"=>"2019", "date(2i)"=>"3", "date(3i)"=>"24", "date(4i)"=>"15", "date(5i)"=>"11"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "location", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Overwatch lague"], ["description", "None"], ["location", "somewhere"], ["date", "2019-03-24 15:11:00"], ["created_at", "2019-01-24 15:11:47.420756"], ["updated_at", "2019-01-24 15:11:47.420756"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Redirected to http://0.0.0.0:3000/events/1
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-01-24 17:11:47 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:11:49 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:11:51 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:11:53 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2019-01-24 17:11:54 +0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (4.4ms)
+  Rendered people/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2019-01-24 17:11:59 +0200
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nmr3tS+sE6sJ2YOahNGo3j7OSmJL2tChE3o7ytwqDv8qB4J7elexeA8LO186A17f8vMnCwLcPZP+iHzsdRqXNg==", "person"=>{"name"=>"James"}, "commit"=>"Create Person"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "James"], ["created_at", "2019-01-24 15:11:59.081856"], ["updated_at", "2019-01-24 15:11:59.081856"]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:31
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:11:59 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (2.6ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?[0m  [["people_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: attendences.people_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?):
+     6: </p>
+     7: 
+     8: Subscribed events: <br/>
+     9: <% @person_events.each do |event| %>
+    10:     name: <%= event.name%><br/>
+    11:     location: <%= event.location%><br/>
+    12:     date: <%= event.date%><br/>
+  
+app/views/people/show.html.erb:9:in `_app_views_people_show_html_erb___1153569648338929601_69863783739440'
+Started GET "/people/" for 127.0.0.1 at 2019-01-24 17:12:08 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateEvents (20190124081633)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "location" varchar, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124081633_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124081633"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePeople (20190124082656)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124082656_create_people.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124082656"]]
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAttendences (20190124150858)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "attendences" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190124150858_create_attendences.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_person_id" ON "attendences" ("person_id")[0m
+  ↳ db/migrate/20190124150858_create_attendences.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_attendences_on_event_id" ON "attendences" ("event_id")[0m
+  ↳ db/migrate/20190124150858_create_attendences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190124150858"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-24 15:13:36.034945"], ["updated_at", "2019-01-24 15:13:36.034945"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/people/" for 127.0.0.1 at 2019-01-24 17:13:49 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/blackcat/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2019-01-24 17:13:51 +0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (2.1ms)
+  Rendered people/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2019-01-24 17:13:53 +0200
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjk7oEpP/43txCQV1lxhQ/NPzvss/UEi8hgUfcvmgRd6VE5uH7RdXusWnNBojpdCP3KjkmX7rBAf6lNbYtYY3g==", "person"=>{"name"=>"James"}, "commit"=>"Create Person"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "James"], ["created_at", "2019-01-24 15:13:53.638798"], ["updated_at", "2019-01-24 15:13:53.638798"]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:31
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 11ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:13:53 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (0.5ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?[0m  [["people_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: attendences.people_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?):
+     6: </p>
+     7: 
+     8: Subscribed events: <br/>
+     9: <% @person_events.each do |event| %>
+    10:     name: <%= event.name%><br/>
+    11:     location: <%= event.location%><br/>
+    12:     date: <%= event.date%><br/>
+  
+app/views/people/show.html.erb:9:in `_app_views_people_show_html_erb___1153569648338929601_47093236730980'
+Started GET "/people/" for 127.0.0.1 at 2019-01-24 17:13:56 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:13:58 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:13:59 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-01-24 17:14:01 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (6.7ms)
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 43ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 17:14:19 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rt90B8Rn8eYhLfMSz6HlpGfDMNbiSRtz94tdMDOv39OESBv4QWva0+TPmRcQSW1+cjD2zECKQkkxzGJlUIYx1Q==", "event"=>{"name"=>"Overwatch lague", "description"=>"asd", "location"=>"USA", "date(1i)"=>"2019", "date(2i)"=>"2", "date(3i)"=>"23", "date(4i)"=>"15", "date(5i)"=>"14"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "location", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Overwatch lague"], ["description", "asd"], ["location", "USA"], ["date", "2019-02-23 15:14:00"], ["created_at", "2019-01-24 15:14:19.888186"], ["updated_at", "2019-01-24 15:14:19.888186"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Redirected to http://0.0.0.0:3000/events/1
+Completed 302 Found in 10ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-01-24 17:14:19 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:14:22 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:14:23 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:14:25 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendence Create (1.4ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 1], ["created_at", "2019-01-24 15:15:09.355357"], ["updated_at", "2019-01-24 15:15:09.355357"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendence Load (0.1ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendence Destroy (0.2ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:16:28 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (0.5ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?[0m  [["people_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: attendences.people_id: SELECT "attendences".* FROM "attendences" WHERE "attendences"."people_id" = ?):
+     6: </p>
+     7: 
+     8: Subscribed events: <br/>
+     9: <% @person_events.each do |event| %>
+    10:     name: <%= event.name%><br/>
+    11:     location: <%= event.location%><br/>
+    12:     date: <%= event.date%><br/>
+  
+app/views/people/show.html.erb:9:in `_app_views_people_show_html_erb___1153569648338929601_69863894873500'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:16:54 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mAttendence Load (0.1ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:18:59 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:68
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 56ms (Views: 33.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:22:55 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:22:59 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:74
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:16
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 44ms (Views: 25.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:28:20 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:19
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:20
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"attend_event", :controller=>"people", :id=>"1"}):
+    20:     location: <%= event.location%><br/>
+    21:     date: <%= event.date%><br/>
+    22:     description: <%= event.description%><br/>
+    23:     <%= link_to "Attend", controller: "people", action: "attend_event" %> <br/> 
+    24: <% end %>
+    25: 
+    26: 
+  
+app/views/people/show.html.erb:23:in `block in _app_views_people_show_html_erb___1153569648338929601_69863898737480'
+app/views/people/show.html.erb:18:in `each'
+app/views/people/show.html.erb:18:in `_app_views_people_show_html_erb___1153569648338929601_69863898737480'
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:30:05 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:31:10 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:19
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:20
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"attend_event", :controller=>"people", :id=>"1"}):
+    20:     location: <%= event.location%><br/>
+    21:     date: <%= event.date%><br/>
+    22:     description: <%= event.description%><br/>
+    23:     <%= link_to "Attend", controller: "people", action: "attend_event" %> <br/> 
+    24: <% end %>
+    25: 
+    26: 
+  
+app/views/people/show.html.erb:23:in `block in _app_views_people_show_html_erb___1153569648338929601_69863893385160'
+app/views/people/show.html.erb:18:in `each'
+app/views/people/show.html.erb:18:in `_app_views_people_show_html_erb___1153569648338929601_69863893385160'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:31:51 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:19
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:20
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/people/attend" for 127.0.0.1 at 2019-01-24 17:31:54 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"attend"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Person with 'id'=attend):
+  
+app/controllers/people_controller.rb:78:in `set_person'
+Started GET "/people/attend" for 127.0.0.1 at 2019-01-24 17:32:35 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"attend"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Person with 'id'=attend):
+  
+app/controllers/people_controller.rb:78:in `set_person'
+Started GET "/people/attend" for 127.0.0.1 at 2019-01-24 17:32:37 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"attend"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Person with 'id'=attend):
+  
+app/controllers/people_controller.rb:78:in `set_person'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:32:38 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:78
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:19
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:20
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:32:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/people/1/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:34:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/people/1/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:34:21 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/people/1/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:34:35 +0200
+Processing by PeopleController#attend_event as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (PeopleController#attend_event is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:34:47 +0200
+  
+ActionController::RoutingError (uninitialized constant PersonController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:34:49 +0200
+  
+ActionController::RoutingError (uninitialized constant PersonController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:35:46 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (PeopleController#attend is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:36:02 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (PeopleController#attend is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:37:37 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:37:37 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:79
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:20
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 21.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:37:40 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:37:40 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:79
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:20
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 33.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/people/1/attend" for 127.0.0.1 at 2019-01-24 17:39:30 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:39:30 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:82
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:23
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:24
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 45ms (Views: 25.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/people/1/attend?event_id=1" for 127.0.0.1 at 2019-01-24 17:39:38 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"1", "id"=>"1"}
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:39:38 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:82
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:23
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:24
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 22.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/people/1/attend?event_id=1" for 127.0.0.1 at 2019-01-24 17:39:39 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"1", "id"=>"1"}
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:39:39 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:82
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:23
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:24
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/people/1/attend?event_id=1" for 127.0.0.1 at 2019-01-24 17:40:40 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"1", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (3.0ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 1], ["created_at", "2019-01-24 15:40:40.745627"], ["updated_at", "2019-01-24 15:40:40.745627"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 48ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:40:40 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:83
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 35ms (Views: 27.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:40:48 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:40:50 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:40:52 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-01-24 17:40:53 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (9.5ms)
+  Rendered events/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 17:41:26 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qnKNeWoGy/xCOqK0fDyKTJ3vxjObv1QVZJlsmloldQdo5eKG7wrgyYfYyLGj1AKWiBwAKTl8DS+i3lPPOQybAQ==", "event"=>{"name"=>"U4ene po matematika", "description"=>"U4ene", "location"=>"W 41 kabinet", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"24", "date(4i)"=>"09", "date(5i)"=>"40"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "location", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "U4ene po matematika"], ["description", "U4ene"], ["location", "W 41 kabinet"], ["date", "2019-01-24 09:40:00"], ["created_at", "2019-01-24 15:41:26.778263"], ["updated_at", "2019-01-24 15:41:26.778263"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Redirected to http://0.0.0.0:3000/events/2
+Completed 302 Found in 10ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-01-24 17:41:26 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-24 17:41:28 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 17:41:31 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-24 17:41:33 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:41:38 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:83
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 32ms (Views: 25.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/people/1/attend?event_id=2" for 127.0.0.1 at 2019-01-24 17:41:42 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (0.3ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-24 15:41:42.188183"], ["updated_at", "2019-01-24 15:41:42.188183"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 8ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:41:42 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:83
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:42:00 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:83
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:42:10 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:83
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:25
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:45:01 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:32
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:33
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:33
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 65ms (Views: 29.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-24 17:45:04 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/people_controller.rb:22:in `cancel'
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-24 17:45:41 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.1ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ?[0m  [["person_id", 1], ["event_id", 2]]
+  ↳ app/controllers/people_controller.rb:23
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:45:41 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:33
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:34
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 60ms (Views: 36.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-24 17:46:55 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/people_controller.rb:24:in `cancel'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:48:45 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:93
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 53ms (Views: 23.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-24 17:48:47 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.2ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mAttendence Destroy (2.0ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/people_controller.rb:24
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:24
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 15ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:48:47 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:93
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/people/1/attend?event_id=2" for 127.0.0.1 at 2019-01-24 17:48:49 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (1.0ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-24 15:48:49.490061"], ["updated_at", "2019-01-24 15:48:49.490061"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 14ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:48:49 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:93
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 19.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-24 17:48:50 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.2ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:24
+  [1m[36mAttendence Destroy (5.9ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/people_controller.rb:24
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:24
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 14ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:48:50 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:93
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1/attend?event_id=2" for 127.0.0.1 at 2019-01-24 17:48:51 +0200
+Processing by PeopleController#attend as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (3.4ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-24 15:48:51.985881"], ["updated_at", "2019-01-24 15:48:51.985881"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 14ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-24 17:48:52 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:93
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:34
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:35
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.8ms)
+
+

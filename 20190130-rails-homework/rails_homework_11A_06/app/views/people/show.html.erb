@@ -1,0 +1,42 @@
+Name: <%= @person.name %><br><br>
+
+
+<h3>Events</h3>
+<% @events_attended.each do |e| %>
+	Name of event: <%= e.name %><br>
+	Date: <%= e.data %><br>
+	Place: <%= e.place %><br>
+	Description: <%= e.description %><br>
+	<%= link_to "Delete Event", "/people/delete_event?event_id=#{e.id}&person_id=#{@person.id}" %><br><br>
+<% end %>
+
+<br>
+
+<%= form_tag("/people/add_event?person_id=#{@person.id}") do -%>
+  <%= select_tag "event", options_for_select(@events_not_attended.map{|e| e.name}) %>
+  <%= submit_tag "Add Event" %>
+<% end -%>
+
+<br>
+<% if @organization %>
+
+	<h3>Organization</h3>
+	<br> <%= @organization.name %>
+	<%= link_to "Leave Organization", "/people/leave_organization?organization_id=#{@organization.id}&person_id=#{@person.id}" %><br>
+	<h4>Events of organization:</h4>
+	<% @organization.events.each do |e| %>
+		Name of event: <%= e.name %><br>
+		Date: <%= e.data %><br>
+		Place: <%= e.place %><br>
+		Description: <%= e.description %><br>
+	<% end %>
+
+<% elsif @organizations %>
+	<h3>Organizations to join</h3>
+	<% @organizations.each do |org| %>
+		<%= org.name %>
+		<%= link_to "Join Organization", "/people/add_organization?organization_id=#{org.id}&person_id=#{@person.id}" %><br>
+	<% end %>
+
+<% end %>
+
