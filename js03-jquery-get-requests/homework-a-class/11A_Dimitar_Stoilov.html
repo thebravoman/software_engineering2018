@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$("#btnLoadJSON").click(function(){
+					$.ajax({
+						url: $("#txtJsonUrl").val(),
+						type: "GET",
+						dataType: "json",
+						crossDomain: true,
+						processData: false,
+						success: function(data, status, xhr){
+							alert(JSON.stringify({status:status,object:data}));
+						},
+						error: function(xhr, status, error) {
+							alert(JSON.stringify({succsess:false,statusCode:xhr.status}));
+						}
+
+					});
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id = "container">
+			 <input type="text" id="txtJsonUrl">
+			 <input type="button" id="btnLoadJSON" value="Send request">
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,10 @@
+
+<%= form_tag("/tasks", method: "get") do %>
+<%= label_tag(:name, "name:") %>
+<%= text_field_tag(:name) %>
+<%= label_tag(:description, "description:") %>
+<%= text_field_tag(:description) %>
+<%= check_box_tag(:wants_solution) %>
+<%= text_field_tag(:wants_solution) %>
+<%= submit_tag("Submit") %>
+<% end %>

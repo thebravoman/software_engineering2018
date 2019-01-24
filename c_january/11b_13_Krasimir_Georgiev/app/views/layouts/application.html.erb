@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DocumentApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class = "content">
+      <p id="notice"><%= params[:notice] %></p>
+    
+      <% if not logged_in? %>
+        <%= link_to 'Register', controller: "login_system", action: "register" %>
+        <%= link_to 'Login', controller: "login_system", action: "login" %>
+      <% else %>
+        <%= link_to 'Logout', controller: "login_system", action: "logout" %>
+      <% end %>
+
+      <%= yield %>
+    </div>
+      
+  </body>
+</html>

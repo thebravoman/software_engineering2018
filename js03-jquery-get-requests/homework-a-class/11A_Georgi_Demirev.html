@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var jsonBtn = $("<button />", {text: "JsonUrl"});
+			parent = $("#container");
+			parent.append(jsonBtn);
+			$(jsonBtn).click(function() {
+				$.ajax({
+					url: $("#jsonUrl").val(),
+					type: "GET",
+					dataType: "json",
+					crossDomain: true,
+					processData: false,
+					success: function(data, status, xhr) {
+						var statusHolder = {};
+						var textArea = $("#textArea");
+						var text = {}
+						text["status"] = status;
+						text["object"] = data;
+						textArea.text(JSON.stringify(text, 2, 2));
+					},
+					error: function(xhr, status, error) {
+						var textArea = $("#textArea");
+						var text = {}
+						var statusHolder = {};
+						text["success"] = "false";
+						text["statusCode"] = xhr.status;
+						textArea.text(JSON.stringify(text, 2, 2));
+					}
+				})
+			});
+		});
+		
+	</script>
+</head>
+<body>
+	<input type="text" id="jsonUrl">
+	<div id="container">
+		<textarea id="textArea"></textarea>
+	</div>
+</body>
+</html>

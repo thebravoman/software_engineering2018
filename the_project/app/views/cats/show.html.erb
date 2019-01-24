@@ -1,0 +1,11 @@
+<h1>Cats#show</h1>
+<p>Find me in app/views/cats/show.html.erb</p>
+
+  Name: <%= @cat.name %> <br/>
+  Weight: <%= @cat.weight %> <br/>
+  Owner: <%= @cat.person.name %>
+  <br/>
+
+  <%= link_to 'Edit', edit_cat_path(@cat) %> <br/>
+  <%= link_to 'Delete', cat_path(@cat), method: :delete, data: { confirm: 'For real?' } %> <br/>
+  <%= link_to 'Back to all cats', cats_path %>

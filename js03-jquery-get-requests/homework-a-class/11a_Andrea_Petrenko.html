@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8"></meta>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          $("#NQKAKUVBUTON").click(function(){
+            $.ajax({
+              url: $("#NQKAKUVTEKST").val(),
+              type: "GET",
+              dataType: "json",
+              crossDomain: true,
+              processData: false,
+              success: function(data, status, xhr){
+                var text = {};
+                text.success = "ti uspq choveche";
+                text.object = JSON.parse(JSON.stringify(data));
+                alert(JSON.stringify(text));
+              },
+              error: function(xhr, status, error) {
+                alert(JSON.stringify({succsess:false,statusCode:xhr.status}));
+              }
+            });
+          });
+        });
+      </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <input type="text" id="NQKAKUVTEKST">
+      <input type="button" id="NQKAKUVBUTON" value="Add">
+  	</div>
+  </body>
+</html>

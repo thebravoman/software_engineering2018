@@ -1,0 +1,43 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<body>
+    <textarea id="textarea" cols="30" rows="10" disable></textarea>
+    
+    <div id="logs"></div>
+    
+    <script>
+        
+        function printobject(object) {
+            $("#textarea").val(JSON.stringify(object));
+        }
+        
+        
+        function inputobject(object) {
+            for (var tmp in object) {
+                
+                
+                var key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(tmp);
+                
+                var value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(object[tmp]);
+                key.appendTo($("div"))
+                    .append(value);
+                value.appendTo($("div"));
+            }
+        }
+        var object = {
+            "kiselo": "mlqko",
+            "Mlechna":"promishlenost"
+        };
+        printobject(object);
+        inputobject(object);
+    </script>
+    
+</body>
+</html>

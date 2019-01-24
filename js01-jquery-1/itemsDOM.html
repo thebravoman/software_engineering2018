@@ -1,0 +1,48 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+var count = 0;
+
+function addItem() {
+	count++;
+	var items = document.getElementById('list');
+	var item = createItem(document.getElementById('txtItem').value);
+
+	items.appendChild(item);
+}
+
+function createItem(itemText) {
+	var item = document.createElement("li");
+	var itemId = '_'+ itemText + count;
+	
+	item.id = itemId;
+	item.appendChild(document.createTextNode(itemText));
+	
+	var removeLink = document.createElement('a');
+	removeLink.href = '#';
+	removeLink.id=count;
+	removeLink.onclick = function() {removeItem(itemId);};
+	removeLink.appendChild(document.createTextNode('remove'));
+	
+	item.appendChild(document.createTextNode(' '));
+	item.appendChild(removeLink);
+	
+	return item;
+}
+function removeItem(itemId) {
+	var item = document.getElementById(itemId);
+	var parent = item.parentNode;
+
+	parent.removeChild(item);
+}
+
+</script>
+<body>
+	<div id="items">
+		<ul id="list"/>
+	</div>
+	<div><input type="text" id="txtItem"/><input type="button" id="btnAddItem" value="Add Item" onclick='addItem()'>
+</div>
+</body>
+</html>

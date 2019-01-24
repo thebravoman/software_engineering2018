@@ -1,0 +1,16 @@
+
+<h1>All of your documents</h1>
+
+<%= link_to 'New document', new_document_path %> <br/><br/>
+
+<% @documents.each do |document| %>
+         
+	
+            <%= link_to document.name, document_path(document) %> <br/>
+	    <p><%= document.discription %></p>
+            <h3><%= button_to "Delete",  document, method: :delete, confirm: "Are you sure that you wish to delete #{document.name}?" %></h3>
+      	    
+         
+<% end %>
+
+

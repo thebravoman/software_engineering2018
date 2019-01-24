@@ -1,0 +1,4 @@
+api_key: 'API Key'
+domain: 'Domain'
+username: 'Default SMTP Login'
+password: 'Default Password'

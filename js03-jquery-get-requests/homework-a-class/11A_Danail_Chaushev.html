@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#naDeduUvisnaliqButton').click(function(){
+      var url_json = $('#nqkvoRandomText4e').val();
+      console.log(url_json);
+      $.ajax({
+        url: url_json,
+        type: "GET",
+        dataType: "json",
+        crossDomain: true,
+        processData: false,
+        success:  function (data, status, xhr){
+          var text = {};
+          text.status = "success";
+          text.object = JSON.parse(JSON.stringify(data));
+          alert(JSON.stringify(text));
+        },
+        error: function(data, status, xhr) {
+          var text = {};
+          text.success = false;
+          text.statusCode = xhr.status;
+          alert(JSON.stringify(text));
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+	<div id="container">
+    <input type="text" id="nqkvoRandomText4e">
+    <input type="button" id="naDeduUvisnaliqButton" value="Submit">
+	</div>
+</body>

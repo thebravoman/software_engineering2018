@@ -1,0 +1,56 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script> 
+	$(document).ready(function() {
+		var count = 0;
+		var _state = {}; //object
+		$(document).ready(function()  {
+	    count++;
+		AddNew(count, _state, $('#items'));  
+		UpdateButton(count, _state, $('#items'));
+		$('#txtObject').show();
+	});
+	});
+
+	function UpdateButton(count, state, parent) {
+	var update = $("<button />", {
+				            id: 'UpdateBtn'+count, 
+							text:'Click to...', 
+							value: count});
+	parent.append(update);
+	$(update).click(function() {
+		var key = $('#' + '_key' + this.value).val();
+	    var value = $('#' + '_value' + this.value).val();
+	    state[key] = value;
+	    stateIn(state);
+	});
+}
+	function AddNew(count, state, parent) {
+    var jsonNodeKey = $("<input />", {
+						      id: '_key' + count});
+	var colon = $("<span />", {
+						id:'_colon' + count, 
+						text: ':'});					  
+	var jsonNodeValue = $("<input />", { type: 'text',
+						id: '_value' + count});
+		$('#items').append(jsonNodeKey);
+	    $('#items').append(colon);
+		$('#items').append(jsonNodeValue);
+	}
+	function stateIn(state) {
+  		$('#txtObject').val(JSON.stringify(state, 2, 2));
+	}
+</script>
+<body>
+	<div>
+		<font color='pink'><h1> Hallo </h1></font>
+	</div>
+	<br/>
+	<div id="items">
+	</div>
+	<hr/>
+	<div>
+		<textarea style="width:520px; height: 480px; display:none;" id="txtObject"></textarea>
+	</div>
+</body>
+</html>

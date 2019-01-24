@@ -1,0 +1,21 @@
+<h1>Edit '<%=@event.name%>'</h1>
+
+<h2 style="color: red">
+	<%=@message%>
+</h2>
+
+<%=form_for :event do |f|%>
+	Name: <%=f.text_field :name%>
+	<br>
+	<br>
+	Location: <%=f.text_field :location%>
+	<br>
+	<br>
+	Date: <%=f.date_field :date%>
+	<br>
+	<br>
+	Description(optional) <%=f.text_field :description%>
+	<br>
+	<br>
+	<%=f.submit 'Edit!'%>
+<%end%>

@@ -1,0 +1,10 @@
+<h2>Edit Document "<strong class="name"><%= @document.name %></strong>"</h2>
+
+<%= form_for @document do |f|%>
+    Name: <%= f.text_field :name %> </br>
+    <%= f.text_field :description, size: "63", value: "Description...(maximum 30 symbols)" %> </br>
+    <%= f.text_area :text, size: "60x12" %></br>
+    <%= f.submit "Save Changes" %>
+<% end  %>
+
+<%= link_to "Cancel", document_path(@document)%>

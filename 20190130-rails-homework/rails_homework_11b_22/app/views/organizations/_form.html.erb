@@ -1,0 +1,8 @@
+<%= form_for @organization, url: yield(:form_url) do |f| %>
+  <%= render 'layouts/error_messages', object: @organization %>
+
+  <%= f.label :name %> <br />
+  <%= f.text_field :name %> <br />
+  <%= f.submit yield(:submit_text) %>
+<% end %>
+

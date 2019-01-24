@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+	$("#btnLoadJSON").click(function(){
+		$.ajax({
+		url: $("#txtJsonUrl").val(),
+		type: "GET",
+		dataType: "json",
+		success: function(data, status, xhr){
+			alert(JSON.stringify({status:status,object:data}));
+		},
+		error: function(xhr, status, error) {
+			alert(JSON.stringify({success:false,statusCode:xhr.status}));
+		}
+		
+		});
+		});
+		});
+</script>
+</head>
+
+<body>
+		<div id = "container">
+			 <input type="text" id="txtJsonUrl">
+			 <input type="button" id="btnLoadJSON" value="RICARDO MILOS">
+			 
+			 
+			 
+		</div>
+		<p>https://api.jquery.com/jquery.getjson/</p>
+		<p>https://www.w3schools.com/jsref/met_win_alert.asp<p/>
+	</body>
+
+
+
+
+
+</html>
+
+
+

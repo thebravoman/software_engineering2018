@@ -1,0 +1,2440 @@
+Started GET "/" for 127.0.0.1 at 2018-09-26 17:46:38 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.8ms)
+Completed 200 OK in 70ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 19:17:33 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 32ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-09-26 19:18:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/equations"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-26 20:12:41 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 20ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:13:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/equation"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:25:40 +0300
+  
+ArgumentError ('EquationController' is not a supported controller name. This can lead to potential routing problems. See http://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:27:55 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1093ms (Views: 1091.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:31:20 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:31:21 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:31:22 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:34:41 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (146.9ms)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007fcbd81afa30>:0x000055d4c37414e8>
+Did you mean?  fork):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<%=form %>
+    8: </body>
+    9: </html>
+  
+app/views/equation/index.html.erb:7:in `_app_views_equation_index_html_erb__1445143494271281608_47186150396400'
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:34:57 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<!-- <%=form_for %> -->
+    8: </body>
+    9: </html>
+  
+app/views/equation/index.html.erb:7:in `_app_views_equation_index_html_erb__1445143494271281608_70256974393620'
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:34:58 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<!-- <%=form_for %> -->
+    8: </body>
+    9: </html>
+  
+app/views/equation/index.html.erb:7:in `_app_views_equation_index_html_erb__1445143494271281608_70256911874760'
+Started GET "/equation/show" for 127.0.0.1 at 2018-09-26 20:35:26 +0300
+Processing by EquationController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 406 Not Acceptable in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (EquationController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/show" for 127.0.0.1 at 2018-09-26 20:35:52 +0300
+Processing by EquationController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/equation, application/equation with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:3:in `show'
+Started GET "/equation/show" for 127.0.0.1 at 2018-09-26 20:36:20 +0300
+Processing by EquationController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<!-- <%=form_for %> -->
+    8: </body>
+    9: </html>
+  
+app/views/equation/index.html.erb:7:in `_app_views_equation_index_html_erb__1445143494271281608_70256922477740'
+app/controllers/equation_controller.rb:3:in `show'
+Started GET "/equation/show" for 127.0.0.1 at 2018-09-26 20:36:47 +0300
+Processing by EquationController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:37:22 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:37:27 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (143.3ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007fcbee27e5b8>:0x00007fcbedbd1dc8>
+Did you mean?  fork):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation2 </h1>
+    7: 	<%=form %>
+    8: </body>
+    9: </html>
+  
+app/views/equation/new.html.erb:7:in `_app_views_equation_new_html_erb__2718100078705928546_70256921819120'
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:37:37 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:37:43 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/index.html.erb within layouts/application
+  Rendered equation/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 20:38:02 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for EquationController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/show" for 127.0.0.1 at 2018-09-26 20:38:54 +0300
+Processing by EquationController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:41:27 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/new.html.erb:8: syntax error, unexpected keyword_do_block
+...on, url: {action: "create"}, do |f| @output_buffer.safe_appe...
+...                             ^~
+/home/martin/Documents/TP/App/app/views/equation/new.html.erb:12: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/martin/Documents/TP/App/app/views/equation/new.html.erb:18: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/martin/Documents/TP/App/app/views/equation/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/equation/new.html.erb:8: syntax error, unexpected keyword_do_block
+app/views/equation/new.html.erb:12: syntax error, unexpected keyword_end
+app/views/equation/new.html.erb:18: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/equation/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:44:13 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/new.html.erb:8: syntax error, unexpected keyword_do_block
+...on, url: {action: "create"}, do |f| @output_buffer.safe_appe...
+...                             ^~
+/home/martin/Documents/TP/App/app/views/equation/new.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/equation/new.html.erb:8: syntax error, unexpected keyword_do_block
+app/views/equation/new.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:44:38 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for @equation, url: {action: "create"} do |f| %>
+     9:   		<%= f.text_field :title %>
+    10:   		<%= f.text_area :body, size: "60x12" %>
+    11: 		<%= f.submit "Create" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256922262460'
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:46:26 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for @equation do |f| %>
+     9:   		<%= f.text_field :title %>
+    10:   		<%= f.text_area :body, size: "60x12" %>
+    11: 		<%= f.submit "Create" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256739785060'
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:47:45 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for @equation do |f| %>
+     9: 		<%= f.lable :a %>
+    10:   		<%= f.text_field :title %>
+    11:   		<%= f.text_area :body, size: "60x12" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256807243680'
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:57:46 +0300
+Processing by EquationController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant EquationController::Equation):
+  
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 20:58:50 +0300
+Processing by EquationController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant EquationController::Equation):
+  
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:00:48 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for @equation do |f| %>
+     9: 		<%= f.lable :a %>
+    10:   		<%= f.text_field :title %>
+    11:   		<%= f.text_area :body, size: "60x12" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256840403300'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:02:06 +0300
+Processing by EquationController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant EquationController::Equation):
+  
+app/controllers/equation_controller.rb:6:in `new'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:02:58 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Equation):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for Equation.new do |f| %>
+     9: 		<%= f.lable :a %>
+    10:   		<%= f.text_field :title %>
+    11:   		<%= f.text_area :body, size: "60x12" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256916559740'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:03:46 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_for do |f| %>
+     9: 		<%= f.lable :a %>
+    10:   		<%= f.text_field :title %>
+    11:   		<%= f.text_area :body, size: "60x12" %>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256920133860'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:05:34 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `lable' for nil:NilClass):
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_tag do |f| %>
+     9: 		<%= f.lable :a %>
+    10:   		<%= f.text_field :title %>
+    11:   		<%= f.text_area :body, size: "60x12" %>
+    12: 		<%= f.submit "Create" %>
+  
+app/views/equation/new.html.erb:9:in `block in _app_views_equation_new_html_erb__2718100078705928546_70256921958140'
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256921958140'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:05:45 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_field' for nil:NilClass):
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_tag do |f| %>
+     9:   		<%= f.text_field :title %>
+    10:   		<%= f.text_area :body, size: "60x12" %>
+    11: 		<%= f.submit "Create" %>
+    12: 	<% end %>
+  
+app/views/equation/new.html.erb:9:in `block in _app_views_equation_new_html_erb__2718100078705928546_70256922620100'
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256922620100'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:08:01 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (74.1ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `lable_tag' for #<#<Class:0x00007fcbed1b3c38>:0x00007fcbedf643c8>
+Did you mean?  label_tag):
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_tag do |f| %>
+     9: 		<%= lable_tag(:a, "A:") %>
+    10:   		<%= text_field_tag(:a) %>
+    11: 		<%= lable_tag(:b, "B:") %>
+    12:   		<%= text_field_tag(:b) %>
+  
+app/views/equation/new.html.erb:9:in `block in _app_views_equation_new_html_erb__2718100078705928546_70256923715280'
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256923715280'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:08:35 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for nil:NilClass):
+    12:   		<%= text_field_tag(:b) %>
+    13: 		<%= label_tag(:c, "C:") %>
+    14:   		<%= text_field_tag(:c) %>
+    15: 		<%= f.submit "Create" %>
+    16: 	<% end %>
+    17: 
+    18: </body>
+  
+app/views/equation/new.html.erb:15:in `block in _app_views_equation_new_html_erb__2718100078705928546_70256740585160'
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256740585160'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:09:00 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:10:45 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:10:53 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:12:06 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:12:55 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:17:04 +0300
+  
+SyntaxError (/home/martin/Documents/TP/App/config/routes.rb:4: syntax error, unexpected '>'
+	post 'equation/new' +> 'equation#calculate'
+	                     ^):
+  
+config/routes.rb:4: syntax error, unexpected '>'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:17:32 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKHPyjgdhMHwo3FM/o+QAA4+QUIScw3pV/7TBcPHKZ7jwEWhR3uqYtayZqaEt2x5+3MUJhPUgeb0Lrji/uufIw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:10:in `calculate'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:17:39 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKHPyjgdhMHwo3FM/o+QAA4+QUIScw3pV/7TBcPHKZ7jwEWhR3uqYtayZqaEt2x5+3MUJhPUgeb0Lrji/uufIw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:10:in `calculate'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:18:45 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKHPyjgdhMHwo3FM/o+QAA4+QUIScw3pV/7TBcPHKZ7jwEWhR3uqYtayZqaEt2x5+3MUJhPUgeb0Lrji/uufIw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 21:20:21 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for EquationController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 21:20:38 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:23:16 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:25:37 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:25:52 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:26:05 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:28:52 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:33:35 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W6M39c+fXrEgdna23UiiT2cQ2ADKdgNzdXVq2iYDT2LEwr2esPlwEgZnYVyncF42kl2NZMvRj3zWpQE9Gy/53w==", "a"=>"tmtealium", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/show.html.erb:15: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/equation/show.html.erb:15: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/equation_controller.rb:13:in `calculate'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:34:08 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W6M39c+fXrEgdna23UiiT2cQ2ADKdgNzdXVq2iYDT2LEwr2esPlwEgZnYVyncF42kl2NZMvRj3zWpQE9Gy/53w==", "a"=>"tmtealium", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 113ms (Views: 112.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:34:11 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:34:55 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:36:13 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"18Gy+k/12R8Glu7Zt5lvdpkH1pUmF/g69UrRICw+pexIoDiRMJP3vCCH+TPNoZMPbEqD8SewdDVWmrrHERITUQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:36:22 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"/calculate", :controller=>"equation", :method=>"post"}):
+     5: <body>
+     6: 	<h1> My Implementation2 </h1>
+     7: 
+     8: 	<%= form_tag(action: "/calculate", method: "post") do %>
+     9: 		<%= label_tag(:a, "A:") %>
+    10:   		<%= text_field_tag(:a) %>
+    11: 		<br>
+  
+app/views/equation/new.html.erb:8:in `_app_views_equation_new_html_erb__2718100078705928546_70256915314960'
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:37:20 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"18Gy+k/12R8Glu7Zt5lvdpkH1pUmF/g69UrRICw+pexIoDiRMJP3vCCH+TPNoZMPbEqD8SewdDVWmrrHERITUQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:39:30 +0300
+Processing by EquationController#calculate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"18Gy+k/12R8Glu7Zt5lvdpkH1pUmF/g69UrRICw+pexIoDiRMJP3vCCH+TPNoZMPbEqD8SewdDVWmrrHERITUQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create", "method"=>"post"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:39:37 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:39:38 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calculate?utf8=%E2%9C%93&a=tmtealium&b=b&c=c&commit=Create" for 127.0.0.1 at 2018-09-26 21:39:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/calculate?utf8=%E2%9C%93&a=tmtealium&b=b&c=c&commit=Create" for 127.0.0.1 at 2018-09-26 21:40:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/calculate?utf8=%E2%9C%93&a=tmtealium&b=b&c=c&commit=Create" for 127.0.0.1 at 2018-09-26 21:41:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/calculate?utf8=%E2%9C%93&a=tmtealium&b=b&c=c&commit=Create" for 127.0.0.1 at 2018-09-26 21:41:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:41:25 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2018-09-26 21:41:29 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/calculate" for 127.0.0.1 at 2018-09-26 21:42:00 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:42:09 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2018-09-26 21:42:13 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:43:25 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation_calculate_path" for 127.0.0.1 at 2018-09-26 21:43:31 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation_calculate_path"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:43:51 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:43:52 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2018-09-26 21:43:55 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 21:45:15 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2018-09-26 21:45:19 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/calculate"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:45:45 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:45:45 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:45:46 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:45:49 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/equation/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:46:21 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:46:26 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:46:46 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 21:47:17 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:47:20 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 21:47:49 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:47:51 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/dvpixelyoursite, application/dvpixelyoursite with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:14:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:48:33 +0300
+  
+SyntaxError (/home/martin/Documents/TP/App/app/controllers/equation_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+		render text : @a
+		            ^):
+  
+app/controllers/equation_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:49:33 +0300
+  
+SyntaxError (/home/martin/Documents/TP/App/app/controllers/equation_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+		render text : params.inspect
+		            ^):
+  
+app/controllers/equation_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:51:49 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:14:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:52:36 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 88ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:52:40 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK8hpZ/Q4s2EqHUhqhyvS52OqiIT37oVub5jiuVE+eD7zqvO4LbMbqK5YsvQJFMyaMP/RhJ4Nhoabght2GhPXQ==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:54:07 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:54:11 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yc1DoI21328OcvCbnZzTvFSEdcDCUtQ/Uj842xLo4tZWrMnL8tPxzChj53HnpC/FockgpMP1WDDx71M8L8RUaw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:14:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:55:07 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yc1DoI21328OcvCbnZzTvFSEdcDCUtQ/Uj842xLo4tZWrMnL8tPxzChj53HnpC/FockgpMP1WDDx71M8L8RUaw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/create.html.erb within layouts/application
+  Rendered equation/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:55:14 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yc1DoI21328OcvCbnZzTvFSEdcDCUtQ/Uj842xLo4tZWrMnL8tPxzChj53HnpC/FockgpMP1WDDx71M8L8RUaw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/create.html.erb within layouts/application
+  Rendered equation/create.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 21:55:39 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yc1DoI21328OcvCbnZzTvFSEdcDCUtQ/Uj842xLo4tZWrMnL8tPxzChj53HnpC/FockgpMP1WDDx71M8L8RUaw==", "a"=>"a", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:14:in `create'
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 21:59:59 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:00:03 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c1qNpXuPpe+7LCss7NvL8G3/C1nwT0X3+QjPwVLBAYnsOwfOBOmLTJ09PMaW4zeJmLJePfHoyfha2KQmb+23NA==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template equation/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/martin/Documents/TP/App/app/views"
+):
+  
+app/controllers/equation_controller.rb:14:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:00:24 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c1qNpXuPpe+7LCss7NvL8G3/C1nwT0X3+QjPwVLBAYnsOwfOBOmLTJ09PMaW4zeJmLJePfHoyfha2KQmb+23NA==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (155.4ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0x00007fcbedaac9e8>:0x00007fcbeda965d0>):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<%= content_tag @a, class: name %>
+    8: </body>
+    9: </html>
+  
+app/views/equation/show.html.erb:7:in `_app_views_equation_show_html_erb__2454219575730655602_70256921167060'
+app/controllers/equation_controller.rb:14:in `create'
+Started GET "/equation/new?method=post" for 127.0.0.1 at 2018-09-26 22:00:27 +0300
+Processing by EquationController#new as HTML
+  Parameters: {"method"=>"post"}
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:00:31 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (172.8ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0x00007fcbedaac9e8>:0x00007fcbee392a58>):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<%= content_tag @a, class: name %>
+    8: </body>
+    9: </html>
+  
+app/views/equation/show.html.erb:7:in `_app_views_equation_show_html_erb__2454219575730655602_70256925903060'
+app/controllers/equation_controller.rb:14:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:00:56 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:01:51 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 22:01:53 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:02:42 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:02:54 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:03:07 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"b", "c"=>"c", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:03:17 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"fasd", "c"=>"caf", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:03:39 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"fasd", "c"=>"caf", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:03:51 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFFpGMob4E+qo57rifZC9AFW/E0Ta380P+C9/owYPGinMONztX3O7IyyiQHzzr6N9BupKRLM8zucMNYZsTSK1Q==", "a"=>"dvpixelyoursite", "b"=>"fasd", "c"=>"caf", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 22:04:10 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 22:04:11 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:04:13 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:04:13 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:04:19 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"tmtealium", "b"=>"fasd", "c"=>"caf", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:10:36 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"tmtealium", "b"=>"fasd", "c"=>"caf", "commit"=>"Create"}
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `b' for #<EquationController:0x00007fcbdc6d8800>
+Did you mean?  @b):
+  
+app/controllers/equation_controller.rb:18:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:11:18 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `b' for #<EquationController:0x00007fcbec77c3a0>
+Did you mean?  @b):
+  
+app/controllers/equation_controller.rb:18:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:11:43 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `b' for #<EquationController:0x00007fcbe020e370>
+Did you mean?  @b):
+  
+app/controllers/equation_controller.rb:27:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:12:03 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/equation_controller.rb:27:in `-'
+app/controllers/equation_controller.rb:27:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:12:30 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:12:49 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:13:34 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:15:54 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `push' for nil:NilClass):
+  
+app/controllers/equation_controller.rb:27:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:17:40 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:18:01 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:18:21 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 22:18:42 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<%= @output.each do |line| %>
+    8: 	<p>
+    9: 		<%= line %>
+   10: 	</p>
+  
+app/views/equation/show.html.erb:7:in `_app_views_equation_show_html_erb__2454219575730655602_70256847618520'
+app/controllers/equation_controller.rb:6:in `index'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:19:32 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:20:24 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:20:49 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:21:16 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:21:19 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:21:47 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:22:00 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 22:22:06 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: </head>
+    5: <body>
+    6: 	<h1> My Implementation </h1>
+    7: 	<%= @output.each do |line| %>
+    8: 	<p>
+    9: 		<%= line %>
+   10: 	</p>
+  
+app/views/equation/show.html.erb:7:in `_app_views_equation_show_html_erb__2454219575730655602_70256786743360'
+app/controllers/equation_controller.rb:6:in `index'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:24:56 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:26:24 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/show.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/equation/show.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/equation_controller.rb:32:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:26:38 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:27:00 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:27:08 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:27:35 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:38:11 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:38:40 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEyzFnF9t/yRNcI53zYAxuiRsD3x79s03WL+NPQM0L4TLTl9DhuZX7ck1dOlDvy/HdzlWfBIVzt+spXTySBmAw==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Create"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 22:39:07 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 68ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:39:54 +0300
+  
+ArgumentError ('/equation/new' is not a supported controller name. This can lead to potential routing problems. See http://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:40:31 +0300
+  
+ArgumentError ('Equation' is not a supported controller name. This can lead to potential routing problems. See http://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:41:06 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 22:41:11 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:41:28 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghhqz9gTT17M8V+bFdEakCV/03P5ZWqDXEV4PlgIsUUdeeCkp3Vh/ergSHFv6ebp0DKGF/jC5oz/lRPZZSQH+A==", "a"=>"tmtealium", "b"=>"3", "c"=>"4", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/equation_controller.rb:32:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 22:46:09 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghhqz9gTT17M8V+bFdEakCV/03P5ZWqDXEV4PlgIsUUdeeCkp3Vh/ergSHFv6ebp0DKGF/jC5oz/lRPZZSQH+A==", "a"=>"tmtealium", "b"=>"3", "c"=>"4", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation/new" for 127.0.0.1 at 2018-09-26 22:46:19 +0300
+Processing by EquationController#new as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:33:11 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sQ8kG759QA7WzhC7UW2Vrp0+4ap1HTcTolkeSHEe7Q8ubq5wwRturfDfB1ErVWnXaHO0znS6uxwBiXWvTDJbsg==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 511ms (Views: 510.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:34:37 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:34:43 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNMEt94jkGWfKsGzorDCRGYJ+fpF48K9t5GgStVADALvso7coUW+xrk71lnYiD49k0SsnkRETrIUQcut6Gy6vw==", "a"=>"1", "b"=>"3", "c"=>"4", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:35:33 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:35:34 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z2iNibyhHp/T3EQrH+L1jWOoUkeIRieMutMsJU5Nk7hQCQfiw8cwPPXNU8Fl2gn0luUHI4nhq4MZA0fCc2ElBQ==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:36:51 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:36:52 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ctQspIUhrQHUTuCEqKlC2RjgR/wm3EMduOloG3fUWeHttabP+keDovJf927Skb6g7a0SmCd7zxIbOQP8SvjvXA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/show.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+</body>
+^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:12: unknown regexp options - htl
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: unterminated string meets end of file
+          end
+             ^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/equation/show.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+app/views/equation/show.html.erb:12: unknown regexp options - htl
+app/views/equation/show.html.erb:17: unterminated string meets end of file
+app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/equation_controller.rb:16:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:37:28 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ctQspIUhrQHUTuCEqKlC2RjgR/wm3EMduOloG3fUWeHttabP+keDovJf927Skb6g7a0SmCd7zxIbOQP8SvjvXA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/show.html.erb:10: syntax error, unexpected '\n', expecting =>
+...safe_append='">Go Back</button>
+...                               ^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:12: unknown regexp options - htl
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: unterminated string meets end of file
+          end
+             ^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/equation/show.html.erb:10: syntax error, unexpected '\n', expecting =>
+app/views/equation/show.html.erb:12: unknown regexp options - htl
+app/views/equation/show.html.erb:17: unterminated string meets end of file
+app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/equation_controller.rb:16:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:38:05 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ctQspIUhrQHUTuCEqKlC2RjgR/wm3EMduOloG3fUWeHttabP+keDovJf927Skb6g7a0SmCd7zxIbOQP8SvjvXA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Documents/TP/App/app/views/equation/show.html.erb:10: syntax error, unexpected '\n', expecting =>
+...safe_append='">Go Back</button>
+...                               ^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:12: unknown regexp options - htl
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: unterminated string meets end of file
+          end
+             ^
+/home/martin/Documents/TP/App/app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/equation/show.html.erb:10: syntax error, unexpected '\n', expecting =>
+app/views/equation/show.html.erb:12: unknown regexp options - htl
+app/views/equation/show.html.erb:17: unterminated string meets end of file
+app/views/equation/show.html.erb:17: syntax error, unexpected end-of-input, expecting ')'
+app/controllers/equation_controller.rb:16:in `create'
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:40:14 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ctQspIUhrQHUTuCEqKlC2RjgR/wm3EMduOloG3fUWeHttabP+keDovJf927Skb6g7a0SmCd7zxIbOQP8SvjvXA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:40:18 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:40:18 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y7EGEkxuGeCLRK2lIFlnVdz5hkq7fDw9ivKqcxe2pjT80Ix5Mwg3Q61Vuk9aYZssKbTTLrrbsDIpIsGUKpoQiQ==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:42:20 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:42:20 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ImTFuxZ+xfk9w4BVYoND6/+2+IN4BTQBefdt8Ihjc+O9BU/QaRjrWhvSl78Yu7+SCvut53miuA7aJwYXtU/FXg==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:42:22 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:42:26 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zrtmnTJbtGZ3cyH3UqCrG8SGo/4zIrIIFiChSJkAXJBnisqaWRlIKtWwSzPWjOhvGXMsBlxPNkEhAUJW6Y5pJA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:42:38 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:42:43 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"05mf5EC1oyEhN/1Dt0kAe4LysDVQJfP+s6/dMRnzAN96qDPjK/dfbYP0l4czZUMPXwc/zT9Id7eEjj4vaX01aw==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:42:45 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:42:52 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GWeNO6qqWlhxGc2Jb+3esNjIj8hp+xQvUMlfg3hyTJawViE8weimFNPap03rwZ3EBT0AMAaWkGZn6LydCPx5Ig==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:42:53 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:42:56 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2waguVjbxwSDIoT4HFaCZcTCnP0jWHICwaeSDu9vJDhyNwy+M5k7SCHh7jyYesERGTcTBUw19kv2hnEQn+ERjA==", "a"=>"", "b"=>"", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:43:31 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:43:43 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+THabxVH57zsaY7zatVjQS4OQUmH4yKT7zFEzxYpphZQAHZofgUb8E6q5Dfu+SA18/vOseiOptrYEKfRZqeTog==", "a"=>"", "b"=>"{:value=>3}", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:43:44 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:43:58 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TZivkjd6UBFcQj37nZf2vPqcwNvXisH5URJXTZOyWDvkqQOVXDisXf6BVz8Zu7XIJ2lPI7jnRbBmM7RT4zxtjw==", "a"=>"", "b"=>"3", "c"=>"", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:43:59 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:44:07 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"naaA4fvEUPU7qAFZjcD2WBRQKf8bUyP6z+foiECi3RA0lyzmkIasuZlra50J7LUsyaWmB3Q+p7P4xguWMCzopA==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:44:09 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:44:39 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSNkXk8fbOiUO9rREu2pWRlxxN4sHP6EpNO9bMJprGg0EshZJF2QpDb4sBWWweotxIRLJkNxes2T8l5ysueZ3A==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:46:09 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 108ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:46:09 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:46:10 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jXLvy38O+/Ru2oZ8YGTEY1/2p+GAbrv55+8CdYWSmCgSE2WgAGjVV0jLkZYaXDgaqrvyhYHJN/ZEP2mSuL4ulQ==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:46:31 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equation" for 127.0.0.1 at 2018-09-26 23:46:32 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:46:33 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"40NUKxleCSgWOJ7af54MyqachcXg8FpONnk1QDjSuQ18It5AZjgnizApiTAFpvCzU9HQoeFX1kGVqV6nBf4PsA==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:46:53 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:46:54 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:46:54 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L7msCwCQe1kFX1gvYHNBoosShsKZQsIBCKxCS3FWG1mw2CZgf/ZV+iNOT8UaS73bfl/TppjlTg6rfCmsTHqt5A==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:46:56 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:46:57 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AIpjlTpVpbt5YbyaNTZzQ9k+zHCDdzgOi0dBCMIE2hmpu8+SURdZ99ui1l6xGjA3BMtDiOwavEe8ZqIWsorvrQ==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-26 23:47:05 +0300
+Processing by EquationController#index as HTML
+  Rendering equation/new.html.erb within layouts/application
+  Rendered equation/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equation" for 127.0.0.1 at 2018-09-26 23:47:28 +0300
+Processing by EquationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xNXIOFfof0vMYb+KqsfwDCuL8seM4bq9oVi6T4o7XCpt5GQ/PKqDB26i1U4u67N49n59P+OMPvSWeVlR+rVpng==", "a"=>"1", "b"=>"3", "c"=>"2", "commit"=>"Calculate"}
+  Rendering equation/show.html.erb within layouts/application
+  Rendered equation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+

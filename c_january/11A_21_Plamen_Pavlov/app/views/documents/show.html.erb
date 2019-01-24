@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @document.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

@@ -1,0 +1,14 @@
+<h1>Cats#new</h1>
+<p>Find me in app/views/cats/new.html.erb</p>
+
+<%= form_for @cat do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :weight %>
+  <%= f.number_field :weight %><br/>
+  <%= f.label :person %>
+  <%= f.select :person_id do %>
+    <%= options_from_collection_for_select(Person.all, :id, :name) %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

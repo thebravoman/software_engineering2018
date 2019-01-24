@@ -1,0 +1,6 @@
+<%= form_for @document, url: {action: "create"} do |f| %>
+  Name: <%= f.text_field :name %><br/>
+  Description: <%= f.text_area :description, size: "60x12" %><br/>
+  Text: <%= f.text_area :text, size: "60x12" %><br/>
+  <%= f.submit "Create" %>
+<% end %>

@@ -1,0 +1,10 @@
+<% @documents.each do |d| %>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Document name: <%= link_to d.name, document_path(d.id) %></h3>
+		</div>
+		<div class="panel-body">
+			Description: <%= d.description %>
+		</div>
+	</div>
+<% end %>

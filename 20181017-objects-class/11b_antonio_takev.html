@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1>Homework</h1>
+	<title>Page for hw</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>	
+
+<body>
+	<div><textarea id="myTextArea" cols=50 rows=5></textarea></div>
+	<div id="block"></div>
+	<script>
+		function printText(text) {
+			var myJson = JSON.stringify(text);
+			document.getElementById("myTextArea").value	 = myJson;	
+		}
+		function split_text(text) {
+			for(t in text)
+			{
+				var div = $("<div>");
+                var key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(t);
+                var value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(text[t]);
+                div.append(key)
+                    .append(value);
+                div.appendTo($("#block"));
+			}
+		}
+		var text = {name:"Toni", age:15};
+		printText(text);
+		split_text(text);
+	</script>
+</body>
+
+</html>

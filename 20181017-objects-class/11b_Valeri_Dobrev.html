@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Homework</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<textarea id="textarea", cols=30, rows=10 disabled></textarea>
+
+	<div id="container"></div>
+	<script>
+		function printObject(object){
+			$("#textarea").val(JSON.stringify(object));
+		}
+		function printNodes(object){
+			for(x in object){
+				let div=$("<div>");
+				let key=$("<input>").attr("type", "text").attr("disabled", true).val(x);
+				let value=$("<input>").attr("type", "text").attr("disabled", true).val(object[x]);
+				div.append(key).append(value);
+				div.appendTo($("#container"));
+			}			
+		}
+		let objects={"name":"Valeri",
+			"lastName":"Dobrev"};
+		printObject(objects);
+		printNodes(objects);
+	</script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Documents</h1>
+
+<div id = "document_list">
+  <% for document in @documents %>
+    <div id = "document">
+      <p id = "name"><%= document.name %></p>
+      <p id = "description"><%= document.description %></p>
+      <p id = "body"><%= document.body %></p>
+
+      <%= link_to 'Show', document %>
+      <% if logged_in? %>
+		  <%= link_to 'Edit', edit_document_path(document) %>
+		  <%= link_to 'Destroy', document, method: :delete %>
+	  <% end %>
+    </div>
+    <br>
+  <% end %>
+</div>
+
+<%= link_to "All Documents", controller: "documents", action: "index" %>
+

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+        <script>
+        $(document).ready(function(){
+
+           $("#btnLoadJson").click(function(){
+
+               $.ajax({
+                   url: $("#txtJsonUrl").val(),
+                   type: "GET",
+                   dataType: "json",
+                   crossDomain: true,
+                   processData: false,
+                   success: function(data, status, xhr){
+                       var new_state = {"status" : "success", object : data};
+                        invalidate_state(new_state);
+                   },
+
+                   error: function(data, status, xhr){
+                        var message = { "success" : false, "statusCode" : 404};
+                        invalidate_state(message);
+                   }
+
+               });
+
+           });   
+
+  
+            function invalidate_state(new_message){
+                $("#resultArea").val(JSON.stringify(new_message, 2, 2));    
+            }
+
+        });
+        </script>
+
+    </head>
+
+    <body>
+        <div id = "container">  
+            <input type="text"  id="txtJsonUrl" style = "width: 50%"    >
+            <input type="button" id="btnLoadJson" value = "GET">
+        </div>
+        <div id = "textareaHolder">
+            <textarea name="result area" id="resultArea" style = "width: 50%; height: 20%"></textarea>
+        </div>
+
+    </body>
+</html>

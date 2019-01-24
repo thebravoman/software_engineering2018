@@ -1,0 +1,24 @@
+Mocks:
+Used for external dependencies
+
+Stubs:
+Used for transactions, file operations,
+
+The behaviour of both can be combined
+
+For the hw:
+The date should have been const
+So the test must always happen on a particular day (which was set in the mock)
+Fix it!
+
+
+File operations in Node:
+module - > fs
+const fs = require('fs');
+fs.exists(path, callback);
+fs.existSync(path);
+fs.read()
+fs.readSync()
+
+How does the asynchronous model work?
+Receives a higher order function

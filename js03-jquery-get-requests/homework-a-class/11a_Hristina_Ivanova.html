@@ -1,0 +1,41 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  var Button = $("<button />", {text: "Add"});
+  var parent = $("#container");
+  parent.append(Button);
+  $(Button).click(function(){
+    $.ajax({
+      url: $("#url").val(),
+      type: "GET",
+      dataType: "json",
+      crossDomain: true,
+      processData: false,
+      success:  function (data, status, xhr){
+        //var jsonObject = JSON.parse(JSON.stringify(data)) ;
+        //var keys = Object.keys(jsonObject);
+        var txtAr = $("#txtarea");
+        var res ={};
+        res["status"] = status;
+        res["Object"] = data;
+        txtAr.append(JSON.stringify(res));
+      },
+      error: function(data, status, xhr) {
+        var txtAr = $("#txtarea");
+        var res ={};
+        res["success"] = false;
+        res["statusCode"] = data.status;
+        txtAr.text(JSON.stringify(res));
+      }
+    });
+  });
+});
+</script>
+<body>
+  <input type="text" id="url">
+	<div id="container">
+	</div>
+  <textarea id="txtarea"></textarea>
+</body>
+</html>

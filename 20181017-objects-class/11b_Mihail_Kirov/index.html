@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Classwork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+</head>
+<script>
+    $(document).ready(function(){
+       //1
+       object = {innerObject: {a: "a", b:"b"},
+                c: "d",
+                e: "f"};
+        show(object);
+        jsonStringified = JSON.stringify(object);
+        $("#txtObject").append(jsonStringified);
+
+        //2 
+        //var object_keys = Object.keys(object);
+        //for(key of object_keys){
+        //    let key_input = $("<input/>")
+        //                    .val(key);
+        //    let value_input = $("<input/>")
+        //                        .val(object[key]);
+        //    let div = $("<div/>");
+        //    div.append(key_input)
+        //    div.append(value_input)
+        //    $("#inputObject").append(div);
+        //    
+        //}
+
+    });
+    function show(object, depth = 0){
+        object_keys = Object.keys(object);
+        let input = $("#inputObject");
+        
+        for(key of object_keys){
+            
+            let key_input = $("<input/>")
+                            .val(key);
+            let key_str = "\xa0".repeat(depth * 8)
+            console.log(key_str);
+            
+            input.append(key_str);
+            input.append(key_input);
+            //input.append("<br>");
+            if(typeof object[key] === 'object'){
+                input.append("<br>");
+                show(object[key], depth+1);
+            }
+            let value_input = $("<input/>", {id: key})
+                                .val(object[key])
+           // value_input.change(function(){
+           //     object[this.id] = $(object[this.id]).val(); 
+           //     console.log(JSON.stringify(object));
+           // });
+            let value_str = "\xa0".repeat(depth * 8);
+            input.append(value_str);
+            input.append(value_input);
+            input.append("<br>");
+
+        }
+    }
+</script>
+<body>
+    <div id="inputObject">
+       
+    </div>
+    <div id="container2">
+        <textarea id="txtObject" ></textarea>
+    </div>
+</body>
+</html>

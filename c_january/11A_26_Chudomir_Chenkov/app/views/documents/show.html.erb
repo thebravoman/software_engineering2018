@@ -1,0 +1,20 @@
+<h1>Documents#show</h1>
+<p>Find me in app/views/documents/show.html.erb</p>
+
+Name: <%= @document.name %> <br>
+Description: <%= @document.description %> <br>
+Content: <%= @document.content %> <br>
+
+<%= link_to 'Edit', edit_document_path(@document) %> <br>
+<%= link_to 'Delete', document_path(@document), method: :delete, data: { confirm: 'For real?' } %> <br>
+<%= link_to 'Back to all documents', documents_path %>
+
+<br>
+<br>
+
+<% if user_signed_in? %>
+    Signed in as <strong><%= current_user.email %></strong>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+<% end %>

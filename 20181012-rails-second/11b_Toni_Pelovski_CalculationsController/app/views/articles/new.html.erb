@@ -1,0 +1,19 @@
+<h1>Toni Pelovski</h1>
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <p>
+    <%= form.label :A %><br>
+    <%= form.text_field :A %>
+  </p>
+  <p>
+    <%= form.label :B %><br>
+    <%= form.text_field :B %>
+  </p>
+  <p>
+    <%= form.label :C %><br>
+    <%= form.text_field :C %>
+  </p>
+
+  <p>
+    <%= form.submit :Run %>
+  </p>
+<% end %>

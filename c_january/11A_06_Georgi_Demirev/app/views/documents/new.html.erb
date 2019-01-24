@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<%= form_for @document do |f| %>
+	  <%= f.label :name %><br>
+	  <%= f.text_field :name %><br>
+	  <%= f.label :description %><br>
+	  <%= f.text_area :description %><br>
+	  <%= f.label :file %><br>
+	  <%= f.file_field :file %><br><br>
+	  <%= f.submit %>
+	<% end %>
+</body>
+</html>

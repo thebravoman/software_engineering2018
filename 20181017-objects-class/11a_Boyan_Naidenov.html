@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--Tova e koga ot chasa, nadqvam se da ne e akademichna nechestnost kato sum go si pisal sam v chas-->
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    var count = 0;
+	var _state = {};
+	$('#btnAddItem').prop('value', 'Add new attribute');
+	$('#btnShowState').click(function(){
+	  alert(JSON.stringify(_state));
+	});
+	$('#btnAddNode').click(function() {
+		count++;
+		var jsonNodeKey = $("<input />", {
+						      id: '_key' + count});
+	    var colon = $("<span />", {
+						id:'_colon' + count, 
+						text: ':'});					  
+		var jsonNodeValue = $("<input />", { type: 'text',
+						id: '_value' + count});
+		$('#items').append(jsonNodeKey);
+	    $('#items').append(colon);
+		$('#items').append(jsonNodeValue);		
+		    
+		var updateState = $("<button />", {
+				            id: '_btnUpdateState'+count, 
+							text:'Update state', 
+							value: count});
+	    $('#items').append(updateState);
+		$(updateState).click(function() {
+			var key = $('#' + '_key' + this.value).val();
+			var value = $('#' + '_value' + this.value).val();
+			_state[key] = value;
+			$('#txtObject').val(JSON.stringify(_state, 2, 2));
+		});
+		var remove = $("<button />", {
+						      id: count, 
+							  text:'Remove', 
+							  value: count});
+		$(remove).click(function() {
+			console.log('#' + '_key' + this.value);
+			var key = $('#' + '_key' + this.value).val();
+			delete _state[key];
+		    $('#txtObject').val(JSON.stringify(_state, 2, 2));
+			$('#' + '_key' + this.value).remove();
+		    $('#' + '_colon' + this.value).remove();
+		    $('#' + '_value' + this.value).remove();
+			$('#' + '_br' + this.value).remove();
+			$('#' + '_btnUpdateState' + this.value).remove();
+			this.remove();
+			if (Object.keys(_state) == 0) {
+				$('#txtObject').hide();
+			}
+		});
+		$('#items').append(remove);
+		$('#items').append($("<br/>", {id: '_br'+count}))
+		$('#txtObject').show();
+	});
+});
+</script>
+<body>
+    <div>
+		<input type="button" id="btnAddNode" value="Add Node">
+		<input type="button" id="btnShowState" value="Show State">
+	</div>
+	<br/>
+	<div id="items">
+	</div>
+	<hr/>
+	<div>
+		<textarea style="width:520px; height: 480px; display:none;" id="txtObject"></textarea>
+	</div>
+</body>
+</html>

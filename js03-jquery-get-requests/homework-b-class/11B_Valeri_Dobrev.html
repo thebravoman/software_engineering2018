@@ -1,0 +1,50 @@
+<!Doctype html>
+
+<html>
+	<head>
+		<title>Homework</title>
+	</head>
+	<body>
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var value;
+			$("#button").click(function(){
+				value = $("#inputField").val();
+				getValue(value);
+			});
+
+	
+		
+			function getValue(val){
+				$.ajax({
+					url:val,
+					type:"GET",
+					dataType:"json",
+					success:function(data, status, xhr){
+						var jsonObject= JSON.parse(JSON.stringify(data));
+						var keys = Object.keys(jsonObject);
+						for(var index in keys){
+							var key= keys[index];
+							var li = $("<li/>",{text: jsonObject[key]});
+							$("#container").append(li);
+						}
+					},
+					error:function(data, status, xhr){
+						alert(JSON.stringify(status));
+					}
+				});
+
+				
+			}
+		});
+
+	</script>
+		<div id="container">
+				<input type="text" id="inputField" >
+				<button id="button">Submit</button>
+		</div>
+	</body>
+</html>

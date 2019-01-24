@@ -1,0 +1,11 @@
+<% if @x1 && @x2 %>
+	Two real roots <br>
+	<% if @x1 > @x2 %>
+ 		x1 -> <%= @x2 %>, x2 -> <%= @x1 %>
+	<% elsif @x2 > @x1 %>
+		x1 -> <%= @x1 %>, x2 -> <%= @x2 %>
+	<% end %>
+<% elsif @x %>
+	One real root <br>
+	x -> <%= @x %>
+<% end %>

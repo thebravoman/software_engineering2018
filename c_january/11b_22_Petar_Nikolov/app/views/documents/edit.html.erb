@@ -1,0 +1,9 @@
+<% provide :form_url, document_path(@document) %>
+<% provide :submit_text, 'Apply changes' %>
+
+<h1><%= "Edit document" %></h1>
+<%= render 'form' %>
+<br />
+<%= link_to 'Back to all documents', documents_path %> <br />
+<%= link_to "To document's page", @document %>
+

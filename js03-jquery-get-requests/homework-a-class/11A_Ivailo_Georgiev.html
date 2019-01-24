@@ -1,0 +1,37 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#btnLoadJSON").click(function() {
+    var a = $("#txtJsonUrl").val();
+    $.ajax({
+      url: a,
+      type: "GET",
+      dataType: "json",
+      crossDomain: true,
+      processData: false,
+      success: function (data, status, xhr){
+        var jsonObject = JSON.parse(JSON.stringify(data));
+        var hesh = {};
+        hesh.status = "success";
+        hesh.oobject = jsonObject;
+        $("#textarea").val(JSON.stringify(hesh));
+      },
+      error: function(data, status, xhr) {
+        var hesh = {};
+        hesh.status = "fail bro";
+        hesh.statuscode = data.status;
+        $("#textarea").val(JSON.stringify(hesh));
+      }
+    });
+  });
+});
+</script>
+<body>
+	<div id="container">
+    <input type="text" id="txtJsonUrl">
+    <input type="button" id="btnLoadJSON" value = "Add">
+	</div>
+  <textarea id = "textarea"></textarea>
+</body>
+</html>

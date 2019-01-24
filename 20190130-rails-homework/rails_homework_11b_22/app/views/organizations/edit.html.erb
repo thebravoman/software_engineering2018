@@ -1,0 +1,10 @@
+<% provide :form_url, organization_path(@organization) %>
+<% provide :submit_text, "Update organization" %>
+
+<%= content_tag :h1, "Update organization '#{@organization.name}'" %>
+
+<%= render 'form' %>
+<br />
+<%= link_to "'#{@organization.name}' page", @organization %> <br />
+<%= link_to 'Index of organizations', organizations_path %>
+
