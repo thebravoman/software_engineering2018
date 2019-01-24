@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+
+<div style="background-color:#cccccc">
+  <p>
+    <strong>Attendances:</strong>
+  </p>
+  <% if @events == [] %>
+      <p>You aren't attending any events.</p>
+  <% else %>
+      <% @events.each do |event| %>
+        <div>
+          <p><b>Event name: </b><%= event.name %></p>
+          <p><b>Location: </b><%= event.location %></p>
+          <p><b>Description: </b><%= event.description == "" ? "(no description)" : event.description %></p>
+          <p><b>Organized at: </b><%= event.organized_at %></p>
+          <p><%= link_to 'Abandon event', attendances_delete_path(:attendance => { person_id: @person.id, event_id: event.id }), method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </div>
+        <hr />
+      <% end %>
+  <% end %>
+</div>
+
+<p>
+    <strong>
+        Unattended events:
+    </strong>
+</p>
+
+<% if @unattended_events.nil? || @unattended_events == [] %>
+    <p>There are no more events you can attend.</p>
+<% else %>
+    <%= form_for(:attendance, :url => { controller: "attendances", action: "create" }) do |f| %>
+        <%= f.hidden_field(:person_id, :value => @person.id) %>
+        <%= f.collection_select :event_id, @unattended_events, :id, :name %><br />
+        <%= f.submit 'Attend event' %>
+    <% end %>
+<% end %>
+<br />
+
+<%= link_to 'Back', root_path %>

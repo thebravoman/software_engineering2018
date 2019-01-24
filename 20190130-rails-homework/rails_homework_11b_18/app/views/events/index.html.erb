@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+
+<% @events.each do |event| %>
+  <div>
+    <p><b>Name: </b><%= event.name %></p>
+    <p><b>Location: </b><%= event.location %></p>
+    <p><b>Description: </b><%= event.description == "" ? "(no description)" : event.description[0..20].gsub(/\s\w+\s*$/, '...') %></p>
+    <p><b>Organized at: </b><%= event.organized_at %></p>
+    <p><%= link_to 'Show', event %></p>
+    <p><%= link_to 'Edit', edit_event_path(event) %></p>
+    <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+  <hr />
+<% end %>
+
+<%= link_to 'New Event', new_event_path %>
