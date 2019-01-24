@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>Name: <%= @person.name %></p>
+
+<p>All events which <%= @person.name %> will attend: </p>
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= link_to 'Cancel attendance', Attendance.find_by(event_id: event.id, person_id: @person.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %></td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if !@unattended_events.empty? %>
+    <p>Add new attendance:</p>
+    <%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
+        <%= f.select :event_id do %>
+            <%= options_from_collection_for_select(@unattended_events, :id, :name) %>
+        <% end %>
+        <%= f.hidden_field :person_id, value: @person.id %>
+        <%= f.submit %>
+    <% end %>
+<% else %>
+<p>There are no more events for this person to attend :(</p>
+<% end %>
