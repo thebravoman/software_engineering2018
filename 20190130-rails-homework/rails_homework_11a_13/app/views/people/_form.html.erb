@@ -4,7 +4,7 @@
       <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
 
       <ul>
-      <% event.errors.full_messages.each do |message| %>
+      <% person.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -14,6 +14,13 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :organisation_id %>
+    <%= form.select :organisation_id do %>
+      <%= options_for_select(@organisation_options) %>
+    <% end %>
   </div>
 
   <div class="actions">

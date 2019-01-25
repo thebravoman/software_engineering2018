@@ -2,6 +2,10 @@
 
 <p>Name: <%= @person.name %></p>
 
+<% if @person.organisation_id %>
+  <p>Organisation: <%= @person.organisation.name %></p>
+<% end %>
+
 <p>All events which <%= @person.name %> will attend: </p>
 <table>
   <thead>

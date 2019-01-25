@@ -17,6 +17,11 @@ class PeopleController < ApplicationController
 
     def new
         @person = Person.new
+        @organisation_options = Array.new
+        @organisation_options[0] = ["None", nil]
+        Organisation.all.each_with_index do |organisation, i|
+            @organisation_options[i+1] = [organisation.name, organisation.id]
+        end
     end
 
     def create
@@ -25,7 +30,7 @@ class PeopleController < ApplicationController
         if @person.save
             redirect_to person_path(@person)
         else
-            redirect_to new_person_path
+            render 'new'
         end
     end
 
@@ -53,7 +58,7 @@ class PeopleController < ApplicationController
     end
 
     def person_params
-        params.require(:person).permit(:name, :event_id)
+        params.require(:person).permit(:name, :event_id, :organisation_id)
     end
     
 end
