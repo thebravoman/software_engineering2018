@@ -16,6 +16,8 @@ class PeopleController < ApplicationController
 		puts params[:events]
 
 		@person = Person.find params[:id]
+
+		@events = Event.all - @person.events
 	end
 
 	def destroy_event
