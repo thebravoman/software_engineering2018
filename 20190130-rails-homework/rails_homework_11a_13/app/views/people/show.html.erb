@@ -2,28 +2,51 @@
 
 <p>Name: <%= @person.name %></p>
 
-<% if @person.organisation_id %>
-  <p>Organisation: <%= @person.organisation.name %></p>
+<% if @person.events.any? %>
+  <p>All events which <%= @person.name %> will attend: </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to "#{event.name}", event_path(event) %></td>
+          <td><%= link_to 'Cancel', Attendance.find_by(event_id: event.id, person_id: @person.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= @person.name %> will not attend any events.</p>
 <% end %>
 
-<p>All events which <%= @person.name %> will attend: </p>
-<table>
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<% if @person.organisation_id %>
+  <p><%= @person.name %> is a part of <%= @person.organisation.name %>.</p>
+  <p>All events which <%= @person.organisation.name %> will attend: </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= link_to 'Cancel attendance', Attendance.find_by(event_id: event.id, person_id: @person.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %></td>
-      <tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% @person.organisation.events.each do |event| %>
+        <tr>
+          <td><%= link_to "#{event.name}", event %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
 <br>
 <% if !@unattended_events.empty? %>
     <p>Add new attendance:</p>

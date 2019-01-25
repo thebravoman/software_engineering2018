@@ -1,5 +1,6 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
+  before_action :set_events, only: [:show]
 
   # GET /organisations
   # GET /organisations.json
@@ -10,6 +11,12 @@ class OrganisationsController < ApplicationController
   # GET /organisations/1
   # GET /organisations/1.json
   def show
+    @unattended_organisation_events = Array.new
+    Event.all.each do |event|
+        if !@events.include? event
+            @unattended_organisation_events.push(event)
+        end
+    end
   end
 
   # GET /organisations/new
@@ -65,6 +72,10 @@ class OrganisationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_organisation
       @organisation = Organisation.find(params[:id])
+    end
+
+    def set_events
+      @events = @organisation.events
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

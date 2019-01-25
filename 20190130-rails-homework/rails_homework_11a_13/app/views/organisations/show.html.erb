@@ -11,11 +11,34 @@
 </p>
 
 <p>
-  <strong>People in this organisation:</strong>
-  <% @organisation.people.each do |person| %>
-    <%= person.name %> | 
+  <strong>Events which organisation will attend:</strong>
+  <% @organisation.events.each do |event| %>
+    <p>
+      <%= link_to "#{event.name}", event %>
+      <%= link_to 'Cancel', OrganisationAttendance.find_by(event_id: event.id, organisation_id: @organisation.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %>
+    </p>
   <% end %>
 </p>
+
+<p>
+  <strong>People in this organisation:</strong>
+  <% @organisation.people.each do |person| %>
+    <%= link_to "#{person.name}", person %> | 
+  <% end %>
+</p>
+
+<% if !@unattended_organisation_events.empty? %>
+    <p>Add new attendance:</p>
+    <%= form_with scope: :organisation_attendance, url: organisation_attendances_path, local: true do |f| %>
+        <%= f.select :event_id do %>
+            <%= options_from_collection_for_select(@unattended_organisation_events, :id, :name) %>
+        <% end %>
+        <%= f.hidden_field :organisation_id, value: @organisation.id %>
+        <%= f.submit %>
+    <% end %>
+<% else %>
+<p>There are no more events for this organisation to attend :(</p>
+<% end %>
 
 <%= link_to 'Edit', edit_organisation_path(@organisation) %> |
 <%= link_to 'Back', organisations_path %>
