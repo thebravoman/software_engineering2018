@@ -13,6 +13,6 @@
 </ul>
 
 <%=form_for :event do |f|%>
-	Present events: <%=f.select :event_id,options_from_collection_for_select(Event.all, 'id', 'name')%>
+	Present events: <%=f.select :event_id,options_from_collection_for_select(@events, 'id', 'name')%>
 	<%=f.submit "Add event"%>
 <%end%>
