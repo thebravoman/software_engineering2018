@@ -1,0 +1,15 @@
+<h1> Events </h1>
+
+<% @event.each do |event| %>
+
+	<div class = "well">
+
+		<h3> <%= event.title %> </h3>
+		<p> <%= event.date %> </p>
+
+		<%= link_to "Read more", event_path(event), :class => 'btn btn-default' %>
+
+	</div>	
+
+<% end %>
+
