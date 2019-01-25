@@ -1,0 +1,8 @@
+<h3><i>List of people</i></h3>
+<%= link_to 'Add person', new_person_path %> | <%= link_to 'Manage events', events_path %>
+<% @people.each do |person| %>
+	<p>
+		ID#: <%= person.id %> <br>
+		Name: <%= link_to person.name, person_path(person) %> <br>
+	</p>
+<% end %>

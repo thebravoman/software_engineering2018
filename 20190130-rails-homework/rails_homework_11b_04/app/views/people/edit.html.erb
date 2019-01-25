@@ -1,0 +1,6 @@
+<%= form_for @person do |p| %>
+	<%= p.label :name %>
+	<%= p.text_field :name %> <br>
+	<br>	
+	<%= p.submit "Save" %> | <%= link_to 'Back', people_path %>
+<% end %>

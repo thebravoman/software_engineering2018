@@ -1,0 +1,30 @@
+<h2> <%= @person.name %>'s events </h2>
+
+<p>
+	<% @person.attendances.each do |attendance| %>
+		<p>
+			-> <%= attendance.event.name %> | <%= attendance.event.created_at %> | <%= link_to 'Remove', attendance, method: :delete %> <br>
+		</p>
+	<% end %>
+	<br>
+
+	<% unsubscribed = [] %>
+	<% subscribed = @person.events %>	
+
+	<% @events.each do |event| %>
+		<% if !subscribed.include?(event) %>
+			<% unsubscribed.push(event) %>
+		<% end %>
+	<% end %>
+
+	<h4><i>Events this person doesnt attend :</i></h4> 
+	
+	<% for event in unsubscribed %> 
+		<%= event.name %> | <%= link_to 'Add', new_attendance_path(person_id: @person, event_id: event) %> <br>
+	<% end %>
+	<br> <br>
+	<%= link_to 'Edit', edit_person_path %>  |
+	<%= link_to 'Delete', @person, method: :delete %> |
+	<%= link_to 'Back', people_path %>
+</p>
+

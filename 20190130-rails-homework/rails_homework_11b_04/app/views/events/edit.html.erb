@@ -1,0 +1,11 @@
+<%= form_for @event do |e| %>
+	<%= e.label :name %>
+	<%= e.text_field :name %> <br> <br>
+	<%= e.label :location %>
+	<%= e.text_field :location %> <br> <br>
+	<%= e.label :description %> 
+	<%= e.text_field :description %> <br> <br>
+	<%= e.label :created_at %> 
+	<%= e.text_field :created_at %> <br> <br>
+	<%= e.submit "Save" %> | <%= link_to 'Back', events_path %>
+<% end %>

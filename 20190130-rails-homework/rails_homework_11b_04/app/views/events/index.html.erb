@@ -1,0 +1,8 @@
+<h3><i>List of events</i></h3>
+<%= link_to 'Add event', new_event_path %> | <%= link_to 'Manage people', people_path %> <br>
+<% @events.each do |event| %>
+	<p>
+		Name: <%= link_to event.name, event_path(event) %> <br>
+		Date : <%= event.created_at %>
+	</p>
+<% end %>
