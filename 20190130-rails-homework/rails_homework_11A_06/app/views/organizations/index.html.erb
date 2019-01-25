@@ -1,0 +1,7 @@
+<% @organizations.each do |o| %>
+	Name: <%= o.name %><br>
+	<%= link_to "Show More", o %><br>
+	<br>
+<% end %>
+
+<%= link_to "Add New Organization", new_organization_path %>

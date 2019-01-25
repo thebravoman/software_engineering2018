@@ -15,3 +15,6 @@ Name: <%= @organization.name %><br><br>
   <%= select_tag "event", options_for_select(@events_not_attended.map{|e| e.name}) %>
   <%= submit_tag "Add Event" %>
 <% end -%>
+
+<br>
+<%= link_to "Back", organizations_path %>
