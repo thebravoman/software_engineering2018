@@ -6,7 +6,6 @@
   <strong>Events subscribed:</strong>
 
 </p>
-<br>
 <table>
   <thead>
     <tr>
@@ -20,7 +19,7 @@
 
   <tbody>
 
-    <%= @events_subscribed.each do |event| %>
+    <% @events_subscribed.each do |event| %>
       <tr>
         <td><%= event.name %></td>
         <td><%= event.location %></td>

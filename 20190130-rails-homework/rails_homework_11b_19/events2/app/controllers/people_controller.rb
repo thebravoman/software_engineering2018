@@ -25,6 +25,7 @@ class PeopleController < ApplicationController
     @events_unsubscribed = []
     
     @events_unsubscribed = Event.all.select{|event| !@events_subscribed.include?(event)}
+    
     #Event.find_each do |event|
     #    if !@events_subscribed.include?(event)
     #        @events_unsubscribed.push(event)
