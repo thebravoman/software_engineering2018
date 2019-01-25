@@ -5,10 +5,15 @@
   <%= @person.name %>
 </p>
 
-<% if @person.events.empty?%>
-  <p>No current attendances to show</p>
-<% else %>
-  <p>Events</p>
+<% if @person.organization_id %>
+<p>
+  <strong>Organization name:</strong>
+  <%= Organization.find(@person.organization_id).name %>
+</p>
+<% end %>
+
+<% if !@person.events.empty?%>
+  <p>Personal events</p>
   <table>
     <thead>
       <tr>
@@ -29,8 +34,30 @@
   </table>
 <% end %>
 
+<% if @all.empty?%>
+  <p>No current attendances to show</p>
+<% else %>
+  <p>Organization events</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
 
-<% if @person.events.length != Event.all.length%>
+    <tbody>
+      <% @all.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<% if @all.length != Event.all.length%>
   <%= form_for :event do |f|%>
     <%= f.select :event_id do %>
       <%= options_from_collection_for_select(@not_events, :id, :name) %>
@@ -38,4 +65,6 @@
     <%= f.submit "Add event"%>
   <% end %>
 <% end %>
+
+
 <%= link_to 'Back', people_path %>

@@ -6,4 +6,5 @@ class Event < ApplicationRecord
 
     has_many :attendances
     has_many :people, through: :attendances
+    has_and_belongs_to_many :organizations
 end
