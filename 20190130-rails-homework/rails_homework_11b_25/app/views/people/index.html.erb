@@ -1,0 +1,10 @@
+<h2 align="center"> People </h2>
+
+<% @people.each do |person|%>
+
+    <h2 align = "center">
+    <%= link_to person.name, person_path(person)  %></h2>
+
+<% end %>
+
+<h3 align = "center"> <%= link_to 'All Events', '/events/' %> <br/> </h3>
