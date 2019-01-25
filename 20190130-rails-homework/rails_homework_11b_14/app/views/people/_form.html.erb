@@ -15,7 +15,14 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
+  
+  <div class="field">
+  <%= form.label :event %>
+  <%= form.select :event_id do %>
+    <%= options_from_collection_for_select(Event.all, :id, :name) %>
+	<% end %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>

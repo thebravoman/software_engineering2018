@@ -32,10 +32,7 @@
     
   </div>
   
-  <%= form.label :person %>
-  <%= form.select :person_id do %>
-    <%= options_from_collection_for_select(Person.all, :id, :name) %>
-	<% end %>
+  
   <div class="actions">
     <%= form.submit %>
   </div>

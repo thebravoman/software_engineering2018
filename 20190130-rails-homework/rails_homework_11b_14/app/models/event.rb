@@ -3,7 +3,8 @@ class Event < ApplicationRecord
 	validates :location, presence: true
 	validates :description, presence: true
 	validates :time, presence: true
-	has_and_belongs_to_many :people
+	has_many :attendances
+  	has_many :people, through: :attendances
 	validate :expiration_date_cannot_be_in_the_past
 
   	def expiration_date_cannot_be_in_the_past
