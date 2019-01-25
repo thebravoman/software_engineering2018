@@ -14,16 +14,14 @@ Subscribed events: <br/><br/>
     <%= link_to "Unsubscribe", "#{@person.id}/cancel?event_id=#{event.id}" %> <br/>
 <% end %>
 
+
 Other events: <br/><br/>
-<% @other_events.each do |event| %>
-    name: <%= event.name%><br/>
-    location: <%= event.location%><br/>
-    date: <%= event.date%><br/>
-    description: <%= event.description%><br/>
-    <%= link_to "Attend", "#{@person.id}/attend?event_id=#{event.id}" %> <br/> 
+<%= form_with url: "#{@person.id}/attend" do |f|%>
+	<%= f.select :event_id do %>
+	    <%= options_from_collection_for_select(@other_events, :id, :name) %>
+	<% end %>
+<%= f.submit "Attend" %>
 <% end %>
-
-
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

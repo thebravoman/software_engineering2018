@@ -28,12 +28,9 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     @person_events = @person.events
-    @other_events = Array.new
-    for event in Event.all
-       if(!@person_events.include?(event))
-        @other_events.push(event)
-      end
-    end
+    # @other_events = Event.all - @person_events
+    @other_events = Event.where.not(id: @person_events.map {|ev| ev.id})
+    # p @other_events
   end
 
   # GET /people/new

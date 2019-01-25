@@ -2772,3 +2772,1268 @@ Processing by PeopleController#show as HTML
 Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:47:43 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (3.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:32
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:33
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:33
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 10.0ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:53:29 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 7.8ms)
+
+
+  
+NameError (uninitialized constant PeopleController::Events):
+  
+app/controllers/people_controller.rb:31:in `show'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:57:54 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.5ms)
+
+
+  
+NameError (uninitialized constant PeopleController::Events):
+  
+app/controllers/people_controller.rb:31:in `show'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:58:15 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 3.5ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:59:50 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 4.1ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 09:59:52 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.8ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:34: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:00:15 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 134ms (Views: 124.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:00:41 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 33.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:01:01 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 51ms (Views: 39.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-25 10:04:45 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2019-01-25 10:04:47 +0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (12.7ms)
+  Rendered people/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2019-01-25 10:04:51 +0200
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ccrpCdpALpYJNfmXUcaOnbHmzdbRMFYocqiw1pKKJWzFp5zHj7uMRQ/nQVLvFHicfdugv5g2uxqfWvfwO7q8pQ==", "person"=>{"name"=>"Mihael"}, "commit"=>"Create Person"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:54
+  [1m[36mPerson Create (4.0ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mihael"], ["created_at", "2019-01-25 08:04:51.671113"], ["updated_at", "2019-01-25 08:04:51.671113"]]
+  ↳ app/controllers/people_controller.rb:54
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:54
+Redirected to http://0.0.0.0:3000/people/2
+Completed 302 Found in 32ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/people/2" for 127.0.0.1 at 2019-01-25 10:04:51 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/" for 127.0.0.1 at 2019-01-25 10:04:56 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/people/2" for 127.0.0.1 at 2019-01-25 10:05:03 +0200
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EdxhDgUBEI9iVFMYIhUsPIKULDyDU+ksnJ3ROB76vUs8hKIf5b/mQIl7hkGnRNksNObbPQVFX7cofllEfQXo7w==", "id"=>"2"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:81
+  [1m[36mAttendence Load (0.2ms)[0m  [1m[34mSELECT "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ?[0m  [["person_id", 2]]
+  ↳ app/controllers/people_controller.rb:81
+  [1m[36mPerson Destroy (0.9ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/people_controller.rb:81
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:81
+Redirected to http://0.0.0.0:3000/people
+Completed 302 Found in 32ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-25 10:05:03 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2019-01-25 10:05:40 +0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (3.5ms)
+  Rendered people/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2019-01-25 10:05:44 +0200
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PFhSDKMePhOtbTiEq0JUKl2fEsLgG2k99RGKVoi9f+iINSfC9uWcwKu/gEEVkKIrkaJ/q6kdhA8Y481wIY3mIQ==", "person"=>{"name"=>"misho"}, "commit"=>"Create Person"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:54
+  [1m[36mPerson Create (6.0ms)[0m  [1m[32mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "misho"], ["created_at", "2019-01-25 08:05:44.639384"], ["updated_at", "2019-01-25 08:05:44.639384"]]
+  ↳ app/controllers/people_controller.rb:54
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:54
+Redirected to http://0.0.0.0:3000/people/3
+Completed 302 Found in 20ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/people/3" for 127.0.0.1 at 2019-01-25 10:05:44 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 3], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/" for 127.0.0.1 at 2019-01-25 10:05:48 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:10:09 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:11:29 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:11:31 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:17:35 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:47:20 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 4.8ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:48:29 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:48:32 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:49:55 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 52ms (Views: 40.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:51:51 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/home/blackcat/school/ruby/Eventer/app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/people/show.html.erb:30: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:52:32 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:91
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 84ms (Views: 75.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:53:44 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 113ms (Views: 60.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:54:09 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 57ms (Views: 47.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:54:34 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["person_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  Rendered people/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 109ms (Views: 54.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:56:10 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 86ms (Views: 40.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-25 10:56:15 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.3ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (2.0ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 25ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:56:15 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 71ms (Views: 55.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:57:47 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 64ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 10:59:38 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 186ms (Views: 174.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/people/1/cancel" for 127.0.0.1 at 2019-01-25 10:59:55 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/people/1/cancel"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/people/1/cancel" for 127.0.0.1 at 2019-01-25 11:00:43 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/people/1/cancel"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:01:26 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 97ms (Views: 89.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 11:01:28 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/people/1/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:01:53 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 102ms (Views: 47.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 11:01:55 +0200
+Processing by PeopleController#attend as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XaW69in/W7Ek/jle91U2NLmenL/jbrPrqiYqiyHXjVVw/XnnyUGtfs/R7AdyBMMkD+xrvmV4BXAexaL3QijY8Q==", "event_id"=>"2", "commit"=>"Attend", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (1.5ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-25 09:01:55.235688"], ["updated_at", "2019-01-25 09:01:55.235688"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 200 OK in 32ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:01:55 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 61ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:14 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 95ms (Views: 43.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-25 11:04:16 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.3ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (3.5ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 37ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:16 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 56ms (Views: 39.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/people/attend" for 127.0.0.1 at 2019-01-25 11:04:17 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/people/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/people/attend" for 127.0.0.1 at 2019-01-25 11:04:19 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/people/attend"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:41 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 40.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 11:04:43 +0200
+Processing by PeopleController#attend as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aMBiLZCsmNSC6DgU5201E8qlXX8CVTb7ApenigegTdpFmKE8cBJuG2nH7U1iPMADfNeqfoRDgGC2dC/2ZF8Yfg==", "event_id"=>"2", "commit"=>"Attend", "id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (2.6ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-25 09:04:43.132257"], ["updated_at", "2019-01-25 09:04:43.132257"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 200 OK in 23ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:43 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 51ms (Views: 39.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-25 11:04:44 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.3ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (0.8ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 18ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:44 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 54ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/people/1/cancel?event_id=1" for 127.0.0.1 at 2019-01-25 11:04:46 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"1", "id"=>"1"}
+  [1m[36mAttendence Load (0.1ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (6.9ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 18ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:46 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 11:04:48 +0200
+Processing by PeopleController#attend as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i4XngP24oi5erDDed6Ff8bgKdzXlbxvtXWTpSGMv3dlDX6Pyrg5FUoh5QRE2j99Lnww2kYnrAQL9ma29zgDyPQ==", "event_id"=>"1", "commit"=>"Attend", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (1.0ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 1], ["created_at", "2019-01-25 09:04:48.574240"], ["updated_at", "2019-01-25 09:04:48.574240"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 200 OK in 15ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 11:04:48 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 40ms (Views: 32.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 12:46:23 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (10.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (13.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (192.0ms)
+Completed 200 OK in 958ms (Views: 664.4ms | ActiveRecord: 26.0ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 12:46:27 +0200
+Processing by PeopleController#attend as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qSZGKEKuf03qFBt08/D63s8OpOGeJ9jxCcDD9d9y56SEfoU5ohCJggE7zi12oQ/OeXxT4Bgxbmq9I0uJvI2yAA==", "event_id"=>"2", "commit"=>"Attend", "id"=>"1"}
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (2.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (3.7ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-25 10:46:27.341040"], ["updated_at", "2019-01-25 10:46:27.341040"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 200 OK in 147ms (ActiveRecord: 24.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 12:46:27 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (3.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 317ms (Views: 265.4ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-25 12:47:34 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.6ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (0.7ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 230ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 12:47:34 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:92
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:31
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:31
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 106ms (Views: 89.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:17:30 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/blackcat/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered people/show.html.erb within layouts/application (79.4ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<ActiveRecord::QueryMethods::WhereChain:0x00007f1504f0fee0>
+Did you mean?  tap):
+    18: Other events: <br/><br/>
+    19: <%= form_with url: "#{@person.id}/attend" do |f|%>
+    20: 	<%= f.select :event_id do %>
+    21: 	    <%= options_from_collection_for_select(@other_events, :id, :name) %>
+    22: 	<% end %>
+    23: <%= f.submit "Attend" %>
+    24: <% end %>
+  
+app/views/people/show.html.erb:21:in `block (2 levels) in _app_views_people_show_html_erb___1153569648338929601_69864126968920'
+app/views/people/show.html.erb:20:in `block in _app_views_people_show_html_erb___1153569648338929601_69864126968920'
+app/views/people/show.html.erb:19:in `_app_views_people_show_html_erb___1153569648338929601_69864126968920'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:17:46 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/blackcat/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered people/show.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<ActiveRecord::QueryMethods::WhereChain:0x00007f14e991bef0>
+Did you mean?  tap):
+    18: Other events: <br/><br/>
+    19: <%= form_with url: "#{@person.id}/attend" do |f|%>
+    20: 	<%= f.select :event_id do %>
+    21: 	    <%= options_from_collection_for_select(@other_events, :id, :name) %>
+    22: 	<% end %>
+    23: <%= f.submit "Attend" %>
+    24: <% end %>
+  
+app/views/people/show.html.erb:21:in `block (2 levels) in _app_views_people_show_html_erb___1153569648338929601_69863897356000'
+app/views/people/show.html.erb:20:in `block in _app_views_people_show_html_erb___1153569648338929601_69863897356000'
+app/views/people/show.html.erb:19:in `_app_views_people_show_html_erb___1153569648338929601_69863897356000'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:17:49 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:9
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/blackcat/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered people/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<ActiveRecord::QueryMethods::WhereChain:0x00007f14e8bd4620>
+Did you mean?  tap):
+    18: Other events: <br/><br/>
+    19: <%= form_with url: "#{@person.id}/attend" do |f|%>
+    20: 	<%= f.select :event_id do %>
+    21: 	    <%= options_from_collection_for_select(@other_events, :id, :name) %>
+    22: 	<% end %>
+    23: <%= f.submit "Attend" %>
+    24: <% end %>
+  
+app/views/people/show.html.erb:21:in `block (2 levels) in _app_views_people_show_html_erb___1153569648338929601_69863890372940'
+app/views/people/show.html.erb:20:in `block in _app_views_people_show_html_erb___1153569648338929601_69863890372940'
+app/views/people/show.html.erb:19:in `_app_views_people_show_html_erb___1153569648338929601_69863890372940'
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:30:12 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:32
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" != ?[0m  [["id", 1]]
+  ↳ app/views/people/show.html.erb:21
+  Rendered people/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 156ms (Views: 89.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/people/1/attend" for 127.0.0.1 at 2019-01-25 13:30:17 +0200
+Processing by PeopleController#attend as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JO/PUyD3OAkcOQNsOH+c6ZKqQDoV5pwFRfRH30kuCoIJtwxCwEnOxvcW1jW9Lmn5JNi3O5PwKp7xF8+jKtFfJg==", "event_id"=>"2", "commit"=>"Attend", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[36mAttendence Create (0.9ms)[0m  [1m[32mINSERT INTO "attendences" ("person_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["person_id", 1], ["event_id", 2], ["created_at", "2019-01-25 11:30:17.066392"], ["updated_at", "2019-01-25 11:30:17.066392"]]
+  ↳ app/controllers/people_controller.rb:15
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:15
+Redirected to http://0.0.0.0:3000/people/1
+Completed 200 OK in 38ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:30:17 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:32
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" NOT IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/people/show.html.erb:21
+  Rendered people/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 61ms (Views: 50.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/people/1/cancel?event_id=2" for 127.0.0.1 at 2019-01-25 13:30:18 +0200
+Processing by PeopleController#cancel as HTML
+  Parameters: {"event_id"=>"2", "id"=>"1"}
+  [1m[36mAttendence Load (0.3ms)[0m  [1m[34mSELECT  "attendences".* FROM "attendences" WHERE "attendences"."person_id" = ? AND "attendences"."event_id" = ? LIMIT ?[0m  [["person_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+  [1m[36mAttendence Destroy (5.3ms)[0m  [1m[31mDELETE FROM "attendences" WHERE "attendences"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/people_controller.rb:22
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:22
+Redirected to http://0.0.0.0:3000/people/1
+Completed 302 Found in 20ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-25 13:30:18 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:88
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendences" ON "events"."id" = "attendences"."event_id" WHERE "attendences"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:32
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" != ?[0m  [["id", 1]]
+  ↳ app/views/people/show.html.erb:21
+  Rendered people/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 47ms (Views: 40.8ms | ActiveRecord: 0.7ms)
+
+
