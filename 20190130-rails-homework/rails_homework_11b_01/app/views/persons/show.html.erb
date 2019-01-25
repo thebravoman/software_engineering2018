@@ -1,0 +1,9 @@
+<h1> <%= @person.name %> </h1>
+
+<hr>
+<%= link_to "Edit", edit_person_path(@person), :class => 'btn btn-default' %>
+
+<%= link_to "Delete", person_path(@person),
+	 method: :delete, 
+	 data: {confirm: "Delete event?"},
+	 :class => 'btn btn-danger' %>

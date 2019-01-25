@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
 
+  has_many :attendences
+
 	validates :title, length: {minimum: 8}, presence: true
 
 	validates :location, presence: true

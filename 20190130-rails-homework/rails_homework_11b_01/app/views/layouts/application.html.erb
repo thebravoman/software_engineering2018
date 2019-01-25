@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EventsWEB</title>
+    <title>11b_01</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,14 +19,12 @@
           <a class="navbar-brand" href="/about">Alex's Homework</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active">  <%= link_to "Home", home_path %>  </li>
-          <li>  <%= link_to "Add event", new_event_path %> </li>
-          <li><a href="#">Page 2</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
+          <li>  <%= link_to "Events", home_path %>  </li>
+          <li>  <%= link_to "Add Event", new_event_path %> </li>
+
+           <li>  <%= link_to "Users", persons_path %>  </li>
+          <li>  <%= link_to "Add person", new_person_path %> </li>
+          
       </div>
     </nav>
 
