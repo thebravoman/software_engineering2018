@@ -1,0 +1,13 @@
+<h1>Event#edit</h1>
+
+<%= form_for @event do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br/>
+	<%= f.label :date %>
+	<%= f.text_field :date %><br/>
+	<%= f.label :location %>
+	<%= f.text_field :location %><br/>
+	<%= f.label :desc %>
+	<%= f.text_area :desc %><br/>
+	<%= f.submit %>
+<% end %>
