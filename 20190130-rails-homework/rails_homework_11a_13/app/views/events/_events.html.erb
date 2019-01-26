@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+        <th>Event</th>
+        <th colspan="2"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% events.each_with_index do |event, i| %>
+        <tr>
+            <td><%= link_to "#{event.name}", event_path(event) %></td>
+            <% if cancelable == true %>
+                <td><%= link_to 'Cancel', cancelable_attendances[i], method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %></td>
+            <% end %>
+        <tr>
+        <% end %>
+    </tbody>
+</table>

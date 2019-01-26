@@ -17,6 +17,10 @@ class OrganisationsController < ApplicationController
             @unattended_organisation_events.push(event)
         end
     end
+    @cancelable_attendances = Array.new
+        @events.each_with_index do |event, i|
+            @cancelable_attendances[i] = OrganisationAttendance.find_by(event_id: event.id, organisation_id: @organisation.id)
+        end
   end
 
   # GET /organisations/new
