@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'attendances/new'
+  get 'attendances/show'
+  get 'attendances/destroy'
   resources :people
   root 'events#index'
   resources :events
