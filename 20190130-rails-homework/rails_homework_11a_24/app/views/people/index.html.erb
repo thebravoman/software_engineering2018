@@ -1,0 +1,9 @@
+<h1>People list</h1>
+<ul>
+  <% @people.each do |person| %>
+    <%= content_tag :li, link_to("#{person.name}", person) %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'New Person', new_person_path %> </br>
+<%= link_to "Go to events list", :controller => "events", :action => "index" %>
