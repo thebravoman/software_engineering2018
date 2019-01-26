@@ -1,0 +1,129 @@
+<html>
+<head>
+  <style>
+    table {
+   width: 100%;
+
+   td, th {
+      color: darken($baseColor, 10%);
+      padding: $padding;
+   }
+
+   td {
+      text-align: center;
+      vertical-align: middle;
+
+      &:last-child {
+         font-size: 0.95em;
+         line-height: 1.4;
+         text-align: left;
+      }
+   }
+
+   th {
+      background-color: lighten($baseColor, 50%);
+      font-weight: 300;
+   }
+
+   tr {
+      &:nth-child(2n) { background-color: white; }
+      &:nth-child(2n+1) { background-color: lighten($baseColor, 55%) }
+   }
+}</style>
+</head>
+<body>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+  <p>Participations:</p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Name:</strong></th>
+        <th><strong>Place:</strong></th>
+        <th><strong>Description:</strong></th>
+        <th><strong>Time:</strong></th></tr>
+        </thead>
+    <tbody>
+  <% @attendances.each do |f| %>
+      <% @events.each do |event| %>
+      <% if event.id == f.eid%>
+      <% if @person.id == f.pid%>
+      <tr>
+        <td>
+            <p>
+              <%= event.name %>
+            </p></td>
+            <td>
+            <p>
+              <%= event.place %>
+            </p>
+            </td>
+            <td>
+            <p>
+              <%= event.description %>
+            </p></td>
+            <td>
+            <p>
+              <%= event.time %>
+            </p></td>
+            <br/>
+          </p>
+        <td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+  <% end %>
+          <% end %>
+      <% end %>
+      <% end %>
+      </tbody>
+      </table>
+  <p>Others</p>
+  <table>
+    <thead>
+      <tr>
+        <td><strong>Name:</strong></td>
+        <td><strong>Place:</strong></td>
+        <td><strong>Description:</strong></td>
+        <td><strong>Time:</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+          <% @events.each do |event| %>
+          <tr>
+          <p>
+            <td>
+            <%= event.name %>
+            <%= link_to "Participate!", new_attendance_path(:person => @person.id, :event => event.id) %>
+            </td>
+          </p>
+
+          <p>
+            <td>
+            <%= event.place %>
+            </td>
+          </p>
+
+          <p>
+            <td>
+            <%= event.description %>
+            </td>
+          </p>
+
+          <p>
+            <td>
+            <%= event.time %>
+            </td>
+          </p>
+          <br/>
+        </p>
+        </tr>
+        <% end %>
+          </tbody>
+          </table>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+</body>
+</html>

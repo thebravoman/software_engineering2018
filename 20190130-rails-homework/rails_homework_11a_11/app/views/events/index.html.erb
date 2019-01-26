@@ -1,0 +1,18 @@
+<h1><center>New Events</center></h1>
+
+<p>
+<%= link_to 'New event', new_event_path %>
+</p>
+<p>
+<% @events.each do |event| %>
+<p> 
+Name: <%= link_to event.name, event_path(event) %>
+</p>
+<p>
+Date: <%= event.date %>
+</p>
+<p>
+	--------------------------------------------------------
+</p>
+</p>
+<% end %> 

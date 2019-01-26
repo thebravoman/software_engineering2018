@@ -1,0 +1,7 @@
+<%= form_for @attendance do |f| %>
+  <%= f.hidden_field :pid, :value => @person.id %>
+  <%= f.hidden_field :eid, :value => @event.id %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', attendances_path %>

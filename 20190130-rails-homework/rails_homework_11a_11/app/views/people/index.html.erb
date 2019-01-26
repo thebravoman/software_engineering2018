@@ -1,0 +1,15 @@
+<h1><center>People</center></h1>
+
+<p>
+<%= link_to 'New person', new_person_path %> </br>
+</p>
+<p>
+<% @people.each do |person| %>
+	<p> 
+	Name: <%= link_to person.name, person_path(person) %></br>
+	</p>
+<p>
+	--------------------------------------------------------
+</p>
+</p>
+<% end %> 

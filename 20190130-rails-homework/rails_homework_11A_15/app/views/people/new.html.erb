@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+  <title>idk</title>
+  <style>
+    .bg-contact2 {
+      text-align:center;
+      font-size: 40px;
+      width: 100%;
+      height:90vh;
+      padding:0;
+    margin:0;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      font-family: Poppins-Regular, sans-serif;
+    }
+
+    .container-contact2 {
+      width: auto;
+      overflow: hidden;
+      height: 90vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background: rgba(219,21,99,0.8);
+      background: -webkit-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+      background: -o-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+      background: -moz-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+      background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+    }
+
+    .wrap-contact2 {
+      width: 790px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 72px 55px 90px 55px;
+      font-family: Poppins-Regular, sans-serif;
+    }
+    body, html {
+    	height: 100%;
+    	font-family: Poppins-Regular, sans-serif;
+    }
+  </style>
+  </head>
+  <body>
+<div class="bg-contact2" style="background-image: url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+  <div class="container-contact2">
+    <div class="wrap-contact2">
+<%= form_for @person do |f| %>
+  <%= f.label :name %>
+  <br/>
+  <%= f.text_field :name %><br/>
+  <%= f.submit %>
+<% end %>
+<br/>
+<div style = "text-decoration: none; font-size:30px;">
+<%= link_to 'Back', people_path %></div>
+</div>
+</div>
+</div>
+</body>
+</html>

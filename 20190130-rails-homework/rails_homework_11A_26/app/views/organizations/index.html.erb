@@ -1,0 +1,12 @@
+<h1> List of all organizations </h1>
+
+<% if !@organizations.empty? %>
+    <% @organizations.each do |org| %>
+        Name: <%= link_to org.name, organization_path(org) %>
+        <br>
+    <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'Add new organization', new_organization_path %>

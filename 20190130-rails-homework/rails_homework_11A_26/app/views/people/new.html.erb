@@ -8,6 +8,14 @@
     </p>
 
     <p>
+        <%= ps.label :organization_id %>
+        <br>
+        <%= ps.select :organization_id  do %>
+            <%= options_for_select(@organizations_list) %>
+        <% end %>
+    </p>
+
+    <p>
         <%= ps.submit %>
     </p>
 <% end %>

@@ -1,2 +1,21 @@
-<h1>People#edit</h1>
-<p>Find me in app/views/people/edit.html.erb</p>
+<h1> Edit person </h1>
+
+<%= form_for @person do |ps| %>
+    <p>
+        <%= ps.label :name %>
+        <br>
+        <%= ps.text_field :name %>
+    </p>
+
+    <p>
+        <%= ps.label :organization_id %>
+        <br>
+        <%= ps.select :organization_id  do %>
+            <%= options_from_collection_for_select(@organizations_list, :id, :name) %>
+        <% end %>
+    </p>
+
+    <p>
+        <%= ps.submit %>
+    </p>
+<% end %>

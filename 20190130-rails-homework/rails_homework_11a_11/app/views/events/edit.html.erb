@@ -1,0 +1,23 @@
+<h1><center>Events</center></h1>
+
+<%= form_for @event do |f| %>
+<p>
+	<%= f.label :name %> 
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :location %> 
+	<%= f.text_field :location %>
+</p>
+<p>
+	<%= f.label :about %> 
+	<%= f.text_field :about %>
+</p>
+<p>
+	<%= f.label :date %> 
+	<%= f.date_field :date %>
+</p>
+<p>
+	<%= f.submit 'Create' %>
+</p>
+<% end %>
