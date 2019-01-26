@@ -9,8 +9,8 @@
 				Are you sure you want to add <%= Person.find(params[:person_id]).name %> to <%= Event.find(params[:event_id]).title %> ?
 			</p>
 			
-			<%= at.hidden_field :person_id, :value => params[:person_id]%> 
-			<%= at.hidden_field :event_id, :value => params[:event_id] %>
+			<%= at.hidden_field :person_id, :value => params[ :person_id] %> 
+			<%= at.hidden_field :event_id, :value => params[ :event_id] %>
 		</div>
 
 		<%= at.submit "Yes" , :class => 'btn btn-primary'  %>
