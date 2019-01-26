@@ -1,0 +1,18 @@
+<p>
+	<h1>Name: <%= @person.name %> <br/></h1>
+</p>
+
+<h2> Attend: </h2>
+<% @attend.each do |event| %>
+	<%= event.name %></br>
+	<%= event.date %></br>
+	<%= event.location %></br>
+	<%= link_to 'Delete event', "/attendances/delete_event?person_id=#{@person.id}&event_id=#{event.id}" %></br>
+	-------------------------------------
+<% end %>
+
+<h2> Not attend: </h2>
+<%= form_tag("/attendances/add_event?person_id=#{@person.id}") do %>
+	<%= select_tag "Events", options_from_collection_for_select(@not_attend, :id, :name) %>
+	<%= submit_tag "Choose" %>
+<% end %>
