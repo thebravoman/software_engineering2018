@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+	<h2> <%= @document.name %> <h2>
+	<br>
+	<h3> Description : </h3> 
+	<%= @document.description %>
+
+	<h3> Content : </h3>
+	<p> <%= @document.content %> </p> <br>
+
+	<%= link_to 'Edit', edit_document_path(@document) %> |
+	<%= link_to 'Delete', document_path(@document), method: :delete, data: { confirm: 'Are you sure?' } %> |
+	<%= link_to 'Back', documents_path %> 
+<% else %>
+	You need to <%= link_to 'log in', new_user_session_path %> before you can access this document
+<% end %>
+	
