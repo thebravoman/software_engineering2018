@@ -20,7 +20,7 @@
 			<%= attendance.event.title %> - 
 			<%= attendance.event.date %>
 			<%= link_to "Read more", event_path(attendance.event), :class => 'btn btn-default' %> 
-			<%= link_to 'Remove', attendance, method: :delete , data: {confirm: "Delete person?"},
+			<%= link_to 'Remove', attendance, method: :delete , data: {confirm: "Delete attendence?"},
 		 :class => 'btn btn-danger' %> <br>
 		</p>
 	<% end %>
