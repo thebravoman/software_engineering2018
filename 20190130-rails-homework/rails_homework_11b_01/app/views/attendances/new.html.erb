@@ -1,0 +1,20 @@
+<h2>Add attendence </h2>
+
+<%= form_for @attendance do |at| %>
+	
+
+		<div class = "well">
+
+			<p>
+				Are you sure you want to add <%= Person.find(params[:person_id]).name %> to <%= Event.find(params[:event_id]).title %> ?
+			</p>
+			
+			<%= at.hidden_field :person_id, :value => params[:person_id]%> 
+			<%= at.hidden_field :event_id, :value => params[:event_id] %>
+		</div>
+
+		<%= at.submit "Yes" , :class => 'btn btn-primary'  %>
+		<%= link_to "No", person_path(params[:person_id]) ,  :class => 'btn btn-default'  %>
+	
+<% end %>
+

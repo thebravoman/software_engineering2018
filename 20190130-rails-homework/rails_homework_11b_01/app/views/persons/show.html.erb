@@ -5,5 +5,52 @@
 
 <%= link_to "Delete", person_path(@person),
 	 method: :delete, 
-	 data: {confirm: "Delete event?"},
+	 data: {confirm: "Delete person?"},
 	 :class => 'btn btn-danger' %>
+
+
+<hr>
+
+<h3> Attending Events</h3>
+
+<div class = "well">
+
+	<% @person.attendances.each do |attendance| %>
+		<p>
+			<%= attendance.event.title %> - 
+			<%= attendance.event.date %>
+			<%= link_to "Read more", event_path(attendance.event), :class => 'btn btn-default' %> 
+			<%= link_to 'Remove', attendance, method: :delete , data: {confirm: "Delete person?"},
+		 :class => 'btn btn-danger' %> <br>
+		</p>
+	<% end %>
+
+</div>
+
+<% unsubscribed = [] %>
+<% subscribed = @person.events %>	
+
+<% @event.each do |event| %>
+	<% if !subscribed.include?(event) %>
+		<% unsubscribed.push(event) %>
+	<% end %>
+<% end %>
+
+<hr>
+
+<h3>Unattended events</h3> 
+	
+<div class = "well">	
+	<% for event in unsubscribed %>
+
+			<p>
+				<%= event.title %>-
+				<%= event.date %>
+				<%= link_to "Read more", event_path(event), :class => 'btn btn-default' %> 
+				<%= link_to 'Add', new_attendance_path(person_id: @person, event_id: event ) , :class => 'btn btn-primary' %>
+			</p> 
+		
+	<% end %>
+</div>
+
+ 

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :events
   resources :persons
+  resources :attendances
 
 end
