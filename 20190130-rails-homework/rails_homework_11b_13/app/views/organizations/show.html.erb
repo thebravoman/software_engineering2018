@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<% if @subscribed_events.length > 0%>
+<p><strong>Attended Events:</strong></p>
+	<% for event in @subscribed_events %>
+		<%= link_to event.name, controller: "events", action: "show", id: event.id %>
+		<%= link_to "Unsubscribe", controller: "attendances", action: "remove", attendant_id: @organization.id, attendant_type: "Organization", event_id: event.id%>
+		<br>
+	<% end %>
+<% end %>
+
+<% if @unsubscribed_events.length > 0 %>
+	<p><strong>Add event</strong></p>
+	<%= form_with(url: "/attendances/add/Organization/#{@organization.id}/") do |form| %>
+	  <div class = "field">
+		<%= form.select :event_id, options_for_select(@unsubscribed_events.map{|e|[e.name, e.id]}) %>
+	  </div>
+
+	  <div class="actions">
+	    <%= form.submit "Attend", name: "attend" %>
+	  </div>
+	<% end %>
+<% end %>
+
+<% if @people.length > 0 %>
+	<p><strong>Member list:</strong></p>
+	<% for person in @people %>
+		<%= link_to person.name, controller: "people", action: "show", id: person.id %>
+		<%= link_to "Kick out", controller: "people", action: "leave_organization", id: person.id %>
+		<br>
+	<% end %>
+<% end %>
+<br><br>
+
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

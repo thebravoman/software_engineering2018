@@ -1,7 +1,7 @@
 <h1> <%= @event.title %> </h1>
-<h3> <%= @event.location %> </h3>
-<p> <%= @event.description %> </p>
-<p> <%= @event.date %> </p>
+<h3> Location: <%= @event.location %> </h3>
+<p> Description: <%= @event.description %> </p>
+<p> Date: <%= @event.date %> </p>
 
 <hr>
 <%= link_to "Edit", edit_event_path(@event), :class => 'btn btn-default' %>

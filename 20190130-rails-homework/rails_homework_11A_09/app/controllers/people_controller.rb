@@ -1,5 +1,8 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy,:add_event, :delete_event]
+  before_action :set_person, only: [:show, :edit, :update, :destroy,:add_event, :delete_event, :add_organization]
+  skip_before_action :verify_authenticity_token
+   
+
 
   # GET /people
   # GET /people.json
@@ -11,14 +14,18 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     @all=Array.new
-
+    @organization_events=Array.new
     @new_event=Event.new
 
     if @person.organization_id
-      @all=(@person.events + Organization.find(@person.organization_id).events).uniq
+      @organization_events=Organization.find(@person.organization_id).events
+      @all=(@person.events + @organization_events).uniq
+    else
+      @all=@person.events
     end
     
    @not_events=Event.all.select{|e| !@all.include? e }
+
   end
 
   # GET /people/new
@@ -39,6 +46,12 @@ class PeopleController < ApplicationController
     @person.events.delete(event)
     redirect_to person_path(@person)
 
+  end
+
+  def add_organization
+    organization=params[:organization][:organization_id]
+    Organization.find(organization).people.append(@person)
+    redirect_to person_path(@person)
   end
 
   
