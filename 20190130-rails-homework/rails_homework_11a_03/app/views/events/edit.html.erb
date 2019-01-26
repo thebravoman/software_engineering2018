@@ -1,0 +1,30 @@
+<div class="header">
+	<div class="container">
+		<h1 style="text-align: center;">Edit event</h1>
+	</div>
+</div>
+
+<div class="create">
+	<div class="container">
+		<%= form_for @event do |f| %>
+			<div class="field">
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			<div class="field">
+				<%= f.label :place %>
+				<%= f.text_field :place %>
+			</div>
+			<div>
+				<%= f.label :date %>
+				<%= f.datetime_select :date %>
+			</div>
+			<div class="field">
+				<%= f.label :description %>
+				<br>
+				<%= f.text_area :description %>
+			</div>
+			<%= f.submit %>
+		<% end %>
+	</div>
+</div>
