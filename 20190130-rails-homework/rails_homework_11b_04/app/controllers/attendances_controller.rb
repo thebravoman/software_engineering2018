@@ -13,7 +13,7 @@ class AttendancesController < ApplicationController
 		end
 	end	
 	def destroy
-		@attendance = Attendance.find(params[:id]).delete
+		@attendance = Attendance.find(params[:id]).destroy
 		redirect_to person_path(@attendance.person_id)
 	end
 	private

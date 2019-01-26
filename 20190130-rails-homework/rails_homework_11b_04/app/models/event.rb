@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-	has_many :attendances
+	has_many :attendances, dependent: :destroy
 	has_many :people, through: :attendances
 	validates :name, presence: true, length: { minimum: 8 }, on: :create
 	validates :name, presence: true, length: { minimum: 8 }, on: :update
