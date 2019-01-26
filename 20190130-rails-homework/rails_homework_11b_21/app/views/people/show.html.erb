@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+
+<br><br><br>
+<table>
+    <% Event.all.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date %></td>
+          <% if Attendance.find_by(person_id: @person.id, event_id: event.id) == nil %>
+	<%= link_to "Attend", attendances_create_path(:attendance => {person_id: @person.id, event_id: event.id}), method: :post %>
+  <% else %>
+	<%= link_to "Leave", attendances_delete_path(:attendance => {person_id: @person.id, event_id: event.id}), method: :delete %>
+  <% end %>
+    <% end %>
+</table>
+
