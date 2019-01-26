@@ -1,0 +1,13 @@
+<h1> Create new person </h1>
+
+<%= form_for @person do |ps| %>
+    <p>
+        <%= ps.label :name %>
+        <br>
+        <%= ps.text_field :name %>
+    </p>
+
+    <p>
+        <%= ps.submit %>
+    </p>
+<% end %>

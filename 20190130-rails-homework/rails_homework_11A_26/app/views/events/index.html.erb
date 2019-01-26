@@ -1,0 +1,15 @@
+<h1> List of all events </h1>
+
+<% if !@events.empty? %>
+    <% @events.each do |e| %>
+        Name: <%= link_to e.name, event_path(e) %>
+        <br>
+        Date: <%= e.date %>
+        <br>
+        <br>
+    <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'Add new event', new_event_path %>

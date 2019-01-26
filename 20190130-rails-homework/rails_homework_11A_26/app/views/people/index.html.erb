@@ -1,0 +1,12 @@
+<h1> List of all people </h1>
+
+<% if !@people.empty? %>
+    <% @people.each do |ps| %>
+        Name: <%= link_to ps.name, person_path(ps) %>
+        <br>
+    <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'Add new person', new_person_path %>

@@ -1,0 +1,31 @@
+<h1> Edit event </h1>
+
+<%= form_for @event do |e| %>
+    <p>
+        <%= e.label :name %>
+        <br>
+        <%= e.text_field :name %>
+    </p>
+
+    <p>
+        <%= e.label :location %>
+        <br>
+        <%= e.text_field :location %>
+    </p>
+
+    <p>
+        <%= e.label :description %>
+        <br>
+        <%= e.text_area :description %>
+    </p>
+
+    <p>
+        <%= e.label :date %>
+        <br>
+        <%= e.datetime_field :date %>
+    </p>
+
+    <p>
+        <%= e.submit %>
+    </p>
+<% end %>
