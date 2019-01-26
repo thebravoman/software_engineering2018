@@ -40,7 +40,12 @@ class PeopleController < ApplicationController
     end
 
     def attendance
-	event = Event.find(params[:event][:event_id])
+	if params[:direct_attend] == 'true'
+	    event = Event.find(params[:event])
+	end
+	if params[:direct_attend] == 'false'
+	    event = Event.find(params[:event][:event_id])
+	end
 	attend = 1
  	
 	name = params[:name]

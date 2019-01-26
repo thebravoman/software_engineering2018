@@ -6,6 +6,7 @@
 <%= form_tag '/people/attendance' do %>
   <%= text_field_tag 'name' %>
   <%= hidden_field_tag 'event', params[:id] %>
+  <%= hidden_field_tag 'direct_attend', 'true' %>
 
   <%= submit_tag 'Attend' %>
 <% end %>

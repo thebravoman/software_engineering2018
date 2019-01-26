@@ -13,6 +13,7 @@
 <%= form_tag '/people/attendance' do %>
   <%= collection_select :event, :event_id, @events, :id, :name %><br/>
   <%= hidden_field_tag 'name', @person.name %>
+  <%= hidden_field_tag 'direct_attend', 'false' %>
   <%= submit_tag 'Attend' %>
 <% end %>
 </h2>
