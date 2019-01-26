@@ -1,0 +1,33 @@
+<div class="header">
+	<div class="container">
+		<h1><%= @event.name %></h1>
+	</div>
+</div>
+
+<div class="events">
+	<div class="container">
+		Where? <strong><%= @event.place %></strong>
+		<hr>
+		When? <h4 class="time"><%= @event.date.strftime('%H:%M %d-%m-%Y') %></h4>
+		<hr>
+		<% if @event.description != "" %>
+			<h4>More details on <%= @event.name %>:</h4>
+			<div class="description"><%= @event.description %></div>
+			<br>
+		<% else %>
+			<h4>No description for <i><%= @event.name %></i></h4>
+		<% end %>
+		<br>
+		<% if @event.people.count > 0 %>
+			People who will attend "<%= @event.name %>": 
+			<% @event.people.each do |p| %>
+				<h2 class="eventname"><%= link_to p.name, person_path(p.id) %></h2>
+			<% end %>
+		<% else %>
+			No people will attend this event. :(
+		<% end %>
+		<br>
+		<br>
+		<%= link_to "Back to events", events_path, { :style => "margin: 0;" } %>
+	</div>
+</div>

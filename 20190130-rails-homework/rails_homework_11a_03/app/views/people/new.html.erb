@@ -1,0 +1,17 @@
+<div class="header">
+	<div class="container">
+		<h1 style="text-align: center;">Create person</h1>
+	</div>
+</div>
+
+<div class="create">
+	<div class="container">
+		<%= form_for Person.new do |f| %>
+			<div class="field">
+      			<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			<%= f.submit "Submit" %>
+		<% end %>
+	</div>
+</div>

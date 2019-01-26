@@ -1,0 +1,54 @@
+<div class="header">
+	<div class="container">
+		<h1><%= @person.name %></h1>
+	</div>
+</div>
+
+<div class="people">
+	<div class="container">
+		<h2>Attendances:</h2>
+		<% if @person.attendances.count == 0 %>
+			None
+		<% else %>
+			<% @person.attendances.each do |a| %>
+				<div  class="management">
+					<h2 class="peoplename">
+						<%= link_to a.event.name, event_path(a.event.id) %>						
+					</h2>
+					<%= form_for(a, :method => :delete) do |f| %>
+						<%= f.submit :value => "Delete" %>
+						<%= f.hidden_field :person_id, value: @person.id %>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+		<% if @person.organisation != nil %>
+			<hr>
+			<h2>Organisation's events</h2>
+			<% if @person.organisation.events.count == 0 %>
+				No events here.
+			<% else %>
+				<% @person.organisation.events.each do |e| %>
+					<div  class="management">
+						<h2 class="peoplename">
+							<%= link_to e.name, event_path(e.id) %>						
+						</h2>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+		<hr>
+		<% if @notattended.count > 0 %>
+			<%= form_for Attendance.new do |f| %>
+				<%= f.hidden_field :person_id, value: @person.id %>
+				<%= f.select :event_id, options_for_select(@notattended.map{ |e| [e.name, e.id] }) %>
+				<%= f. submit %>
+			<% end %>
+		<% else %>
+			<h3><%= @person.name %> is attending all available events.</h3>
+		<% end %>
+		<br>
+		<br>
+		<%= link_to "Back to events", events_path %>
+	</div>
+</div>
