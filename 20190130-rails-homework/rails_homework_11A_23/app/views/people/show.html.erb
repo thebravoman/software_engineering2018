@@ -1,0 +1,18 @@
+Name of person: <%= @person.name %><br>
+<br>
+
+<% @yes_events.each do |event| %>
+  Name of Event: <%= event.name %>
+  <%= link_to "Delete the event", "/people/attendances/delete?person_id=#{@person.id}&event_id=#{event.id}" %><br>
+  <br>
+<% end %>
+<br>
+
+<%= form_tag("/people/attendances/add?person_id=#{@person.id}") do %>
+  <%= select_tag "event_id", options_from_collection_for_select(@no_events, :id, :name) %>
+  <%= submit_tag "Attend" %>
+<% end %>
+<br> <br>
+
+<%= link_to "Destroy the person", person_path(@person), method: :delete %>
+<br><%= link_to "Back", people_path %>

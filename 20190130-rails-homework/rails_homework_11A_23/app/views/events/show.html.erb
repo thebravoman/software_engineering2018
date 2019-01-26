@@ -1,0 +1,13 @@
+<h1>Events#show</h1>
+<p>Find me in app/views/events/show.html.erb</p>
+
+
+Name: <%= @event.name %><br>
+Place: <%= @event.place %> <br>
+Description: <%= @event.description %> <br>
+Date: <%= @event.date %> <br>
+<br>
+
+<%= link_to "Edit", edit_event_path(@event) %><br>
+<%= link_to "Destroy", event_path(@event), method: :delete %><br>
+<%= link_to "Return back to main page", events_path %>
