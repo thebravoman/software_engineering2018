@@ -14,6 +14,8 @@
   </h4>
 <% end %>
 
+<hr>
+
 <div class="wrapper">
   <% unless @subscribed.empty? %>
     <div class="personal subscribed">
@@ -42,7 +44,7 @@
     </div>
   <% end %>
 
-  <% unless @group.empty? %>
+  <% unless @group.nil? %>
     <div class="group subscribed">
       <h3> Group </h3>
       <table>
