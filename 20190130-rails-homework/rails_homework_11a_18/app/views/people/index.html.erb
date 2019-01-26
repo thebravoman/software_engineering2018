@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>People</h1>
+<%= link_to 'New Person', new_person_path %>
+<br>
+
+
+<% @people.each do |event|%>
+    <div class="table_info">
+      <p class="content">Name: <%= event.name %></p>
+      <%= link_to "View", person_path(event)%>
+    </div>
+<% end %>
+
+
+

@@ -1,0 +1,40 @@
+
+<h2>
+  <strong class="name">Name:</strong>
+  <%= @person.name %>
+</h2>
+
+
+<h3> Going to Events: </h3>
+<% @person.events.each do |event| %>
+  <p class = "field"> <strong class = "name"> -> </strong>  <%= event.name %>
+    <% id = event.attendances.where(person_id: @person.id).take.id %>
+    <%=link_to "Unregister", destroy_attendance_path(id), method: :destroy%> | 
+    <%=link_to "View", event_path(event)%>
+  </p>
+
+<% end  %>  
+
+<%= form_with model: @attendance, url: create_attendance_path, local: true do |f|  %>
+    <%= f.select(:event_id) do%>
+      <%=options_from_collection_for_select( @possible_attendances, :id, :name)%>
+    <% end %>
+  <%= f.submit "Register!" %>
+<% end %>
+ 
+
+<h3>  
+  Organization: 
+</h3>
+  <% if @person.organization %> 
+    <% name = @person.organization.name %>
+  <% else %>
+    <% name = "None"%>
+  <% end %>
+
+  <p><strong class = "name"> -> </strong><%= name %> </p> 
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Delete', person_path(@person), method: :delete %> |
+<%= link_to 'Back', people_path %>

@@ -1,0 +1,27 @@
+
+<h3>
+  <strong class = "name">Name:</strong>
+  <%= @organization.name %>
+</h3>
+
+<div>
+  <strong >Participating:</strong>
+  <% @organization.people.each do |person| %>
+    <p class = "name">
+      <strong class = "name"> -> </strong> <%= person.name %>
+      <%=link_to "kick", remove_person_from_organization_path(@organization, person.id), method: :post  %> 
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <%= form_tag add_person_to_organization_path(@organization) do  %>
+    <%=  select_tag :person_id, options_from_collection_for_select(@possible_people, :id, :name)  %>
+    <%= submit_tag "Add new person!"%>
+  <% end %>
+</div>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Destroy', organization_path(@organization), method: :delete,  data: {confirm: "Do you really want to destroy that organization?"}  %> |
+<%= link_to 'Back', organizations_path %>

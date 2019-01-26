@@ -1,0 +1,18 @@
+
+<div class = "content">
+  <p class="content", id = "name"><strong class="name">Name:</strong>
+    <%= @event.name %> <br/>
+  </p>
+  <p class="content"><strong class="name">Location:</strong>
+    <%= @event.location %> <br/>
+  </p>
+  <p class="content"><strong class="name">Description:</strong>
+    <%= @event.description %> <br/>
+  </p>
+  <p class="content"><strong class="name">Date:</strong>
+    <%= @event.date %> <br/>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

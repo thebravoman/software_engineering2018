@@ -1,0 +1,26 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div class="alert">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.select :organization_id  do %>
+    <%= options_from_collection_for_select(Organization.all, :id, :name  ) %>
+  <% end %>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
