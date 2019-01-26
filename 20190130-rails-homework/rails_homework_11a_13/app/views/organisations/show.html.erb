@@ -10,22 +10,26 @@
   <%= @organisation.description %>
 </p>
 
-<p>
-  <strong>Events which organisation will attend:</strong>
-  <% @organisation.events.each do |event| %>
-    <p>
-      <%= link_to "#{event.name}", event %>
-      <%= link_to 'Cancel', OrganisationAttendance.find_by(event_id: event.id, organisation_id: @organisation.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %>
-    </p>
-  <% end %>
-</p>
+<% if @organisation.events.any? %>
+  <p>
+    <strong>Events which organisation will attend:</strong>
+    <%= render partial: "events/events", locals: { events: @organisation.events, cancelable: true, cancelable_attendances: @cancelable_attendances } %>
+  </p>
+<% else %>
+  <p>This organisation isn't going to attend any events.</p>
+<% end %>
 
-<p>
-  <strong>People in this organisation:</strong>
-  <% @organisation.people.each do |person| %>
-    <%= link_to "#{person.name}", person %> | 
-  <% end %>
-</p>
+<% if @organisation.people.any? %>
+  <p>
+    <strong>People in this organisation:</strong>
+    <% @organisation.people.each do |person| %>
+      <%= link_to "#{person.name}", person %> | 
+    <% end %>
+  </p>
+<% else %>
+  <p>There are no people in this organisation.</p>
+<% end %>
+
 
 <% if !@unattended_organisation_events.empty? %>
     <p>Add new attendance:</p>
@@ -34,11 +38,11 @@
             <%= options_from_collection_for_select(@unattended_organisation_events, :id, :name) %>
         <% end %>
         <%= f.hidden_field :organisation_id, value: @organisation.id %>
-        <%= f.submit %>
+        <%= f.submit "Add attendance" %>
     <% end %>
 <% else %>
 <p>There are no more events for this organisation to attend :(</p>
 <% end %>
-
+<br>
 <%= link_to 'Edit', edit_organisation_path(@organisation) %> |
-<%= link_to 'Back', organisations_path %>
+<%= link_to 'All organisation', organisations_path %>

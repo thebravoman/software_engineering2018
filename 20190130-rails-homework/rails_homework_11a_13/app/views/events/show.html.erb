@@ -21,9 +21,16 @@
 </p>
 
 <p>
-  <strong>People:</strong>
+  <strong>People attending:</strong>
   <% @people.each do |person| %>
   <%= person.name %> |
+  <% end %>
+</p>
+
+<p>
+  <strong>Organisations attending:</strong>
+  <% @event.organisations.each do |organisation| %>
+  <%= organisation.name %> |
   <% end %>
 </p>
 

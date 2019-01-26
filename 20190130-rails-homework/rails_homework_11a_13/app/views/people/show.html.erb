@@ -4,50 +4,11 @@
 
 <% if @person.events.any? %>
   <p>All events which <%= @person.name %> will attend: </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @events.each do |event| %>
-        <tr>
-          <td><%= link_to "#{event.name}", event_path(event) %></td>
-          <td><%= link_to 'Cancel', Attendance.find_by(event_id: event.id, person_id: @person.id), method: :delete, data: { confirm: 'Are you sure you want to cancel this attendance?' } %></td>
-        <tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render partial: "events/events", locals: { events: @events, cancelable: true, cancelable_attendances: @cancelable_attendances } %>
 <% else %>
   <p><%= @person.name %> will not attend any events.</p>
 <% end %>
 
-<% if @person.organisation_id %>
-  <p><%= @person.name %> is a part of <%= @person.organisation.name %>.</p>
-  <p>All events which <%= @person.organisation.name %> will attend: </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @person.organisation.events.each do |event| %>
-        <tr>
-          <td><%= link_to "#{event.name}", event %></td>
-        <tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-
-<br>
 <% if !@unattended_events.empty? %>
     <p>Add new attendance:</p>
     <%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
@@ -55,8 +16,25 @@
             <%= options_from_collection_for_select(@unattended_events, :id, :name) %>
         <% end %>
         <%= f.hidden_field :person_id, value: @person.id %>
-        <%= f.submit %>
+        <%= f.submit "Add attendance" %>
     <% end %>
 <% else %>
 <p>There are no more events for this person to attend :(</p>
 <% end %>
+<br>
+<% if @person.organisation_id %>
+  <p><%= @person.name %> is a part of <%= @person.organisation.name %>.</p>
+  <p>All events which <%= @person.organisation.name %> will attend: </p>
+  <%= render partial: "events/events", locals: { events: @person.organisation.events, cancelable: false }%>
+<% else %>
+  <p><%= @person.name %> is not part of an organisation. Add one:</p>
+  <%= form_with(model: @person, local: true) do |form| %>
+    <%= form.label :organisation_id %>
+    <%= form.select :organisation_id do %>
+      <%= options_from_collection_for_select(Organisation.all, :id, :name) %>
+    <% end %>
+    <%= form.submit "Add organisation" %>
+  <% end %>
+<% end %>
+<br>
+<%= link_to 'All people', people_path %>

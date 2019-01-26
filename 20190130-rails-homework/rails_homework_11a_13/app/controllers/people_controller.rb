@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
     before_action :set_person, only: [:show, :update, :destroy]
     before_action :set_events, only: [:show]
+    before_action :set_organisation_options, only: [:new]
     
     def index
         @people = Person.all
@@ -13,15 +14,17 @@ class PeopleController < ApplicationController
                 @unattended_events.push(event)
             end
         end
+        @cancelable_attendances = Array.new
+        @events.each_with_index do |event, i|
+            @cancelable_attendances[i] = Attendance.find_by(event_id: event.id, person_id: @person.id)
+        end
     end
 
     def new
         @person = Person.new
-        @organisation_options = Array.new
-        @organisation_options[0] = ["None", nil]
-        Organisation.all.each_with_index do |organisation, i|
-            @organisation_options[i+1] = [organisation.name, organisation.id]
-        end
+    end
+
+    def edit
     end
 
     def create
@@ -35,11 +38,10 @@ class PeopleController < ApplicationController
     end
 
     def update 
-        @attendance = Attendance.new(params.require(:attendance).permit())
         if @person.update(person_params)
-            render plain: params[:person].inspect
+            redirect_to @person, notice: 'Successfully updated organisation!'
         else
-            redirect_to person_path(@person), notice: 'Error: Event was not added successfully'
+            redirect_to person_path(@person), notice: 'Error!'
         end
     end
 
@@ -49,6 +51,14 @@ class PeopleController < ApplicationController
     end
 
     private
+    def set_organisation_options
+        @organisation_options = Array.new
+        @organisation_options[0] = ["None", nil]
+        Organisation.all.each_with_index do |organisation, i|
+            @organisation_options[i+1] = [organisation.name, organisation.id]
+        end
+    end
+
     def set_person
         @person = Person.find(params[:id])
     end
