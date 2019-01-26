@@ -1,0 +1,49 @@
+<h1><%= @person.name %></h1>
+
+<h2>Attendances:</h2>
+<% if @person.attendances.count == 0 %>
+    None :(
+<% else %>
+    <ul>
+        <% @person.attendances.each do |a| %>
+            <li>
+                <%= link_to a.event.name, event_path(a.event.id) %>
+                <%= form_for(a, :method => :delete) do |f| %>
+                    <%= f.submit :value => "Delete" %>
+                    <%= f.hidden_field :person_id, value: @person.id %>
+                <% end %>
+            </li>
+        <% end %>
+    </ul>    
+<% end %>
+<hr>
+
+<% if @person.organisation != nil %>
+    <h2>Organisation attendances</h2>
+    <% if @person.organisation.events.count == 0 %>
+        Organisation has no events :(
+    <% else %>
+        <ul>
+            <% @person.organisation.events.each do |e| %>
+                <li>
+                    <%= link_to e.name, event_path(e.id) %>
+                </li>
+            <% end %>
+        </ul> 
+    <% end %>
+    <hr>
+<% else %>
+    Person doesn't belong to an organisation
+<% end %>   
+
+<hr>
+
+<% if @notattended.count == 0 %>
+    <%= @person.name %> is an enthusiast and is attending every available event.
+<% else %>    
+    <%= form_for Attendance.new do |f| %>
+    <%= f.hidden_field :person_id, value: @person.id %>
+    <%= f.select :event_id, options_for_select(@notattended.map{ |e| [e.name, e.id] }) %>
+    <%= f. submit %>
+    <% end %>
+<% end %>
