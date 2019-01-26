@@ -4334,3 +4334,253 @@ Processing by PeopleController#show as HTML
 Completed 200 OK in 28ms (Views: 20.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-26 00:51:32 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/toni/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/toni/.rvm/gems/ruby-2.5.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/toni/.rvm/gems/ruby-2.5.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-26 00:51:38 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 185ms (Views: 180.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2019-01-26 00:51:41 +0200
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (9.2ms)
+  Rendered events/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2019-01-26 00:51:43 +0200
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2QSuWHjYX8DY+PUOod3heZvt2gH0S7+vSVJF0uqppNQ+U4LGcaL70fzqQjxcLxl/JRLRsKYTZC0sRG7yBM607w==", "event"=>{"name"=>"food_festival", "description"=>"festival for different kind of foods", "location"=>"near NDK 03", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"26", "date(4i)"=>"19", "date(5i)"=>"05"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:44
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-01-26 00:51:43 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-26 00:51:46 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/2/edit" for 127.0.0.1 at 2019-01-26 00:51:54 +0200
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (7.3ms)
+  Rendered events/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/events/2" for 127.0.0.1 at 2019-01-26 00:52:01 +0200
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fv58+INXosBlOQW5cBlJrryVGP3HJR9oIIDiq2ydI2Qirl1bDOZp7CH/3Ir3q8wyi1fdtA/Cq5fdh79yjI1A3Q==", "event"=>{"name"=>"rd-toni-26", "description"=>"nema takova jivotno", "location"=>"nekude tam", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"26", "date(4i)"=>"19", "date(5i)"=>"00"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:44
+  [1m[36mEvent Update (0.3ms)[0m  [1m[33mUPDATE "events" SET "location" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["location", "nekude tam"], ["updated_at", "2019-01-25 22:52:01.432210"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (216.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:44
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 223ms (ActiveRecord: 216.9ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-01-26 00:52:01 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-26 00:52:04 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-26 00:52:09 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-26 00:52:13 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:74
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:16
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:17
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:17
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:17
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:22
+  Rendered people/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 41ms (Views: 20.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/2/edit" for 127.0.0.1 at 2019-01-26 00:52:24 +0200
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.0ms)
+  Rendered events/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-26 00:52:25 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-01-26 00:52:27 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (8.2ms)
+  Rendered events/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-26 00:52:38 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHRqCkPYLN55WiO+0oI+ZdGXbDn8BCFsKj5YCM33Z4yWmW732loCMie+oaTXp8cxWTYsKXvivabmO8BpH41Hvw==", "event"=>{"name"=>"eho", "description"=>"", "location"=>"tam", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"25", "date(4i)"=>"22", "date(5i)"=>"52"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.1ms)
+  Rendered events/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-26 00:52:44 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qLqwXU1ZeCZxZiMoyEj/fHMxzP7Nr3d0hPIVAW0/ohXl+0NU4HLdJy5fXK/NGa5EMuyF/3EcHuiFh2Tq0wq++A==", "event"=>{"name"=>"ehoehoeho", "description"=>"", "location"=>"tam", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"25", "date(4i)"=>"22", "date(5i)"=>"52"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (3.6ms)
+  Rendered events/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-26 00:52:48 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SEPHGXhTrg/ziz0dJFdP+LnA5uJwfB1QYwBgloSS5nYFAjQQ1XgLDqyyQpohBh7A+B2v48zPdMxidRF9Oqf6mw==", "event"=>{"name"=>"ehoehoeho", "description"=>"", "location"=>"tam", "date(1i)"=>"2019", "date(2i)"=>"1", "date(3i)"=>"26", "date(4i)"=>"22", "date(5i)"=>"52"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "location", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "ehoehoeho"], ["description", ""], ["location", "tam"], ["date", "2019-01-26 22:52:00"], ["created_at", "2019-01-25 22:52:48.785555"], ["updated_at", "2019-01-25 22:52:48.785555"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (82.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 92ms (ActiveRecord: 83.5ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-01-26 00:52:48 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:67
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-01-26 00:52:50 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2019-01-26 00:52:58 +0200
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:14
+  Rendered people/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/people/1" for 127.0.0.1 at 2019-01-26 00:53:02 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:74
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:16
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:17
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/people_controller.rb:17
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/controllers/people_controller.rb:17
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."event_id" WHERE "attendances"."person_id" = ?[0m  [["person_id", 1]]
+  ↳ app/views/people/show.html.erb:22
+  Rendered people/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 0.9ms)
+
+
