@@ -1,0 +1,150 @@
+<html>
+<head>
+<link rel="stylesheet"
+  href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.4.js" /></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  function init() {
+    $('#contactView').tabs();
+    $('#btnCancel').click(function(event){
+      onCancel(event);
+    });
+    
+    $('#btnEdit').click(function(event){
+      onEdit(event);
+    });
+    
+    $('#btnSave').click(function(event){
+      onEdit(event);
+    });
+  }
+
+  function onCancel(event) {
+    toggle(true);
+  }
+  
+  function onSave(event) {
+    
+  }
+  
+  function onEdit(event) {
+	toggle(false);
+  }
+  
+  function toggle(isDisabled) {
+    $('#txtFirstName').prop('disabled', isDisabled);
+    $('#txtLastName').prop('disabled', isDisabled);
+    $('#txtDefaultMobile').prop('disabled', isDisabled);
+    $('#txtDefaultEmailAddress').prop('disabled', isDisabled);
+    $('#txtDefaultEmailAddress').prop('disabled', isDisabled);
+    
+    $('#txtPersonalEmailAddress').prop('disabled', isDisabled);
+    $('#txtPersonalSkype').prop('disabled', isDisabled);
+    $('#txtPersonalPhone').prop('disabled', isDisabled);
+    $('#txtPersonalMobile').prop('disabled', isDisabled);    
+    $('#txtPersonalSkype').prop('txtPersonalAddress', isDisabled);
+    
+    $('#txtCompany').prop('disabled', isDisabled);
+    $('#txtCompanyWebSite').prop('disabled', isDisabled);
+    $('#txtBusinessEmail').prop('disabled', isDisabled);
+    $('#txtBusinessPhone').prop('disabled', isDisabled);
+    $('#txtBusinessMobile').prop('disabled', isDisabled);
+    $('#txtBusinessAddress').prop('disabled', isDisabled);
+    
+  }
+
+  $(document).ready(function() {
+    init();
+  });
+</script>
+</head>
+<body>
+  <div style="width: 100 vh;">
+    <div style="clear: left;">
+      <div style="width: 500px; float: left; vertical-align: top;">
+        <div id="contactView">
+          <ul>
+            <li><a href="#detailsTab">Details</a></li>
+            <li><a href="#personalDetalsTab">Personal</a></li>
+            <li><a href="#businessDetailsTab">Business</a></li>
+            <li><a href="#photoTab">Photo</a>
+          </ul>
+          <div id="detailsTab">
+            <span>First name:</span> 
+            <input type="text" style="float: right;" disabled="disabled" id="txtFirstName" />
+            <br /><br />
+            <span>Last name:</span>
+            <input type="text" style="float: right;" disabled="disabled" id="txtLastName" />
+            <br /><br />
+            <span>Default mobile:</span>
+            <input type="text" style="float: right;" disabled="disabled" id="txtDefaultMobile" />
+            <br /><br />
+            <span>Default email address:</span>
+            <input type="text" style="float: right;" disabled="disabled" id="txtDefaultEmailAddress" />
+            <br /><br />
+          </div>
+          <div id="personalDetalsTab">
+            <span>Email:</span> <input type="text" style="float: right;"
+              disabled="disabled" id="txtPersonalEmailAddress" />
+            <br /><br />
+            <span>Skype:</span> <input type="text" style="float: right;"
+              disabled="disabled" id="txtPersonalSkype" />
+            <br /><br />
+            <span>Phone:</span>
+            <input type="text" style="float: right;" disabled="disabled"
+              id="txtPersonalPhone" />
+            <br /><br />
+            <span>Mobile:</span> <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtPersonalMobile" /><br /><br /> <span>Address:</span>
+            <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtPersonalAddress" />
+            
+          </div>
+          <div id="businessDetailsTab">
+
+            <span>Company:</span> <input type="text"
+              style="float: right;" disabled="disabled" id="txtCompany" />
+            <br /><br />
+            <span>Web site:</span>
+            <input type="text"
+              style="float: right;" disabled="disabled"
+              id="txtCompanyWebSite" />
+            <br /><br />
+            <span>Email:</span> <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtBusinessEmail" />
+            <br /><br />
+            <span>Phone:</span> <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtBusinessPhone" />
+            <br /><br />
+            <span>Mobile:</span> <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtBusinessMobile" />
+            <br /><br />
+            <span>Address:</span>
+            <input
+              type="text" style="float: right;" disabled="disabled"
+              id="txtBusinessAddress" />
+
+          </div>
+          <div id="photoTab">
+            <img src="TrollFace.jpg"
+              style="max-width: 100%; max-height: 100%;" />
+          </div>
+        </div>
+        <input type="button" id="btnEdit" value="Edit" /> <input
+          type="button" id="btnCancel" value="Cancel" /> <input
+          type="button" id="btnSave" value="Save" />
+      </div>
+      <div style="margin-left: 400px;">
+        <textarea id="txtCode" style="width: 90%; height: 90vh;"></textarea>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
