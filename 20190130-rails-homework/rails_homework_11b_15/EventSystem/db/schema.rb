@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_132053) do
+ActiveRecord::Schema.define(version: 2019_01_23_171134) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "event_id"
-    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "subscriber_type"
+    t.integer "subscriber_id"
     t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["person_id"], name: "index_attendances_on_person_id"
+    t.index ["subscriber_type", "subscriber_id"], name: "index_attendances_on_subscriber_type_and_subscriber_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -30,10 +31,18 @@ ActiveRecord::Schema.define(version: 2019_01_19_132053) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_people_on_organization_id"
   end
 
 end

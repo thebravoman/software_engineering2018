@@ -1,0 +1,16 @@
+<h1> New Event </h1>
+<%= form_for @event do |f| %>
+  <h2><%= f.label :name %></h2>
+  <%= f.text_field :name %><br/>
+  <h2><%= f.label :description %></h2>
+  <%= f.text_field :description %><br/>
+  <h2><%= f.label :location %></h2>
+  <%= f.text_field :location %><br/>
+  <%= f.label :date %>
+  <%= f.date_field :date %><br/>
+
+  <h3><%= f.submit %></h3>
+<% end %>
+
+<%= link_to 'Go back', '/events' %>
+

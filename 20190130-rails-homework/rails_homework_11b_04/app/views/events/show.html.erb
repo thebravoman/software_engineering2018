@@ -1,0 +1,10 @@
+<h2> <%= @event.name %> </h2>
+
+<p>
+	Location : <%= @event.location %> <br>
+	Description : <%= @event.description %> <br>
+	Date : <%= @event.created_at %> <br>
+
+	<br>
+	<%= link_to 'Edit', edit_event_path %> | <%= link_to 'Delete', @event, method: :delete %> | <%= link_to 'Back', events_path %>
+<p>

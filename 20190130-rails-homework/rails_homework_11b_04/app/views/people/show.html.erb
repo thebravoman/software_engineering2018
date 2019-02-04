@@ -1,0 +1,36 @@
+<% if @person.attendances.empty? %>
+	<h2> <%= @person.name %> doesn't attend any events yet </h2>
+<% else %>
+	<h2> <%= @person.name %>'s events </h2>
+<% end %>
+
+<p>
+	<% @person.attendances.each do |attendance| %>
+		<p>
+			-> <%= attendance.event.name %> | <%= attendance.event.created_at %> | <%= link_to 'Remove', attendance, method: :delete %> <br>
+		</p>
+	<% end %>
+	<br>
+
+	<% unsubscribed = [] %>
+	<% subscribed = @person.events %>	
+
+	<% @events.each do |event| %>
+		<% if !subscribed.include?(event) %>
+			<% unsubscribed.push(event) %>
+		<% end %>
+	<% end %>
+
+	<% if unsubscribed.any?  %>
+		<h4><i>You can add this person to the following events : </i></h4> 
+		<% for event in unsubscribed %> 
+			<%= event.name %> | <%= link_to 'Add', new_attendance_path(person_id: @person, event_id: event) %> <br>
+		<% end %>
+		<br> <br>
+	<% end %>
+
+	<%= link_to 'Edit', edit_person_path %>  |
+	<%= link_to 'Delete', @person, method: :delete %> |
+	<%= link_to 'Back', people_path %>
+</p>
+

@@ -1,0 +1,9 @@
+<h1>All events</h1>
+
+<% @events.each do |e| %>
+    <h2>Name: <%= link_to e.name, event_path(e.id) %></h2> 
+    <h4>Date: <%= e.date.strftime('%H:%M %d-%m-%Y') %></h4>
+        <%= link_to "Edit", edit_event_path(e.id) %>
+        <%= button_to "Delete", event_path(e), method: :delete %>
+    <hr>
+<% end %>

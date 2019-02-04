@@ -1,0 +1,10 @@
+<h1>Events#index</h1>
+
+<%= link_to 'New event', new_event_path %>
+<br/>
+
+<% @events.each do |event| %>
+  Event: <%= link_to event.name, event_path(event) %> <br/>
+  Date: <%= event.date %> <br/>
+  <br/>
+<% end %>

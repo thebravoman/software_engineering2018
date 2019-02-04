@@ -1,0 +1,13 @@
+<h1>People#index</h1>
+
+<%= link_to 'New person', new_person_path %>
+<br/>
+<br/>
+
+<br/>
+
+
+<% @people.each do |person| %>
+  Name: <%= link_to person.name, event_path(person) %> <br/>
+  <br/>
+<% end %>

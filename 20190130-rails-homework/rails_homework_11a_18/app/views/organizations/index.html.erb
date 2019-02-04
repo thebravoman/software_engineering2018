@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Organizations</h1>
+<%= link_to 'New Organization', new_organization_path %>
+<br/>
+
+<% @organizations.each do |organization|%>
+    <div class="table_info">
+      <p class="content">Name: <%= organization.name %></p>
+      <%= link_to "View", organization_path(organization)%>
+    </div>
+<% end %>
+
+
+

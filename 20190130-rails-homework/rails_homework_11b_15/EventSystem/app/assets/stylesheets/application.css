@@ -40,6 +40,38 @@
     text-decoration: none;
 }
 
-.nav-bar li a:hover {
-    background-color: #111;
+.nav-bar li a:link {
+    color: rgb(190, 190, 190);
+}
+
+.subscribed
+{
+    background-color: antiquewhite  ;
+    margin: 30px;
+    padding: 10px;
+    display: inline;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.personal
+{
+    float: left;
+    margin-bottom: 20px;
+}
+
+.group
+{
+    float: right;
+    margin-bottom: 20px;
+}
+
+.wrapper
+{
+    margin: 30px;
+}
+
+.adder
+{
+    clear: both;
 }

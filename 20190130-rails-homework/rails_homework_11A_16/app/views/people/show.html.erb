@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<% @person.events.each do |event| %>
+    <%= event.name %>
+    <%= link_to 'Unattend', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+<% end %>
+<br>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+<br> <br>
+
+Other events: <br>
+<% @unattended.each do |event| %>
+    <%= event.name %>
+    <br>
+<% end %>

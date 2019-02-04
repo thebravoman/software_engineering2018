@@ -1,0 +1,14 @@
+<h1> Users </h1>
+
+<% @person.each do |person| %>
+
+	<div class = "well">
+
+		<h3> <%= person.name %> </h3>
+
+		<%= link_to "Person info", person_path(person), :class => 'btn btn-default' %>
+
+	</div>	
+
+<% end %>
+

@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body, p {
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  margin: 0;
+  background-color: #f2580b;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+  height: 20%; 
+  text-align: center;
+}
+
+.header img {
+  margin: 15px 0 0;
+  width: 60px;
+}
+
+.header h1 {
+  display: inline-block;
+}
+
+.header a {
+  color: white;
+  padding-top: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.header a:hover, .header a:active {
+  color: grey;
+}
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.field {
+  margin-top: 20px
+}
+
+.field label {
+  font-weight: bold;
+  font-size: 20px; 
+}
+
+.field input[type="text"] {
+  margin-top: 5px;
+  height: 20px;
+  width: 50%;
+}
+
+.time {
+  color: #0084d7;
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+button, input[type="submit"] {
+  background-color: #f2580b;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #c24609;
+  transition: background-color 0.5s;
+}
+
+form label {
+  display: block;
+  width: 100%;
+}
+
+form textarea {
+  border: 1px solid transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  /*margin: 20px 0 10px;*/
+  min-height: 100px;
+  padding: 16px;
+  transition: border 0.5s;
+  width: calc(100% - 32px);
+}
+
+form textarea:focus {
+  border: 1px solid #0084d7;
+  box-shadow: 0;
+  outline: 0;
+  transition: border 0.5s;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+}

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+You subscribed for:<br/>
+<% @subscribed_events.each do |event| %>
+	name: <%= event.name %><br/>
+	<%= link_to "Unsubscribe", "/people/#{@person.id}/unsubscribe/#{event.id}", method: "delete" %><br/>
+<% end %>
+
+<br/>
+You may also like:
+<%= form_for @attendance, url: "/people/#{@person.id}/subscribe" do |f| %>
+	<%= f.hidden_field :person_id, value: @person.id %>
+	<%= f.select :event_id, @not_subscribed_events.map{|event| [event.name, event.id]} %>
+	<%= f.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

@@ -1,0 +1,11 @@
+<%= content_tag :h1, @event.name %>
+<%= content_tag :h4, "location: #{@event.location}" %>
+<%= content_tag :h4, "date: #{@event.date}" %>
+<br />
+<%= content_tag :p, @event.description %>
+<br />
+<%= link_to 'Edit event', edit_event_path(@event) %> <br />
+<%= link_to 'Index of events', events_path %> <br />
+<%= link_to 'Delete event', @event, 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
+

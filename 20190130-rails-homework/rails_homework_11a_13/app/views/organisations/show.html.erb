@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organisation.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @organisation.description %>
+</p>
+
+<% if @organisation.events.any? %>
+  <p>
+    <strong>Events which organisation will attend:</strong>
+    <%= render partial: "events/events", locals: { events: @organisation.events, cancelable: true, cancelable_attendances: @cancelable_attendances } %>
+  </p>
+<% else %>
+  <p>This organisation isn't going to attend any events.</p>
+<% end %>
+
+<% if @organisation.people.any? %>
+  <p>
+    <strong>People in this organisation:</strong>
+    <% @organisation.people.each do |person| %>
+      <%= link_to "#{person.name}", person %> | 
+    <% end %>
+  </p>
+<% else %>
+  <p>There are no people in this organisation.</p>
+<% end %>
+
+
+<% if !@unattended_organisation_events.empty? %>
+    <p>Add new attendance:</p>
+    <%= form_with scope: :organisation_attendance, url: organisation_attendances_path, local: true do |f| %>
+        <%= f.select :event_id do %>
+            <%= options_from_collection_for_select(@unattended_organisation_events, :id, :name) %>
+        <% end %>
+        <%= f.hidden_field :organisation_id, value: @organisation.id %>
+        <%= f.submit "Add attendance" %>
+    <% end %>
+<% else %>
+<p>There are no more events for this organisation to attend :(</p>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'All organisation', organisations_path %>

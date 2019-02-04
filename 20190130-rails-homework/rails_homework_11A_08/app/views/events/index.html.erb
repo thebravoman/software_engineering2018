@@ -1,0 +1,15 @@
+<h1>Events#index</h1>
+
+<ul>
+	<%Event.all.each do |event|%>
+		<li>
+			<h2>
+				<%=link_to event.name, '/events/show/' + String(event.id)%>
+			</h2>
+
+			<%=event.date%>
+		</li>
+	<%end%>
+</ul>
+
+<%=link_to 'Create event!', '/events/new/'%>

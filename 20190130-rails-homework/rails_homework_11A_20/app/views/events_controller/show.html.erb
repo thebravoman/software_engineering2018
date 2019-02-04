@@ -1,0 +1,9 @@
+<h1>Name: <%=@event.name%></h1>
+
+<h2>Location: <%=@event.location%></h2>
+
+<h2>Date: <%=@event.date%></h2>
+
+<h3><%=@event.description%></h3>
+
+<h3><%=link_to 'Edit the event!', '/events/edit/' + String(@event.id)%></h3>

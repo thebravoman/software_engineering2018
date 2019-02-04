@@ -1,0 +1,10 @@
+<div class="events">
+	<%= link_to "All events", events_path %>
+	<div class="container">
+		<% @people.each do |p| %>
+			<div style="border-style: solid; border-color: grey; border-radius: 5px; padding: 20px" class="people"> 
+  				<h2 class="peoplename">Name: <%= link_to p.name, person_path(p.id) %></h2>
+			</div>
+		<% end %>
+	</div>
+</div>

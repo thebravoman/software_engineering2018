@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11b_01</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/about">Alex's Homework</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li>  <%= link_to "Events", home_path %>  </li>
+          <li>  <%= link_to "Add Event", new_event_path %> </li>
+
+           <li>  <%= link_to "Users", persons_path %>  </li>
+          <li>  <%= link_to "Add person", new_person_path %> </li>
+          
+      </div>
+    </nav>
+
+
+    <div class = "container">  
+    
+      <%= yield %>
+
+    </div>
+
+  </body>
+</html>

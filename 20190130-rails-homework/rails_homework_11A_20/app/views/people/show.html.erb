@@ -1,0 +1,18 @@
+<h1>
+	<%= @person.name%>
+</h1>
+
+<ul>
+		<%@person.events.each do |event|%>
+			<li>
+				<%=link_to event.name, '/events/show/' + String(event.id)%>
+
+				<%=link_to 'Delete', "/people/#{@person.id}/events/delete/#{event.id}"%>
+			</li>
+		<%end%>
+</ul>
+
+<%=form_for :event do |f|%>
+	Present events: <%=f.select :event_id,options_from_collection_for_select(@events, 'id', 'name')%>
+	<%=f.submit "Add event"%>
+<%end%>

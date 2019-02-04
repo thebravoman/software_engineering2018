@@ -1,0 +1,16 @@
+<h1> Event information </h1>
+
+Name: <%= @event.name %>
+<br>
+Location: <%= @event.location %>
+<br>
+Description: <%= @event.description %>
+<br>
+Date: <%= @event.date %>
+<br>
+
+<%= link_to 'Edit', edit_event_path(@event) %>
+<br>
+<%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'For real?' } %> 
+<br>
+<%= link_to 'Back to all events', events_path %>

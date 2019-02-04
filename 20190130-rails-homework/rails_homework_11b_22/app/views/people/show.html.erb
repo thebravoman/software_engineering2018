@@ -1,0 +1,36 @@
+<%= content_tag :h1, @person.name %>
+<br />
+<h3>Events which they are attending:</h3>
+<ul>
+  <% @attending_events.each do |event| %>
+    <%= content_tag :li do %>
+      <%= content_tag :span, "#{event.name} (#{event.date})" %>
+      <%= link_to 'Cancel attendance', delete_attendance_path(@person, event),
+                  method: :delete %>
+    <% end %>
+  <% end %>
+</ul>
+<% if @person.organization %>
+  <h3>Events which their organization is attending:</h3>
+  <ul>
+    <% @organization_events.each do |event| %>
+      <%= content_tag :li do %>
+        <%= content_tag :span, "#{event.name} (#{event.date})" %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+<h3>Events which they are not attending:</h3>
+<ul>
+  <% @unattending_events.each do |event| %>
+    <%= content_tag :li do %>
+      <%= content_tag :span, "#{event.name} (#{event.date})" %>
+      <%= link_to 'Confirm attendance', 
+                  confirm_attendance_path(@person.class, @person, event),
+                  method: :post %>
+    <% end %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'Index of people', people_path %>
+

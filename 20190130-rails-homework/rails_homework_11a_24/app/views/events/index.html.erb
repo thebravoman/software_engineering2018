@@ -1,0 +1,10 @@
+<h1>Index of events</h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <%= content_tag :li, link_to("#{event.name} (#{event.date})", event) %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'New event', new_event_path %> </br>
+<%= link_to "Go to people list", :controller => "people", :action => "index" %>

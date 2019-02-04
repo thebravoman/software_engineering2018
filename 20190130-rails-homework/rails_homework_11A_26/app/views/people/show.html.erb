@@ -1,0 +1,84 @@
+<h1> Person information </h1>
+
+<div>
+    Name: <%= @person.name %>
+    <br>
+</div>
+
+<br>
+
+<div>
+    <% if !@events_attended.empty? %>
+        <h2> Attended events </h2>
+        <% @events_attended.each do |e| %>
+            Event: <%= link_to e.name, event_path(e) %>
+            <br>
+            Location: <%= e.location %>
+            <br>
+            Description: <%= e.description %>
+            <br>
+            Date: <%= e.date %>
+            <br>
+            <%= link_to 'Cancel attendance', "/people/cancel_attend?event_id=#{e.id}&person_id=#{@person.id}", method: :post, data: {confirm: 'Are you sure you want to cancel attendance?'} %>
+            <br><br>
+        <% end %>
+    <% end %>
+</div>
+
+<div>
+    <%if !@events_unattended.empty? %>
+        <h2> Events you might want to attend </h2>
+        <%= form_with url: "/people/attend_event?person_id=#{@person.id}", method: :post do |f| %>
+            <%= f.select :event_id do %>
+                <%= options_from_collection_for_select(@events_unattended, :id, :name) %>
+            <% end %>
+            <%= f.submit 'Attend' %>
+        <% end %>
+    <% end %>
+</div>
+
+<br>
+
+<div>
+    <% if !Organization.where(id: @person.organization_id).empty? %>
+        <p><%= @person.name %> is a part of <%= @person.organization.name %></p>
+        <p> <%= @person.organization.name %> attends these events: </p>
+        <% if !@organization_events.empty? %>
+            <% @organization_events.each do |e| %>
+                Event: <%= link_to e.name, event_path(e) %>
+                <br>
+                Location: <%= e.location %>
+                <br>
+                Description: <%= e.description %>
+                <br>
+                Date: <%= e.date %>
+                <br>
+                <br>
+            <% end %>
+        <% end %>
+
+    <% else %>
+        <p><%= @person.name %> is not a part of any organization</p>
+        <p> Join organization </p> 
+        <%= form_for @person do |ps| %>
+            <p>
+                <%= ps.label :organization_id %>
+                <br>
+                <%= ps.select :organization_id  do %>
+                    <%= options_for_select(@organizations_list) %>
+                <% end %>
+            </p>
+
+            <p>
+                <%= ps.submit 'Join organization'%>
+            </p>
+        <% end %>
+    <% end %>
+</div>
+
+<br>
+<%= link_to 'Edit', edit_person_path(@person) %>
+<br>
+<%= link_to 'Delete', person_path(@person), method: :delete, data: { confirm: 'For real?' } %> 
+<br>
+<%= link_to 'Back to all people', people_path %>

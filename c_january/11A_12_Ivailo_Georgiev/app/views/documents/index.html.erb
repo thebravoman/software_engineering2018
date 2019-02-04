@@ -1,7 +1,7 @@
 <p class="navbar-text pull-right">
 	<p class="navbar-text pull-right">
 	<% if user_signed_in? %>
-	  Logged in as <%= current_user.email %><br>
+	  Logged in as <%= current_user.email %>.
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 	<% else %>
 	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
@@ -12,5 +12,5 @@
 <% @documents.each do |d| %>
 	Name: <%= d.name %> <br>
 	Description: <%= d.desc %> <br>
-	Text:<br><%= d.text %><br><br>
+	Document: <br><%= d.text %><br><br>
 <% end %>

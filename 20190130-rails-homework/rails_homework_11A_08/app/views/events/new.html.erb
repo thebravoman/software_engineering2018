@@ -1,0 +1,22 @@
+<h1>Events#new</h1>
+
+
+<h4 style="color: red">
+	<%=@message%>	
+</h4>
+
+<%=form_for :event do |f|%>
+	Name: <%=f.text_field :name%>
+	<br>
+	<br>
+	Location: <%=f.text_field :location%>
+	<br>
+	<br>
+	Date: <%=f.date_field :date%>
+	<br>
+	<br>
+	Description(optional) <%=f.text_field :description%>
+	<br>
+	<br>
+	<%=f.submit 'Create!'%>
+<%end%>

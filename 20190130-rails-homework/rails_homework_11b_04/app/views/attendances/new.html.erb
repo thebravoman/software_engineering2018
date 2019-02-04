@@ -1,0 +1,30 @@
+<h2>New attendance</h2>
+
+<%= form_for @attendance do |at| %>
+	<% if !params[:person_id].nil? %>
+
+		Add person "<%= Person.find(params[:person_id]).name %>" to event "<%= Event.find(params[:event_id]).name %>"? -
+
+		<%= at.hidden_field :person_id, :value => params[:person_id]%> 
+		<%= at.hidden_field :event_id, :value => params[:event_id] %> 
+		<%= at.submit "Confirm" %>
+
+		<br><br>
+		<%= link_to "Cancel", person_path(params[:person_id]) %>
+	<% else %>
+		<%= at.label "Select person" %> 
+		<%= at.select :person_id do %> 
+			<%= options_from_collection_for_select(Person.all, :id, :name) %>
+
+		<% end %>
+		<br><br>
+		<%= at.label "Select event to attend" %> 
+		<%= at.select :event_id do %> 
+			<%= options_from_collection_for_select(Event.all, :id, :name) %>
+
+		<% end %>
+		<br><br>
+		<%= at.submit "Save" %> | <%= link_to "Cancel", people_path %>
+	<% end %>
+<% end %>
+

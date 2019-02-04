@@ -1,0 +1,10 @@
+<h1>Index of organizations</h1>
+
+<ul>
+  <% @organizations.each do |organization| %>
+    <%= content_tag :li, link_to("#{organization.name}", organization) %>
+  <% end %>
+</ul>
+<br />
+<%= link_to 'New organization', new_organization_path %>
+

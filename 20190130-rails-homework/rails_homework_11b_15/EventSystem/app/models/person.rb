@@ -1,5 +1,6 @@
 class Person < ApplicationRecord
-    has_many :attendances, dependent: :destroy, foreign_key: "person_id"
+    belongs_to :organization, optional: :true
+    has_many :attendances, as: :subscriber
     has_many :events, through: :attendances
     validates_presence_of :name, message: "can't be blank"
 end

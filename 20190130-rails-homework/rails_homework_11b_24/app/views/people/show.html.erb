@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<%= link_to 'Back', people_path %>
+
+<% @events.each do |event| %>
+          <p>Name of Event: <%= event.name %></p>
+          <p>Place: <%= event.place %></p>
+          <p>Description: <%= event.description %></p>
+          <p>Date: <%= event.date %></p>
+          <p><%= button_to 'Unattend', confirm: "For real?"  %></p>
+<% end %>
+
+<% if @not_attended_events != [] %>
+	<%= form_for(:attendance, :url => { controller: "attendances", action: "create" }) do |f| %>
+    	<%= f.hidden_field(:person_id, :value => @person.id) %>
+    	<%= f.collection_select :event_id, @not_attended_events, :id, :name %>
+    	<%= f.submit 'Attend this event' %>
+	<% end %>  
+<% else %>
+	<p><strong> Well, there are no more events you can sign up for! We are sorry! </strong> </p>  
+<% end %>

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%=content_tag :h1, @event.name %>
+</p>
+
+<p>
+  <%=content_tag :h3, "Place: #{@event.place}" %>
+</p>
+
+<p>
+  <%=content_tag :h4, "Content: #{@event.content}" %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<%= link_to 'Edit event', edit_event_path(@event) %> <br />
+<%= link_to '<< Back to events', events_path %> <br />
+<%= link_to 'Delete event', @event,
+            method: :delete, data: { confirm: 'Are you sure?' } %>

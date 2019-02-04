@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th><strong><h2>This person's attendances</h1></strong></th>
+    </tr>
+    <tr>
+      <th>Event</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendances.each do |attendance| %>
+      <tr>
+        <td><%= Event.find(attendance.event_id).name %></td>
+        <td><%= link_to 'Show', attendance %></td>
+        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
+        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr />
+
+<strong><h2>You can also attend</h1></strong>
+
+<%= form_for(:attendance, :url => { controller: "attendances", action: "create" }) do |event| %>
+    <%= event.hidden_field(:person_id, :value => @person.id) %>
+    <%= event.collection_select :event_id, @unattended, :id, :name %><br/>
+    <%= event.submit 'Attend' %>
+<% end %>

@@ -1,0 +1,24 @@
+<h1><%= @event.name %></h1>
+
+Location: <%= @event.location %>
+<hr>
+Date and time: <%= @event.date.strftime('%H:%M %d-%m-%Y') %>
+<hr>
+Description:
+<br>
+<p><%= @event.description %></p>
+<br>
+<br>
+People attending:
+<% if @event.people.count > 0 %>
+    <ul>
+        <% @event.people.each do |p| %>
+        <li><%= link_to p.name, person_path(p.id) %></li>
+        <% end %>
+    </ul>
+   
+<% else %>
+    Nobody :(
+<% end %>
+
+<br>

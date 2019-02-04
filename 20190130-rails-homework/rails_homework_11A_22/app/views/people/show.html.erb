@@ -1,0 +1,27 @@
+<h1>People#show</h1>
+
+Name: <%= @person.name %>
+</br>
+
+<h2>Attending</h2>
+<%  @attended.each do |event| %>
+	<%= event.name %>
+	<%= link_to 'Delete', "/attendances/delete?person_id=#{@person.id}&event_id=#{event.id}"%>
+	<br/>
+
+	  
+<% end %>
+<br/>
+<br/>
+<h2>Not Attending</h2>
+	  
+<%= form_tag("/attendances/add?person_id=#{@person.id}") do%>
+	<%= select_tag "event_id", options_from_collection_for_select(@unattended, :id, :name) %>
+	<%= submit_tag "Attend" %>
+<% end %>
+
+
+
+<br/>
+
+

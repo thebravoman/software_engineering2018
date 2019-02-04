@@ -1,0 +1,20 @@
+<div class="events">
+	<div class="container management">
+		<%= link_to "Create new event", new_event_path %>
+		<%= link_to "Create new person", new_person_path %>
+	</div>
+	<div class="container">
+		<% @events.each do |e| %>
+			<div style="border-style: solid; border-color: grey; border-radius: 5px; padding: 20px" class="events"> 
+  				<h2 class="eventname">Name: <%= link_to e.name, event_path(e.id) %></h2> 
+  				<h4 class="time">Date: <%= e.date.strftime('%H:%M %d-%m-%Y') %></h4>
+  				<hr>
+  				<div class="management">
+  					<%= link_to "Edit", edit_event_path(e.id) %>
+  					<%= button_to "Delete", event_path(e), method: :delete %>
+  				</div>
+			</div>
+		<% end %>
+		<br>
+	</div>
+</div>

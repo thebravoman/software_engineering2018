@@ -4,7 +4,7 @@ class DocumentsController < ApplicationController
 	end
 
 	def startpage
-		@document = Document.all.order("id desc").limit(3)
+		@documents = Document.all.order("id desc").limit(3)
 	end
 
 	def show

@@ -1,37 +1,38 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
-  # GET /people
-  # GET /people.json
+  
   def index
     @people = Person.all
   end
 
-  # GET /people/1
-  # GET /people/1.json
   def show
-    # FIXME
+    
+    organization = @person.organization
     @subscribed = @person.events
-    @unsubscribed = []
+    unsub = []
+    
+    tmp = @subscribed.dup
+    unless organization.nil? 
+      @group = organization.events
+      tmp += @group
+    end
 
     Event.find_each do |event| 
-      unless @subscribed.include?(event) then @unsubscribed.push(event) end
+      unless tmp.include?(event) then unsub.push(event) end
     end
-    
+    @unsubscribed = unsub.map{|e| [e.name, e.id]}
+
     @attendance = Attendance.new
   end
 
-  # GET /people/new
   def new
     @person = Person.new
   end
 
-  # GET /people/1/edit
   def edit
   end
-
-  # POST /people
-  # POST /people.json
+  
   def create
     @person = Person.new(person_params)
 
@@ -46,8 +47,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # PATCH/PUT /people/1
-  # PATCH/PUT /people/1.json
   def update
     respond_to do |format|
       if @person.update(person_params)
@@ -60,8 +59,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.json
   def destroy
     @person.destroy
     respond_to do |format|
@@ -71,41 +68,30 @@ class PeopleController < ApplicationController
   end
 
   def subscribe_event
+    set_person
     attendance = Attendance.new(attendance_params)
+    attendance.subscriber = @person 
 
-    if attendance.save
-      redirect_to attendance.person, notice: "New attendance created"
+    if attendance.save!
+      redirect_to @person, notice: "New attendance created"
     else
-      render events_path, notice: "Something went wrong..."
+      redirect_to events_path, notice: "Something went wrong..."
     end
   end
 
   def unsubscribe_event 
     set_person
-    attendance = Attendance.find_by(person_id: params[:id], event_id: params[:event_id])
-    unless attendance.nil? 
-      attendance.destroy
-      redirect_to @person, notice: "Successfuly deleted this subscription"
-    else
-      render @person, notice: "Something prevents this subscription from being deleted..."
-    end
+    unsubscribe @person
   end
-  
-
   private
 
-    def attendance_params
-      params.require(:attendance).permit(:person_id, :event_id)
-    end
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
-  # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def person_params
-      params.require(:person).permit(:name)
-    end
+  
+  def person_params
+    params.require(:person).permit(:name)
+  end
 
 end

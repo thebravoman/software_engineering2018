@@ -1,0 +1,13 @@
+<h2>Document view</h2>
+<p>
+  <strong>Title:</strong>
+    <%= @document.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+    <%= @document.text %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

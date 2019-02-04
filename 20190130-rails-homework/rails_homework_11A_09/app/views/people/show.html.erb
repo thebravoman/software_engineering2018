@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<% if @person.organization_id %>
+<p>
+  <strong>Organization name:</strong>
+  <%= Organization.find(@person.organization_id).name %>
+</p>
+<% end %>
+
+<% if !@person.events.empty?%>
+  <table>
+    <thead>
+      <tr>
+        <th>Personal Event</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @person.events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= link_to 'Cancel attendance', @person.id.to_s+'/event/'+event.id.to_s,method: :delete %></td>
+
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @organization_events.empty?%>
+  <p>No current organization attendances to show</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Organization event</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @organization_events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<% if @all.length != Event.all.length%>
+  <%= form_for :event, url: @person.id.to_s+'/event' do |f|%>
+    <%= f.select :event_id do %>
+      <%= options_from_collection_for_select(@not_events, :id, :name) %>
+    <% end %>
+    <%= f.submit "Add event"%>
+  <% end %>
+<% end %>
+
+
+<% if !@person.organization_id %>
+  <%= form_for :organization, url: @person.id.to_s+'/organization' do |f|%>
+    <%= f.select :organization_id do %>
+      <%= options_from_collection_for_select(Organization.all, :id, :name) %>
+    <% end %>
+    <%= f.submit "Add organization"%>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', people_path %>

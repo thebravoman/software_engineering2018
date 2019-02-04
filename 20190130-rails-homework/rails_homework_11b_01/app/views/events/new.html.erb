@@ -1,0 +1,38 @@
+<h1> Add event </h1>
+
+<%= form_for :event, url: events_path  do |f| %>
+
+	<% if @event.errors.any? %>
+		<% @event.errors.full_messages.each do |msg| %>
+			<div class = "alert alert-danger"> <%= msg %> </div>
+		<% end %>
+	<% end %>
+
+	<p>
+		<%= f.label :title %> <br>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.label :location %> <br>
+		<%= f.text_field(:location, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.label :description %> <br>
+		<%= f.text_area(:description, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.label :date %> <br>
+		<%= f.datetime_field(:date, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+
+
+<% end %>
+
+

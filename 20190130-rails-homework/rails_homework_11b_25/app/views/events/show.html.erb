@@ -1,0 +1,15 @@
+<%= @event.name  %> <br/>
+<%= @event.description  %> <br/>
+<%= @event.location  %> <br/>
+<%= @event.date  %> <br/>
+
+<%= form_tag '/people/attendance' do %>
+  <%= text_field_tag 'name' %>
+  <%= hidden_field_tag 'event', params[:id] %>
+  <%= hidden_field_tag 'direct_attend', 'true' %>
+
+  <%= submit_tag 'Attend' %>
+<% end %>
+<br/>
+<%= link_to 'Edit', edit_event_path(@event) %> <br/>
+<%= link_to 'Delete', '/events/' + params[:id], method: :delete %>

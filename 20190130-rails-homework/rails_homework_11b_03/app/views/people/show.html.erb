@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %><br>
+</p>
+
+<% @person.events.each do |event| %>
+<p><b>Event name: </b><%= event.name %></p>
+  <p><b>Event location: </b><%= event.location %></p>
+  <p><b>Event data: </b><%= event.date %></p>
+  <p><%= link_to "Leave", attendances_delete_path(:attendance => {person_id: @person.id, event_id: event.id}), method: :delete %></p>
+<% end %>
+
+<br>
+<%= form_for :attendance, :url => attendances_create_path(:person_id => @person.id) do |k|%>
+  
+  <%= k.collection_select :event_id, @other_events, :id, :name %>
+  <%= k.submit 'GO' %>
+<%end%>
+<br>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

@@ -1,10 +1,10 @@
-<% @document.each do |i| %>
-    Name: <%= i.name %>
+<% @documents.each do |i| %>
+    <%= i.name %>
     <br>
-    Description: <%= i.desc %>
+    <%= i.desc %>
     <br>
-    Text: <br><%= i.text %>
+    <%= i.text %>
     <br>
     <br>
-	<br>
+    <br>
 <% end %>
