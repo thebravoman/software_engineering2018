@@ -17,16 +17,44 @@
     });
     
     $('#btnSave').click(function(event){
-      onEdit(event);
+      onSave(event);
     });
-  }
+	    
+    $( "#dateBirthdate" ).datepicker();
 
+
+  }
+  
   function onCancel(event) {
     toggle(true);
+    
   }
   
   function onSave(event) {
+    var contact = {};
+    contact["firstName"] =  $('#txtFirstName').val();
+    contact["lastName"] =  $('#txtLastName').val();
+    contact["defaultMobile"] =  $('#txtDefaultMobile').val();
+    contact["defaultEmailAddress"] =  $('#txtDefaultEmailAddress').val();
+
+    contact["personalDetails"] = {};
+    contact["personalDetails"]["personalEmailAddress"] =  $('#txtPersonalEmailAddress').val();
+    contact["personalDetails"]["personalSkype"] =  $('#txtPersonalSkype').val();
+    contact["personalDetails"]["personalPhone"] =  $('#txtPersonalPhone').val();
+    contact["personalDetails"]["personalMobile"] =  $('#txtPersonalMobile').val();
+    contact["personalDetails"]["personalAddress"] =  $('#txtPersonalAddress').val();
+    contact["personalDetails"]["birthday"] =  $('#dateBirthdate').val();
     
+    contact["businessDetails"] = {};
+    contact["businessDetails"]["company"] = $('#txtCompany').val();
+    contact["businessDetails"]["companyWebSite"] = $('#txtCompanyWebSite').val();
+    contact["businessDetails"]["businessEmail"] = $('#txtBusinessEmail').val();
+    contact["businessDetails"]["businessPhone"] = $('#txtBusinessPhone').val();
+    contact["businessDetails"]["businessMobile"] = $('#txtBusinessMobile').val();
+    contact["businessDetails"]["businessAddress"] = $('#txtBusinessAddress').val();
+
+    
+    $('#txtPayload').val(JSON.stringify(contact, 2, 2));
   }
   
   function onEdit(event) {
@@ -38,13 +66,14 @@
     $('#txtLastName').prop('disabled', isDisabled);
     $('#txtDefaultMobile').prop('disabled', isDisabled);
     $('#txtDefaultEmailAddress').prop('disabled', isDisabled);
-    $('#txtDefaultEmailAddress').prop('disabled', isDisabled);
     
     $('#txtPersonalEmailAddress').prop('disabled', isDisabled);
     $('#txtPersonalSkype').prop('disabled', isDisabled);
     $('#txtPersonalPhone').prop('disabled', isDisabled);
     $('#txtPersonalMobile').prop('disabled', isDisabled);    
-    $('#txtPersonalSkype').prop('txtPersonalAddress', isDisabled);
+    $('#txtPersonalSkype').prop('disabled', isDisabled);
+    $('#txtPersonalAddress').prop('disabled', isDisabled);
+    $('#dateBirthdate').prop('disabled', isDisabled);
     
     $('#txtCompany').prop('disabled', isDisabled);
     $('#txtCompanyWebSite').prop('disabled', isDisabled);
@@ -83,6 +112,9 @@
             <br /><br />
             <span>Default email address:</span>
             <input type="text" style="float: right;" disabled="disabled" id="txtDefaultEmailAddress" />
+            <br /><br />
+            <span>Birthday:</span>
+            <input type="text" style="float: right;" disabled="disabled" id="dateBirthdate" />
             <br /><br />
           </div>
           <div id="personalDetalsTab">
@@ -142,7 +174,7 @@
           type="button" id="btnSave" value="Save" />
       </div>
       <div style="margin-left: 400px;">
-        <textarea id="txtCode" style="width: 90%; height: 90vh;"></textarea>
+        <textarea id="txtPayload" style="width: 80%; height: 80vh;"></textarea>
       </div>
     </div>
   </div>
