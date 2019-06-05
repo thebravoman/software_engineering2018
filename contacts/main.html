@@ -1,0 +1,480 @@
+<html>
+<head>
+<link rel="stylesheet"
+  href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.4.js" /></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  function init() {
+    $('#contactView').tabs();
+    /*$('#contactView-1').tabs();
+    $('#contactView-2').tabs();
+    $('#contactView-3').tabs();*/
+    $('#contactView-4').tabs();
+
+    $("#dateBirthdate-1").datepicker();
+  //  $("#dateBirthdate-2").datepicker();
+  //  $("#dateBirthdate-3").datepicker();
+  //  $("#dateBirthdate-4").datepicker();
+
+    $("#saveDialog").hide();
+    $("#newContactDialog").hide();
+    $("#deleteSelectedDialog").hide();
+
+    $("#btnAddContact").click(function(){
+      onNewContact();
+    });
+
+    $("#btnDeleteSelection").click(function() {
+      onDeleteSelection();
+    });
+
+    createContactView('#contactList', 'X');
+	$('#conctactView-X').tabs();
+
+    $( "#contactList" ).accordion({
+      collapsible: true,
+      autoHeight: false
+    });
+
+
+    $('#contactList input[type="checkbox"]').click(function(e) {
+      e.stopPropagation();
+  	});
+
+    $('#contactList span').click(function(e) {
+      console.log(e);
+  	});
+  }
+
+  function createContactView(parent, id) {
+    var header = $("<h3/>");
+    header.append($("<span/>", {text:"Contact"}));
+
+    var chkDelete = $("<input/>", {
+      id: "selected",
+      type: "checkbox",
+
+    });
+    chkDelete.css('float', 'right');
+
+    header.append(chkDelete);
+
+    $('#contactList').append(header);
+    $('#contactList').append(createContactTabs('X'));
+  }
+
+  function createContactTabs(id) {
+    var parent = $('<div/>');
+    parent.css('padding', '2px');
+    var contactTabs = $('<div/>');
+  	var ulContact = $('<ul/>');
+
+  	ulContact.append(newListItem('detailsTab-'+id, 'Details'));
+  	ulContact.append(newListItem('personalDetalsTab-'+id, 'Personal'));
+  	ulContact.append(newListItem('businessDetalsTab-'+id, 'Business'));
+  	ulContact.append(newListItem('photoTab-'+id, 'Photo'));
+
+  	contactTabs.append(ulContact);
+
+  	contactTabs.append(createDetailsTab(id));
+  	contactTabs.append(createPersonalDetailsTab(id));
+  	contactTabs.append(createBusinessDetailsTab(id));
+  	contactTabs.append(createPhotoTab(id));
+
+  	contactTabs.tabs();
+   	parent.append(contactTabs);
+
+    var btnEdit = $('<button/>', {id:'btnEdit'+id, text:'Edit', value: id}).click(function(){
+      onEdit(this);
+    });
+    parent.append(btnEdit);
+
+    var btnSave = $('<button/>', {id:'btnSave'+id, text:'Save', value: id}).click(function(){
+      onSave(this);
+    });
+    parent.append(btnSave);
+
+    var btnCancel = $('<button/>', {id:'btnCancel'+id, text:'Cancel', value: id}).click(function(){
+      onCancel(this);
+    });
+    btnCancel.css('float', 'right');
+    parent.append(btnCancel);
+
+    return parent;
+
+  }
+
+  function createDetailsTab(id){
+    var detailsTab = $('<div/>', {height: '299px', id: 'detailsTab-'+id});
+  	detailsTab.append(createRow("First name:", "txtFirstName-"+id));
+  	detailsTab.append(createRow("Last name: ", "txtLastName-"+id));
+  	detailsTab.append(createRow("Default mobile:  ", "txtDefaultMobile-"+id));
+  	detailsTab.append(createRow("Default email address: ", "txtDefaultEmailAddress-"+id));
+  	detailsTab.append(createRow("Birthday:  ", "dateBirthdate-"+id));
+
+    return detailsTab;
+  }
+
+  function createPersonalDetailsTab(id) {
+
+    var personalDetailsTab = $('<div/>', {height: '300px', id: 'personalDetalsTab-'+id});
+
+    personalDetailsTab.append(createRow("Email:", "txtPersonalEmailAddress-"+id));
+    personalDetailsTab.append(createRow("Skype: ", "txtPersonalSkype-"+id));
+    personalDetailsTab.append(createRow("Phone:  ", "txtPersonalPhone-"+id));
+    personalDetailsTab.append(createRow("Mobile: ", "txtPersonalMobile-"+id));
+    personalDetailsTab.append(createRow("Address: ", "txtPersonalAddress-"+id));
+    return personalDetailsTab;
+  }
+
+  function createBusinessDetailsTab(id) {
+    var businessDetalsTab = $('<div/>', {height: '300px', id: 'businessDetalsTab-'+id});
+
+    businessDetalsTab.append(createRow("Company:", "txtCompany-"+id));
+    businessDetalsTab.append(createRow("Web site: ", "txtCompanyWebSite-"+id));
+    businessDetalsTab.append(createRow("Email:  ", "txtBusinessEmail-"+id));
+    businessDetalsTab.append(createRow("Phone: ", "txtBusinessPhone-"+id));
+    businessDetalsTab.append(createRow("Mobile: ", "txtBusinessMobile-"+id));
+    businessDetalsTab.append(createRow("Address: ","txtBusinessAddress-"+id));
+
+    return businessDetalsTab;
+  }
+
+  function createPhotoTab(id) {
+    var photoTab = $('<div/>', {height: '300px', id: 'photoTab-'+id});
+
+
+    return photoTab;
+  }
+
+  function createRow(title, _id) {
+    var tab = $('<div/>');
+    tab.css('margin','10px');
+
+    var row = $('<div/>');
+    row.css('display','table-row');
+
+    var cellTitle = $('<div/>', {text: title});
+    cellTitle.css('display', 'table-cell');
+    cellTitle.css('vertical-align', 'middle');
+    cellTitle.css('width', '280px');
+
+    var cellEdit = $('<div/>');
+    cellEdit.css('display', 'table-cell');
+    var input = $('<input/>', {type: 'text', id: _id});
+    cellEdit.append(input);
+
+    row.append(cellTitle);
+    row.append(cellEdit);
+    tab.append(row);
+    return tab;
+  }
+
+  function newListItem(hrefId, caption) {
+     var li = $('<li/>');
+  	 li.append($('<a />', {
+  	   href: '#'+hrefId,
+  	   text: caption}));
+  	 return li;
+  }
+
+  function onCancel(btnCancel) {
+    toggle(true, btnCancel.value);
+  }
+
+  function onSave(btnSave) {
+    var _id = btnSave.value;
+    var contact = {};
+    contact["firstName"] =  $('#txtFirstName-'+_id).val();
+    contact["lastName"] =  $('#txtLastName-'+_id).val();
+    contact["defaultMobile"] =  $('#txtDefaultMobile-'+_id).val();
+    contact["defaultEmailAddress"] =  $('#txtDefaultEmailAddress-'+_id).val();
+
+    contact["personalDetails"] = {};
+    contact["personalDetails"]["personalEmailAddress"] =  $('#txtPersonalEmailAddress-'+_id).val();
+    contact["personalDetails"]["personalSkype"] =  $('#txtPersonalSkype-'+_id).val();
+    contact["personalDetails"]["personalPhone"] =  $('#txtPersonalPhone-'+_id).val();
+    contact["personalDetails"]["personalMobile"] =  $('#txtPersonalMobile-'+_id).val();
+    contact["personalDetails"]["personalAddress"] =  $('#txtPersonalAddress-'+_id).val();
+    contact["personalDetails"]["birthday"] =  $('#dateBirthdate-'+_id).val();
+
+    contact["businessDetails"] = {};
+    contact["businessDetails"]["company"] = $('#txtCompany-'+_id).val();
+    contact["businessDetails"]["companyWebSite"] = $('#txtCompanyWebSite-'+_id).val();
+    contact["businessDetails"]["businessEmail"] = $('#txtBusinessEmail-'+_id).val();
+    contact["businessDetails"]["businessPhone"] = $('#txtBusinessPhone-'+_id).val();
+    contact["businessDetails"]["businessMobile"] = $('#txtBusinessMobile-'+_id).val();
+    contact["businessDetails"]["businessAddress"] = $('#txtBusinessAddress-'+_id).val();
+
+    $('#txtPayload').text(JSON.stringify(contact, 2, 2));
+
+    $('#saveDialog').dialog({
+      width: 600,
+      height: 600,
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $(this).dialog("close");
+        }
+      }
+    });
+  }
+
+  function onDeleteSelection() {
+    $("#deleteSelectedDialog").dialog({
+      width: 600,
+      height: 200,
+      modal: true,
+      buttons: {
+        Ok: function() {
+          var i = 0;
+          $("input:checkbox[name=selected]:checked").each(function(){ i++;
+          });
+          alert(i);
+          $(this).dialog("close");
+        },
+    	Cancel: function() {
+          $(this).dialog("close");
+    	}
+      }
+    });
+  }
+
+  function onEdit(btnEdit) {
+      toggle(false, btnEdit.value);
+  }
+
+  function onNewContact() {
+    $('#newContactDialog').dialog({
+      width: 600,
+      height: 600,
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $(this).dialog( "close" );
+        }
+      }
+    });
+  }
+
+  function toggle(isDisabled, _id) {
+
+    console.log('id:'+_id+' toggle:' + isDisabled);
+    var d = $('#txtFirstName-'+_id);
+    $('#txtFirstName-'+_id).prop('disabled', isDisabled);
+
+    $('#txtLastName-'+_id).prop('disabled', isDisabled);
+    $('#txtDefaultMobile-'+_id).prop('disabled', isDisabled);
+    $('#txtDefaultEmailAddress-'+_id).prop('disabled', isDisabled);
+
+    $('#txtPersonalEmailAddress-'+_id).prop('disabled', isDisabled);
+    $('#txtPersonalSkype-'+_id).prop('disabled', isDisabled);
+    $('#txtPersonalPhone-'+_id).prop('disabled', isDisabled);
+    $('#txtPersonalMobile-'+_id).prop('disabled', isDisabled);
+    $('#txtPersonalSkype-'+_id).prop('disabled', isDisabled);
+    $('#txtPersonalAddress-'+_id).prop('disabled', isDisabled);
+    $('#dateBirthdate-'+_id).prop('disabled', isDisabled);
+
+    $('#txtCompany-'+_id).prop('disabled', isDisabled);
+    $('#txtCompanyWebSite-'+_id).prop('disabled', isDisabled);
+    $('#txtBusinessEmail-'+_id).prop('disabled', isDisabled);
+    $('#txtBusinessPhone-'+_id).prop('disabled', isDisabled);
+    $('#txtBusinessMobile-'+_id).prop('disabled', isDisabled);
+    $('#txtBusinessAddress-'+_id).prop('disabled', isDisabled);
+  }
+
+  $(document).ready(function() {
+    init();
+    toggle(true, 'X');
+    $('#dateBirthdate-X').datepicker();
+
+
+  });
+</script>
+</head>
+<body>
+  <div style="width: 100 vh; margin-left: 100px;">
+    <div>
+      <div style="width: 600px; height:30px; border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black; position:relative; padding-top:10px">
+          <span style="height: 20px; possition:relative; padding-left:10px">Contacts, a jQuery reference applcation</span>
+      </div>
+
+      <div style="width: 600px; vertical-align: top; height: 600px;
+        border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black;border-bottom: 1px solid black;
+        overflow: scroll;">
+        <div id="contactList">
+
+        <h3><span>Contact</span><input type="checkbox" style="float: right;"/></h3>
+          <div style="padding:2px;">
+            <div id="contactView-4">
+              <ul>
+                <li><a href="#detailsTab-4">Details</a></li>
+                <li><a href="#personalDetalsTab-4">Personal</a></li>
+                <li><a href="#businessDetailsTab-4">Business</a></li>
+                <li><a href="#photoTab">Photo</a>
+              </ul>
+              <div id="detailsTab-4" style="height:300px;">
+                <span>First name:</span>
+                <input type="text" style="float: right;" disabled="disabled" id="txtFirstName-4" />
+                <br /><br />
+                <span>Last name:</span>
+                <input type="text" style="float: right;" disabled="disabled" id="txtLastName-4" />
+                 <br /><br />
+                <span>Default mobile:</span>
+                <input type="text" style="float: right;" disabled="disabled" id="txtDefaultMobile-4" />
+                <br /><br />
+                <span>Default email address:</span>
+                <input type="text" style="float: right;" disabled="disabled" id="txtDefaultEmailAddress-4" />
+                <br /><br />
+                <span>Birthday:</span>
+                <input type="text" style="float: right;" disabled="disabled" id="dateBirthdate-4" />
+                <br /><br />
+              </div>
+              <div id="personalDetalsTab-4" style="height:300px;">
+                <span>Email:</span> <input type="text" style="float: right;"
+                  disabled="disabled" id="txtPersonalEmailAddress-4" />
+                <br /><br />
+                <span>Skype:</span> <input type="text" style="float: right;"
+                  disabled="disabled" id="txtPersonalSkype-4" />
+                <br /><br />
+                <span>Phone:</span>
+                <input type="text" style="float: right;" disabled="disabled"
+                  id="txtPersonalPhone-4" />
+                <br /><br />
+                <span>Mobile:</span> <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtPersonalMobile-4" /><br /><br /> <span>Address:</span>
+                <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtPersonalAddress-4" />
+              </div>
+              <div id="businessDetailsTab-4" style="height:300px;">
+                <span>Company:</span> <input type="text"
+                  style="float: right;" disabled="disabled" id="txtCompany-4" />
+                <br /><br />
+                <span>Web site:</span>
+                <input type="text"
+                  style="float: right;" disabled="disabled"
+                  id="txtCompanyWebSite-4" />
+                <br /><br />
+                <span>Email:</span> <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtBusinessEmail-4" />
+                <br /><br />
+                <span>Phone:</span> <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtBusinessPhone-4" />
+                <br /><br />
+                <span>Mobile:</span> <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtBusinessMobile-4" />
+                <br /><br />
+                <span>Address:</span>
+                <input
+                  type="text" style="float: right;" disabled="disabled"
+                  id="txtBusinessAddress-4" />
+                  </div>
+              <div id="photoTab" style="height:300px;">
+                <img src="TrollFace.jpg"
+                  style="max-width: 400px; max-height: 300px;" />
+              </div>
+            </div>
+            <button id="btnEdit-4" onClick="onEdit(this);" value="4" >Edit</button>
+            <button id="btnSave-4" onClick="onSave(this);" value="4">Save</button>
+            <button id="btnCancel-4" onClick="onCancel(this);" value="4" style="float:right;">Cancel</button>
+
+          </div>
+
+         <!--  -->
+
+         </div>
+      </div>
+      <div style="width: 600px; vertical-align: top;" >
+      <button>Prev</button><button>Next</button>
+      <button id="btnAddContact">New contact</button>
+      <button id="btnDeleteSelection" style="float:right;">Delete selected</button>
+      </div>
+
+      <div id="saveDialog" title="Contact JSON document">
+        <div id="txtPayload" style="width: 80%; height: 80vh; margin-left:20px; white-space: pre;"></div>
+      </div>
+      <div id="deleteSelectedDialog" title="Confirm deletion">
+         <div id="delConfirm" style="width: 400px; margin-left:20px; white-space: pre;">
+          <span style="font-wieght: bold">Are you sure you want to delete the selected contacts?</span>
+         </div>
+      </div>
+      <div id="newContactDialog" title="New contact">
+        <div id="newContact">
+            <div id="contactView">
+              <ul>
+                <li><a href="#detailsTab">Details</a></li>
+                <li><a href="#personalDetalsTab">Personal</a></li>
+                <li><a href="#businessDetailsTab">Business</a></li>
+                <li><a href="#photoTab">Photo</a>
+              </ul>
+              <div id="detailsTab" style="height:300px;">
+                <span>First name:</span>
+                <input type="text" style="float: right;" id="txtFirstName" />
+                <br /><br />
+                <span>Last name:</span>
+                <input type="text" style="float: right;" id="txtLastName" />
+                 <br /><br />
+                <span>Default mobile:</span>
+                <input type="text" style="float: right;" id="txtDefaultMobile" />
+                <br /><br />
+                <span>Default email address:</span>
+                <input type="text" style="float: right;" id="txtDefaultEmailAddress" />
+                <br /><br />
+                <span>Birthday:</span>
+                <input type="text" style="float: right;" id="dateBirthdate" />
+                <br /><br />
+              </div>
+              <div id="personalDetalsTab" style="height:300px;">
+                <span>Email:</span> <input type="text" style="float: right;"
+                  id="txtPersonalEmailAddress" />
+                <br /><br />
+                <span>Skype:</span> <input type="text" style="float: right;"
+                  id="txtPersonalSkype" />
+                <br /><br />
+                <span>Phone:</span>
+                <input type="text" style="float: right;" id="txtPersonalPhone" />
+                <br /><br />
+                <span>Mobile:</span> <input
+                  type="text" style="float: right;" id="txtPersonalMobile" /><br /><br /> <span>Address:</span>
+                <input
+                  type="text" style="float: right;" id="txtPersonalAddress" />
+              </div>
+              <div id="businessDetailsTab" style="height:300px;">
+                <span>Company:</span> <input type="text"
+                  style="float: right;" id="txtCompany" />
+                <br /><br />
+                <span>Web site:</span>
+                <input type="text"
+                  style="float: right;" id="txtCompanyWebSite" />
+                <br /><br />
+                <span>Email:</span> <input
+                  type="text" style="float: right;" id="txtBusinessEmail" />
+                <br /><br />
+                <span>Phone:</span> <input
+                  type="text" style="float: right;" id="txtBusinessPhone" />
+                <br /><br />
+                <span>Mobile:</span> <input
+                  type="text" style="float: right;" id="txtBusinessMobile" />
+                <br /><br />
+                <span>Address:</span>
+                <input
+                  type="text" style="float: right;" id="txtBusinessAddress" />
+              </div>
+              <div id="photoTab" style="height:300px;">
+                <img src="TrollFace.jpg"
+                  style="max-width: 400px; max-height: 300px;" />
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
