@@ -1,15 +1,27 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.where(confirmed: true)
+    @page = params[:page]
+    @page ||= 1
+    page_size = 2
+    @users = User.all.paginate(:page => @page, :per_page => page_size)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    respond_to do |format|
+      if User.where(id: params[:id]).empty?
+        format.json { render :index, status: :unprocessable_entity, notice: 'No such entry' }
+      else
+        set_user
+        format.html
+        format.json { render :show, status: :created, location: @user }
+      end
+    end
   end
 
   # GET /users/new
@@ -32,7 +44,7 @@ class UsersController < ApplicationController
 
         format.html { redirect_to @user, notice: "User was successfully created.
           You need to confirm your registration on the mail you gave us." }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :created, location: @user}
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
